@@ -1,0 +1,189 @@
+{
+  "_meta": {
+    "purpose": "Starter dataset for rawtocookedcalculator.com. Cooking yield % = cooked weight as a percentage of raw weight. Macros are per 100g RAW food, sourced/cross-referenced from USDA FoodData Central and USDA Table of Cooking Yields for Meat and Poultry, Release 2.",
+    "verification_needed": "Spot-check every entry against live USDA FoodData Central (fdc.nal.usda.gov) before publishing, especially chicken (flagship page). Entries marked 'estimate' are not direct USDA cooking-yield data and should be flagged as such on the site, the same way Summer & Cinnamon discloses it for salmon/shrimp.",
+    "formula_forward": "cooked_weight = raw_weight * (yield_percent / 100)",
+    "formula_reverse": "raw_weight = cooked_weight / (yield_percent / 100)"
+  },
+  "categories": {
+    "meat_poultry_seafood": [
+      {
+        "id": "chicken-breast",
+        "name": "Chicken Breast (skinless, boneless)",
+        "flagship": true,
+        "default_cooking_method": "baked/roasted",
+        "yield_percent": 75,
+        "yield_by_method": {
+          "baked_roasted": 75,
+          "grilled": 70,
+          "boiled_poached": 80,
+          "pan_fried": 72
+        },
+        "source": "USDA Table of Cooking Yields for Meat and Poultry",
+        "macros_per_100g_raw": { "calories": 120, "protein_g": 22.5, "carbs_g": 0, "fat_g": 2.6 }
+      },
+      {
+        "id": "chicken-thigh",
+        "name": "Chicken Thigh (skinless, boneless)",
+        "default_cooking_method": "baked/roasted",
+        "yield_percent": 73,
+        "source": "USDA Table of Cooking Yields for Meat and Poultry",
+        "macros_per_100g_raw": { "calories": 128, "protein_g": 20.4, "carbs_g": 0, "fat_g": 4.6 }
+      },
+      {
+        "id": "ground-beef-80-20",
+        "name": "Ground Beef (80/20)",
+        "default_cooking_method": "pan_fried",
+        "yield_percent": 73,
+        "source": "USDA Table of Cooking Yields for Meat and Poultry",
+        "macros_per_100g_raw": { "calories": 254, "protein_g": 17.2, "carbs_g": 0, "fat_g": 20 }
+      },
+      {
+        "id": "ground-beef-93-7",
+        "name": "Ground Beef (93/7, lean)",
+        "default_cooking_method": "pan_fried",
+        "yield_percent": 77,
+        "source": "USDA Table of Cooking Yields for Meat and Poultry",
+        "macros_per_100g_raw": { "calories": 152, "protein_g": 20.9, "carbs_g": 0, "fat_g": 7.2 }
+      },
+      {
+        "id": "ribeye-steak",
+        "name": "Ribeye Steak",
+        "default_cooking_method": "grilled",
+        "yield_percent": 84,
+        "note": "Yield varies meaningfully by doneness (rare vs well-done) - consider doneness sub-options if you extend this page",
+        "source": "USDA Table of Cooking Yields for Meat and Poultry",
+        "macros_per_100g_raw": { "calories": 291, "protein_g": 19.3, "carbs_g": 0, "fat_g": 23.3 }
+      },
+      {
+        "id": "pork-chop",
+        "name": "Pork Chop (boneless)",
+        "default_cooking_method": "pan_fried",
+        "yield_percent": 78,
+        "source": "USDA Table of Cooking Yields for Meat and Poultry",
+        "macros_per_100g_raw": { "calories": 143, "protein_g": 21.5, "carbs_g": 0, "fat_g": 5.6 }
+      },
+      {
+        "id": "pork-shoulder",
+        "name": "Pork Shoulder",
+        "default_cooking_method": "slow_cooked_braised",
+        "yield_percent": 65,
+        "note": "Low-and-slow braise loses significantly more than quick-cook cuts",
+        "source": "USDA Table of Cooking Yields for Meat and Poultry",
+        "macros_per_100g_raw": { "calories": 201, "protein_g": 17.4, "carbs_g": 0, "fat_g": 14.2 }
+      },
+      {
+        "id": "turkey-breast",
+        "name": "Turkey Breast (skinless, boneless)",
+        "default_cooking_method": "baked_roasted",
+        "yield_percent": 74,
+        "source": "USDA Table of Cooking Yields for Meat and Poultry",
+        "macros_per_100g_raw": { "calories": 114, "protein_g": 24.6, "carbs_g": 0, "fat_g": 1 }
+      },
+      {
+        "id": "salmon",
+        "name": "Salmon Fillet",
+        "default_cooking_method": "baked",
+        "yield_percent": 79,
+        "note": "USDA has not published a direct cooking-yield figure for salmon - this is an industry-standard estimate. Disclose this on the page, same as Summer & Cinnamon does.",
+        "source": "estimate - not direct USDA cooking-yield data",
+        "macros_per_100g_raw": { "calories": 208, "protein_g": 20, "carbs_g": 0, "fat_g": 13.4 }
+      },
+      {
+        "id": "shrimp",
+        "name": "Shrimp",
+        "default_cooking_method": "boiled",
+        "yield_percent": 89,
+        "note": "USDA has not published a direct cooking-yield figure for shrimp - this is an industry-standard estimate. Disclose this on the page.",
+        "source": "estimate - not direct USDA cooking-yield data",
+        "macros_per_100g_raw": { "calories": 99, "protein_g": 24, "carbs_g": 0.2, "fat_g": 0.3 }
+      }
+    ],
+    "grains_pasta_legumes": [
+      {
+        "id": "white-rice",
+        "name": "White Rice (dry)",
+        "default_cooking_method": "boiled",
+        "yield_percent": 300,
+        "note": "Grains EXPAND rather than shrink - yield_percent > 100 here means the weight triples",
+        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "macros_per_100g_raw": { "calories": 365, "protein_g": 7.1, "carbs_g": 80, "fat_g": 0.7 }
+      },
+      {
+        "id": "brown-rice",
+        "name": "Brown Rice (dry)",
+        "default_cooking_method": "boiled",
+        "yield_percent": 280,
+        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "macros_per_100g_raw": { "calories": 370, "protein_g": 7.9, "carbs_g": 77, "fat_g": 2.9 }
+      },
+      {
+        "id": "pasta",
+        "name": "Pasta (dry)",
+        "default_cooking_method": "boiled",
+        "yield_percent": 225,
+        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "macros_per_100g_raw": { "calories": 371, "protein_g": 13, "carbs_g": 75, "fat_g": 1.5 }
+      },
+      {
+        "id": "quinoa",
+        "name": "Quinoa (dry)",
+        "default_cooking_method": "boiled",
+        "yield_percent": 280,
+        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "macros_per_100g_raw": { "calories": 368, "protein_g": 14.1, "carbs_g": 64.2, "fat_g": 6.1 }
+      },
+      {
+        "id": "lentils",
+        "name": "Lentils (dry)",
+        "default_cooking_method": "boiled",
+        "yield_percent": 230,
+        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "macros_per_100g_raw": { "calories": 353, "protein_g": 25.8, "carbs_g": 60.1, "fat_g": 1.1 }
+      },
+      {
+        "id": "black-beans",
+        "name": "Black Beans (dry)",
+        "default_cooking_method": "boiled",
+        "yield_percent": 220,
+        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "macros_per_100g_raw": { "calories": 341, "protein_g": 21.6, "carbs_g": 62.4, "fat_g": 1.4 }
+      }
+    ],
+    "vegetables": [
+      {
+        "id": "broccoli",
+        "name": "Broccoli",
+        "default_cooking_method": "boiled_steamed",
+        "yield_percent": 90,
+        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "macros_per_100g_raw": { "calories": 34, "protein_g": 2.8, "carbs_g": 6.6, "fat_g": 0.4 }
+      },
+      {
+        "id": "spinach",
+        "name": "Spinach",
+        "default_cooking_method": "boiled_steamed",
+        "yield_percent": 30,
+        "note": "Leafy greens lose the most volume/weight of any vegetable - real, dramatic shrinkage, worth highlighting in content",
+        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "macros_per_100g_raw": { "calories": 23, "protein_g": 2.9, "carbs_g": 3.6, "fat_g": 0.4 }
+      },
+      {
+        "id": "potato",
+        "name": "Potato",
+        "default_cooking_method": "boiled",
+        "yield_percent": 94,
+        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "macros_per_100g_raw": { "calories": 77, "protein_g": 2, "carbs_g": 17.5, "fat_g": 0.1 }
+      },
+      {
+        "id": "sweet-potato",
+        "name": "Sweet Potato",
+        "default_cooking_method": "baked",
+        "yield_percent": 90,
+        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "macros_per_100g_raw": { "calories": 86, "protein_g": 1.6, "carbs_g": 20.1, "fat_g": 0.1 }
+      }
+    ]
+  }
+}

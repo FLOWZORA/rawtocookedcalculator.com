@@ -1,0 +1,58 @@
+---
+---
+
+<nav class="border-b border-[var(--color-hairline)] bg-[var(--color-canvas)] sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+    <!-- Wordmark -->
+    <a
+      href="/"
+      class="text-sm font-semibold text-[var(--color-ink)] tracking-tight no-underline hover:opacity-70 transition-opacity"
+    >
+      Raw<span class="text-[var(--color-mute)] font-normal">→</span>Cooked
+    </a>
+
+    <!-- Nav links (desktop) -->
+    <div class="hidden sm:flex items-center gap-1 text-sm text-[var(--color-body)]">
+      <a href="/chicken" class="px-3 py-1.5 rounded-full hover:bg-[var(--color-hairline-soft)] transition-colors">
+        Chicken
+      </a>
+      <a href="/rice" class="px-3 py-1.5 rounded-full hover:bg-[var(--color-hairline-soft)] transition-colors">
+        Rice
+      </a>
+      <a href="/beef" class="px-3 py-1.5 rounded-full hover:bg-[var(--color-hairline-soft)] transition-colors">
+        Beef
+      </a>
+    </div>
+
+    <!-- Dark mode toggle -->
+    <button
+      id="theme-toggle"
+      aria-label="Toggle dark mode"
+      class="flex items-center justify-center w-8 h-8 rounded-[var(--radius-sm)] border border-[var(--color-hairline)] bg-[var(--color-surface)] text-[var(--color-body)] hover:bg-[var(--color-hairline-soft)] transition-colors text-sm cursor-pointer"
+    >
+      <span id="theme-icon-sun" class="hidden">☀</span>
+      <span id="theme-icon-moon" class="hidden">☽</span>
+    </button>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('theme-toggle')!;
+  const sunIcon = document.getElementById('theme-icon-sun')!;
+  const moonIcon = document.getElementById('theme-icon-moon')!;
+
+  function updateIcon() {
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    sunIcon.classList.toggle('hidden', !isDark);
+    moonIcon.classList.toggle('hidden', isDark);
+  }
+
+  updateIcon();
+
+  btn.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('theme', next);
+    updateIcon();
+  });
+</script>

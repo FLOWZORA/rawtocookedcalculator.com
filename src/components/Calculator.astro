@@ -1,0 +1,609 @@
+---
+import { getAllFoods, COOKING_METHOD_LABELS, CATEGORY_LABELS } from '../utils/foods';
+
+interface Props {
+  preselectedId?: string;
+}
+
+const { preselectedId = '' } = Astro.props;
+
+const allFoods = getAllFoods();
+const foodsJson = JSON.stringify(allFoods);
+const methodLabelsJson = JSON.stringify(COOKING_METHOD_LABELS);
+const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
+---
+
+<div id="calculator" class="w-full">
+
+  <!-- Search Box -->
+  <div class="mb-4 relative">
+    <label for="food-search" class="block text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+      Food
+    </label>
+    <div class="relative">
+      <input
+        id="food-search"
+        type="text"
+        role="combobox"
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-controls="food-dropdown"
+        aria-haspopup="listbox"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="Search — chicken breast, white rice, broccoli…"
+        class="w-full px-3 py-2.5 text-sm bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-sm)] text-[var(--color-ink)] placeholder:text-[var(--color-faint)] focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] focus:ring-offset-0 transition-shadow"
+      />
+      <!-- Clear button -->
+      <button
+        id="search-clear"
+        hidden
+        aria-label="Clear food selection"
+        class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[var(--color-mute)] hover:text-[var(--color-ink)] transition-colors text-base leading-none cursor-pointer"
+      >×</button>
+    </div>
+
+    <!-- Autocomplete Dropdown -->
+    <ul
+      id="food-dropdown"
+      role="listbox"
+      aria-label="Food suggestions"
+      hidden
+      class="absolute z-40 w-full mt-1 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] shadow-md overflow-hidden max-h-72 overflow-y-auto"
+    ></ul>
+  </div>
+
+  <!-- Direction Toggle -->
+  <div class="mb-4">
+    <label class="block text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+      Direction
+    </label>
+    <div class="inline-flex rounded-[var(--radius-sm)] border border-[var(--color-hairline)] overflow-hidden bg-[var(--color-surface)] w-full sm:w-auto">
+      <button
+        id="btn-rtc"
+        class="direction-btn flex-1 sm:flex-none px-4 py-2 text-sm font-medium transition-colors cursor-pointer"
+        data-dir="raw-to-cooked"
+      >
+        Raw → Cooked
+      </button>
+      <button
+        id="btn-ctr"
+        class="direction-btn flex-1 sm:flex-none px-4 py-2 text-sm font-medium transition-colors border-l border-[var(--color-hairline)] cursor-pointer"
+        data-dir="cooked-to-raw"
+      >
+        Cooked → Raw
+      </button>
+    </div>
+  </div>
+
+  <!-- Weight Input -->
+  <div class="mb-6">
+    <label id="weight-label" for="weight-input" class="block text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+      Raw weight
+    </label>
+    <div class="flex gap-2">
+      <input
+        id="weight-input"
+        type="number"
+        min="0"
+        step="any"
+        inputmode="decimal"
+        placeholder="e.g. 200"
+        class="flex-1 px-3 py-2.5 text-sm bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-sm)] text-[var(--color-ink)] placeholder:text-[var(--color-faint)] focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] transition-shadow"
+      />
+      <select
+        id="unit-select"
+        class="px-3 py-2.5 text-sm bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-sm)] text-[var(--color-ink)] focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] transition-shadow cursor-pointer"
+      >
+        <option value="g">g</option>
+        <option value="oz">oz</option>
+        <option value="lbs">lbs</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Results (hidden until food + weight entered) -->
+  <div id="results" hidden>
+    <!-- Output weight card -->
+    <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5 mb-3">
+      <div class="flex items-baseline justify-between gap-4 mb-3">
+        <span id="output-label" class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider">
+          Cooked weight
+        </span>
+        <span id="output-value" class="text-2xl font-semibold text-[var(--color-ink)] tracking-tight tabular-nums">
+          —
+        </span>
+      </div>
+
+      <!-- Yield badge -->
+      <div id="yield-badge" class="text-xs text-[var(--color-mute)] border-t border-[var(--color-hairline)] pt-3"></div>
+    </div>
+
+    <!-- Macro table -->
+    <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] overflow-hidden mb-3">
+      <div class="px-5 py-3 border-b border-[var(--color-hairline)]">
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider">
+          Nutrition — for this amount
+        </p>
+      </div>
+      <div class="grid grid-cols-4 divide-x divide-[var(--color-hairline)]">
+        <div class="px-4 py-4 text-center">
+          <p class="text-xs text-[var(--color-mute)] mb-1">Calories</p>
+          <p id="mac-cal" class="text-lg font-semibold text-[var(--color-ink)] tabular-nums">—</p>
+        </div>
+        <div class="px-4 py-4 text-center">
+          <p class="text-xs text-[var(--color-mute)] mb-1">Protein</p>
+          <p id="mac-pro" class="text-lg font-semibold text-[var(--color-ink)] tabular-nums">—</p>
+        </div>
+        <div class="px-4 py-4 text-center">
+          <p class="text-xs text-[var(--color-mute)] mb-1">Carbs</p>
+          <p id="mac-car" class="text-lg font-semibold text-[var(--color-ink)] tabular-nums">—</p>
+        </div>
+        <div class="px-4 py-4 text-center">
+          <p class="text-xs text-[var(--color-mute)] mb-1">Fat</p>
+          <p id="mac-fat" class="text-lg font-semibold text-[var(--color-ink)] tabular-nums">—</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- USDA citation -->
+    <div id="citation-wrapper" class="flex items-center gap-2 text-xs text-[var(--color-mute)] mb-3">
+      <span class="font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded border border-[var(--color-hairline)] text-[var(--color-faint)]">Source</span>
+      <span id="citation-source"></span>
+    </div>
+
+    <!-- Estimate disclosure -->
+    <div id="estimate-note" hidden class="text-xs text-[var(--color-warning)] bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-sm)] px-3 py-2 mb-3">
+      <strong>Note:</strong> This yield figure is an industry-standard estimate. USDA has not published a direct cooking-yield measurement for this item.
+    </div>
+
+    <!-- More precise toggle (only shown if food has yield_by_method) -->
+    <div id="precise-wrapper" hidden class="border-t border-[var(--color-hairline)] pt-3 mt-1">
+      <button
+        id="precise-toggle"
+        class="text-xs text-[var(--color-link)] hover:underline cursor-pointer transition-colors"
+      >
+        + More precise: choose cooking method
+      </button>
+      <div id="precise-panel" hidden class="mt-3">
+        <label for="method-select" class="block text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+          Cooking method
+        </label>
+        <select
+          id="method-select"
+          class="w-full sm:w-auto px-3 py-2 text-sm bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-sm)] text-[var(--color-ink)] focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] transition-shadow cursor-pointer"
+        >
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty state prompt -->
+  <div id="empty-state" class="text-sm text-[var(--color-faint)] text-center py-6">
+    Search for a food above to get started.
+  </div>
+</div>
+
+<style>
+  .direction-btn {
+    color: var(--color-body);
+    background-color: var(--color-surface);
+  }
+  .direction-btn.active {
+    background-color: var(--color-ink);
+    color: var(--color-canvas);
+  }
+  .dropdown-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-hairline);
+    transition: background-color 0.1s;
+  }
+  .dropdown-item:last-child {
+    border-bottom: none;
+  }
+  .dropdown-item:hover,
+  .dropdown-item[aria-selected="true"] {
+    background-color: var(--color-hairline-soft);
+  }
+  .dropdown-item-name {
+    font-size: 14px;
+    color: var(--color-ink);
+    font-weight: 500;
+  }
+  .dropdown-item-category {
+    font-size: 11px;
+    color: var(--color-mute);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>
+
+<script define:vars={{ foodsJson, methodLabelsJson, categoryLabelsJson, preselectedId }}>
+  const FOODS = JSON.parse(foodsJson);
+  const METHOD_LABELS = JSON.parse(methodLabelsJson);
+  const CATEGORY_LABELS = JSON.parse(categoryLabelsJson);
+
+  // ── State ─────────────────────────────────────────────────────────────
+  let state = {
+    food: null,
+    direction: 'raw-to-cooked',
+    inputVal: '',
+    unit: 'g',
+    method: null,
+    showPrecise: false,
+    dropdownOpen: false,
+    highlightedIndex: -1,
+    filteredFoods: [],
+  };
+
+  // ── DOM refs ──────────────────────────────────────────────────────────
+  const searchInput = document.getElementById('food-search');
+  const searchClear = document.getElementById('search-clear');
+  const dropdown = document.getElementById('food-dropdown');
+  const btnRtc = document.getElementById('btn-rtc');
+  const btnCtr = document.getElementById('btn-ctr');
+  const weightLabel = document.getElementById('weight-label');
+  const weightInput = document.getElementById('weight-input');
+  const unitSelect = document.getElementById('unit-select');
+  const results = document.getElementById('results');
+  const emptyState = document.getElementById('empty-state');
+  const outputLabel = document.getElementById('output-label');
+  const outputValue = document.getElementById('output-value');
+  const yieldBadge = document.getElementById('yield-badge');
+  const macCal = document.getElementById('mac-cal');
+  const macPro = document.getElementById('mac-pro');
+  const macCar = document.getElementById('mac-car');
+  const macFat = document.getElementById('mac-fat');
+  const citationSource = document.getElementById('citation-source');
+  const estimateNote = document.getElementById('estimate-note');
+  const preciseWrapper = document.getElementById('precise-wrapper');
+  const preciseToggle = document.getElementById('precise-toggle');
+  const precisePanel = document.getElementById('precise-panel');
+  const methodSelect = document.getElementById('method-select');
+
+  // ── Utilities ─────────────────────────────────────────────────────────
+  function toGrams(val, unit) {
+    if (unit === 'oz') return val * 28.3495;
+    if (unit === 'lbs') return val * 453.592;
+    return val;
+  }
+
+  function formatWeight(grams, unit) {
+    const val = unit === 'oz' ? grams / 28.3495 : unit === 'lbs' ? grams / 453.592 : grams;
+    const decimals = unit === 'g' ? 0 : unit === 'lbs' ? 3 : 1;
+    return val.toFixed(decimals) + ' ' + unit;
+  }
+
+  function calcFromState() {
+    if (!state.food || !state.inputVal) return null;
+    const num = parseFloat(state.inputVal);
+    if (isNaN(num) || num <= 0) return null;
+
+    const inputG = toGrams(num, state.unit);
+    const yieldPct = (state.method && state.food.yield_by_method && state.food.yield_by_method[state.method])
+      ? state.food.yield_by_method[state.method]
+      : state.food.yield_percent;
+
+    const rawG = state.direction === 'raw-to-cooked' ? inputG : inputG / (yieldPct / 100);
+    const cookedG = rawG * (yieldPct / 100);
+
+    const m = state.food.macros_per_100g_raw;
+    const macros = {
+      calories: (rawG / 100) * m.calories,
+      protein_g: (rawG / 100) * m.protein_g,
+      carbs_g: (rawG / 100) * m.carbs_g,
+      fat_g: (rawG / 100) * m.fat_g,
+    };
+
+    return { rawG, cookedG, yieldPct, macros, inputG };
+  }
+
+  // ── Search / dropdown ─────────────────────────────────────────────────
+  function filterFoods(query) {
+    if (!query.trim()) return FOODS;
+    const q = query.toLowerCase();
+    return FOODS.filter((f) =>
+      f.name.toLowerCase().includes(q) ||
+      CATEGORY_LABELS[f.category].toLowerCase().includes(q)
+    );
+  }
+
+  function renderDropdown() {
+    dropdown.innerHTML = '';
+    const foods = state.filteredFoods;
+
+    if (foods.length === 0) {
+      const li = document.createElement('li');
+      li.className = 'px-4 py-3 text-sm text-[var(--color-mute)]';
+      li.textContent = 'No foods found.';
+      dropdown.appendChild(li);
+    } else {
+      foods.forEach((food, i) => {
+        const li = document.createElement('li');
+        li.className = 'dropdown-item';
+        li.setAttribute('role', 'option');
+        li.setAttribute('aria-selected', String(i === state.highlightedIndex));
+        li.setAttribute('data-food-id', food.id);
+        li.innerHTML = `
+          <span class="dropdown-item-name">${food.name}</span>
+          <span class="dropdown-item-category">${CATEGORY_LABELS[food.category] || food.category}</span>
+        `;
+        li.addEventListener('mousedown', (e) => {
+          e.preventDefault();
+          selectFood(food);
+        });
+        dropdown.appendChild(li);
+      });
+    }
+  }
+
+  function openDropdown() {
+    state.dropdownOpen = true;
+    state.filteredFoods = filterFoods(searchInput.value);
+    state.highlightedIndex = -1;
+    renderDropdown();
+    dropdown.hidden = false;
+    searchInput.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDropdown() {
+    state.dropdownOpen = false;
+    dropdown.hidden = true;
+    searchInput.setAttribute('aria-expanded', 'false');
+    state.highlightedIndex = -1;
+  }
+
+  function moveHighlight(dir) {
+    const max = state.filteredFoods.length - 1;
+    state.highlightedIndex = Math.max(0, Math.min(max, state.highlightedIndex + dir));
+    const items = dropdown.querySelectorAll('[role="option"]');
+    items.forEach((el, i) => {
+      el.setAttribute('aria-selected', String(i === state.highlightedIndex));
+    });
+    items[state.highlightedIndex]?.scrollIntoView({ block: 'nearest' });
+  }
+
+  function selectFood(food) {
+    state.food = food;
+    state.method = null;
+    state.showPrecise = false;
+    searchInput.value = food.name;
+    searchClear.hidden = false;
+    closeDropdown();
+    render();
+  }
+
+  function clearFood() {
+    state.food = null;
+    state.method = null;
+    state.showPrecise = false;
+    searchInput.value = '';
+    searchClear.hidden = true;
+    render();
+  }
+
+  // ── Render ────────────────────────────────────────────────────────────
+  function render() {
+    // Direction toggle styles
+    btnRtc.classList.toggle('active', state.direction === 'raw-to-cooked');
+    btnCtr.classList.toggle('active', state.direction === 'cooked-to-raw');
+
+    // Weight input label
+    weightLabel.textContent = state.direction === 'raw-to-cooked' ? 'Raw weight' : 'Cooked weight';
+
+    // No food selected
+    if (!state.food) {
+      results.hidden = true;
+      emptyState.hidden = false;
+      updateUrl();
+      return;
+    }
+
+    emptyState.hidden = true;
+
+    // No weight entered
+    const result = calcFromState();
+    if (!result) {
+      results.hidden = true;
+      updateUrl();
+      return;
+    }
+
+    results.hidden = false;
+
+    // Output weight
+    const outputG = state.direction === 'raw-to-cooked' ? result.cookedG : result.rawG;
+    outputLabel.textContent = state.direction === 'raw-to-cooked' ? 'Cooked weight' : 'Raw weight';
+    outputValue.textContent = formatWeight(outputG, state.unit);
+
+    // Yield badge
+    const isExpand = result.yieldPct > 100;
+    if (isExpand) {
+      yieldBadge.textContent = `Expands to ${(result.yieldPct / 100).toFixed(2).replace(/\.?0+$/, '')}× its dry weight · USDA yield: ${result.yieldPct}%`;
+    } else {
+      yieldBadge.textContent = `${100 - result.yieldPct}% weight loss when cooked · USDA yield: ${result.yieldPct}%`;
+    }
+
+    // Macros
+    macCal.textContent = Math.round(result.macros.calories).toString();
+    macPro.textContent = result.macros.protein_g.toFixed(1) + 'g';
+    macCar.textContent = result.macros.carbs_g.toFixed(1) + 'g';
+    macFat.textContent = result.macros.fat_g.toFixed(1) + 'g';
+
+    // Citation
+    const isEstimate = state.food.source.startsWith('estimate');
+    citationSource.textContent = isEstimate
+      ? 'Industry-standard estimate (USDA data unavailable for this item)'
+      : state.food.source;
+    estimateNote.hidden = !isEstimate;
+
+    // More precise panel
+    const hasMethodData = state.food.yield_by_method && Object.keys(state.food.yield_by_method).length > 0;
+    preciseWrapper.hidden = !hasMethodData;
+
+    if (hasMethodData) {
+      // Rebuild method select if food changed
+      if (methodSelect.dataset.foodId !== state.food.id) {
+        methodSelect.innerHTML = '';
+        methodSelect.dataset.foodId = state.food.id;
+        for (const [key, pct] of Object.entries(state.food.yield_by_method)) {
+          const opt = document.createElement('option');
+          opt.value = key;
+          const label = METHOD_LABELS[key] || key.replace(/_/g, ' ');
+          opt.textContent = `${label} — ${pct}% yield`;
+          methodSelect.appendChild(opt);
+        }
+        // Default method if not set
+        if (!state.method) {
+          state.method = methodSelect.value;
+        }
+      }
+      // Sync select to state.method
+      if (state.method) methodSelect.value = state.method;
+
+      // Precise toggle label
+      preciseToggle.textContent = state.showPrecise
+        ? '− Hide cooking method'
+        : '+ More precise: choose cooking method';
+      precisePanel.hidden = !state.showPrecise;
+    }
+
+    updateUrl();
+  }
+
+  // ── URL state ─────────────────────────────────────────────────────────
+  function updateUrl() {
+    const params = new URLSearchParams();
+    if (state.food) params.set('food', state.food.id);
+    if (state.inputVal) params.set('weight', state.inputVal);
+    if (state.unit !== 'g') params.set('unit', state.unit);
+    if (state.direction !== 'raw-to-cooked') params.set('dir', 'ctr');
+    if (state.method) params.set('method', state.method);
+    const qs = params.toString();
+    const url = qs ? window.location.pathname + '?' + qs : window.location.pathname;
+    window.history.replaceState(null, '', url);
+  }
+
+  function loadFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const foodId = params.get('food');
+    const weight = params.get('weight');
+    const unit = params.get('unit');
+    const dir = params.get('dir');
+    const method = params.get('method');
+
+    if (foodId) {
+      const food = FOODS.find((f) => f.id === foodId);
+      if (food) {
+        state.food = food;
+        searchInput.value = food.name;
+        searchClear.hidden = false;
+      }
+    }
+    if (weight) {
+      state.inputVal = weight;
+      weightInput.value = weight;
+    }
+    if (unit && ['g', 'oz', 'lbs'].includes(unit)) {
+      state.unit = unit;
+      unitSelect.value = unit;
+    }
+    if (dir === 'ctr') state.direction = 'cooked-to-raw';
+    if (method && state.food?.yield_by_method?.[method]) state.method = method;
+  }
+
+  // ── Event listeners ───────────────────────────────────────────────────
+  searchInput.addEventListener('focus', () => openDropdown());
+  searchInput.addEventListener('input', () => {
+    state.filteredFoods = filterFoods(searchInput.value);
+    state.highlightedIndex = -1;
+    renderDropdown();
+    if (!state.dropdownOpen) openDropdown();
+    // If user clears input, clear food selection
+    if (!searchInput.value.trim()) {
+      state.food = null;
+      searchClear.hidden = true;
+      render();
+    }
+  });
+
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (!state.dropdownOpen) openDropdown();
+      moveHighlight(1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      moveHighlight(-1);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (state.highlightedIndex >= 0 && state.filteredFoods[state.highlightedIndex]) {
+        selectFood(state.filteredFoods[state.highlightedIndex]);
+      } else if (state.filteredFoods.length === 1) {
+        selectFood(state.filteredFoods[0]);
+      }
+    } else if (e.key === 'Escape') {
+      closeDropdown();
+      searchInput.blur();
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!document.getElementById('calculator').contains(e.target)) {
+      closeDropdown();
+    }
+  });
+
+  searchClear.addEventListener('click', clearFood);
+
+  btnRtc.addEventListener('click', () => {
+    state.direction = 'raw-to-cooked';
+    render();
+  });
+  btnCtr.addEventListener('click', () => {
+    state.direction = 'cooked-to-raw';
+    render();
+  });
+
+  weightInput.addEventListener('input', () => {
+    state.inputVal = weightInput.value;
+    render();
+  });
+
+  unitSelect.addEventListener('change', () => {
+    state.unit = unitSelect.value;
+    render();
+  });
+
+  preciseToggle.addEventListener('click', () => {
+    state.showPrecise = !state.showPrecise;
+    render();
+  });
+
+  methodSelect.addEventListener('change', () => {
+    state.method = methodSelect.value;
+    render();
+  });
+
+  // ── Initialize ────────────────────────────────────────────────────────
+  (function init() {
+    // URL params take priority over preselectedId
+    const hasUrlFood = new URLSearchParams(window.location.search).has('food');
+    if (hasUrlFood) {
+      loadFromUrl();
+    } else if (preselectedId) {
+      const food = FOODS.find((f) => f.id === preselectedId);
+      if (food) {
+        state.food = food;
+        searchInput.value = food.name;
+        searchClear.hidden = false;
+      }
+    }
+    render();
+  })();
+</script>

@@ -1,0 +1,51 @@
+---
+---
+
+<footer class="mt-auto border-t border-[var(--color-hairline)] bg-[var(--color-canvas)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <!-- Brand -->
+      <div>
+        <p class="text-sm font-semibold text-[var(--color-ink)] mb-2">Raw→Cooked Calculator</p>
+        <p class="text-xs text-[var(--color-mute)] leading-relaxed">
+          USDA-sourced cooking yield data for meat, grains, and vegetables. Full macros for every conversion.
+        </p>
+      </div>
+
+      <!-- Foods -->
+      <div>
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">Popular Foods</p>
+        <ul class="space-y-1.5">
+          {[
+            ['Chicken Breast', '/chicken'],
+            ['White Rice', '/rice'],
+            ['Ground Beef', '/beef'],
+            ['Pasta', '/pasta'],
+            ['Salmon', '/salmon'],
+            ['Broccoli', '/broccoli'],
+          ].map(([label, href]) => (
+            <li>
+              <a href={href} class="text-xs text-[var(--color-body)] hover:text-[var(--color-ink)] transition-colors no-underline">
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Sources -->
+      <div>
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">Data Sources</p>
+        <ul class="space-y-1.5 text-xs text-[var(--color-mute)] leading-relaxed">
+          <li>USDA Table of Cooking Yields for Meat and Poultry</li>
+          <li>USDA FoodData Central</li>
+          <li class="pt-1 text-[var(--color-faint)]">Estimates disclosed where USDA data is unavailable.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-[var(--color-hairline)] text-xs text-[var(--color-faint)]">
+      Values are per the USDA data above. Always weigh your food with a kitchen scale for accuracy.
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,57 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  jsonLd?: object;
+}
+
+const { title, description, canonicalUrl, jsonLd } = Astro.props;
+const canon = canonicalUrl ?? Astro.url.href;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canon} />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/favicon.ico" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canon} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content="Raw to Cooked Calculator" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+
+<!-- Geist fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Dark mode: resolve before first paint to avoid flash -->
+<script is:inline>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.theme = saved ?? (prefersDark ? 'dark' : 'light');
+  })();
+</script>
+
+<!-- JSON-LD structured data -->
+{jsonLd && (
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+)}

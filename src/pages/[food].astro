@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Calculator from '../components/Calculator.astro';
+import {
+  SLUG_TO_ID,
+  getAllFoods,
+  getFoodBySlug,
+  getYieldDescription,
+  getCategoryExplanation,
+  isEstimate,
+  COOKING_METHOD_LABELS,
+  CATEGORY_LABELS,
+} from '../utils/foods';
+import type { Food } from '../utils/foods';
+
+export function getStaticPaths() {
+  return Object.keys(SLUG_TO_ID).map((slug) => ({ params: { food: slug } }));
+}
+
+const { food: slug } = Astro.params;
+const food = getFoodBySlug(slug)!;
+
+if (!food) {
+  return Astro.redirect('/');
+}
+
+const isChicken = food.id === 'chicken-breast';
+const yieldDesc = getYieldDescription(food);
+const explanation = getCategoryExplanation(food);
+const estimate = isEstimate(food);
+
+// Build SEO metadata
+const yieldStr = food.yield_percent > 100
+  ? `${(food.yield_percent / 100).toFixed(1)}× expansion`
+  : `${food.yield_percent}% yield`;
+
+const titleFoodName = food.name.replace(/\s*\(.*\)/, ''); // strip parentheticals for title
+const pageTitle = isChicken
+  ? `Raw to Cooked Chicken Breast Calculator | USDA Yield: 75%`
+  : `${titleFoodName} Raw to Cooked Calculator | USDA ${yieldStr}`;
+
+const pageDesc = food.yield_percent > 100
+  ? `${food.name} expands to ${(food.yield_percent / 100).toFixed(1)}× its dry weight when cooked. Enter any amount to get the cooked weight plus calories, protein, carbs, and fat — USDA data.`
+  : `${food.name} has a ${food.yield_percent}% cooking yield (${yieldDesc.toLowerCase()}). Enter any weight to convert raw ↔ cooked and get full macros — calories, protein, carbs, and fat.`;
+
+// FAQ JSON-LD for food pages
+const faqItems = isChicken
+  ? [
+      {
+        q: 'How much does chicken breast shrink when cooked?',
+        a: 'Chicken breast loses about 25% of its weight when cooked, meaning a 200g raw breast yields approximately 150g cooked. Yield varies slightly by method: baked/roasted = 75%, grilled = 70%, boiled/poached = 80%, pan-fried = 72% (USDA data).',
+      },
+      {
+        q: 'Should I track chicken macros raw or cooked?',
+        a: 'USDA nutrition data (and most food labels) are measured on raw chicken. For accuracy, always log the raw weight and calculate macros from there. This calculator always derives macros from the raw-weight equivalent, regardless of which direction you convert.',
+      },
+      {
+        q: 'Why does chicken lose weight when cooked?',
+        a: 'Chicken loses weight primarily through moisture evaporation. Heat causes proteins to denature and contract, squeezing water out of muscle fibers. Higher temperatures and longer cook times increase moisture loss, which is why grilling (70% yield) loses more than boiling/poaching (80% yield).',
+      },
+    ]
+  : food.category === 'grains_pasta_legumes'
+  ? [
+      {
+        q: `Should I weigh ${titleFoodName.toLowerCase()} raw or cooked?`,
+        a: `USDA nutrition data is measured on dry, uncooked ${titleFoodName.toLowerCase()}. For accurate macro tracking, weigh the dry amount and use those macros — or use this calculator to enter either weight and get the correct numbers.`,
+      },
+      {
+        q: `How much does ${titleFoodName.toLowerCase()} expand when cooked?`,
+        a: `${food.name} has a ${food.yield_percent}% yield, meaning it expands to ${(food.yield_percent / 100).toFixed(1)}× its dry weight when cooked. 100g dry ${titleFoodName.toLowerCase()} becomes approximately ${food.yield_percent}g cooked.`,
+      },
+    ]
+  : [
+      {
+        q: `How much weight does ${titleFoodName.toLowerCase()} lose when cooked?`,
+        a: `${food.name} has a ${food.yield_percent}% cooking yield, losing ${100 - food.yield_percent}% of its weight when cooked. Source: USDA FoodData Central.`,
+      },
+      {
+        q: `Should I track ${titleFoodName.toLowerCase()} macros raw or cooked?`,
+        a: `USDA nutrition values are based on raw weight. For best accuracy, track the raw weight and calculate macros from there. This calculator always computes macros from the raw-weight equivalent.`,
+      },
+    ];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDesc}
+  canonicalUrl={`https://rawtocookedcalculator.com/${slug}`}
+  jsonLd={jsonLd}
+>
+  <!-- Food hero -->
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+
+      <!-- Eyebrow -->
+      <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+        {CATEGORY_LABELS[food.category]}
+        {estimate && ' · Estimated yield'}
+      </p>
+
+      <!-- H1 -->
+      <h1 class="text-3xl sm:text-4xl font-semibold text-[var(--color-ink)] tracking-[-1.5px] leading-tight mb-4">
+        {food.name}<br class="hidden sm:block" /> Raw to Cooked Calculator
+      </h1>
+
+      <!-- Yield stat -->
+      <div class="inline-flex items-center gap-3 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] px-4 py-3 mb-5">
+        <span class="text-2xl font-semibold text-[var(--color-ink)] tabular-nums tracking-tight">
+          {food.yield_percent}%
+        </span>
+        <div>
+          <p class="text-sm font-medium text-[var(--color-ink)]">USDA cooking yield</p>
+          <p class="text-xs text-[var(--color-mute)]">{yieldDesc}</p>
+        </div>
+      </div>
+
+      <!-- Explanation -->
+      {explanation && (
+        <p class="text-sm text-[var(--color-body)] leading-relaxed max-w-xl mb-3">
+          {explanation}
+        </p>
+      )}
+
+      <!-- Source -->
+      <p class="text-xs font-mono text-[var(--color-faint)]">
+        Source: {estimate
+          ? 'Industry-standard estimate — USDA has not published direct cooking-yield data for this food.'
+          : food.source}
+      </p>
+    </div>
+  </section>
+
+  <!-- Chicken-specific: method yields table -->
+  {isChicken && food.yield_by_method && (
+    <section class="border-b border-[var(--color-hairline)]">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+        <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-5">
+          Yield by cooking method
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl">
+          {Object.entries(food.yield_by_method).map(([method, pct]) => (
+            <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] px-4 py-4 text-center">
+              <p class="text-2xl font-semibold text-[var(--color-ink)] tabular-nums mb-1">{pct}%</p>
+              <p class="text-xs text-[var(--color-mute)]">
+                {COOKING_METHOD_LABELS[method] || method.replace(/_/g, ' ')}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p class="mt-4 text-xs text-[var(--color-faint)] font-mono">
+          Source: USDA Table of Cooking Yields for Meat and Poultry
+        </p>
+      </div>
+    </section>
+  )}
+
+  <!-- Chicken-specific: protein quality note -->
+  {isChicken && (
+    <section class="border-b border-[var(--color-hairline)]">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+        <div class="max-w-2xl">
+          <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+            Why chicken breast is the macro-tracking gold standard
+          </h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed mb-3">
+            Skinless, boneless chicken breast delivers roughly 22.5g of protein per 100g raw — one of the
+            highest protein-per-calorie ratios of any whole food. At only 120 calories and 2.6g of fat per 100g
+            raw, it's the go-to lean protein for bodybuilders, athletes, and anyone managing a caloric deficit.
+          </p>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            The catch: because it loses 25–30% of its weight when cooked, <strong class="text-[var(--color-ink)]">tracking cooked
+            weight without accounting for yield leads to underestimating your actual protein intake</strong>.
+            A 150g cooked portion came from roughly 200g raw — that's the raw weight you should be logging
+            against the USDA nutrition label.
+          </p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Calculator -->
+  <section>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+      <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-6">
+        {food.name} Calculator
+      </h2>
+      <div class="max-w-lg">
+        <Calculator preselectedId={food.id} />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="border-t border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-8">
+        Frequently asked questions
+      </h2>
+      <div class="max-w-2xl space-y-6">
+        {faqItems.map(({ q, a }) => (
+          <div class="border-b border-[var(--color-hairline)] pb-6 last:border-b-0">
+            <h3 class="text-sm font-semibold text-[var(--color-ink)] mb-2">{q}</h3>
+            <p class="text-sm text-[var(--color-body)] leading-relaxed">{a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related foods -->
+  <section class="border-t border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+      <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-4">
+        Related calculators
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {getAllFoods()
+          .filter((f) => f.id !== food.id && f.category === food.category)
+          .slice(0, 5)
+          .map((f) => (
+            <a
+              href={`/${f.slug}`}
+              class="text-sm px-3 py-1.5 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-pill-category)] text-[var(--color-body)] no-underline hover:text-[var(--color-ink)] hover:bg-[var(--color-hairline-soft)] transition-colors"
+            >
+              {f.name.replace(/\s*\(.*\)/, '')}
+            </a>
+          ))}
+        <a
+          href="/"
+          class="text-sm px-3 py-1.5 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-pill-category)] text-[var(--color-mute)] no-underline hover:text-[var(--color-ink)] hover:bg-[var(--color-hairline-soft)] transition-colors"
+        >
+          All foods →
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

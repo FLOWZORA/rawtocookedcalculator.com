@@ -1,17 +1,181 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Calculator from '../components/Calculator.astro';
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Raw to Cooked Calculator',
+  url: 'https://rawtocookedcalculator.com',
+  description:
+    'Convert any food weight between raw and cooked states. Get calories, protein, carbs, and fat for any amount. Covers meat, grains, and vegetables — all based on USDA cooking yield data.',
+  applicationCategory: 'HealthApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
+
+const categories = [
+  {
+    label: 'Meat, Poultry & Seafood',
+    foods: [
+      { name: 'Chicken Breast', slug: 'chicken', note: 'Loses 25% when cooked' },
+      { name: 'Ground Beef (80/20)', slug: 'beef', note: 'Loses 27% when cooked' },
+      { name: 'Salmon Fillet', slug: 'salmon', note: 'Loses 21% when cooked' },
+      { name: 'Pork Chop', slug: 'pork', note: 'Loses 22% when cooked' },
+    ],
+  },
+  {
+    label: 'Grains, Pasta & Legumes',
+    foods: [
+      { name: 'White Rice', slug: 'rice', note: 'Expands 3× when cooked' },
+      { name: 'Pasta', slug: 'pasta', note: 'Expands 2.25× when cooked' },
+      { name: 'Lentils', slug: 'lentils', note: 'Expands 2.3× when cooked' },
+      { name: 'Quinoa', slug: 'quinoa', note: 'Expands 2.8× when cooked' },
+    ],
+  },
+  {
+    label: 'Vegetables',
+    foods: [
+      { name: 'Spinach', slug: 'spinach', note: 'Loses 70% when cooked' },
+      { name: 'Broccoli', slug: 'broccoli', note: 'Loses 10% when cooked' },
+      { name: 'Potato', slug: 'potato', note: 'Loses 6% when cooked' },
+      { name: 'Sweet Potato', slug: 'sweet-potato', note: 'Loses 10% when cooked' },
+    ],
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Raw to Cooked Calculator | USDA Yield Data & Full Macros"
+  description="Convert any food weight between raw and cooked states. Get calories, protein, carbs, and fat for any amount. Covers meat, grains, and vegetables — all based on USDA cooking yield data."
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-4">
+        Based on USDA cooking yield data
+      </p>
+      <h1 class="text-4xl sm:text-5xl font-semibold text-[var(--color-ink)] tracking-[-2px] leading-tight mb-4">
+        Raw to Cooked<br class="hidden sm:block" /> Calculator
+      </h1>
+      <p class="text-base text-[var(--color-body)] max-w-xl leading-relaxed mb-2">
+        Enter a raw or cooked weight — get the converted weight plus full macros (calories, protein, carbs, fat).
+        Covers meat, grains, and vegetables.
+      </p>
+      <p class="text-sm text-[var(--color-mute)]">
+        All yields sourced from USDA FoodData Central and USDA Table of Cooking Yields.
+      </p>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+      <div class="max-w-lg">
+        <Calculator />
+      </div>
+    </div>
+  </section>
+
+  <!-- Category browse -->
+  <section class="border-t border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <h2 class="text-2xl font-semibold text-[var(--color-ink)] tracking-[-0.8px] mb-2">
+        Browse by food
+      </h2>
+      <p class="text-sm text-[var(--color-mute)] mb-8">
+        20 foods across all three major categories — the broadest coverage of any raw-to-cooked calculator.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        {categories.map((cat) => (
+          <div>
+            <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-4">
+              {cat.label}
+            </p>
+            <ul class="space-y-2.5">
+              {cat.foods.map((food) => (
+                <li>
+                  <a
+                    href={`/${food.slug}`}
+                    class="flex items-center justify-between group no-underline py-0.5"
+                  >
+                    <span class="text-sm text-[var(--color-body)] group-hover:text-[var(--color-ink)] transition-colors">
+                      {food.name}
+                    </span>
+                    <span class="text-xs text-[var(--color-faint)] font-mono group-hover:text-[var(--color-mute)] transition-colors ml-4 shrink-0">
+                      {food.note}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Spinach callout — "surprising yields" content hook -->
+  <section class="border-t border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-6 max-w-2xl">
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+          Surprising yields
+        </p>
+        <h3 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-2">
+          Spinach loses 70% of its weight when cooked
+        </h3>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+          That bag of raw spinach shrinks to less than a third of its original weight after boiling or steaming.
+          White rice goes the opposite direction — 100g dry becomes 300g cooked. These extremes are why
+          weighing raw matters so much for accurate macro tracking.
+        </p>
+        <div class="flex gap-3 flex-wrap">
+          <a
+            href="/spinach"
+            class="text-xs px-3 py-1.5 bg-[var(--color-ink)] text-[var(--color-canvas)] rounded-[var(--radius-pill)] font-medium no-underline hover:opacity-80 transition-opacity"
+          >
+            Spinach calculator →
+          </a>
+          <a
+            href="/rice"
+            class="text-xs px-3 py-1.5 bg-[var(--color-surface)] text-[var(--color-ink)] border border-[var(--color-hairline)] rounded-[var(--radius-pill)] font-medium no-underline hover:bg-[var(--color-hairline-soft)] transition-colors"
+          >
+            Rice calculator →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why trust this data -->
+  <section class="border-t border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-6">
+        Why USDA data?
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl">
+        <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+          <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+            Meat & Poultry
+          </p>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            Yields from the <strong class="text-[var(--color-ink)]">USDA Table of Cooking Yields for Meat and Poultry</strong> —
+            the same source used by food manufacturers and dietitians.
+          </p>
+        </div>
+        <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+          <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+            Grains & Vegetables
+          </p>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            Yields derived from comparing raw vs. cooked entries in <strong class="text-[var(--color-ink)]">USDA FoodData Central</strong>
+            (fdc.nal.usda.gov), the authoritative US nutrient database.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
