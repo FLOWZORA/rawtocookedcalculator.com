@@ -4,9 +4,18 @@ interface Props {
   description: string;
   canonicalUrl?: string;
   jsonLd?: object;
+  hreflangUrls?: Record<string, string>;
+  ogImage?: string;
 }
 
-const { title, description, canonicalUrl, jsonLd } = Astro.props;
+const {
+  title,
+  description,
+  canonicalUrl,
+  jsonLd,
+  hreflangUrls,
+  ogImage = 'https://rawtocookedcalculator.com/og-image.png',
+} = Astro.props;
 const canon = canonicalUrl ?? Astro.url.href;
 ---
 
@@ -19,8 +28,12 @@ const canon = canonicalUrl ?? Astro.url.href;
 <link rel="canonical" href={canon} />
 
 <!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="raw2cook" />
+<link rel="manifest" href="/site.webmanifest" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -28,11 +41,18 @@ const canon = canonicalUrl ?? Astro.url.href;
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:site_name" content="Raw to Cooked Calculator" />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={title} />
+<meta property="og:locale" content="en_US" />
 
 <!-- Twitter -->
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={title} />
 
 <!-- Geist fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,6 +62,12 @@ const canon = canonicalUrl ?? Astro.url.href;
   rel="stylesheet"
 />
 
+<!-- hreflang alternate links for multilingual SEO -->
+{hreflangUrls && Object.entries(hreflangUrls).map(([lang, href]) => (
+  <link rel="alternate" hreflang={lang} href={href} />
+))}
+{hreflangUrls && <link rel="alternate" hreflang="x-default" href={hreflangUrls['en'] ?? canon} />}
+
 <!-- Dark mode: resolve before first paint to avoid flash -->
 <script is:inline>
   (function () {
@@ -49,6 +75,15 @@ const canon = canonicalUrl ?? Astro.url.href;
     var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     document.documentElement.dataset.theme = saved ?? (prefersDark ? 'dark' : 'light');
   })();
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYV3QLFX70"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZYV3QLFX70');
 </script>
 
 <!-- JSON-LD structured data -->

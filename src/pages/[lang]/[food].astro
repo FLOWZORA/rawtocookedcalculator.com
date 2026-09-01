@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Calculator from '../components/Calculator.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Calculator from '../../components/Calculator.astro';
 import {
   SLUG_TO_ID,
   getAllFoods,
@@ -10,22 +10,28 @@ import {
   isEstimate,
   COOKING_METHOD_LABELS,
   CATEGORY_LABELS,
-} from '../utils/foods';
-import type { Food } from '../utils/foods';
-import { t, LOCALES } from '../i18n';
-
-const locale = 'en';
+} from '../../utils/foods';
+import type { Food } from '../../utils/foods';
+import { t, LOCALES, isValidLocale } from '../../i18n';
+import type { Locale } from '../../i18n';
 
 export function getStaticPaths() {
-  return Object.keys(SLUG_TO_ID).map((slug) => ({ params: { food: slug } }));
+  const paths = [];
+  for (const lang of LOCALES) {
+    if (lang === 'en') continue;
+    for (const slug of Object.keys(SLUG_TO_ID)) {
+      paths.push({ params: { lang, food: slug } });
+    }
+  }
+  return paths;
 }
 
-const { food: slug } = Astro.params;
+const { lang, food: slug } = Astro.params;
+if (!isValidLocale(lang)) return Astro.redirect('/');
+const locale = lang as Locale;
+
 const food = getFoodBySlug(slug)!;
-
-if (!food) {
-  return Astro.redirect('/');
-}
+if (!food) return Astro.redirect(`/${locale}/`);
 
 const isChicken = food.id === 'chicken-breast';
 const isWhiteRice = food.id === 'white-rice';
@@ -34,21 +40,28 @@ const yieldDesc = getYieldDescription(food);
 const explanation = getCategoryExplanation(food);
 const estimate = isEstimate(food);
 
-// Build SEO metadata
 const yieldStr = food.yield_percent > 100
   ? `${(food.yield_percent / 100).toFixed(1)}× expansion`
   : `${food.yield_percent}% yield`;
 
-const titleFoodName = food.name.replace(/\s*\(.*\)/, ''); // strip parentheticals for title
+const titleFoodName = food.name.replace(/\s*\(.*\)/, '');
+
+const BASE = 'https://rawtocookedcalculator.com';
+const hreflangUrls: Record<string, string> = { en: `${BASE}/${slug}` };
+for (const l of LOCALES) {
+  if (l !== 'en') hreflangUrls[l] = `${BASE}/${l}/${slug}`;
+}
+
+// Build page title and description using locale strings as base + food-specific data
 const pageTitle = isChicken
-  ? `Raw to Cooked Chicken Breast Calculator | USDA Yield: 75%`
-  : `${titleFoodName} Raw to Cooked Calculator | USDA ${yieldStr}`;
+  ? `${t(locale, 'food.rawToCookedCalc')} — Chicken Breast | USDA 75%`
+  : `Chicken Breast ${t(locale, 'food.rawToCookedCalc')} | USDA ${yieldStr}`.replace('Chicken Breast', titleFoodName);
 
 const pageDesc = food.yield_percent > 100
-  ? `${food.name} expands to ${(food.yield_percent / 100).toFixed(1)}× its dry weight when cooked. Enter any amount to get the cooked weight plus calories, protein, carbs, and fat — USDA data.`
-  : `${food.name} has a ${food.yield_percent}% cooking yield (${yieldDesc.toLowerCase()}). Enter any weight to convert raw ↔ cooked and get full macros — calories, protein, carbs, and fat.`;
+  ? `${food.name} expands to ${(food.yield_percent / 100).toFixed(1)}× its dry weight when cooked. ${t(locale, 'page.homeDescription')}`
+  : `${food.name}: ${food.yield_percent}% ${t(locale, 'food.usdaCookingYield').toLowerCase()}. ${t(locale, 'page.homeDescription')}`;
 
-// FAQ JSON-LD for food pages
+// FAQ items remain in English for structured data (Google parses the page language separately)
 const faqItems = isChicken
   ? [
       {
@@ -118,12 +131,6 @@ const faqItems = isChicken
       }] : []),
     ];
 
-const BASE = 'https://rawtocookedcalculator.com';
-const hreflangUrls: Record<string, string> = { en: `${BASE}/${slug}` };
-for (const l of LOCALES) {
-  if (l !== 'en') hreflangUrls[l] = `${BASE}/${l}/${slug}`;
-}
-
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -138,7 +145,7 @@ const jsonLd = {
 <BaseLayout
   title={pageTitle}
   description={pageDesc}
-  canonicalUrl={`${BASE}/${slug}`}
+  canonicalUrl={`${BASE}/${locale}/${slug}`}
   jsonLd={jsonLd}
   locale={locale}
   hreflangUrls={hreflangUrls}
@@ -147,39 +154,34 @@ const jsonLd = {
   <section class="border-b border-[var(--color-hairline)]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
 
-      <!-- Eyebrow -->
       <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
         {CATEGORY_LABELS[food.category]}
-        {estimate && ' · Estimated yield'}
+        {estimate && ` · ${t(locale, 'food.estimatedYield')}`}
       </p>
 
-      <!-- H1 -->
       <h1 class="text-3xl sm:text-4xl font-semibold text-[var(--color-ink)] tracking-[-1.5px] leading-tight mb-4">
-        {food.name}<br class="hidden sm:block" /> Raw to Cooked Calculator
+        {food.name}<br class="hidden sm:block" /> {t(locale, 'food.rawToCookedCalc')}
       </h1>
 
-      <!-- Yield stat -->
       <div class="flex items-center gap-3 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] px-4 py-3 mb-5 w-fit max-w-full">
         <span class="text-2xl font-semibold text-[var(--color-ink)] tabular-nums tracking-tight">
           {food.yield_percent}%
         </span>
         <div>
-          <p class="text-sm font-medium text-[var(--color-ink)]">USDA cooking yield</p>
+          <p class="text-sm font-medium text-[var(--color-ink)]">{t(locale, 'food.usdaCookingYield')}</p>
           <p class="text-xs text-[var(--color-mute)]">{yieldDesc}</p>
         </div>
       </div>
 
-      <!-- Explanation -->
       {explanation && (
         <p class="text-sm text-[var(--color-body)] leading-relaxed max-w-xl mb-3">
           {explanation}
         </p>
       )}
 
-      <!-- Source -->
       <p class="text-xs font-mono text-[var(--color-faint)]">
-        Source: {estimate
-          ? 'Industry-standard estimate — USDA has not published direct cooking-yield data for this food.'
+        {t(locale, 'food.source')}: {estimate
+          ? t(locale, 'food.estimateSource')
           : food.source}
       </p>
     </div>
@@ -190,7 +192,7 @@ const jsonLd = {
     <section class="border-b border-[var(--color-hairline)]">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
         <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-5">
-          Yield by cooking method
+          {t(locale, 'food.yieldByMethod')}
         </h2>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl">
           {Object.entries(food.yield_by_method).map(([method, pct]) => (
@@ -203,7 +205,7 @@ const jsonLd = {
           ))}
         </div>
         <p class="mt-4 text-xs text-[var(--color-faint)] font-mono">
-          Source: USDA Table of Cooking Yields for Meat and Poultry
+          {t(locale, 'food.yieldByMethodSource')}
         </p>
       </div>
     </section>
@@ -215,19 +217,12 @@ const jsonLd = {
       <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
         <div class="max-w-2xl">
           <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
-            Why chicken breast is the macro-tracking gold standard
+            {t(locale, 'food.chickenHeading')}
           </h2>
           <p class="text-sm text-[var(--color-body)] leading-relaxed mb-3">
-            Skinless, boneless chicken breast delivers roughly 22.5g of protein per 100g raw — one of the
-            highest protein-per-calorie ratios of any whole food. At only 120 calories and 2.6g of fat per 100g
-            raw, it's the go-to lean protein for bodybuilders, athletes, and anyone managing a caloric deficit.
+            {t(locale, 'food.chickenP1')}
           </p>
-          <p class="text-sm text-[var(--color-body)] leading-relaxed">
-            The catch: because it loses 25–30% of its weight when cooked, <strong class="text-[var(--color-ink)]">tracking cooked
-            weight without accounting for yield leads to underestimating your actual protein intake</strong>.
-            A 150g cooked portion came from roughly 200g raw — that's the raw weight you should be logging
-            against the USDA nutrition label.
-          </p>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed" set:html={t(locale, 'food.chickenP2')} />
         </div>
       </div>
     </section>
@@ -237,7 +232,7 @@ const jsonLd = {
   <section>
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
       <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-6">
-        {food.name} Calculator
+        {t(locale, 'food.calcHeading').replace('{name}', food.name)}
       </h2>
       <div class="max-w-lg">
         <Calculator preselectedId={food.id} locale={locale} />
@@ -249,7 +244,7 @@ const jsonLd = {
   <section class="border-t border-[var(--color-hairline)]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
       <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-8">
-        Frequently asked questions
+        {t(locale, 'food.faqHeading')}
       </h2>
       <div class="max-w-2xl border-t border-[var(--color-hairline)]">
         {faqItems.map(({ q, a }) => (
@@ -271,7 +266,7 @@ const jsonLd = {
   <section class="border-t border-[var(--color-hairline)]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
       <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-4">
-        Related calculators
+        {t(locale, 'food.relatedLabel')}
       </p>
       <div class="flex flex-wrap gap-2">
         {getAllFoods()
@@ -279,17 +274,17 @@ const jsonLd = {
           .slice(0, 5)
           .map((f) => (
             <a
-              href={`/${f.slug}`}
-              class="text-sm px-3 py-1.5 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-pill-category)] text-[var(--color-body)] no-underline hover:text-[var(--color-ink)] hover:bg-[var(--color-hairline-soft)] transition-colors"
+              href={`/${locale}/${f.slug}`}
+              class="text-sm px-3 py-1.5 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-pill)] text-[var(--color-body)] no-underline hover:text-[var(--color-ink)] hover:bg-[var(--color-hairline-soft)] transition-colors"
             >
               {f.name.replace(/\s*\(.*\)/, '')}
             </a>
           ))}
         <a
-          href="/"
-          class="text-sm px-3 py-1.5 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-pill-category)] text-[var(--color-mute)] no-underline hover:text-[var(--color-ink)] hover:bg-[var(--color-hairline-soft)] transition-colors"
+          href={`/${locale}/`}
+          class="text-sm px-3 py-1.5 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-pill)] text-[var(--color-mute)] no-underline hover:text-[var(--color-ink)] hover:bg-[var(--color-hairline-soft)] transition-colors"
         >
-          All foods →
+          {t(locale, 'food.allFoods')}
         </a>
       </div>
     </div>

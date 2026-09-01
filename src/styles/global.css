@@ -61,6 +61,17 @@ body {
   flex-direction: column;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+/* Prevent iOS Safari from zooming into focused inputs */
+@media (max-width: 640px) {
+  input, select, textarea {
+    font-size: 16px;
+  }
+}
+
 /* Focus visible */
 :focus-visible {
   outline: 2px solid var(--color-link);

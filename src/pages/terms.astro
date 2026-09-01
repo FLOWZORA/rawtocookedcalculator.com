@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const BASE = 'https://rawtocookedcalculator.com';
+const LAST_UPDATED = 'August 31, 2026';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Terms and Conditions — Raw to Cooked Calculator',
+  description: 'Terms and conditions for using rawtocookedcalculator.com. Calculations are for informational purposes only and are not medical or dietary advice.',
+  url: `${BASE}/terms`,
+};
+---
+
+<BaseLayout
+  title="Terms and Conditions | Raw to Cooked Calculator"
+  description="Terms and conditions for rawtocookedcalculator.com. Cooking yield data is sourced from USDA and provided for informational purposes — not medical or dietary advice."
+  canonicalUrl={`${BASE}/terms`}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+      <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+        Legal
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-semibold text-[var(--color-ink)] tracking-[-1.5px] leading-tight mb-4">
+        Terms and Conditions
+      </h1>
+      <p class="text-sm text-[var(--color-mute)] font-mono">
+        Last updated: {LAST_UPDATED}
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <div class="max-w-2xl space-y-10">
+
+        <!-- Agreement -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Agreement to terms</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            By accessing or using rawtocookedcalculator.com, you agree to be bound by these Terms and Conditions. If you do not agree, please do not use the site. We reserve the right to update these terms at any time; continued use of the site after changes are posted constitutes acceptance.
+          </p>
+        </div>
+
+        <!-- Use of site -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Use of the site</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+            Raw to Cooked Calculator is a free tool for personal, non-commercial use. You may use the calculator and share its URL freely. You may not scrape, reproduce, or republish the site's content in bulk without permission.
+          </p>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            The site must not be used for any unlawful purpose or in any way that could damage, disable, or impair its operation.
+          </p>
+        </div>
+
+        <!-- Informational only -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Informational purposes only</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+            All content on this site — including yield percentages, macro calculations, and educational material — is provided for general informational purposes only. It is not intended to replace professional nutritional assessment or dietary planning.
+          </p>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            <strong class="text-[var(--color-ink)]">Nothing on this site constitutes medical, dietary, or nutritional advice.</strong> If you have specific health conditions, dietary restrictions, or medical needs, consult a qualified healthcare professional or registered dietitian before making dietary changes based on information from this site.
+          </p>
+        </div>
+
+        <!-- Data accuracy -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Data accuracy and limitations</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+            Yield percentages are sourced from USDA publications and represent research-based averages, not guarantees for any specific piece of food. Actual cooking results vary by cut, size, starting moisture content, and how precisely a cooking method is followed.
+          </p>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+            A small number of foods use industry-standard estimates where USDA has not published direct cooking-yield data. These are disclosed on the relevant food pages.
+          </p>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            While we make reasonable efforts to ensure accuracy, we do not warrant that all data is complete, current, or error-free. USDA publishes updates to its databases periodically; there may be a lag before those updates are reflected here.
+          </p>
+        </div>
+
+        <!-- No warranty -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">No warranties</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            This site is provided "as is" and "as available" without any warranty of any kind, express or implied. We make no guarantee about the completeness, accuracy, reliability, suitability, or availability of the site, its content, or its calculations for any purpose.
+          </p>
+        </div>
+
+        <!-- Limitation of liability -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Limitation of liability</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            To the fullest extent permitted by law, Raw to Cooked Calculator and its operators shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of — or inability to use — this site or its calculations. Your use of the site is at your own risk.
+          </p>
+        </div>
+
+        <!-- Intellectual property -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Intellectual property</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            The USDA data used on this site is in the public domain. Original site content — including editorial copy, page structure, and code — is the property of Raw to Cooked Calculator. Underlying nutritional data is sourced from USDA and is not claimed as proprietary.
+          </p>
+        </div>
+
+        <!-- External links -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">External links</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            This site may link to external websites such as USDA FoodData Central. We are not responsible for the content, accuracy, or privacy practices of any external site. Links do not constitute endorsement.
+          </p>
+        </div>
+
+        <!-- Governing law -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Governing law</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            These terms are governed by and construed in accordance with applicable law. Any disputes arising from use of this site shall be subject to the exclusive jurisdiction of the competent courts in the applicable territory.
+          </p>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Questions</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            If you have questions about these terms, email{' '}
+            <a href="mailto:hello@rawtocookedcalculator.com" class="text-[var(--color-link)] hover:underline">
+              hello@rawtocookedcalculator.com
+            </a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -148,6 +148,32 @@
         "yield_percent": 220,
         "source": "USDA FoodData Central (raw vs. cooked entries)",
         "macros_per_100g_raw": { "calories": 341, "protein_g": 21.6, "carbs_g": 62.4, "fat_g": 1.4 }
+      },
+      {
+        "id": "chickpeas",
+        "name": "Chickpeas / Garbanzo Beans (dry)",
+        "default_cooking_method": "boiled",
+        "yield_percent": 240,
+        "note": "Dry legume - expands rather than shrinks, similar to lentils and black beans",
+        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "macros_per_100g_raw": { "calories": 378, "protein_g": 20.5, "carbs_g": 63, "fat_g": 6.0 }
+      },
+      {
+        "id": "kidney-beans",
+        "name": "Kidney Beans (dry)",
+        "default_cooking_method": "boiled",
+        "yield_percent": 225,
+        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "macros_per_100g_raw": { "calories": 333, "protein_g": 24.0, "carbs_g": 60.0, "fat_g": 0.8 }
+      },
+      {
+        "id": "soy-chunks",
+        "name": "Soy Chunks (dry / textured vegetable protein)",
+        "default_cooking_method": "boiled_rehydrated",
+        "yield_percent": 280,
+        "note": "Dehydrated soy protein product, not a whole raw legume - absorbs a large amount of water when rehydrated/cooked. Popular high-protein staple in vegetarian diets, especially in India.",
+        "source": "estimate - based on commonly cited Indian Food Composition Tables (IFCT) values, not a direct USDA FoodData Central entry. Disclose this on the page, same as the salmon/shrimp estimate disclosure.",
+        "macros_per_100g_raw": { "calories": 345, "protein_g": 52.0, "carbs_g": 33.0, "fat_g": 0.5 }
       }
     ],
     "vegetables": [

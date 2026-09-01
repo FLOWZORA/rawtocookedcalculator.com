@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const BASE = 'https://rawtocookedcalculator.com';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'About Raw to Cooked Calculator',
+  description: 'Learn how Raw to Cooked Calculator works, where the data comes from, and why accurate cooking-yield data matters for food tracking.',
+  url: `${BASE}/about`,
+};
+---
+
+<BaseLayout
+  title="About Raw to Cooked Calculator | USDA-Sourced Cooking Yield Data"
+  description="Raw to Cooked Calculator uses official USDA cooking-yield data to convert raw and cooked food weights with full macro output. Learn how it works and why it exists."
+  canonicalUrl={`${BASE}/about`}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+      <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+        About
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-semibold text-[var(--color-ink)] tracking-[-1.5px] leading-tight mb-4">
+        Why this calculator exists
+      </h1>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed max-w-xl">
+        The raw-versus-cooked weight problem is one of the most common sources of macro tracking error — and one of the easiest to fix once you understand it.
+      </p>
+    </div>
+  </section>
+
+  <!-- The problem -->
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <div class="max-w-2xl">
+        <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+          The problem
+        </h2>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+          Standard nutrition databases — including USDA FoodData Central — publish macro values based on raw, uncooked food weight. Most people cook before eating. The weight of food changes during cooking: meat loses water and shrinks, dry grains absorb water and expand. The nutrition label stays the same, but the weight on your scale is completely different.
+        </p>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+          If you weigh 150g of cooked chicken and log it against a raw-weight database entry, you are actually logging the macros for 150g raw — undercounting by roughly 50g of protein source. Do this daily and the tracking error compounds fast.
+        </p>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed">
+          This calculator solves that by letting you enter either a raw or cooked weight and instantly converting to the other side — along with accurate calories, protein, carbs, and fat — using the correct cooking yield for each specific food.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data sources -->
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <div class="max-w-2xl">
+        <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+          Where the data comes from
+        </h2>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed mb-6">
+          Every yield figure on this site comes from official USDA sources — the same databases used by dietitians, food manufacturers, and researchers.
+        </p>
+        <div class="space-y-4">
+          <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+            <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+              Meat &amp; Poultry
+            </p>
+            <p class="text-sm text-[var(--color-body)] leading-relaxed">
+              Yield percentages for chicken, beef, pork, turkey, and other animal proteins come from the <strong class="text-[var(--color-ink)]">USDA Table of Cooking Yields for Meat and Poultry</strong>, which reports yield data measured under controlled cooking conditions.
+            </p>
+          </div>
+          <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+            <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+              Grains, Vegetables &amp; Legumes
+            </p>
+            <p class="text-sm text-[var(--color-body)] leading-relaxed">
+              Yield percentages for rice, pasta, legumes, and vegetables are derived by comparing raw and cooked entries in <strong class="text-[var(--color-ink)]">USDA FoodData Central</strong> — the same database that powers most major nutrition apps.
+            </p>
+          </div>
+          <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+            <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+              Estimates
+            </p>
+            <p class="text-sm text-[var(--color-body)] leading-relaxed">
+              A small number of foods (salmon, shrimp) use industry-standard estimates because USDA has not published direct cooking-yield data for them. These are clearly disclosed on the relevant food pages.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <div class="max-w-2xl">
+        <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+          How the calculation works
+        </h2>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+          Every conversion is built on one number: the yield percentage. This is the cooked weight expressed as a percentage of the raw weight. A 75% yield means 100g raw becomes 75g cooked. A 300% yield means 100g dry becomes 300g cooked (like white rice).
+        </p>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+          Macros are always calculated from the raw-weight equivalent, regardless of which direction you convert. This keeps the output consistent with USDA nutrition data, which is measured on raw food.
+        </p>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed">
+          Yield percentages are research-based averages — actual results vary by exact cut, size, moisture content, and cooking method. The calculator gets you meaningfully closer to accurate than not accounting for cooking loss at all; it does not promise laboratory precision.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The tool -->
+  <section>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <div class="max-w-2xl">
+        <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+          The tool
+        </h2>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+          Raw to Cooked Calculator is a free, static web tool with no accounts, no tracking of personal data, and no paywalled features. It works in any browser on any device.
+        </p>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed mb-6">
+          It covers chicken breast, ground beef, salmon, pork, rice, pasta, quinoa, lentils, spinach, broccoli, potato, and more — with per-cooking-method yield data for foods where it meaningfully changes the result.
+        </p>
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-sm font-medium text-[var(--color-link)] hover:underline"
+        >
+          ← Use the calculator
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

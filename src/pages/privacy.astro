@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const BASE = 'https://rawtocookedcalculator.com';
+const LAST_UPDATED = 'August 31, 2026';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Privacy Policy — Raw to Cooked Calculator',
+  description: 'Privacy policy for rawtocookedcalculator.com. We do not collect personal information or require accounts.',
+  url: `${BASE}/privacy`,
+};
+---
+
+<BaseLayout
+  title="Privacy Policy | Raw to Cooked Calculator"
+  description="Privacy policy for rawtocookedcalculator.com. No accounts, no personal data collection. Learn exactly what data this site does and does not collect."
+  canonicalUrl={`${BASE}/privacy`}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+      <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+        Legal
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-semibold text-[var(--color-ink)] tracking-[-1.5px] leading-tight mb-4">
+        Privacy Policy
+      </h1>
+      <p class="text-sm text-[var(--color-mute)] font-mono">
+        Last updated: {LAST_UPDATED}
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <div class="max-w-2xl space-y-10">
+
+        <!-- Overview -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Overview</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            Raw to Cooked Calculator is a static website. We do not have user accounts, we do not collect personal information through forms, and we do not sell or share data with third parties for commercial purposes. This page explains what minimal data interactions do occur when you use the site.
+          </p>
+        </div>
+
+        <!-- What we collect -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">What we collect</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+            We do not collect names, email addresses, or any personally identifying information through this site. There are no sign-up forms, login systems, or comment sections.
+          </p>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            When you use the calculator, all computations happen directly in your browser. No input values (food, weight, or results) are ever sent to a server.
+          </p>
+        </div>
+
+        <!-- Browser storage -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Browser storage</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            The site stores one preference — your light/dark mode choice — in your browser's <code class="text-xs font-mono bg-[var(--color-surface)] border border-[var(--color-hairline)] px-1.5 py-0.5 rounded">localStorage</code>. This data never leaves your device and is not transmitted to any server. You can clear it at any time by clearing your browser's site data.
+          </p>
+        </div>
+
+        <!-- Analytics -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Analytics</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+            This site may use privacy-respecting analytics tools to understand aggregate traffic patterns — for example, which pages are visited most often and what devices visitors use. If used, these tools collect non-personal, aggregated data such as page views, approximate geographic region (country/city level), device type, and referring URL.
+          </p>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            No analytics data is linked to individual identities. If we use Google Analytics, you can opt out using the <a href="https://tools.google.com/dlpage/gaoptout" class="text-[var(--color-link)] hover:underline" rel="noopener noreferrer" target="_blank">Google Analytics Opt-Out browser add-on</a>.
+          </p>
+        </div>
+
+        <!-- Third parties -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Third-party services</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+            The site loads fonts from Google Fonts. When your browser requests these fonts, Google may log the request. You can review Google's privacy practices at <a href="https://policies.google.com/privacy" class="text-[var(--color-link)] hover:underline" rel="noopener noreferrer" target="_blank">policies.google.com/privacy</a>.
+          </p>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            We do not embed third-party video players, social media widgets, or advertising networks.
+          </p>
+        </div>
+
+        <!-- Cookies -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Cookies</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            This site does not set first-party cookies. If analytics are active, the analytics provider may set its own cookies to distinguish unique visits. You can block or delete cookies through your browser settings at any time.
+          </p>
+        </div>
+
+        <!-- External links -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">External links</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            This site links to external sources including USDA FoodData Central and USDA publications. We are not responsible for the privacy practices or content of those sites. Their policies govern data collection on their platforms.
+          </p>
+        </div>
+
+        <!-- Children -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Children's privacy</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            This site is not directed at children under 13 and does not knowingly collect any information from children.
+          </p>
+        </div>
+
+        <!-- Changes -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Changes to this policy</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            We may update this page from time to time. The "Last updated" date at the top of the page reflects the most recent revision. Continued use of the site after changes are posted constitutes acceptance of the updated policy.
+          </p>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">Contact</h2>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            For privacy-related questions, email us at{' '}
+            <a href="mailto:hello@rawtocookedcalculator.com" class="text-[var(--color-link)] hover:underline">
+              hello@rawtocookedcalculator.com
+            </a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

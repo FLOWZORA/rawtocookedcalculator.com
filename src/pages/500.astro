@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Server Error | Raw to Cooked Calculator"
+  description="Something went wrong on our end. The Raw to Cooked Calculator will be back shortly."
+>
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+
+      <!-- 500 number -->
+      <p class="text-[120px] sm:text-[180px] font-semibold font-mono leading-none text-[var(--color-hairline)] tracking-tight select-none mb-2" aria-hidden="true">
+        500
+      </p>
+
+      <h1 class="text-2xl sm:text-3xl font-semibold text-[var(--color-ink)] tracking-tight mb-3">
+        Something went wrong
+      </h1>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed max-w-md mb-8">
+        There was an unexpected error on our end. This is usually temporary — try refreshing the page. If the problem persists, check back in a few minutes.
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 px-4 py-2.5 bg-[var(--color-ink)] text-[var(--color-canvas)] text-sm font-medium rounded-[var(--radius-sm)] no-underline hover:opacity-80 transition-opacity"
+        >
+          ← Back to homepage
+        </a>
+        <button
+          onclick="window.location.reload()"
+          class="inline-flex items-center gap-2 px-4 py-2.5 bg-[var(--color-surface)] text-[var(--color-ink)] border border-[var(--color-hairline)] text-sm font-medium rounded-[var(--radius-sm)] hover:bg-[var(--color-hairline-soft)] transition-colors cursor-pointer"
+        >
+          Reload page
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Status note -->
+  <section>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5 max-w-lg">
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+          If this keeps happening
+        </p>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed">
+          Email us at{' '}
+          <a href="mailto:hello@rawtocookedcalculator.com" class="text-[var(--color-link)] hover:underline">
+            hello@rawtocookedcalculator.com
+          </a>
+          {' '}and we'll look into it.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

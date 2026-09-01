@@ -1,11 +1,21 @@
 ---
+import { t, LOCALES, LOCALE_NAMES, getLangPrefix } from '../i18n';
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale?: Locale;
+  currentPath?: string;
+}
+
+const { locale = 'en', currentPath = '/' } = Astro.props;
+const prefix = getLangPrefix(locale);
 ---
 
 <nav class="border-b border-[var(--color-hairline)] bg-[var(--color-canvas)] sticky top-0 z-50">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
     <!-- Wordmark -->
     <a
-      href="/"
+      href={`${prefix}/`}
       class="text-sm font-semibold text-[var(--color-ink)] tracking-tight no-underline hover:opacity-70 transition-opacity"
     >
       Raw<span class="text-[var(--color-mute)] font-normal">→</span>Cooked
@@ -13,30 +23,73 @@
 
     <!-- Nav links (desktop) -->
     <div class="hidden sm:flex items-center gap-1 text-sm text-[var(--color-body)]">
-      <a href="/chicken" class="px-3 py-1.5 rounded-full hover:bg-[var(--color-hairline-soft)] transition-colors">
-        Chicken
+      <a href={`${prefix}/chicken`} class="px-3 py-1.5 rounded-full hover:bg-[var(--color-hairline-soft)] transition-colors">
+        {t(locale, 'nav.chicken')}
       </a>
-      <a href="/rice" class="px-3 py-1.5 rounded-full hover:bg-[var(--color-hairline-soft)] transition-colors">
-        Rice
+      <a href={`${prefix}/rice`} class="px-3 py-1.5 rounded-full hover:bg-[var(--color-hairline-soft)] transition-colors">
+        {t(locale, 'nav.rice')}
       </a>
-      <a href="/beef" class="px-3 py-1.5 rounded-full hover:bg-[var(--color-hairline-soft)] transition-colors">
-        Beef
+      <a href={`${prefix}/beef`} class="px-3 py-1.5 rounded-full hover:bg-[var(--color-hairline-soft)] transition-colors">
+        {t(locale, 'nav.beef')}
       </a>
     </div>
 
-    <!-- Dark mode toggle -->
-    <button
-      id="theme-toggle"
-      aria-label="Toggle dark mode"
-      class="flex items-center justify-center w-8 h-8 rounded-[var(--radius-sm)] border border-[var(--color-hairline)] bg-[var(--color-surface)] text-[var(--color-body)] hover:bg-[var(--color-hairline-soft)] transition-colors text-sm cursor-pointer"
-    >
-      <span id="theme-icon-sun" class="hidden">☀</span>
-      <span id="theme-icon-moon" class="hidden">☽</span>
-    </button>
+    <div class="flex items-center gap-2">
+      <!-- Language switcher -->
+      <div class="relative" id="lang-switcher">
+        <button
+          id="lang-btn"
+          aria-label={t(locale, 'nav.language')}
+          class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-mono text-[var(--color-body)] rounded-[var(--radius-sm)] border border-[var(--color-hairline)] bg-[var(--color-surface)] hover:bg-[var(--color-hairline-soft)] transition-colors cursor-pointer"
+        >
+          <span>{locale.toUpperCase()}</span>
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="opacity-50">
+            <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <ul
+          id="lang-dropdown"
+          hidden
+          class="absolute right-0 mt-1 w-36 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] shadow-md overflow-hidden z-50"
+        >
+          {LOCALES.map((lang) => {
+            // Build the equivalent path in the target language
+            const targetPrefix = lang === 'en' ? '' : `/${lang}`;
+            // Strip current lang prefix from currentPath to get the bare path
+            const barePath = locale === 'en'
+              ? currentPath
+              : currentPath.replace(new RegExp(`^/${locale}`), '') || '/';
+            const targetHref = targetPrefix + barePath;
+            return (
+              <li>
+                <a
+                  href={targetHref}
+                  class={`flex items-center justify-between px-3 py-2 text-sm no-underline hover:bg-[var(--color-hairline-soft)] transition-colors ${lang === locale ? 'text-[var(--color-ink)] font-medium' : 'text-[var(--color-body)]'}`}
+                >
+                  <span>{LOCALE_NAMES[lang]}</span>
+                  {lang === locale && <span class="text-[var(--color-mute)] text-xs">✓</span>}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      <!-- Dark mode toggle -->
+      <button
+        id="theme-toggle"
+        aria-label={t(locale, 'nav.darkMode')}
+        class="flex items-center justify-center w-8 h-8 rounded-[var(--radius-sm)] border border-[var(--color-hairline)] bg-[var(--color-surface)] text-[var(--color-body)] hover:bg-[var(--color-hairline-soft)] transition-colors text-sm cursor-pointer"
+      >
+        <span id="theme-icon-sun" class="hidden">☀</span>
+        <span id="theme-icon-moon" class="hidden">☽</span>
+      </button>
+    </div>
   </div>
 </nav>
 
 <script>
+  // Theme toggle
   const btn = document.getElementById('theme-toggle')!;
   const sunIcon = document.getElementById('theme-icon-sun')!;
   const moonIcon = document.getElementById('theme-icon-moon')!;
@@ -54,5 +107,18 @@
     document.documentElement.dataset.theme = next;
     localStorage.setItem('theme', next);
     updateIcon();
+  });
+
+  // Language switcher dropdown
+  const langBtn = document.getElementById('lang-btn')!;
+  const langDropdown = document.getElementById('lang-dropdown')!;
+
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langDropdown.hidden = !langDropdown.hidden;
+  });
+
+  document.addEventListener('click', () => {
+    langDropdown.hidden = true;
   });
 </script>

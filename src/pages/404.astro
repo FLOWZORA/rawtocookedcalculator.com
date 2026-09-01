@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const popularFoods = [
+  { name: 'Chicken Breast', slug: 'chicken' },
+  { name: 'White Rice', slug: 'rice' },
+  { name: 'Ground Beef', slug: 'beef' },
+  { name: 'Pasta', slug: 'pasta' },
+  { name: 'Salmon', slug: 'salmon' },
+  { name: 'Spinach', slug: 'spinach' },
+  { name: 'Broccoli', slug: 'broccoli' },
+  { name: 'Potato', slug: 'potato' },
+];
+---
+
+<BaseLayout
+  title="Page Not Found | Raw to Cooked Calculator"
+  description="The page you're looking for doesn't exist. Use the Raw to Cooked Calculator to convert raw and cooked food weights."
+>
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+
+      <!-- 404 number -->
+      <p class="text-[120px] sm:text-[180px] font-semibold font-mono leading-none text-[var(--color-hairline)] tracking-tight select-none mb-2" aria-hidden="true">
+        404
+      </p>
+
+      <h1 class="text-2xl sm:text-3xl font-semibold text-[var(--color-ink)] tracking-tight mb-3">
+        Page not found
+      </h1>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed max-w-md mb-8">
+        This page doesn't exist or has moved. If you typed the URL manually, check for a typo. Otherwise, the links below should get you back on track.
+      </p>
+
+      <!-- Primary CTA -->
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 px-4 py-2.5 bg-[var(--color-ink)] text-[var(--color-canvas)] text-sm font-medium rounded-[var(--radius-sm)] no-underline hover:opacity-80 transition-opacity"
+      >
+        ← Back to homepage
+      </a>
+    </div>
+  </section>
+
+  <!-- Popular foods -->
+  <section>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-5">
+        Popular calculators
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {popularFoods.map((food) => (
+          <a
+            href={`/${food.slug}`}
+            class="text-sm px-3 py-2 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-pill-category)] text-[var(--color-body)] no-underline hover:text-[var(--color-ink)] hover:bg-[var(--color-hairline-soft)] transition-colors"
+          >
+            {food.name}
+          </a>
+        ))}
+        <a
+          href="/"
+          class="text-sm px-3 py-2 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-pill-category)] text-[var(--color-mute)] no-underline hover:text-[var(--color-ink)] hover:bg-[var(--color-hairline-soft)] transition-colors"
+        >
+          All foods →
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

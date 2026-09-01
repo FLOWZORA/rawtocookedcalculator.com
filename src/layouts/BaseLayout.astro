@@ -3,32 +3,39 @@ import '../styles/global.css';
 import BaseHead from '../components/BaseHead.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import type { Locale } from '../i18n';
 
 interface Props {
   title: string;
   description: string;
   canonicalUrl?: string;
   jsonLd?: object;
+  locale?: Locale;
+  hreflangUrls?: Record<string, string>;
+  ogImage?: string;
 }
 
-const { title, description, canonicalUrl, jsonLd } = Astro.props;
+const { title, description, canonicalUrl, jsonLd, locale = 'en', hreflangUrls, ogImage } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <BaseHead
       title={title}
       description={description}
       canonicalUrl={canonicalUrl}
       jsonLd={jsonLd}
+      hreflangUrls={hreflangUrls}
+      ogImage={ogImage}
     />
   </head>
   <body class="bg-[var(--color-canvas)] text-[var(--color-ink)] font-sans">
-    <Nav />
+    <Nav locale={locale} currentPath={currentPath} />
     <main class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <Footer locale={locale} />
   </body>
 </html>

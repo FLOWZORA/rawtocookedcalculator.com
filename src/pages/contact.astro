@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const BASE = 'https://rawtocookedcalculator.com';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact — Raw to Cooked Calculator',
+  description: 'Get in touch with the Raw to Cooked Calculator team for questions about data, calculations, or feedback.',
+  url: `${BASE}/contact`,
+};
+---
+
+<BaseLayout
+  title="Contact | Raw to Cooked Calculator"
+  description="Questions about cooking yield data, a calculation that looks off, or general feedback — reach out to the Raw to Cooked Calculator team."
+  canonicalUrl={`${BASE}/contact`}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+      <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+        Contact
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-semibold text-[var(--color-ink)] tracking-[-1.5px] leading-tight mb-4">
+        Get in touch
+      </h1>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed max-w-xl">
+        For questions about how the calculator works, a data figure that looks wrong, or general feedback — we read every message.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact card -->
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <div class="max-w-2xl">
+        <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-6 mb-8">
+          <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+            Email
+          </p>
+          <a
+            href="mailto:hello@rawtocookedcalculator.com"
+            class="text-lg font-semibold text-[var(--color-link)] hover:underline break-all"
+          >
+            hello@rawtocookedcalculator.com
+          </a>
+          <p class="text-sm text-[var(--color-mute)] mt-2 leading-relaxed">
+            We aim to respond within a few business days.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we can help with -->
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <div class="max-w-2xl">
+        <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-6">
+          What we can help with
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+            <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+              We can help
+            </p>
+            <ul class="space-y-2 text-sm text-[var(--color-body)] leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--color-mute)] mt-0.5 shrink-0">·</span>
+                Questions about how yield percentages are calculated
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--color-mute)] mt-0.5 shrink-0">·</span>
+                Reporting a data figure that appears incorrect
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--color-mute)] mt-0.5 shrink-0">·</span>
+                General feedback about the calculator or site
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--color-mute)] mt-0.5 shrink-0">·</span>
+                Requesting a food that isn't currently covered
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--color-mute)] mt-0.5 shrink-0">·</span>
+                Technical issues or bugs
+              </li>
+            </ul>
+          </div>
+          <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+            <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+              Out of scope
+            </p>
+            <ul class="space-y-2 text-sm text-[var(--color-body)] leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--color-mute)] mt-0.5 shrink-0">·</span>
+                Personalized diet or nutrition advice
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--color-mute)] mt-0.5 shrink-0">·</span>
+                Medical questions or health assessments
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--color-mute)] mt-0.5 shrink-0">·</span>
+                Meal planning for specific health conditions
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data question tip -->
+  <section>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <div class="max-w-2xl">
+        <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+          <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+            Reporting a data issue
+          </p>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed">
+            If a yield percentage looks wrong to you, the most helpful information to include is: the food and cooking method in question, the figure you expected, and the source you're comparing against. That lets us check it against the USDA data quickly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

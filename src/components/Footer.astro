@@ -1,28 +1,39 @@
 ---
+import { t, getLangPrefix } from '../i18n';
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+const prefix = getLangPrefix(locale);
 ---
 
 <footer class="mt-auto border-t border-[var(--color-hairline)] bg-[var(--color-canvas)]">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-10">
       <!-- Brand -->
-      <div>
+      <div class="col-span-2 sm:col-span-1">
         <p class="text-sm font-semibold text-[var(--color-ink)] mb-2">Raw→Cooked Calculator</p>
         <p class="text-xs text-[var(--color-mute)] leading-relaxed">
-          USDA-sourced cooking yield data for meat, grains, and vegetables. Full macros for every conversion.
+          {t(locale, 'footer.tagline')}
         </p>
       </div>
 
       <!-- Foods -->
       <div>
-        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">Popular Foods</p>
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+          {t(locale, 'footer.popularFoods')}
+        </p>
         <ul class="space-y-1.5">
           {[
-            ['Chicken Breast', '/chicken'],
-            ['White Rice', '/rice'],
-            ['Ground Beef', '/beef'],
-            ['Pasta', '/pasta'],
-            ['Salmon', '/salmon'],
-            ['Broccoli', '/broccoli'],
+            ['Chicken Breast', `${prefix}/chicken`],
+            ['White Rice', `${prefix}/rice`],
+            ['Ground Beef', `${prefix}/beef`],
+            ['Pasta', `${prefix}/pasta`],
+            ['Salmon', `${prefix}/salmon`],
+            ['Broccoli', `${prefix}/broccoli`],
           ].map(([label, href]) => (
             <li>
               <a href={href} class="text-xs text-[var(--color-body)] hover:text-[var(--color-ink)] transition-colors no-underline">
@@ -35,17 +46,38 @@
 
       <!-- Sources -->
       <div>
-        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">Data Sources</p>
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+          {t(locale, 'footer.dataSources')}
+        </p>
         <ul class="space-y-1.5 text-xs text-[var(--color-mute)] leading-relaxed">
-          <li>USDA Table of Cooking Yields for Meat and Poultry</li>
-          <li>USDA FoodData Central</li>
-          <li class="pt-1 text-[var(--color-faint)]">Estimates disclosed where USDA data is unavailable.</li>
+          <li>{t(locale, 'footer.usdaMeat')}</li>
+          <li>{t(locale, 'footer.usdaFdc')}</li>
+          <li class="pt-1 text-[var(--color-faint)]">{t(locale, 'footer.estimatesNote')}</li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+          Company
+        </p>
+        <ul class="space-y-1.5">
+          {[
+            ['About Us', '/about'],
+            ['Contact', '/contact'],
+            ['Privacy Policy', '/privacy'],
+            ['Terms &amp; Conditions', '/terms'],
+          ].map(([label, href]) => (
+            <li>
+              <a href={href} class="text-xs text-[var(--color-body)] hover:text-[var(--color-ink)] transition-colors no-underline" set:html={label} />
+            </li>
+          ))}
         </ul>
       </div>
     </div>
 
     <div class="mt-10 pt-6 border-t border-[var(--color-hairline)] text-xs text-[var(--color-faint)]">
-      Values are per the USDA data above. Always weigh your food with a kitchen scale for accuracy.
+      {t(locale, 'footer.disclaimer')}
     </div>
   </div>
 </footer>

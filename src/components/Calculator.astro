@@ -1,24 +1,42 @@
 ---
 import { getAllFoods, COOKING_METHOD_LABELS, CATEGORY_LABELS } from '../utils/foods';
+import { t } from '../i18n';
+import type { Locale } from '../i18n';
 
 interface Props {
   preselectedId?: string;
+  locale?: Locale;
 }
 
-const { preselectedId = '' } = Astro.props;
+const { preselectedId = '', locale = 'en' } = Astro.props;
 
 const allFoods = getAllFoods();
 const foodsJson = JSON.stringify(allFoods);
 const methodLabelsJson = JSON.stringify(COOKING_METHOD_LABELS);
 const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
+
+// JS strings passed via define:vars (template variables use {n}/{pct}/{loss} placeholders)
+const jsStrings = {
+  noFoodsFound: t(locale, 'calc.noFoodsFound'),
+  yieldExpand: t(locale, 'calc.yieldExpand'),
+  yieldLoss: t(locale, 'calc.yieldLoss'),
+  estimateSource: t(locale, 'calc.estimateSource'),
+  morePrecise: t(locale, 'calc.morePrecise'),
+  hidePrecise: t(locale, 'calc.hidePrecise'),
+  rawWeight: t(locale, 'calc.rawWeight'),
+  cookedWeight: t(locale, 'calc.cookedWeight'),
+  outputCooked: t(locale, 'calc.cookedWeight'),
+  outputRaw: t(locale, 'calc.rawWeight'),
+};
+const jsStringsJson = JSON.stringify(jsStrings);
 ---
 
 <div id="calculator" class="w-full">
 
   <!-- Search Box -->
   <div class="mb-4 relative">
-    <label for="food-search" class="block text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
-      Food
+    <label for="food-search" class="block text-sm font-mono font-medium text-[var(--color-ink)] uppercase tracking-wider mb-2">
+      {t(locale, 'calc.foodLabel')}
     </label>
     <div class="relative">
       <input
@@ -31,14 +49,14 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
         aria-haspopup="listbox"
         autocomplete="off"
         spellcheck="false"
-        placeholder="Search — chicken breast, white rice, broccoli…"
+        placeholder={t(locale, 'calc.foodPlaceholder')}
         class="w-full px-3 py-2.5 text-sm bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-sm)] text-[var(--color-ink)] placeholder:text-[var(--color-faint)] focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] focus:ring-offset-0 transition-shadow"
       />
       <!-- Clear button -->
       <button
         id="search-clear"
         hidden
-        aria-label="Clear food selection"
+        aria-label={t(locale, 'calc.clearFood')}
         class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[var(--color-mute)] hover:text-[var(--color-ink)] transition-colors text-base leading-none cursor-pointer"
       >×</button>
     </div>
@@ -47,7 +65,7 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
     <ul
       id="food-dropdown"
       role="listbox"
-      aria-label="Food suggestions"
+      aria-label={t(locale, 'calc.foodSuggestions')}
       hidden
       class="absolute z-40 w-full mt-1 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] shadow-md overflow-hidden max-h-72 overflow-y-auto"
     ></ul>
@@ -55,31 +73,31 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
 
   <!-- Direction Toggle -->
   <div class="mb-4">
-    <label class="block text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
-      Direction
+    <label class="block text-sm font-mono font-medium text-[var(--color-ink)] uppercase tracking-wider mb-2">
+      {t(locale, 'calc.directionLabel')}
     </label>
     <div class="inline-flex rounded-[var(--radius-sm)] border border-[var(--color-hairline)] overflow-hidden bg-[var(--color-surface)] w-full sm:w-auto">
       <button
         id="btn-rtc"
-        class="direction-btn flex-1 sm:flex-none px-4 py-2 text-sm font-medium transition-colors cursor-pointer"
+        class="direction-btn flex-1 sm:flex-none px-4 py-3 sm:py-2 text-sm font-medium transition-colors cursor-pointer"
         data-dir="raw-to-cooked"
       >
-        Raw → Cooked
+        {t(locale, 'calc.rawToCooked')}
       </button>
       <button
         id="btn-ctr"
-        class="direction-btn flex-1 sm:flex-none px-4 py-2 text-sm font-medium transition-colors border-l border-[var(--color-hairline)] cursor-pointer"
+        class="direction-btn flex-1 sm:flex-none px-4 py-3 sm:py-2 text-sm font-medium transition-colors border-l border-[var(--color-hairline)] cursor-pointer"
         data-dir="cooked-to-raw"
       >
-        Cooked → Raw
+        {t(locale, 'calc.cookedToRaw')}
       </button>
     </div>
   </div>
 
   <!-- Weight Input -->
   <div class="mb-6">
-    <label id="weight-label" for="weight-input" class="block text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
-      Raw weight
+    <label id="weight-label" for="weight-input" class="block text-sm font-mono font-medium text-[var(--color-ink)] uppercase tracking-wider mb-2">
+      {t(locale, 'calc.rawWeight')}
     </label>
     <div class="flex gap-2">
       <input
@@ -88,7 +106,7 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
         min="0"
         step="any"
         inputmode="decimal"
-        placeholder="e.g. 200"
+        placeholder={t(locale, 'calc.weightPlaceholder')}
         class="flex-1 px-3 py-2.5 text-sm bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-sm)] text-[var(--color-ink)] placeholder:text-[var(--color-faint)] focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] transition-shadow"
       />
       <select
@@ -107,8 +125,8 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
     <!-- Output weight card -->
     <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5 mb-3">
       <div class="flex items-baseline justify-between gap-4 mb-3">
-        <span id="output-label" class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider">
-          Cooked weight
+        <span id="output-label" class="text-sm font-mono font-medium text-[var(--color-ink)] uppercase tracking-wider">
+          {t(locale, 'calc.cookedWeight')}
         </span>
         <span id="output-value" class="text-2xl font-semibold text-[var(--color-ink)] tracking-tight tabular-nums">
           —
@@ -122,25 +140,25 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
     <!-- Macro table -->
     <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] overflow-hidden mb-3">
       <div class="px-5 py-3 border-b border-[var(--color-hairline)]">
-        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider">
-          Nutrition — for this amount
+        <p class="text-sm font-mono font-medium text-[var(--color-ink)] uppercase tracking-wider">
+          {t(locale, 'calc.nutritionHeader')}
         </p>
       </div>
-      <div class="grid grid-cols-4 divide-x divide-[var(--color-hairline)]">
-        <div class="px-4 py-4 text-center">
-          <p class="text-xs text-[var(--color-mute)] mb-1">Calories</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-px bg-[var(--color-hairline)]">
+        <div class="px-4 py-4 text-center bg-[var(--color-surface)]">
+          <p class="text-xs text-[var(--color-mute)] mb-1">{t(locale, 'calc.calories')}</p>
           <p id="mac-cal" class="text-lg font-semibold text-[var(--color-ink)] tabular-nums">—</p>
         </div>
-        <div class="px-4 py-4 text-center">
-          <p class="text-xs text-[var(--color-mute)] mb-1">Protein</p>
+        <div class="px-4 py-4 text-center bg-[var(--color-surface)]">
+          <p class="text-xs text-[var(--color-mute)] mb-1">{t(locale, 'calc.protein')}</p>
           <p id="mac-pro" class="text-lg font-semibold text-[var(--color-ink)] tabular-nums">—</p>
         </div>
-        <div class="px-4 py-4 text-center">
-          <p class="text-xs text-[var(--color-mute)] mb-1">Carbs</p>
+        <div class="px-4 py-4 text-center bg-[var(--color-surface)]">
+          <p class="text-xs text-[var(--color-mute)] mb-1">{t(locale, 'calc.carbs')}</p>
           <p id="mac-car" class="text-lg font-semibold text-[var(--color-ink)] tabular-nums">—</p>
         </div>
-        <div class="px-4 py-4 text-center">
-          <p class="text-xs text-[var(--color-mute)] mb-1">Fat</p>
+        <div class="px-4 py-4 text-center bg-[var(--color-surface)]">
+          <p class="text-xs text-[var(--color-mute)] mb-1">{t(locale, 'calc.fat')}</p>
           <p id="mac-fat" class="text-lg font-semibold text-[var(--color-ink)] tabular-nums">—</p>
         </div>
       </div>
@@ -148,13 +166,13 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
 
     <!-- USDA citation -->
     <div id="citation-wrapper" class="flex items-center gap-2 text-xs text-[var(--color-mute)] mb-3">
-      <span class="font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded border border-[var(--color-hairline)] text-[var(--color-faint)]">Source</span>
+      <span class="font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded border border-[var(--color-hairline)] text-[var(--color-faint)]">{t(locale, 'calc.sourceLabel')}</span>
       <span id="citation-source"></span>
     </div>
 
     <!-- Estimate disclosure -->
     <div id="estimate-note" hidden class="text-xs text-[var(--color-warning)] bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-sm)] px-3 py-2 mb-3">
-      <strong>Note:</strong> This yield figure is an industry-standard estimate. USDA has not published a direct cooking-yield measurement for this item.
+      <strong>Note:</strong> {t(locale, 'calc.estimateNote')}
     </div>
 
     <!-- More precise toggle (only shown if food has yield_by_method) -->
@@ -163,11 +181,11 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
         id="precise-toggle"
         class="text-xs text-[var(--color-link)] hover:underline cursor-pointer transition-colors"
       >
-        + More precise: choose cooking method
+        {t(locale, 'calc.morePrecise')}
       </button>
       <div id="precise-panel" hidden class="mt-3">
-        <label for="method-select" class="block text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
-          Cooking method
+        <label for="method-select" class="block text-sm font-mono font-medium text-[var(--color-ink)] uppercase tracking-wider mb-2">
+          {t(locale, 'calc.cookingMethodLabel')}
         </label>
         <select
           id="method-select"
@@ -180,7 +198,7 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
 
   <!-- Empty state prompt -->
   <div id="empty-state" class="text-sm text-[var(--color-faint)] text-center py-6">
-    Search for a food above to get started.
+    {t(locale, 'calc.emptyState')}
   </div>
 </div>
 
@@ -223,10 +241,11 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
   }
 </style>
 
-<script define:vars={{ foodsJson, methodLabelsJson, categoryLabelsJson, preselectedId }}>
+<script define:vars={{ foodsJson, methodLabelsJson, categoryLabelsJson, preselectedId, jsStringsJson }}>
   const FOODS = JSON.parse(foodsJson);
   const METHOD_LABELS = JSON.parse(methodLabelsJson);
   const CATEGORY_LABELS = JSON.parse(categoryLabelsJson);
+  const STR = JSON.parse(jsStringsJson);
 
   // ── State ─────────────────────────────────────────────────────────────
   let state = {
@@ -320,7 +339,7 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
     if (foods.length === 0) {
       const li = document.createElement('li');
       li.className = 'px-4 py-3 text-sm text-[var(--color-mute)]';
-      li.textContent = 'No foods found.';
+      li.textContent = STR.noFoodsFound;
       dropdown.appendChild(li);
     } else {
       foods.forEach((food, i) => {
@@ -394,7 +413,7 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
     btnCtr.classList.toggle('active', state.direction === 'cooked-to-raw');
 
     // Weight input label
-    weightLabel.textContent = state.direction === 'raw-to-cooked' ? 'Raw weight' : 'Cooked weight';
+    weightLabel.textContent = state.direction === 'raw-to-cooked' ? STR.rawWeight : STR.cookedWeight;
 
     // No food selected
     if (!state.food) {
@@ -418,15 +437,17 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
 
     // Output weight
     const outputG = state.direction === 'raw-to-cooked' ? result.cookedG : result.rawG;
-    outputLabel.textContent = state.direction === 'raw-to-cooked' ? 'Cooked weight' : 'Raw weight';
+    outputLabel.textContent = state.direction === 'raw-to-cooked' ? STR.outputCooked : STR.outputRaw;
     outputValue.textContent = formatWeight(outputG, state.unit);
 
     // Yield badge
     const isExpand = result.yieldPct > 100;
     if (isExpand) {
-      yieldBadge.textContent = `Expands to ${(result.yieldPct / 100).toFixed(2).replace(/\.?0+$/, '')}× its dry weight · USDA yield: ${result.yieldPct}%`;
+      const n = (result.yieldPct / 100).toFixed(2).replace(/\.?0+$/, '');
+      yieldBadge.textContent = STR.yieldExpand.replace('{n}', n).replace('{pct}', result.yieldPct);
     } else {
-      yieldBadge.textContent = `${100 - result.yieldPct}% weight loss when cooked · USDA yield: ${result.yieldPct}%`;
+      const loss = 100 - result.yieldPct;
+      yieldBadge.textContent = STR.yieldLoss.replace('{loss}', loss).replace('{pct}', result.yieldPct);
     }
 
     // Macros
@@ -437,9 +458,7 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
 
     // Citation
     const isEstimate = state.food.source.startsWith('estimate');
-    citationSource.textContent = isEstimate
-      ? 'Industry-standard estimate (USDA data unavailable for this item)'
-      : state.food.source;
+    citationSource.textContent = isEstimate ? STR.estimateSource : state.food.source;
     estimateNote.hidden = !isEstimate;
 
     // More precise panel
@@ -467,9 +486,7 @@ const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
       if (state.method) methodSelect.value = state.method;
 
       // Precise toggle label
-      preciseToggle.textContent = state.showPrecise
-        ? '− Hide cooking method'
-        : '+ More precise: choose cooking method';
+      preciseToggle.textContent = state.showPrecise ? STR.hidePrecise : STR.morePrecise;
       precisePanel.hidden = !state.showPrecise;
     }
 

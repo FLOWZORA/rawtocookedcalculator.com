@@ -62,6 +62,7 @@ export const COOKING_METHOD_LABELS: Record<string, string> = {
   boiled_poached: 'Boiled / Poached',
   pan_fried: 'Pan-fried',
   boiled: 'Boiled',
+  boiled_rehydrated: 'Boiled / Rehydrated',
   boiled_steamed: 'Boiled / Steamed',
   slow_cooked_braised: 'Slow-cooked / Braised',
   baked: 'Baked',
