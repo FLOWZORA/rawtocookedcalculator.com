@@ -1,12 +1,15 @@
-export const LOCALES = ['en', 'es', 'fr', 'de', 'pt', 'hi'] as const;
+export const LOCALES = ['en', 'es', 'ja', 'fr', 'de', 'pt', 'ko', 'it', 'hi'] as const;
 export type Locale = (typeof LOCALES)[number];
 
 export const LOCALE_NAMES: Record<Locale, string> = {
   en: 'English',
   es: 'Español',
+  ja: '日本語',
   fr: 'Français',
   de: 'Deutsch',
   pt: 'Português',
+  ko: '한국어',
+  it: 'Italiano',
   hi: 'हिन्दी',
 };
 
@@ -563,6 +566,333 @@ export const ui = {
     'page.homeTitle': 'Calculadora Cru para Cozido | Dados de Rendimento USDA & Macros Completos',
     'page.homeDescription':
       'Converta o peso de qualquer alimento entre cru e cozido. Obtenha calorias, proteínas, carboidratos e gorduras para qualquer quantidade. Carnes, grãos e vegetais — baseado em dados do USDA.',
+  },
+
+  ja: {
+    'nav.wordmark': '生→調理済み',
+    'nav.chicken': 'チキン',
+    'nav.rice': 'ご飯',
+    'nav.beef': '牛肉',
+    'nav.darkMode': 'ダークモード切替',
+    'nav.language': '言語',
+
+    'hero.eyebrow': 'USDA調理収率データに基づく',
+    'hero.heading': '生から調理済み計算機',
+    'hero.description':
+      '生または調理済みの重量を入力 — 変換後の重量と完全なマクロ（カロリー、タンパク質、炭水化物、脂質）を取得。肉類、穀物、野菜に対応。',
+    'hero.usda':
+      'すべての収率はUSDA FoodData CentralおよびUSDA調理収率表から取得しています。',
+
+    'browse.heading': '食品を選ぶ',
+    'browse.description':
+      '3つの主要カテゴリにわたる20種類の食品 — あらゆる生から調理済み計算機の中で最も広い対応範囲。',
+    'browse.catMeat': '肉類・鶏肉・魚介類',
+    'browse.catGrains': '穀物・パスタ・豆類',
+    'browse.catVeg': '野菜',
+    'browse.note.chicken': '調理後25%減',
+    'browse.note.beef': '調理後27%減',
+    'browse.note.salmon': '調理後21%減',
+    'browse.note.pork': '調理後22%減',
+    'browse.note.rice': '調理後3倍に膨張',
+    'browse.note.pasta': '調理後2.25倍に膨張',
+    'browse.note.lentils': '調理後2.3倍に膨張',
+    'browse.note.quinoa': '調理後2.8倍に膨張',
+    'browse.note.spinach': '調理後70%減',
+    'browse.note.broccoli': '調理後10%減',
+    'browse.note.potato': '調理後6%減',
+    'browse.note.sweetPotato': '調理後10%減',
+
+    'callout.eyebrow': '驚きの収率',
+    'callout.heading': 'ほうれん草は調理後に重量の70%を失う',
+    'callout.description':
+      '生ほうれん草のあの袋は、茹でたり蒸したりすると元の重量の3分の1以下に縮んでしまいます。白米はその逆 — 乾燥100gが調理後300gになります。これらの極端な例が、正確なマクロ追跡において生の状態で計ることがいかに重要かを示しています。',
+    'callout.spinachBtn': 'ほうれん草計算機 →',
+    'callout.riceBtn': '米計算機 →',
+
+    'usda.heading': 'なぜUSDAデータ？',
+    'usda.meatLabel': '肉類・鶏肉',
+    'usda.meatText':
+      '<strong>USDAの肉類・鶏肉調理収率表</strong>からの収率 — 食品メーカーや栄養士が使用しているのと同じ情報源。',
+    'usda.grainsLabel': '穀物・野菜',
+    'usda.grainsText':
+      '<strong>USDA FoodData Central</strong>（fdc.nal.usda.gov）の生と調理済みの項目を比較して導き出した収率。米国の公式栄養データベース。',
+
+    'calc.foodLabel': '食品',
+    'calc.foodPlaceholder': '検索 — 鶏の胸肉、白米、ブロッコリー…',
+    'calc.clearFood': '食品選択をクリア',
+    'calc.foodSuggestions': '食品候補',
+    'calc.noFoodsFound': '食品が見つかりませんでした。',
+    'calc.directionLabel': '方向',
+    'calc.rawToCooked': '生 → 調理済み',
+    'calc.cookedToRaw': '調理済み → 生',
+    'calc.rawWeight': '生の重量',
+    'calc.cookedWeight': '調理済みの重量',
+    'calc.weightPlaceholder': '例：200',
+    'calc.emptyState': '上記で食品を検索して始めてください。',
+    'calc.nutritionHeader': '栄養成分 — この量について',
+    'calc.calories': 'カロリー',
+    'calc.protein': 'タンパク質',
+    'calc.carbs': '炭水化物',
+    'calc.fat': '脂質',
+    'calc.sourceLabel': '出典',
+    'calc.estimateSource': '業界標準の推定値（USDAデータ未掲載）',
+    'calc.estimateNote':
+      'この収率は業界標準の推定値です。USDAはこの食品の調理収率の直接測定値を公開していません。',
+    'calc.morePrecise': '+ より精確：調理方法を選ぶ',
+    'calc.hidePrecise': '− 調理方法を非表示',
+    'calc.cookingMethodLabel': '調理方法',
+    'calc.yieldExpand': '乾燥重量の{n}倍に膨張 · USDA収率：{pct}%',
+    'calc.yieldLoss': '調理後{loss}%の重量減 · USDA収率：{pct}%',
+
+    'footer.tagline':
+      '肉類、穀物、野菜のUSDA調理収率データ。すべての換算に完全なマクロ付き。',
+    'footer.popularFoods': '人気の食品',
+    'footer.dataSources': 'データ出典',
+    'footer.usdaMeat': 'USDA肉類・鶏肉調理収率表',
+    'footer.usdaFdc': 'USDA FoodData Central',
+    'footer.estimatesNote': 'USDAデータが入手できない場合は推定値を表示しています。',
+    'footer.disclaimer':
+      '数値は上記のUSDAデータに基づいています。正確な計量のため、常に料理用スケールで食品を計ってください。',
+
+    'food.estimatedYield': '推定収率',
+    'food.rawToCookedCalc': '生から調理済み計算機',
+    'food.usdaCookingYield': 'USDA調理収率',
+    'food.source': '出典',
+    'food.estimateSource':
+      '業界標準の推定値 — USDAはこの食品の調理収率データを直接公開していません。',
+    'food.yieldByMethod': '調理方法別収率',
+    'food.yieldByMethodSource': '出典：USDA肉類・鶏肉調理収率表',
+    'food.chickenHeading': '鶏の胸肉がマクロ追跡の金本位標準である理由',
+    'food.chickenP1':
+      '皮なし・骨なしの鶏の胸肉は、生100gあたり約22.5gのタンパク質を含みます — あらゆる全食品の中で最高のタンパク質・カロリー比のひとつです。生100gあたりわずか120カロリー、2.6gの脂質で、ボディビルダー、アスリート、カロリー制限中の誰にとっても定番のリーンプロテインです。',
+    'food.chickenP2':
+      '注意点：調理後に25〜30%の重量を失うため、<strong>収率を考慮せずに調理後の重量を記録すると、実際のタンパク質摂取量を過小評価してしまいます</strong>。調理済み150gの量は、生約200gから得られたもの — それがUSDA栄養ラベルと照合するための生の重量です。',
+    'food.calcHeading': '{name}計算機',
+    'food.faqHeading': 'よくある質問',
+    'food.relatedLabel': '関連計算機',
+    'food.allFoods': 'すべての食品 →',
+
+    'page.homeTitle': '生から調理済み計算機 | USDA収率データと完全なマクロ',
+    'page.homeDescription':
+      'あらゆる食品の生から調理済みの重量を換算。カロリー、タンパク質、炭水化物、脂質をあらゆる量で取得 — USDAデータに基づく。',
+  },
+
+  ko: {
+    'nav.wordmark': '생→조리',
+    'nav.chicken': '닭고기',
+    'nav.rice': '쌀',
+    'nav.beef': '소고기',
+    'nav.darkMode': '다크 모드 전환',
+    'nav.language': '언어',
+
+    'hero.eyebrow': 'USDA 조리 수율 데이터 기반',
+    'hero.heading': '생 → 조리 계산기',
+    'hero.description':
+      '생 또는 조리된 무게를 입력하면 변환된 무게와 완전한 매크로(칼로리, 단백질, 탄수화물, 지방)를 얻을 수 있습니다. 육류, 곡물, 채소를 다룹니다.',
+    'hero.usda':
+      '모든 수율은 USDA FoodData Central과 USDA 조리 수율 표에서 가져왔습니다.',
+
+    'browse.heading': '식품별 찾기',
+    'browse.description':
+      '3가지 주요 카테고리에 걸친 20가지 식품 — 어떤 생→조리 계산기보다 넓은 범위.',
+    'browse.catMeat': '육류, 가금류 및 해산물',
+    'browse.catGrains': '곡물, 파스타 및 콩류',
+    'browse.catVeg': '채소',
+    'browse.note.chicken': '조리 시 25% 감소',
+    'browse.note.beef': '조리 시 27% 감소',
+    'browse.note.salmon': '조리 시 21% 감소',
+    'browse.note.pork': '조리 시 22% 감소',
+    'browse.note.rice': '조리 시 3배 팽창',
+    'browse.note.pasta': '조리 시 2.25배 팽창',
+    'browse.note.lentils': '조리 시 2.3배 팽창',
+    'browse.note.quinoa': '조리 시 2.8배 팽창',
+    'browse.note.spinach': '조리 시 70% 감소',
+    'browse.note.broccoli': '조리 시 10% 감소',
+    'browse.note.potato': '조리 시 6% 감소',
+    'browse.note.sweetPotato': '조리 시 10% 감소',
+
+    'callout.eyebrow': '놀라운 수율',
+    'callout.heading': '시금치는 조리 시 무게의 70%를 잃습니다',
+    'callout.description':
+      '생 시금치 한 봉지는 끓이거나 찌면 원래 무게의 3분의 1 미만으로 줄어듭니다. 백미는 반대 방향으로 — 건조 100g이 조리 후 300g이 됩니다. 이러한 극단적인 차이가 정확한 매크로 추적을 위해 생 상태에서 무게를 재는 것이 왜 중요한지 보여줍니다.',
+    'callout.spinachBtn': '시금치 계산기 →',
+    'callout.riceBtn': '쌀 계산기 →',
+
+    'usda.heading': '왜 USDA 데이터인가?',
+    'usda.meatLabel': '육류 및 가금류',
+    'usda.meatText':
+      '<strong>USDA 육류 및 가금류 조리 수율 표</strong>의 수율 — 식품 제조업체와 영양사들이 사용하는 동일한 출처.',
+    'usda.grainsLabel': '곡물 및 채소',
+    'usda.grainsText':
+      '<strong>USDA FoodData Central</strong>(fdc.nal.usda.gov)에서 생 및 조리된 항목을 비교하여 도출된 수율 — 미국의 권위 있는 영양 데이터베이스.',
+
+    'calc.foodLabel': '식품',
+    'calc.foodPlaceholder': '검색 — 닭 가슴살, 백미, 브로콜리…',
+    'calc.clearFood': '식품 선택 지우기',
+    'calc.foodSuggestions': '식품 추천',
+    'calc.noFoodsFound': '식품을 찾을 수 없습니다.',
+    'calc.directionLabel': '방향',
+    'calc.rawToCooked': '생 → 조리',
+    'calc.cookedToRaw': '조리 → 생',
+    'calc.rawWeight': '생 무게',
+    'calc.cookedWeight': '조리된 무게',
+    'calc.weightPlaceholder': '예: 200',
+    'calc.emptyState': '시작하려면 위에서 식품을 검색하세요.',
+    'calc.nutritionHeader': '영양 — 이 양에 대해',
+    'calc.calories': '칼로리',
+    'calc.protein': '단백질',
+    'calc.carbs': '탄수화물',
+    'calc.fat': '지방',
+    'calc.sourceLabel': '출처',
+    'calc.estimateSource': '업계 표준 추정치 (USDA 데이터 없음)',
+    'calc.estimateNote':
+      '이 수율 수치는 업계 표준 추정치입니다. USDA는 이 식품에 대한 직접적인 조리 수율 측정값을 게시하지 않았습니다.',
+    'calc.morePrecise': '+ 더 정확하게: 조리 방법 선택',
+    'calc.hidePrecise': '− 조리 방법 숨기기',
+    'calc.cookingMethodLabel': '조리 방법',
+    'calc.yieldExpand': '건조 무게의 {n}배로 팽창 · USDA 수율: {pct}%',
+    'calc.yieldLoss': '조리 시 {loss}% 무게 감소 · USDA 수율: {pct}%',
+
+    'footer.tagline':
+      '육류, 곡물, 채소를 위한 USDA 조리 수율 데이터. 모든 변환에 대한 완전한 매크로.',
+    'footer.popularFoods': '인기 식품',
+    'footer.dataSources': '데이터 출처',
+    'footer.usdaMeat': 'USDA 육류 및 가금류 조리 수율 표',
+    'footer.usdaFdc': 'USDA FoodData Central',
+    'footer.estimatesNote': 'USDA 데이터를 사용할 수 없는 경우 추정치가 표시됩니다.',
+    'footer.disclaimer':
+      '값은 위의 USDA 데이터를 기반으로 합니다. 정확도를 위해 항상 주방 저울로 식품을 측정하세요.',
+
+    'food.estimatedYield': '추정 수율',
+    'food.rawToCookedCalc': '생 → 조리 계산기',
+    'food.usdaCookingYield': 'USDA 조리 수율',
+    'food.source': '출처',
+    'food.estimateSource':
+      '업계 표준 추정치 — USDA는 이 식품에 대한 직접적인 조리 수율 데이터를 게시하지 않았습니다.',
+    'food.yieldByMethod': '조리 방법별 수율',
+    'food.yieldByMethodSource': '출처: USDA 육류 및 가금류 조리 수율 표',
+    'food.chickenHeading': '닭 가슴살이 매크로 추적의 황금 기준인 이유',
+    'food.chickenP1':
+      '껍질과 뼈를 제거한 닭 가슴살은 생 100g당 약 22.5g의 단백질을 제공합니다 — 모든 전체 식품 중 가장 높은 단백질 대 칼로리 비율 중 하나입니다. 생 100g당 120칼로리와 2.6g의 지방만으로, 보디빌더, 운동선수, 칼로리 적자를 관리하는 모든 사람에게 가장 선호되는 린 단백질입니다.',
+    'food.chickenP2':
+      '주의사항: 조리 시 25~30%의 무게를 잃기 때문에, <strong>수율을 고려하지 않고 조리된 무게를 기록하면 실제 단백질 섭취량을 과소평가하게 됩니다</strong>. 조리된 150g은 약 200g 생에서 나온 것입니다 — USDA 영양 라벨 기준으로 기록해야 할 생 무게가 바로 그것입니다.',
+    'food.calcHeading': '{name} 계산기',
+    'food.faqHeading': '자주 묻는 질문',
+    'food.relatedLabel': '관련 계산기',
+    'food.allFoods': '모든 식품 →',
+
+    'page.homeTitle': '생 → 조리 계산기 | USDA 수율 데이터 및 완전한 매크로',
+    'page.homeDescription':
+      '모든 식품의 생 및 조리된 무게를 변환하세요. 모든 양에 대한 칼로리, 단백질, 탄수화물, 지방을 얻으세요 — USDA 데이터 기반.',
+  },
+
+  it: {
+    'nav.wordmark': 'Crudo→Cotto',
+    'nav.chicken': 'Pollo',
+    'nav.rice': 'Riso',
+    'nav.beef': 'Manzo',
+    'nav.darkMode': 'Attiva/disattiva modalità scura',
+    'nav.language': 'Lingua',
+
+    'hero.eyebrow': 'Basato sui dati di resa di cottura USDA',
+    'hero.heading': 'Calcolatore da Crudo a Cotto',
+    'hero.description':
+      'Inserisci un peso crudo o cotto — ottieni il peso convertito più i macronutrienti completi (calorie, proteine, carboidrati, grassi). Copre carni, cereali e verdure.',
+    'hero.usda':
+      'Tutte le rese provengono da USDA FoodData Central e dalla Tabella delle rese di cottura USDA.',
+
+    'browse.heading': 'Sfoglia per alimento',
+    'browse.description':
+      '20 alimenti nelle tre categorie principali — la copertura più ampia di qualsiasi calcolatore crudo-cotto.',
+    'browse.catMeat': 'Carne, Pollame e Frutti di mare',
+    'browse.catGrains': 'Cereali, Pasta e Legumi',
+    'browse.catVeg': 'Verdure',
+    'browse.note.chicken': 'Perde il 25% durante la cottura',
+    'browse.note.beef': 'Perde il 27% durante la cottura',
+    'browse.note.salmon': 'Perde il 21% durante la cottura',
+    'browse.note.pork': 'Perde il 22% durante la cottura',
+    'browse.note.rice': 'Si espande 3× durante la cottura',
+    'browse.note.pasta': 'Si espande 2,25× durante la cottura',
+    'browse.note.lentils': 'Si espande 2,3× durante la cottura',
+    'browse.note.quinoa': 'Si espande 2,8× durante la cottura',
+    'browse.note.spinach': 'Perde il 70% durante la cottura',
+    'browse.note.broccoli': 'Perde il 10% durante la cottura',
+    'browse.note.potato': 'Perde il 6% durante la cottura',
+    'browse.note.sweetPotato': 'Perde il 10% durante la cottura',
+
+    'callout.eyebrow': 'Rese sorprendenti',
+    'callout.heading': 'Gli spinaci perdono il 70% del loro peso durante la cottura',
+    'callout.description':
+      'Quel sacchetto di spinaci crudi si riduce a meno di un terzo del peso originale dopo la bollitura o la cottura a vapore. Il riso bianco va nella direzione opposta — 100g secco diventa 300g cotto. Questi estremi spiegano perché pesare crudo è così importante per un tracciamento preciso dei macronutrienti.',
+    'callout.spinachBtn': 'Calcolatore spinaci →',
+    'callout.riceBtn': 'Calcolatore riso →',
+
+    'usda.heading': 'Perché i dati USDA?',
+    'usda.meatLabel': 'Carne e Pollame',
+    'usda.meatText':
+      'Rese dalla <strong>Tabella delle rese di cottura USDA per carne e pollame</strong> — la stessa fonte utilizzata dai produttori alimentari e dai dietisti.',
+    'usda.grainsLabel': 'Cereali e Verdure',
+    'usda.grainsText':
+      'Rese derivate dal confronto tra voci crude e cotte in <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov), il database nutrizionale ufficiale statunitense.',
+
+    'calc.foodLabel': 'Alimento',
+    'calc.foodPlaceholder': 'Cerca — petto di pollo, riso bianco, broccoli…',
+    'calc.clearFood': 'Cancella selezione alimento',
+    'calc.foodSuggestions': 'Suggerimenti alimenti',
+    'calc.noFoodsFound': 'Nessun alimento trovato.',
+    'calc.directionLabel': 'Direzione',
+    'calc.rawToCooked': 'Crudo → Cotto',
+    'calc.cookedToRaw': 'Cotto → Crudo',
+    'calc.rawWeight': 'Peso crudo',
+    'calc.cookedWeight': 'Peso cotto',
+    'calc.weightPlaceholder': 'es. 200',
+    'calc.emptyState': 'Cerca un alimento sopra per iniziare.',
+    'calc.nutritionHeader': 'Nutrizione — per questa quantità',
+    'calc.calories': 'Calorie',
+    'calc.protein': 'Proteine',
+    'calc.carbs': 'Carboidrati',
+    'calc.fat': 'Grassi',
+    'calc.sourceLabel': 'Fonte',
+    'calc.estimateSource': 'Stima standard del settore (dati USDA non disponibili)',
+    'calc.estimateNote':
+      'Questo valore di resa è una stima standard del settore. L\'USDA non ha pubblicato misurazioni dirette della resa di cottura per questo alimento.',
+    'calc.morePrecise': '+ Più preciso: scegli il metodo di cottura',
+    'calc.hidePrecise': '− Nascondi il metodo di cottura',
+    'calc.cookingMethodLabel': 'Metodo di cottura',
+    'calc.yieldExpand': 'Si espande a {n}× del suo peso secco · Resa USDA: {pct}%',
+    'calc.yieldLoss': '{loss}% perdita di peso durante la cottura · Resa USDA: {pct}%',
+
+    'footer.tagline':
+      'Dati di resa di cottura USDA per carne, cereali e verdure. Macronutrienti completi per ogni conversione.',
+    'footer.popularFoods': 'Alimenti popolari',
+    'footer.dataSources': 'Fonti dei dati',
+    'footer.usdaMeat': 'Tabella delle rese di cottura USDA per carne e pollame',
+    'footer.usdaFdc': 'USDA FoodData Central',
+    'footer.estimatesNote': 'Le stime sono indicate quando i dati USDA non sono disponibili.',
+    'footer.disclaimer':
+      'I valori si basano sui dati USDA sopra indicati. Pesa sempre il cibo con una bilancia da cucina per maggiore precisione.',
+
+    'food.estimatedYield': 'Resa stimata',
+    'food.rawToCookedCalc': 'Calcolatore da Crudo a Cotto',
+    'food.usdaCookingYield': 'Resa di cottura USDA',
+    'food.source': 'Fonte',
+    'food.estimateSource':
+      'Stima standard del settore — l\'USDA non ha pubblicato dati diretti sulla resa di cottura per questo alimento.',
+    'food.yieldByMethod': 'Resa per metodo di cottura',
+    'food.yieldByMethodSource': 'Fonte: Tabella delle rese di cottura USDA per carne e pollame',
+    'food.chickenHeading': 'Perché il petto di pollo è il gold standard per il tracciamento dei macronutrienti',
+    'food.chickenP1':
+      'Il petto di pollo senza pelle e senza osso fornisce circa 22,5g di proteine per 100g crudo — uno dei migliori rapporti proteine/calorie tra tutti gli alimenti interi. Con sole 120 calorie e 2,6g di grassi per 100g crudo, è la proteina magra preferita da bodybuilder, atleti e chiunque gestisca un deficit calorico.',
+    'food.chickenP2':
+      'Il problema: poiché perde il 25–30% del suo peso durante la cottura, <strong>registrare il peso cotto senza considerare la resa porta a sottostimare l\'apporto effettivo di proteine</strong>. Una porzione di 150g cotto proviene da circa 200g crudo — è il peso crudo che dovresti registrare.',
+    'food.calcHeading': 'Calcolatore {name}',
+    'food.faqHeading': 'Domande frequenti',
+    'food.relatedLabel': 'Calcolatori correlati',
+    'food.allFoods': 'Tutti gli alimenti →',
+
+    'page.homeTitle': 'Calcolatore da Crudo a Cotto | Dati di Resa USDA e Macronutrienti Completi',
+    'page.homeDescription':
+      'Converti il peso di qualsiasi alimento tra crudo e cotto. Ottieni calorie, proteine, carboidrati e grassi per qualsiasi quantità. Carni, cereali e verdure — basato sui dati USDA.',
   },
 
   hi: {
