@@ -1,7 +1,8 @@
 ---
-import { getAllFoods, COOKING_METHOD_LABELS, CATEGORY_LABELS } from '../utils/foods';
+import { getAllFoods, COOKING_METHOD_LABELS } from '../utils/foods';
 import { t } from '../i18n';
 import type { Locale } from '../i18n';
+import { TRANSLATED_FOOD_NAMES, TRANSLATED_CATEGORY_LABELS } from '../i18n/food-names';
 
 interface Props {
   preselectedId?: string;
@@ -13,7 +14,12 @@ const { preselectedId = '', locale = 'en' } = Astro.props;
 const allFoods = getAllFoods();
 const foodsJson = JSON.stringify(allFoods);
 const methodLabelsJson = JSON.stringify(COOKING_METHOD_LABELS);
-const categoryLabelsJson = JSON.stringify(CATEGORY_LABELS);
+const categoryLabelsJson = JSON.stringify(
+  TRANSLATED_CATEGORY_LABELS[locale] ?? TRANSLATED_CATEGORY_LABELS['en']
+);
+const foodNamesJson = JSON.stringify(
+  TRANSLATED_FOOD_NAMES[locale] ?? TRANSLATED_FOOD_NAMES['en']
+);
 
 // JS strings passed via define:vars (template variables use {n}/{pct}/{loss} placeholders)
 const jsStrings = {
@@ -241,10 +247,11 @@ const jsStringsJson = JSON.stringify(jsStrings);
   }
 </style>
 
-<script define:vars={{ foodsJson, methodLabelsJson, categoryLabelsJson, preselectedId, jsStringsJson }}>
+<script define:vars={{ foodsJson, methodLabelsJson, categoryLabelsJson, foodNamesJson, preselectedId, jsStringsJson }}>
   const FOODS = JSON.parse(foodsJson);
   const METHOD_LABELS = JSON.parse(methodLabelsJson);
   const CATEGORY_LABELS = JSON.parse(categoryLabelsJson);
+  const FOOD_NAMES = JSON.parse(foodNamesJson);
   const STR = JSON.parse(jsStringsJson);
 
   // ── State ─────────────────────────────────────────────────────────────
@@ -323,12 +330,17 @@ const jsStringsJson = JSON.stringify(jsStrings);
   }
 
   // ── Search / dropdown ─────────────────────────────────────────────────
+  function foodDisplayName(food) {
+    return FOOD_NAMES[food.id] || food.name;
+  }
+
   function filterFoods(query) {
     if (!query.trim()) return FOODS;
     const q = query.toLowerCase();
     return FOODS.filter((f) =>
+      foodDisplayName(f).toLowerCase().includes(q) ||
       f.name.toLowerCase().includes(q) ||
-      CATEGORY_LABELS[f.category].toLowerCase().includes(q)
+      (CATEGORY_LABELS[f.category] || '').toLowerCase().includes(q)
     );
   }
 
@@ -349,7 +361,7 @@ const jsStringsJson = JSON.stringify(jsStrings);
         li.setAttribute('aria-selected', String(i === state.highlightedIndex));
         li.setAttribute('data-food-id', food.id);
         li.innerHTML = `
-          <span class="dropdown-item-name">${food.name}</span>
+          <span class="dropdown-item-name">${foodDisplayName(food)}</span>
           <span class="dropdown-item-category">${CATEGORY_LABELS[food.category] || food.category}</span>
         `;
         li.addEventListener('mousedown', (e) => {
@@ -391,7 +403,7 @@ const jsStringsJson = JSON.stringify(jsStrings);
     state.food = food;
     state.method = null;
     state.showPrecise = false;
-    searchInput.value = food.name;
+    searchInput.value = foodDisplayName(food);
     searchClear.hidden = false;
     closeDropdown();
     render();
@@ -518,7 +530,7 @@ const jsStringsJson = JSON.stringify(jsStrings);
       const food = FOODS.find((f) => f.id === foodId);
       if (food) {
         state.food = food;
-        searchInput.value = food.name;
+        searchInput.value = foodDisplayName(food);
         searchClear.hidden = false;
       }
     }
@@ -617,7 +629,7 @@ const jsStringsJson = JSON.stringify(jsStrings);
       const food = FOODS.find((f) => f.id === preselectedId);
       if (food) {
         state.food = food;
-        searchInput.value = food.name;
+        searchInput.value = foodDisplayName(food);
         searchClear.hidden = false;
       }
     }
