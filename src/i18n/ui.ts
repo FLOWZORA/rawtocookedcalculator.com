@@ -144,9 +144,9 @@ export const ui = {
     'food.allFoods': 'All foods →',
 
     // Page titles / SEO
-    'page.homeTitle': 'Raw to Cooked Calculator | Free Food Weight Converter',
+    'page.homeTitle': 'Free Raw to Cooked Calculator & Converter, No Login | USDA',
     'page.homeDescription':
-      'Free raw to cooked weight conversion calculator for meat, rice & 20+ foods. Convert raw chicken, ground beef, rice & more — get full macros from USDA data.',
+      'Free calculator & converter for 20+ foods. No login. Full macros (protein/carbs/fat) too, not just weight. Every yield % cited to USDA.',
     // Footer company links, yield descriptions, data-source labels
     "footer.company": "Company",
     "footer.about": "About Us",
