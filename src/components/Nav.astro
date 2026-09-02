@@ -42,7 +42,7 @@ const [markBefore, markAfter] = t(locale, 'nav.wordmark').split('→');
       <div class="relative" id="lang-switcher">
         <button
           id="lang-btn"
-          aria-label={t(locale, 'nav.language')}
+          aria-label={`${t(locale, 'nav.language')}: ${locale.toUpperCase()}`}
           class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-mono text-[var(--color-body)] rounded-[var(--radius-sm)] border border-[var(--color-hairline)] bg-[var(--color-surface)] hover:bg-[var(--color-hairline-soft)] transition-colors cursor-pointer"
         >
           <span>{locale.toUpperCase()}</span>

@@ -107,6 +107,7 @@ export const ui = {
     'calc.morePrecise': '+ More precise: choose cooking method',
     'calc.hidePrecise': '− Hide cooking method',
     'calc.cookingMethodLabel': 'Cooking method',
+    'calc.unitLabel': 'Weight unit',
     'calc.yieldExpand': 'Expands to {n}× its dry weight · USDA yield: {pct}%',
     'calc.yieldLoss': '{loss}% weight loss when cooked · USDA yield: {pct}%',
 
@@ -245,6 +246,7 @@ export const ui = {
     'calc.morePrecise': '+ Más preciso: elegir método de cocción',
     'calc.hidePrecise': '− Ocultar método de cocción',
     'calc.cookingMethodLabel': 'Método de cocción',
+    'calc.unitLabel': 'Unidad de peso',
     'calc.yieldExpand': 'Se expande a {n}× su peso seco · Rendimiento USDA: {pct}%',
     'calc.yieldLoss': '{loss}% de pérdida de peso al cocinar · Rendimiento USDA: {pct}%',
 
@@ -380,6 +382,7 @@ export const ui = {
     'calc.morePrecise': '+ Plus précis : choisir la méthode de cuisson',
     'calc.hidePrecise': '− Masquer la méthode de cuisson',
     'calc.cookingMethodLabel': 'Méthode de cuisson',
+    'calc.unitLabel': 'Unité de poids',
     'calc.yieldExpand': 'S\'étend à {n}× son poids sec · Rendement USDA : {pct}%',
     'calc.yieldLoss': '{loss}% de perte de poids à la cuisson · Rendement USDA : {pct}%',
 
@@ -515,6 +518,7 @@ export const ui = {
     'calc.morePrecise': '+ Genauer: Garmethode wählen',
     'calc.hidePrecise': '− Garmethode ausblenden',
     'calc.cookingMethodLabel': 'Garmethode',
+    'calc.unitLabel': 'Gewichtseinheit',
     'calc.yieldExpand': 'Dehnt sich auf {n}× des Trockengewichts aus · USDA-Ausbeute: {pct}%',
     'calc.yieldLoss': '{loss}% Gewichtsverlust beim Garen · USDA-Ausbeute: {pct}%',
 
@@ -650,6 +654,7 @@ export const ui = {
     'calc.morePrecise': '+ Mais preciso: escolher método de cozimento',
     'calc.hidePrecise': '− Ocultar método de cozimento',
     'calc.cookingMethodLabel': 'Método de cozimento',
+    'calc.unitLabel': 'Unidade de peso',
     'calc.yieldExpand': 'Expande para {n}× do peso seco · Rendimento USDA: {pct}%',
     'calc.yieldLoss': '{loss}% de perda de peso ao cozinhar · Rendimento USDA: {pct}%',
 
@@ -785,6 +790,7 @@ export const ui = {
     'calc.morePrecise': '+ より精確：調理方法を選ぶ',
     'calc.hidePrecise': '− 調理方法を非表示',
     'calc.cookingMethodLabel': '調理方法',
+    'calc.unitLabel': '重量の単位',
     'calc.yieldExpand': '乾燥重量の{n}倍に膨張 · USDA収率：{pct}%',
     'calc.yieldLoss': '調理後{loss}%の重量減 · USDA収率：{pct}%',
 
@@ -920,6 +926,7 @@ export const ui = {
     'calc.morePrecise': '+ 더 정확하게: 조리 방법 선택',
     'calc.hidePrecise': '− 조리 방법 숨기기',
     'calc.cookingMethodLabel': '조리 방법',
+    'calc.unitLabel': '무게 단위',
     'calc.yieldExpand': '건조 무게의 {n}배로 팽창 · USDA 수율: {pct}%',
     'calc.yieldLoss': '조리 시 {loss}% 무게 감소 · USDA 수율: {pct}%',
 
@@ -1055,6 +1062,7 @@ export const ui = {
     'calc.morePrecise': '+ Più preciso: scegli il metodo di cottura',
     'calc.hidePrecise': '− Nascondi il metodo di cottura',
     'calc.cookingMethodLabel': 'Metodo di cottura',
+    'calc.unitLabel': 'Unità di peso',
     'calc.yieldExpand': 'Si espande a {n}× del suo peso secco · Resa USDA: {pct}%',
     'calc.yieldLoss': '{loss}% perdita di peso durante la cottura · Resa USDA: {pct}%',
 
@@ -1190,6 +1198,7 @@ export const ui = {
     'calc.morePrecise': '+ अधिक सटीक: पकाने की विधि चुनें',
     'calc.hidePrecise': '− पकाने की विधि छुपाएं',
     'calc.cookingMethodLabel': 'पकाने की विधि',
+    'calc.unitLabel': 'वजन की इकाई',
     'calc.yieldExpand': 'सूखे वजन का {n}× फैलता है · USDA यील्ड: {pct}%',
     'calc.yieldLoss': 'पकाने पर {loss}% वजन घटता है · USDA यील्ड: {pct}%',
 

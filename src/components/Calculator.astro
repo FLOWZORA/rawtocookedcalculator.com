@@ -13,25 +13,8 @@ interface Props {
 const { preselectedId = '', locale = 'en' } = Astro.props;
 
 const allFoods = getAllFoods();
-const foodsJson = JSON.stringify(allFoods);
-const methodLabelsJson = JSON.stringify(METHOD_LABELS[locale] ?? METHOD_LABELS['en']);
-// Per-food source citations, translated (the raw JSON `source` field is English).
-const foodSourcesJson = JSON.stringify(
-  Object.fromEntries(
-    allFoods.map((f) => {
-      const key = getSourceKey(f);
-      return [f.id, key === 'estimate' ? t(locale, 'calc.estimateSource') : t(locale, key)];
-    })
-  )
-);
-const categoryLabelsJson = JSON.stringify(
-  TRANSLATED_CATEGORY_LABELS[locale] ?? TRANSLATED_CATEGORY_LABELS['en']
-);
-const foodNamesJson = JSON.stringify(
-  TRANSLATED_FOOD_NAMES[locale] ?? TRANSLATED_FOOD_NAMES['en']
-);
 
-// JS strings passed via define:vars (template variables use {n}/{pct}/{loss} placeholders)
+// Template variables use {n}/{pct}/{loss} placeholders, substituted client-side.
 const jsStrings = {
   noFoodsFound: t(locale, 'calc.noFoodsFound'),
   yieldExpand: t(locale, 'calc.yieldExpand'),
@@ -43,7 +26,25 @@ const jsStrings = {
   outputCooked: t(locale, 'calc.cookedWeight'),
   outputRaw: t(locale, 'calc.rawWeight'),
 };
-const jsStringsJson = JSON.stringify(jsStrings);
+
+// All calculator data is handed to the client as one JSON blob in a
+// <script type="application/json"> tag. The behaviour script (below) is a
+// bundled ES module — deferred by default — so it never blocks HTML parsing.
+const calcDataJson = JSON.stringify({
+  foods: allFoods,
+  methodLabels: METHOD_LABELS[locale] ?? METHOD_LABELS['en'],
+  categoryLabels: TRANSLATED_CATEGORY_LABELS[locale] ?? TRANSLATED_CATEGORY_LABELS['en'],
+  foodNames: TRANSLATED_FOOD_NAMES[locale] ?? TRANSLATED_FOOD_NAMES['en'],
+  // Per-food source citations, translated (the raw JSON `source` field is English).
+  foodSources: Object.fromEntries(
+    allFoods.map((f) => {
+      const key = getSourceKey(f);
+      return [f.id, key === 'estimate' ? t(locale, 'calc.estimateSource') : t(locale, key)];
+    })
+  ),
+  strings: jsStrings,
+  preselectedId,
+}).replace(/</g, '\\u003c');
 ---
 
 <div id="calculator" class="w-full">
@@ -72,7 +73,7 @@ const jsStringsJson = JSON.stringify(jsStrings);
         id="search-clear"
         hidden
         aria-label={t(locale, 'calc.clearFood')}
-        class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[var(--color-mute)] hover:text-[var(--color-ink)] transition-colors text-base leading-none cursor-pointer"
+        class="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center justify-center w-6 h-6 text-[var(--color-mute)] hover:text-[var(--color-ink)] transition-colors text-base leading-none cursor-pointer"
       >×</button>
     </div>
 
@@ -126,6 +127,7 @@ const jsStringsJson = JSON.stringify(jsStrings);
       />
       <select
         id="unit-select"
+        aria-label={t(locale, 'calc.unitLabel')}
         class="px-3 py-2.5 text-sm bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-sm)] text-[var(--color-ink)] focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] transition-shadow cursor-pointer"
       >
         <option value="g">g</option>
@@ -204,6 +206,7 @@ const jsStringsJson = JSON.stringify(jsStrings);
         </label>
         <select
           id="method-select"
+          aria-label={t(locale, 'calc.cookingMethodLabel')}
           class="w-full sm:w-auto px-3 py-2 text-sm bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-sm)] text-[var(--color-ink)] focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] transition-shadow cursor-pointer"
         >
         </select>
@@ -256,13 +259,17 @@ const jsStringsJson = JSON.stringify(jsStrings);
   }
 </style>
 
-<script define:vars={{ foodsJson, methodLabelsJson, categoryLabelsJson, foodNamesJson, foodSourcesJson, preselectedId, jsStringsJson }}>
-  const FOODS = JSON.parse(foodsJson);
-  const METHOD_LABELS = JSON.parse(methodLabelsJson);
-  const CATEGORY_LABELS = JSON.parse(categoryLabelsJson);
-  const FOOD_NAMES = JSON.parse(foodNamesJson);
-  const FOOD_SOURCES = JSON.parse(foodSourcesJson);
-  const STR = JSON.parse(jsStringsJson);
+<script type="application/json" id="calc-data" set:html={calcDataJson}></script>
+
+<script>
+  const DATA = JSON.parse(document.getElementById('calc-data').textContent);
+  const FOODS = DATA.foods;
+  const METHOD_LABELS = DATA.methodLabels;
+  const CATEGORY_LABELS = DATA.categoryLabels;
+  const FOOD_NAMES = DATA.foodNames;
+  const FOOD_SOURCES = DATA.foodSources;
+  const STR = DATA.strings;
+  const preselectedId = DATA.preselectedId;
 
   // ── State ─────────────────────────────────────────────────────────────
   let state = {

@@ -43,9 +43,8 @@ const OG_LOCALES: Record<string, string> = {
 <link rel="canonical" href={canon} />
 
 <!-- Favicon -->
+<link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="raw2cook" />
 <link rel="manifest" href="/site.webmanifest" />
@@ -69,13 +68,27 @@ const OG_LOCALES: Record<string, string> = {
 <meta name="twitter:image" content={ogImage} />
 <meta name="twitter:image:alt" content={title} />
 
-<!-- Geist fonts -->
+<!-- Geist fonts — loaded without blocking the first paint. --font-sans/--font-mono
+     fall back to Arial / ui-monospace until the webfont arrives (font-display: swap). -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
+  rel="preload"
+  as="style"
   href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap"
-  rel="stylesheet"
 />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap"
+  />
+</noscript>
 
 <!-- hreflang alternate links for multilingual SEO -->
 {hreflangUrls && Object.entries(hreflangUrls).map(([lang, href]) => (
@@ -92,13 +105,28 @@ const OG_LOCALES: Record<string, string> = {
   })();
 </script>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYV3QLFX70"></script>
+<!-- Google Analytics — gtag.js (~90 KiB) is kept off the critical path: it loads on
+     the first user interaction, or after 3.5s, whichever comes first. -->
 <script is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-ZYV3QLFX70');
+  (function () {
+    var loaded = false;
+    var events = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
+    function loadGA() {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) { window.removeEventListener(e, loadGA, { passive: true }); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZYV3QLFX70';
+      document.head.appendChild(s);
+    }
+    events.forEach(function (e) { window.addEventListener(e, loadGA, { passive: true }); });
+    setTimeout(loadGA, 3500);
+  })();
 </script>
 
 <!-- JSON-LD structured data -->

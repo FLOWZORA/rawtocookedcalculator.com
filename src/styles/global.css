@@ -4,8 +4,9 @@
   /* Colors */
   --color-ink: #171717;
   --color-body: #4d4d4d;
-  --color-mute: #8f8f8f;
-  --color-faint: #a1a1a1;
+  /* mute/faint darkened to clear WCAG AA (4.5:1) on the #fafafa canvas and #fff surfaces */
+  --color-mute: #5e5e5e;
+  --color-faint: #717171;
   --color-canvas: #fafafa;
   --color-surface: #ffffff;
   --color-hairline: #ebebeb;
@@ -33,8 +34,9 @@
 :root[data-theme="dark"] {
   --color-ink: #ededed;
   --color-body: #a1a1a1;
-  --color-mute: #666666;
-  --color-faint: #444444;
+  /* mute/faint lightened to clear WCAG AA (4.5:1) on the #0a0a0a canvas and #111 surfaces */
+  --color-mute: #8f8f8f;
+  --color-faint: #7f7f7f;
   --color-canvas: #0a0a0a;
   --color-surface: #111111;
   --color-hairline: #222222;
