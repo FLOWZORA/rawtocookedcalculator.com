@@ -247,3 +247,157 @@ export function getFoodName(locale: Locale, foodId: string): string {
 export function getCategoryLabel(locale: Locale, category: string): string {
   return TRANSLATED_CATEGORY_LABELS[locale]?.[category] ?? TRANSLATED_CATEGORY_LABELS['en'][category] ?? category;
 }
+
+/**
+ * Sentence-ready food phrases for FAQ templates.
+ *
+ * Romance locales need the definite article for the name to read naturally
+ * mid-sentence ("pesar el arroz blanco", not "pesar arroz blanco"). Locales
+ * that take a bare noun (de, ja, ko, hi) fall through to the short name.
+ */
+const ARTICLED_FOOD_PHRASES: Partial<Record<Locale, Record<string, string>>> = {
+  es: {
+    'chicken-breast': 'la pechuga de pollo',
+    'chicken-thigh': 'el muslo de pollo',
+    'ground-beef-80-20': 'la carne molida',
+    'ground-beef-93-7': 'la carne molida magra',
+    'ribeye-steak': 'el bistec de costilla',
+    'pork-chop': 'la chuleta de cerdo',
+    'pork-shoulder': 'la paleta de cerdo',
+    'turkey-breast': 'la pechuga de pavo',
+    'salmon': 'el filete de salmón',
+    'shrimp': 'los camarones',
+    'white-rice': 'el arroz blanco',
+    'brown-rice': 'el arroz integral',
+    'pasta': 'la pasta',
+    'quinoa': 'la quinoa',
+    'lentils': 'las lentejas',
+    'black-beans': 'los frijoles negros',
+    'chickpeas': 'los garbanzos',
+    'kidney-beans': 'los frijoles rojos',
+    'soy-chunks': 'la soja texturizada',
+    'broccoli': 'el brócoli',
+    'spinach': 'la espinaca',
+    'potato': 'la papa',
+    'sweet-potato': 'el camote',
+  },
+  fr: {
+    'chicken-breast': 'le blanc de poulet',
+    'chicken-thigh': 'la cuisse de poulet',
+    'ground-beef-80-20': 'le bœuf haché',
+    'ground-beef-93-7': 'le bœuf haché maigre',
+    'ribeye-steak': 'l’entrecôte',
+    'pork-chop': 'la côtelette de porc',
+    'pork-shoulder': 'l’épaule de porc',
+    'turkey-breast': 'le blanc de dinde',
+    'salmon': 'le filet de saumon',
+    'shrimp': 'les crevettes',
+    'white-rice': 'le riz blanc',
+    'brown-rice': 'le riz complet',
+    'pasta': 'les pâtes',
+    'quinoa': 'le quinoa',
+    'lentils': 'les lentilles',
+    'black-beans': 'les haricots noirs',
+    'chickpeas': 'les pois chiches',
+    'kidney-beans': 'les haricots rouges',
+    'soy-chunks': 'le soja texturé',
+    'broccoli': 'le brocoli',
+    'spinach': 'les épinards',
+    'potato': 'la pomme de terre',
+    'sweet-potato': 'la patate douce',
+  },
+  pt: {
+    'chicken-breast': 'o peito de frango',
+    'chicken-thigh': 'a coxa de frango',
+    'ground-beef-80-20': 'a carne moída',
+    'ground-beef-93-7': 'a carne moída magra',
+    'ribeye-steak': 'o bife de costela',
+    'pork-chop': 'a costeleta de porco',
+    'pork-shoulder': 'a paleta de porco',
+    'turkey-breast': 'o peito de peru',
+    'salmon': 'o filé de salmão',
+    'shrimp': 'o camarão',
+    'white-rice': 'o arroz branco',
+    'brown-rice': 'o arroz integral',
+    'pasta': 'o macarrão',
+    'quinoa': 'a quinoa',
+    'lentils': 'as lentilhas',
+    'black-beans': 'o feijão preto',
+    'chickpeas': 'o grão-de-bico',
+    'kidney-beans': 'o feijão vermelho',
+    'soy-chunks': 'a soja texturizada',
+    'broccoli': 'o brócolis',
+    'spinach': 'o espinafre',
+    'potato': 'a batata',
+    'sweet-potato': 'a batata-doce',
+  },
+  it: {
+    'chicken-breast': 'il petto di pollo',
+    'chicken-thigh': 'la coscia di pollo',
+    'ground-beef-80-20': 'la carne macinata',
+    'ground-beef-93-7': 'la carne macinata magra',
+    'ribeye-steak': 'la bistecca di costata',
+    'pork-chop': 'la braciola di maiale',
+    'pork-shoulder': 'la spalla di maiale',
+    'turkey-breast': 'il petto di tacchino',
+    'salmon': 'il filetto di salmone',
+    'shrimp': 'i gamberi',
+    'white-rice': 'il riso bianco',
+    'brown-rice': 'il riso integrale',
+    'pasta': 'la pasta',
+    'quinoa': 'la quinoa',
+    'lentils': 'le lenticchie',
+    'black-beans': 'i fagioli neri',
+    'chickpeas': 'i ceci',
+    'kidney-beans': 'i fagioli rossi',
+    'soy-chunks': 'la soia texturizzata',
+    'broccoli': 'i broccoli',
+    'spinach': 'gli spinaci',
+    'potato': 'la patata',
+    'sweet-potato': 'la patata dolce',
+  },
+  en: {
+    'chicken-breast': 'chicken breast',
+    'chicken-thigh': 'chicken thigh',
+    'ground-beef-80-20': 'ground beef',
+    'ground-beef-93-7': 'lean ground beef',
+    'ribeye-steak': 'ribeye steak',
+    'pork-chop': 'pork chop',
+    'pork-shoulder': 'pork shoulder',
+    'turkey-breast': 'turkey breast',
+    'salmon': 'salmon fillet',
+    'shrimp': 'shrimp',
+    'white-rice': 'white rice',
+    'brown-rice': 'brown rice',
+    'pasta': 'pasta',
+    'quinoa': 'quinoa',
+    'lentils': 'lentils',
+    'black-beans': 'black beans',
+    'chickpeas': 'chickpeas',
+    'kidney-beans': 'kidney beans',
+    'soy-chunks': 'soy chunks',
+    'broccoli': 'broccoli',
+    'spinach': 'spinach',
+    'potato': 'potato',
+    'sweet-potato': 'sweet potato',
+  },
+};
+
+/** Matches a trailing qualifier in ASCII or full-width parentheses. */
+const PARENTHETICAL = /\s*[（(][^）)]*[）)]\s*/g;
+
+/** Translated name with the "(skinless, boneless)" style qualifier removed. */
+export function getShortFoodName(locale: Locale, foodId: string): string {
+  return getFoodName(locale, foodId).replace(PARENTHETICAL, ' ').trim();
+}
+
+/** Translated name phrased for use inside a sentence in this locale. */
+export function getFoodPhrase(locale: Locale, foodId: string): string {
+  return ARTICLED_FOOD_PHRASES[locale]?.[foodId] ?? getShortFoodName(locale, foodId);
+}
+
+/** Same as getFoodPhrase, capitalised for the start of a sentence. */
+export function getFoodPhraseCapitalized(locale: Locale, foodId: string): string {
+  const phrase = getFoodPhrase(locale, foodId);
+  return phrase.charAt(0).toUpperCase() + phrase.slice(1);
+}

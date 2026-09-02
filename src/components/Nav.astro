@@ -9,6 +9,9 @@ interface Props {
 
 const { locale = 'en', currentPath = '/' } = Astro.props;
 const prefix = getLangPrefix(locale);
+
+// The wordmark reads "<before>→<after>"; the arrow is styled separately.
+const [markBefore, markAfter] = t(locale, 'nav.wordmark').split('→');
 ---
 
 <nav class="border-b border-[var(--color-hairline)] bg-[var(--color-canvas)] sticky top-0 z-50">
@@ -18,7 +21,7 @@ const prefix = getLangPrefix(locale);
       href={`${prefix}/`}
       class="text-sm font-semibold text-[var(--color-ink)] tracking-tight no-underline hover:opacity-70 transition-opacity"
     >
-      Raw<span class="text-[var(--color-mute)] font-normal">→</span>Cooked
+      {markBefore}<span class="text-[var(--color-mute)] font-normal">→</span>{markAfter}
     </a>
 
     <!-- Nav links (desktop) -->

@@ -1,10 +1,17 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import LegalContent from '../components/LegalContent.astro';
-import { LOCALES } from '../i18n';
-import { getPrivacy } from '../i18n/legal';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalContent from '../../components/LegalContent.astro';
+import { LOCALES, isValidLocale } from '../../i18n';
+import type { Locale } from '../../i18n';
+import { getPrivacy } from '../../i18n/legal';
 
-const locale = 'en';
+export function getStaticPaths() {
+  return LOCALES.filter((l) => l !== 'en').map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+if (!isValidLocale(lang)) return Astro.redirect('/');
+const locale = lang as Locale;
 const page = getPrivacy(locale);
 
 const BASE = 'https://rawtocookedcalculator.com';
@@ -18,14 +25,14 @@ const jsonLd = {
   '@type': 'WebPage',
   name: page.metaTitle,
   description: page.metaDescription,
-  url: `${BASE}/privacy`,
+  url: `${BASE}/${locale}/privacy`,
 };
 ---
 
 <BaseLayout
   title={page.metaTitle}
   description={page.metaDescription}
-  canonicalUrl={`${BASE}/privacy`}
+  canonicalUrl={`${BASE}/${locale}/privacy`}
   jsonLd={jsonLd}
   locale={locale}
   hreflangUrls={hreflangUrls}

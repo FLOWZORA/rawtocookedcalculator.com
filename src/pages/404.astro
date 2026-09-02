@@ -1,22 +1,42 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { LOCALES, getLangPrefix } from '../i18n';
+import { NOT_FOUND } from '../i18n/errors';
+import { SLUG_TO_ID } from '../utils/foods';
+import { getShortFoodName } from '../i18n/food-names';
 
-const popularFoods = [
-  { name: 'Chicken Breast', slug: 'chicken' },
-  { name: 'White Rice', slug: 'rice' },
-  { name: 'Ground Beef', slug: 'beef' },
-  { name: 'Pasta', slug: 'pasta' },
-  { name: 'Salmon', slug: 'salmon' },
-  { name: 'Spinach', slug: 'spinach' },
-  { name: 'Broccoli', slug: 'broccoli' },
-  { name: 'Potato', slug: 'potato' },
-];
+// This file is built once and served by the host for every unmatched path on
+// every locale (/es/nope, /fr/nope, …) — there is no per-locale route to
+// build for a 404. The English copy renders statically (correct with no JS
+// and for crawlers); an inline script then swaps it for the right locale by
+// reading the first path segment. See src/i18n/errors.ts for the strings.
+
+const locale = 'en';
+const page = NOT_FOUND[locale];
+
+const popularSlugs = ['chicken', 'rice', 'beef', 'pasta', 'salmon', 'spinach', 'broccoli', 'potato'];
+const popularFoods = popularSlugs.map((slug) => ({ slug, id: SLUG_TO_ID[slug] }));
+
+// Per-locale strings and food names for the client-side swap, keyed by locale.
+const i18nData = Object.fromEntries(
+  LOCALES.map((l) => [
+    l,
+    {
+      title: NOT_FOUND[l].metaTitle,
+      description: NOT_FOUND[l].metaDescription,
+      heading: NOT_FOUND[l].heading,
+      body: NOT_FOUND[l].body,
+      homeCta: NOT_FOUND[l].homeCta,
+      popularLabel: NOT_FOUND[l].popularLabel,
+      allFoods: NOT_FOUND[l].allFoods,
+      prefix: getLangPrefix(l),
+      foodNames: Object.fromEntries(popularFoods.map((f) => [f.slug, getShortFoodName(l, f.id)])),
+    },
+  ])
+);
 ---
 
-<BaseLayout
-  title="Page Not Found | Raw to Cooked Calculator"
-  description="The page you're looking for doesn't exist. Use the Raw to Cooked Calculator to convert raw and cooked food weights."
->
+<BaseLayout title={page.metaTitle} description={page.metaDescription}>
   <section class="border-b border-[var(--color-hairline)]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
 
@@ -25,19 +45,20 @@ const popularFoods = [
         404
       </p>
 
-      <h1 class="text-2xl sm:text-3xl font-semibold text-[var(--color-ink)] tracking-tight mb-3">
-        Page not found
+      <h1 id="nf-heading" class="text-2xl sm:text-3xl font-semibold text-[var(--color-ink)] tracking-tight mb-3">
+        {page.heading}
       </h1>
-      <p class="text-sm text-[var(--color-body)] leading-relaxed max-w-md mb-8">
-        This page doesn't exist or has moved. If you typed the URL manually, check for a typo. Otherwise, the links below should get you back on track.
+      <p id="nf-body" class="text-sm text-[var(--color-body)] leading-relaxed max-w-md mb-8">
+        {page.body}
       </p>
 
       <!-- Primary CTA -->
       <a
+        id="nf-home-cta"
         href="/"
         class="inline-flex items-center gap-2 px-4 py-2.5 bg-[var(--color-ink)] text-[var(--color-canvas)] text-sm font-medium rounded-[var(--radius-sm)] no-underline hover:opacity-80 transition-opacity"
       >
-        ← Back to homepage
+        {page.homeCta}
       </a>
     </div>
   </section>
@@ -45,25 +66,61 @@ const popularFoods = [
   <!-- Popular foods -->
   <section>
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-      <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-5">
-        Popular calculators
+      <p id="nf-popular-label" class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-5">
+        {page.popularLabel}
       </p>
       <div class="flex flex-wrap gap-2">
-        {popularFoods.map((food) => (
+        {popularFoods.map(({ slug, id }) => (
           <a
-            href={`/${food.slug}`}
-            class="text-sm px-3 py-2 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-pill-category)] text-[var(--color-body)] no-underline hover:text-[var(--color-ink)] hover:bg-[var(--color-hairline-soft)] transition-colors"
+            href={`/${slug}`}
+            data-food-slug={slug}
+            class="nf-food-link text-sm px-3 py-2 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-pill-category)] text-[var(--color-body)] no-underline hover:text-[var(--color-ink)] hover:bg-[var(--color-hairline-soft)] transition-colors"
           >
-            {food.name}
+            {getShortFoodName(locale, id)}
           </a>
         ))}
         <a
+          id="nf-all-foods"
           href="/"
           class="text-sm px-3 py-2 bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-pill-category)] text-[var(--color-mute)] no-underline hover:text-[var(--color-ink)] hover:bg-[var(--color-hairline-soft)] transition-colors"
         >
-          All foods →
+          {page.allFoods}
         </a>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script define:vars={{ i18nData }}>
+  (function () {
+    var seg = location.pathname.split('/').filter(Boolean)[0];
+    var d = i18nData[seg];
+    if (!d) return; // English (or unrecognized) path — the static markup is already correct.
+
+    document.title = d.title;
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', d.description);
+    document.documentElement.lang = seg;
+
+    var set = function (id, text) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = text;
+    };
+    set('nf-heading', d.heading);
+    set('nf-body', d.body);
+    set('nf-home-cta', d.homeCta);
+    set('nf-popular-label', d.popularLabel);
+    set('nf-all-foods', d.allFoods);
+
+    var homeCta = document.getElementById('nf-home-cta');
+    if (homeCta) homeCta.href = d.prefix + '/';
+    var allFoods = document.getElementById('nf-all-foods');
+    if (allFoods) allFoods.href = d.prefix + '/';
+
+    document.querySelectorAll('.nf-food-link').forEach(function (a) {
+      var slug = a.getAttribute('data-food-slug');
+      a.href = d.prefix + '/' + slug;
+      if (d.foodNames[slug]) a.textContent = d.foodNames[slug];
+    });
+  })();
+</script>

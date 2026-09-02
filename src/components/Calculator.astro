@@ -1,6 +1,7 @@
 ---
-import { getAllFoods, COOKING_METHOD_LABELS } from '../utils/foods';
+import { getAllFoods, getSourceKey } from '../utils/foods';
 import { t } from '../i18n';
+import { METHOD_LABELS } from '../i18n/content';
 import type { Locale } from '../i18n';
 import { TRANSLATED_FOOD_NAMES, TRANSLATED_CATEGORY_LABELS } from '../i18n/food-names';
 
@@ -13,7 +14,16 @@ const { preselectedId = '', locale = 'en' } = Astro.props;
 
 const allFoods = getAllFoods();
 const foodsJson = JSON.stringify(allFoods);
-const methodLabelsJson = JSON.stringify(COOKING_METHOD_LABELS);
+const methodLabelsJson = JSON.stringify(METHOD_LABELS[locale] ?? METHOD_LABELS['en']);
+// Per-food source citations, translated (the raw JSON `source` field is English).
+const foodSourcesJson = JSON.stringify(
+  Object.fromEntries(
+    allFoods.map((f) => {
+      const key = getSourceKey(f);
+      return [f.id, key === 'estimate' ? t(locale, 'calc.estimateSource') : t(locale, key)];
+    })
+  )
+);
 const categoryLabelsJson = JSON.stringify(
   TRANSLATED_CATEGORY_LABELS[locale] ?? TRANSLATED_CATEGORY_LABELS['en']
 );
@@ -26,7 +36,6 @@ const jsStrings = {
   noFoodsFound: t(locale, 'calc.noFoodsFound'),
   yieldExpand: t(locale, 'calc.yieldExpand'),
   yieldLoss: t(locale, 'calc.yieldLoss'),
-  estimateSource: t(locale, 'calc.estimateSource'),
   morePrecise: t(locale, 'calc.morePrecise'),
   hidePrecise: t(locale, 'calc.hidePrecise'),
   rawWeight: t(locale, 'calc.rawWeight'),
@@ -178,7 +187,7 @@ const jsStringsJson = JSON.stringify(jsStrings);
 
     <!-- Estimate disclosure -->
     <div id="estimate-note" hidden class="text-xs text-[var(--color-warning)] bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-sm)] px-3 py-2 mb-3">
-      <strong>Note:</strong> {t(locale, 'calc.estimateNote')}
+      <strong>{t(locale, 'calc.noteLabel')}</strong> {t(locale, 'calc.estimateNote')}
     </div>
 
     <!-- More precise toggle (only shown if food has yield_by_method) -->
@@ -247,11 +256,12 @@ const jsStringsJson = JSON.stringify(jsStrings);
   }
 </style>
 
-<script define:vars={{ foodsJson, methodLabelsJson, categoryLabelsJson, foodNamesJson, preselectedId, jsStringsJson }}>
+<script define:vars={{ foodsJson, methodLabelsJson, categoryLabelsJson, foodNamesJson, foodSourcesJson, preselectedId, jsStringsJson }}>
   const FOODS = JSON.parse(foodsJson);
   const METHOD_LABELS = JSON.parse(methodLabelsJson);
   const CATEGORY_LABELS = JSON.parse(categoryLabelsJson);
   const FOOD_NAMES = JSON.parse(foodNamesJson);
+  const FOOD_SOURCES = JSON.parse(foodSourcesJson);
   const STR = JSON.parse(jsStringsJson);
 
   // ── State ─────────────────────────────────────────────────────────────
@@ -470,7 +480,7 @@ const jsStringsJson = JSON.stringify(jsStrings);
 
     // Citation
     const isEstimate = state.food.source.startsWith('estimate');
-    citationSource.textContent = isEstimate ? STR.estimateSource : state.food.source;
+    citationSource.textContent = FOOD_SOURCES[state.food.id] || state.food.source;
     estimateNote.hidden = !isEstimate;
 
     // More precise panel

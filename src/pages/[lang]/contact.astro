@@ -1,10 +1,17 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import ContactContent from '../components/ContactContent.astro';
-import { LOCALES } from '../i18n';
-import { getContact } from '../i18n/company';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactContent from '../../components/ContactContent.astro';
+import { LOCALES, isValidLocale } from '../../i18n';
+import type { Locale } from '../../i18n';
+import { getContact } from '../../i18n/company';
 
-const locale = 'en';
+export function getStaticPaths() {
+  return LOCALES.filter((l) => l !== 'en').map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+if (!isValidLocale(lang)) return Astro.redirect('/');
+const locale = lang as Locale;
 const page = getContact(locale);
 
 const BASE = 'https://rawtocookedcalculator.com';
@@ -18,14 +25,14 @@ const jsonLd = {
   '@type': 'ContactPage',
   name: page.metaTitle,
   description: page.metaDescription,
-  url: `${BASE}/contact`,
+  url: `${BASE}/${locale}/contact`,
 };
 ---
 
 <BaseLayout
   title={page.metaTitle}
   description={page.metaDescription}
-  canonicalUrl={`${BASE}/contact`}
+  canonicalUrl={`${BASE}/${locale}/contact`}
   jsonLd={jsonLd}
   locale={locale}
   hreflangUrls={hreflangUrls}

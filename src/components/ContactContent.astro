@@ -1,0 +1,104 @@
+---
+import type { Locale } from '../i18n';
+import { getContact } from '../i18n/company';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const page = getContact(locale);
+const EMAIL = 'hello@rawtocookedcalculator.com';
+---
+
+<!-- Hero -->
+<section class="border-b border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+      {page.eyebrow}
+    </p>
+    <h1 class="text-3xl sm:text-4xl font-semibold text-[var(--color-ink)] tracking-[-1.5px] leading-tight mb-4">
+      {page.heading}
+    </h1>
+    <p class="text-sm text-[var(--color-body)] leading-relaxed max-w-xl">
+      {page.lede}
+    </p>
+  </div>
+</section>
+
+<!-- Contact card -->
+<section class="border-b border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <div class="max-w-2xl">
+      <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-6 mb-8">
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+          {page.emailLabel}
+        </p>
+        <a
+          href={`mailto:${EMAIL}`}
+          class="text-lg font-semibold text-[var(--color-link)] hover:underline break-all"
+        >
+          {EMAIL}
+        </a>
+        <p class="text-sm text-[var(--color-mute)] mt-2 leading-relaxed">
+          {page.emailNote}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What we can help with -->
+<section class="border-b border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <div class="max-w-2xl">
+      <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-6">
+        {page.helpHeading}
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+          <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+            {page.canHelpLabel}
+          </p>
+          <ul class="space-y-2 text-sm text-[var(--color-body)] leading-relaxed">
+            {page.canHelp.map((item) => (
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--color-mute)] mt-0.5 shrink-0">·</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+          <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+            {page.outOfScopeLabel}
+          </p>
+          <ul class="space-y-2 text-sm text-[var(--color-body)] leading-relaxed">
+            {page.outOfScope.map((item) => (
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--color-mute)] mt-0.5 shrink-0">·</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Data question tip -->
+<section>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <div class="max-w-2xl">
+      <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+          {page.tipLabel}
+        </p>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed">
+          {page.tipText}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

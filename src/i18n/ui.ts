@@ -144,6 +144,19 @@ export const ui = {
     'page.homeTitle': 'Raw to Cooked Calculator | Free Food Weight Converter',
     'page.homeDescription':
       'Free raw to cooked weight conversion calculator for meat, rice & 20+ foods. Convert raw chicken, ground beef, rice & more — get full macros from USDA data.',
+    // Footer company links, yield descriptions, data-source labels
+    "footer.company": "Company",
+    "footer.about": "About Us",
+    "footer.contact": "Contact",
+    "footer.privacy": "Privacy Policy",
+    "footer.terms": "Terms & Conditions",
+    "yield.loses": "Loses {loss}% of its weight when cooked",
+    "yield.expands": "Expands to {n}× its dry weight when cooked",
+    "source.usdaMeatTable": "USDA Table of Cooking Yields for Meat and Poultry",
+    "source.usdaFdc": "USDA FoodData Central (raw vs. cooked entries)",
+    "calc.noteLabel": "Note:",
+
+    "footer.brand": "Raw→Cooked Calculator",
   },
 
   es: {
@@ -266,6 +279,19 @@ export const ui = {
     'page.homeTitle': 'Calculadora Crudo a Cocido | Datos de Rendimiento USDA y Macros Completos',
     'page.homeDescription':
       'Convierte el peso de cualquier alimento entre crudo y cocido. Obtén calorías, proteínas, carbohidratos y grasas para cualquier cantidad. Cubre carne, cereales y verduras — basado en datos del USDA.',
+    // Footer company links, yield descriptions, data-source labels
+    "footer.company": "Empresa",
+    "footer.about": "Sobre nosotros",
+    "footer.contact": "Contacto",
+    "footer.privacy": "Política de privacidad",
+    "footer.terms": "Términos y condiciones",
+    "yield.loses": "Pérdida del {loss}% del peso al cocinarse",
+    "yield.expands": "El peso se multiplica por {n} al cocinarse",
+    "source.usdaMeatTable": "Tabla de Rendimientos de Cocción del USDA para Carne y Aves",
+    "source.usdaFdc": "USDA FoodData Central (entradas en crudo y cocido)",
+    "calc.noteLabel": "Nota:",
+
+    "footer.brand": "Calculadora Crudo→Cocido",
   },
 
   fr: {
@@ -388,6 +414,19 @@ export const ui = {
     'page.homeTitle': 'Calculateur Cru à Cuit | Données de Rendement USDA & Macros Complets',
     'page.homeDescription':
       'Convertissez le poids de n\'importe quel aliment entre l\'état cru et cuit. Obtenez les calories, protéines, glucides et lipides pour n\'importe quelle quantité — basé sur les données USDA.',
+    // Footer company links, yield descriptions, data-source labels
+    "footer.company": "Entreprise",
+    "footer.about": "À propos",
+    "footer.contact": "Contact",
+    "footer.privacy": "Politique de confidentialité",
+    "footer.terms": "Conditions générales",
+    "yield.loses": "Perte de {loss} % du poids à la cuisson",
+    "yield.expands": "Poids multiplié par {n} à la cuisson",
+    "source.usdaMeatTable": "Table des rendements de cuisson de l’USDA pour la viande et la volaille",
+    "source.usdaFdc": "USDA FoodData Central (entrées crues et cuites)",
+    "calc.noteLabel": "Remarque :",
+
+    "footer.brand": "Calculateur Cru→Cuit",
   },
 
   de: {
@@ -510,6 +549,19 @@ export const ui = {
     'page.homeTitle': 'Roh-zu-Gekocht-Rechner | USDA-Ausbeute & Vollständige Makros',
     'page.homeDescription':
       'Rechne das Gewicht beliebiger Lebensmittel zwischen roh und gekocht um. Erhalte Kalorien, Protein, Kohlenhydrate und Fett für jede Menge. Fleisch, Getreide und Gemüse — basierend auf USDA-Daten.',
+    // Footer company links, yield descriptions, data-source labels
+    "footer.company": "Unternehmen",
+    "footer.about": "Über uns",
+    "footer.contact": "Kontakt",
+    "footer.privacy": "Datenschutzerklärung",
+    "footer.terms": "Allgemeine Geschäftsbedingungen",
+    "yield.loses": "{loss} % Gewichtsverlust beim Garen",
+    "yield.expands": "{n}-faches Gewicht nach dem Garen",
+    "source.usdaMeatTable": "USDA-Tabelle der Garausbeuten für Fleisch und Geflügel",
+    "source.usdaFdc": "USDA FoodData Central (rohe und gegarte Einträge)",
+    "calc.noteLabel": "Hinweis:",
+
+    "footer.brand": "Roh→Gekocht Rechner",
   },
 
   pt: {
@@ -632,6 +684,19 @@ export const ui = {
     'page.homeTitle': 'Calculadora Cru para Cozido | Dados de Rendimento USDA & Macros Completos',
     'page.homeDescription':
       'Converta o peso de qualquer alimento entre cru e cozido. Obtenha calorias, proteínas, carboidratos e gorduras para qualquer quantidade. Carnes, grãos e vegetais — baseado em dados do USDA.',
+    // Footer company links, yield descriptions, data-source labels
+    "footer.company": "Empresa",
+    "footer.about": "Sobre nós",
+    "footer.contact": "Contato",
+    "footer.privacy": "Política de privacidade",
+    "footer.terms": "Termos e condições",
+    "yield.loses": "Perda de {loss}% do peso ao cozinhar",
+    "yield.expands": "O peso é multiplicado por {n} ao cozinhar",
+    "source.usdaMeatTable": "Tabela de Rendimentos de Cocção do USDA para Carnes e Aves",
+    "source.usdaFdc": "USDA FoodData Central (entradas cruas e cozidas)",
+    "calc.noteLabel": "Observação:",
+
+    "footer.brand": "Calculadora Cru→Cozido",
   },
 
   ja: {
@@ -754,6 +819,19 @@ export const ui = {
     'page.homeTitle': '生から調理済み計算機 | USDA収率データと完全なマクロ',
     'page.homeDescription':
       'あらゆる食品の生から調理済みの重量を換算。カロリー、タンパク質、炭水化物、脂質をあらゆる量で取得 — USDAデータに基づく。',
+    // Footer company links, yield descriptions, data-source labels
+    "footer.company": "会社情報",
+    "footer.about": "運営者について",
+    "footer.contact": "お問い合わせ",
+    "footer.privacy": "プライバシーポリシー",
+    "footer.terms": "利用規約",
+    "yield.loses": "調理すると重量が{loss}%減ります",
+    "yield.expands": "調理すると乾燥重量の{n}倍に膨らみます",
+    "source.usdaMeatTable": "USDA 食肉・鶏肉の調理歩留まり表",
+    "source.usdaFdc": "USDA FoodData Central（生と加熱後のデータを比較）",
+    "calc.noteLabel": "注:",
+
+    "footer.brand": "生→調理済み 計算機",
   },
 
   ko: {
@@ -876,6 +954,19 @@ export const ui = {
     'page.homeTitle': '생 → 조리 계산기 | USDA 수율 데이터 및 완전한 매크로',
     'page.homeDescription':
       '모든 식품의 생 및 조리된 무게를 변환하세요. 모든 양에 대한 칼로리, 단백질, 탄수화물, 지방을 얻으세요 — USDA 데이터 기반.',
+    // Footer company links, yield descriptions, data-source labels
+    "footer.company": "회사 정보",
+    "footer.about": "사이트 소개",
+    "footer.contact": "문의하기",
+    "footer.privacy": "개인정보 처리방침",
+    "footer.terms": "이용약관",
+    "yield.loses": "조리하면 무게의 {loss}%가 줄어듭니다",
+    "yield.expands": "조리하면 건조 중량의 {n}배로 불어납니다",
+    "source.usdaMeatTable": "USDA 육류·가금류 조리 수율표",
+    "source.usdaFdc": "USDA FoodData Central (생·조리 항목 비교)",
+    "calc.noteLabel": "참고:",
+
+    "footer.brand": "생→조리 계산기",
   },
 
   it: {
@@ -998,6 +1089,19 @@ export const ui = {
     'page.homeTitle': 'Calcolatore da Crudo a Cotto | Dati di Resa USDA e Macronutrienti Completi',
     'page.homeDescription':
       'Converti il peso di qualsiasi alimento tra crudo e cotto. Ottieni calorie, proteine, carboidrati e grassi per qualsiasi quantità. Carni, cereali e verdure — basato sui dati USDA.',
+    // Footer company links, yield descriptions, data-source labels
+    "footer.company": "Azienda",
+    "footer.about": "Chi siamo",
+    "footer.contact": "Contatti",
+    "footer.privacy": "Informativa sulla privacy",
+    "footer.terms": "Termini e condizioni",
+    "yield.loses": "Perdita del {loss}% del peso in cottura",
+    "yield.expands": "Peso moltiplicato per {n} in cottura",
+    "source.usdaMeatTable": "Tabella USDA delle rese di cottura per carne e pollame",
+    "source.usdaFdc": "USDA FoodData Central (voci crude e cotte)",
+    "calc.noteLabel": "Nota:",
+
+    "footer.brand": "Calcolatore Crudo→Cotto",
   },
 
   hi: {
@@ -1120,6 +1224,19 @@ export const ui = {
     'page.homeTitle': 'कच्चे से पके का कैलकुलेटर | USDA यील्ड डेटा और पूरे मैक्रो',
     'page.homeDescription':
       'किसी भी खाद्य पदार्थ का कच्चे और पके के बीच वजन बदलें। किसी भी मात्रा के लिए कैलोरी, प्रोटीन, कार्ब्स और वसा पाएं — USDA डेटा पर आधारित।',
+    // Footer company links, yield descriptions, data-source labels
+    "footer.company": "कंपनी",
+    "footer.about": "हमारे बारे में",
+    "footer.contact": "संपर्क करें",
+    "footer.privacy": "गोपनीयता नीति",
+    "footer.terms": "नियम और शर्तें",
+    "yield.loses": "पकाने पर अपने वजन का {loss}% खो देता है",
+    "yield.expands": "पकाने पर सूखे वजन का {n} गुना हो जाता है",
+    "source.usdaMeatTable": "USDA मांस और मुर्गी कुकिंग यील्ड तालिका",
+    "source.usdaFdc": "USDA FoodData Central (कच्ची और पकी प्रविष्टियों की तुलना)",
+    "calc.noteLabel": "ध्यान दें:",
+
+    "footer.brand": "कच्चा→पका कैलकुलेटर",
   },
 } as const;
 

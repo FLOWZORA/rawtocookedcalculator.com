@@ -1,6 +1,7 @@
 ---
 import { t, getLangPrefix } from '../i18n';
 import type { Locale } from '../i18n';
+import { getShortFoodName } from '../i18n/food-names';
 
 interface Props {
   locale?: Locale;
@@ -8,6 +9,22 @@ interface Props {
 
 const { locale = 'en' } = Astro.props;
 const prefix = getLangPrefix(locale);
+
+const popularFoods: { id: string; slug: string }[] = [
+  { id: 'chicken-breast', slug: 'chicken' },
+  { id: 'white-rice', slug: 'rice' },
+  { id: 'ground-beef-80-20', slug: 'beef' },
+  { id: 'pasta', slug: 'pasta' },
+  { id: 'salmon', slug: 'salmon' },
+  { id: 'broccoli', slug: 'broccoli' },
+];
+
+const companyLinks: { label: string; href: string }[] = [
+  { label: t(locale, 'footer.about'), href: `${prefix}/about` },
+  { label: t(locale, 'footer.contact'), href: `${prefix}/contact` },
+  { label: t(locale, 'footer.privacy'), href: `${prefix}/privacy` },
+  { label: t(locale, 'footer.terms'), href: `${prefix}/terms` },
+];
 ---
 
 <footer class="mt-auto border-t border-[var(--color-hairline)] bg-[var(--color-canvas)]">
@@ -15,7 +32,7 @@ const prefix = getLangPrefix(locale);
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-10">
       <!-- Brand -->
       <div class="col-span-2 sm:col-span-1">
-        <p class="text-sm font-semibold text-[var(--color-ink)] mb-2">Raw→Cooked Calculator</p>
+        <p class="text-sm font-semibold text-[var(--color-ink)] mb-2">{t(locale, 'footer.brand')}</p>
         <p class="text-xs text-[var(--color-mute)] leading-relaxed">
           {t(locale, 'footer.tagline')}
         </p>
@@ -27,17 +44,10 @@ const prefix = getLangPrefix(locale);
           {t(locale, 'footer.popularFoods')}
         </p>
         <ul class="space-y-1.5">
-          {[
-            ['Chicken Breast', `${prefix}/chicken`],
-            ['White Rice', `${prefix}/rice`],
-            ['Ground Beef', `${prefix}/beef`],
-            ['Pasta', `${prefix}/pasta`],
-            ['Salmon', `${prefix}/salmon`],
-            ['Broccoli', `${prefix}/broccoli`],
-          ].map(([label, href]) => (
+          {popularFoods.map(({ id, slug }) => (
             <li>
-              <a href={href} class="text-xs text-[var(--color-body)] hover:text-[var(--color-ink)] transition-colors no-underline">
-                {label}
+              <a href={`${prefix}/${slug}`} class="text-xs text-[var(--color-body)] hover:text-[var(--color-ink)] transition-colors no-underline">
+                {getShortFoodName(locale, id)}
               </a>
             </li>
           ))}
@@ -59,17 +69,14 @@ const prefix = getLangPrefix(locale);
       <!-- Company -->
       <div>
         <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
-          Company
+          {t(locale, 'footer.company')}
         </p>
         <ul class="space-y-1.5">
-          {[
-            ['About Us', '/about'],
-            ['Contact', '/contact'],
-            ['Privacy Policy', '/privacy'],
-            ['Terms &amp; Conditions', '/terms'],
-          ].map(([label, href]) => (
+          {companyLinks.map(({ label, href }) => (
             <li>
-              <a href={href} class="text-xs text-[var(--color-body)] hover:text-[var(--color-ink)] transition-colors no-underline" set:html={label} />
+              <a href={href} class="text-xs text-[var(--color-body)] hover:text-[var(--color-ink)] transition-colors no-underline">
+                {label}
+              </a>
             </li>
           ))}
         </ul>

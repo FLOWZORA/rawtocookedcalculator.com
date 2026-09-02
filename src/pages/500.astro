@@ -1,11 +1,36 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { LOCALES, getLangPrefix } from '../i18n';
+import { SERVER_ERROR } from '../i18n/errors';
+
+// Same approach as 404.astro: this file is served for every unmatched path
+// on every locale, so there is no per-locale route to build. English renders
+// statically; an inline script swaps it by reading the first path segment.
+
+const locale = 'en';
+const page = SERVER_ERROR[locale];
+const EMAIL = 'hello@rawtocookedcalculator.com';
+
+const i18nData = Object.fromEntries(
+  LOCALES.map((l) => [
+    l,
+    {
+      title: SERVER_ERROR[l].metaTitle,
+      description: SERVER_ERROR[l].metaDescription,
+      heading: SERVER_ERROR[l].heading,
+      body: SERVER_ERROR[l].body,
+      homeCta: SERVER_ERROR[l].homeCta,
+      reload: SERVER_ERROR[l].reload,
+      helpLabel: SERVER_ERROR[l].helpLabel,
+      helpBefore: SERVER_ERROR[l].helpBefore,
+      helpAfter: SERVER_ERROR[l].helpAfter,
+      prefix: getLangPrefix(l),
+    },
+  ])
+);
 ---
 
-<BaseLayout
-  title="Server Error | Raw to Cooked Calculator"
-  description="Something went wrong on our end. The Raw to Cooked Calculator will be back shortly."
->
+<BaseLayout title={page.metaTitle} description={page.metaDescription}>
   <section class="border-b border-[var(--color-hairline)]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
 
@@ -14,25 +39,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         500
       </p>
 
-      <h1 class="text-2xl sm:text-3xl font-semibold text-[var(--color-ink)] tracking-tight mb-3">
-        Something went wrong
+      <h1 id="se-heading" class="text-2xl sm:text-3xl font-semibold text-[var(--color-ink)] tracking-tight mb-3">
+        {page.heading}
       </h1>
-      <p class="text-sm text-[var(--color-body)] leading-relaxed max-w-md mb-8">
-        There was an unexpected error on our end. This is usually temporary — try refreshing the page. If the problem persists, check back in a few minutes.
+      <p id="se-body" class="text-sm text-[var(--color-body)] leading-relaxed max-w-md mb-8">
+        {page.body}
       </p>
 
       <div class="flex flex-wrap gap-3">
         <a
+          id="se-home-cta"
           href="/"
           class="inline-flex items-center gap-2 px-4 py-2.5 bg-[var(--color-ink)] text-[var(--color-canvas)] text-sm font-medium rounded-[var(--radius-sm)] no-underline hover:opacity-80 transition-opacity"
         >
-          ← Back to homepage
+          {page.homeCta}
         </a>
         <button
+          id="se-reload"
           onclick="window.location.reload()"
           class="inline-flex items-center gap-2 px-4 py-2.5 bg-[var(--color-surface)] text-[var(--color-ink)] border border-[var(--color-hairline)] text-sm font-medium rounded-[var(--radius-sm)] hover:bg-[var(--color-hairline-soft)] transition-colors cursor-pointer"
         >
-          Reload page
+          {page.reload}
         </button>
       </div>
     </div>
@@ -42,17 +69,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section>
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
       <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5 max-w-lg">
-        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
-          If this keeps happening
+        <p id="se-help-label" class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+          {page.helpLabel}
         </p>
         <p class="text-sm text-[var(--color-body)] leading-relaxed">
-          Email us at{' '}
-          <a href="mailto:hello@rawtocookedcalculator.com" class="text-[var(--color-link)] hover:underline">
-            hello@rawtocookedcalculator.com
-          </a>
-          {' '}and we'll look into it.
+          <span id="se-help-before">{page.helpBefore}</span>{' '}
+          <a href={`mailto:${EMAIL}`} class="text-[var(--color-link)] hover:underline">{EMAIL}</a>
+          {' '}<span id="se-help-after">{page.helpAfter}</span>
         </p>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script define:vars={{ i18nData }}>
+  (function () {
+    var seg = location.pathname.split('/').filter(Boolean)[0];
+    var d = i18nData[seg];
+    if (!d) return; // English (or unrecognized) path — the static markup is already correct.
+
+    document.title = d.title;
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', d.description);
+    document.documentElement.lang = seg;
+
+    var set = function (id, text) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = text;
+    };
+    set('se-heading', d.heading);
+    set('se-body', d.body);
+    set('se-home-cta', d.homeCta);
+    set('se-reload', d.reload);
+    set('se-help-label', d.helpLabel);
+    set('se-help-before', d.helpBefore);
+    set('se-help-after', d.helpAfter);
+
+    var homeCta = document.getElementById('se-home-cta');
+    if (homeCta) homeCta.href = d.prefix + '/';
+  })();
+</script>

@@ -1,0 +1,44 @@
+---
+import type { LegalPage } from '../i18n/legal';
+
+interface Props {
+  page: LegalPage;
+}
+
+const { page } = Astro.props;
+---
+
+<!-- Hero -->
+<section class="border-b border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+      {page.eyebrow}
+    </p>
+    <h1 class="text-3xl sm:text-4xl font-semibold text-[var(--color-ink)] tracking-[-1.5px] leading-tight mb-4">
+      {page.heading}
+    </h1>
+    <p class="text-sm text-[var(--color-mute)] font-mono">
+      {page.lastUpdatedLabel}: {page.lastUpdated}
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <div class="max-w-2xl space-y-10">
+      {page.sections.map((section) => (
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-3">
+            {section.heading}
+          </h2>
+          {section.paragraphs.map((html, i) => (
+            <p
+              class={`text-sm text-[var(--color-body)] leading-relaxed ${i === section.paragraphs.length - 1 ? '' : 'mb-4'}`}
+              set:html={html}
+            />
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

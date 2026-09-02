@@ -40,11 +40,19 @@ export const GET: APIRoute = () => {
       foodSlugs.map((s) => entry(`${BASE}/${l}/${s}`, '0.5', 'monthly'))
     ),
 
-    // Company / info pages
+    // Company / info pages (English)
     entry(`${BASE}/about`, '0.4', 'yearly'),
     entry(`${BASE}/contact`, '0.4', 'yearly'),
     entry(`${BASE}/privacy`, '0.3', 'yearly'),
     entry(`${BASE}/terms`, '0.3', 'yearly'),
+
+    // Localized company / info pages
+    ...nonEnglishLocales.flatMap((l) => [
+      entry(`${BASE}/${l}/about`, '0.3', 'yearly'),
+      entry(`${BASE}/${l}/contact`, '0.3', 'yearly'),
+      entry(`${BASE}/${l}/privacy`, '0.2', 'yearly'),
+      entry(`${BASE}/${l}/terms`, '0.2', 'yearly'),
+    ]),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

@@ -1,0 +1,281 @@
+---
+import Calculator from './Calculator.astro';
+import { t, getLangPrefix } from '../i18n';
+import type { Locale } from '../i18n';
+import { getHome } from '../i18n/home';
+import { getHomeFaq } from '../i18n/faq';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const prefix = getLangPrefix(locale);
+const home = getHome(locale);
+const article = home.article;
+const faqItems = getHomeFaq(locale);
+
+const categories = [
+  {
+    label: t(locale, 'browse.catMeat'),
+    foods: [
+      { name: t(locale, 'browse.food.chicken'), slug: 'chicken', note: t(locale, 'browse.note.chicken') },
+      { name: t(locale, 'browse.food.beef'), slug: 'beef', note: t(locale, 'browse.note.beef') },
+      { name: t(locale, 'browse.food.salmon'), slug: 'salmon', note: t(locale, 'browse.note.salmon') },
+      { name: t(locale, 'browse.food.pork'), slug: 'pork', note: t(locale, 'browse.note.pork') },
+    ],
+  },
+  {
+    label: t(locale, 'browse.catGrains'),
+    foods: [
+      { name: t(locale, 'browse.food.rice'), slug: 'rice', note: t(locale, 'browse.note.rice') },
+      { name: t(locale, 'browse.food.pasta'), slug: 'pasta', note: t(locale, 'browse.note.pasta') },
+      { name: t(locale, 'browse.food.lentils'), slug: 'lentils', note: t(locale, 'browse.note.lentils') },
+      { name: t(locale, 'browse.food.quinoa'), slug: 'quinoa', note: t(locale, 'browse.note.quinoa') },
+    ],
+  },
+  {
+    label: t(locale, 'browse.catVeg'),
+    foods: [
+      { name: t(locale, 'browse.food.spinach'), slug: 'spinach', note: t(locale, 'browse.note.spinach') },
+      { name: t(locale, 'browse.food.broccoli'), slug: 'broccoli', note: t(locale, 'browse.note.broccoli') },
+      { name: t(locale, 'browse.food.potato'), slug: 'potato', note: t(locale, 'browse.note.potato') },
+      { name: t(locale, 'browse.food.sweetPotato'), slug: 'sweet-potato', note: t(locale, 'browse.note.sweetPotato') },
+    ],
+  },
+];
+---
+
+<!-- Hero -->
+<section class="border-b border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-14 sm:py-20 text-center">
+    <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-5">
+      {t(locale, 'hero.eyebrow')}
+    </p>
+    <h1 class="text-5xl sm:text-7xl font-semibold text-[var(--color-ink)] tracking-[-1.5px] sm:tracking-[-3px] leading-[1.05] mb-6 text-balance">
+      {t(locale, 'hero.heading')}
+    </h1>
+    <p class="text-lg sm:text-xl text-[var(--color-body)] max-w-2xl mx-auto leading-relaxed mb-3">
+      {t(locale, 'hero.description')}
+    </p>
+    <p class="text-sm text-[var(--color-mute)]">
+      {t(locale, 'hero.usda')}
+    </p>
+  </div>
+</section>
+
+<!-- Calculator -->
+<section>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+    <div class="max-w-lg">
+      <Calculator locale={locale} />
+    </div>
+  </div>
+</section>
+
+<!-- Category browse -->
+<section class="border-t border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <h2 class="text-2xl font-semibold text-[var(--color-ink)] tracking-[-0.8px] mb-2">
+      {t(locale, 'browse.heading')}
+    </h2>
+    <p class="text-sm text-[var(--color-mute)] mb-8">
+      {t(locale, 'browse.description')}
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      {categories.map((cat) => (
+        <div>
+          <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-4">
+            {cat.label}
+          </p>
+          <ul class="space-y-2.5">
+            {cat.foods.map((food) => (
+              <li>
+                <a
+                  href={`${prefix}/${food.slug}`}
+                  class="flex items-center justify-between group no-underline py-2"
+                >
+                  <span class="text-sm text-[var(--color-body)] group-hover:text-[var(--color-ink)] transition-colors">
+                    {food.name}
+                  </span>
+                  <span class="text-xs text-[var(--color-faint)] font-mono group-hover:text-[var(--color-mute)] transition-colors ml-4 shrink-0">
+                    {food.note}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Conversion formula -->
+<section class="border-t border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-2">
+      {home.formulaHeading}
+    </h2>
+    <p class="text-sm text-[var(--color-mute)] mb-8 max-w-xl">
+      {home.formulaIntro}
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mb-8">
+      <!-- Raw → Cooked -->
+      <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+          {t(locale, 'calc.rawToCooked')}
+        </p>
+        <p class="font-mono text-sm text-[var(--color-ink)] leading-relaxed">
+          {home.cookedEqRaw} <span class="text-[var(--color-mute)]">{home.yieldExpr}</span>
+        </p>
+        <p class="text-xs text-[var(--color-mute)] mt-3 leading-relaxed" set:html={home.rtcExampleHtml} />
+      </div>
+
+      <!-- Cooked → Raw -->
+      <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+          {t(locale, 'calc.cookedToRaw')}
+        </p>
+        <p class="font-mono text-sm text-[var(--color-ink)] leading-relaxed">
+          {home.rawEqCooked} <span class="text-[var(--color-mute)]">{home.yieldExpr}</span>
+        </p>
+        <p class="text-xs text-[var(--color-mute)] mt-3 leading-relaxed" set:html={home.ctrExampleHtml} />
+      </div>
+    </div>
+
+    <!-- Macro note -->
+    <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5 max-w-2xl">
+      <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+        {home.macroRuleLabel}
+      </p>
+      <p class="font-mono text-sm text-[var(--color-ink)] leading-relaxed mb-3">
+        {home.macroPre} <span class="text-[var(--color-mute)]">{home.macroVar}</span> {home.macroPost}
+      </p>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed" set:html={home.macroTextHtml} />
+    </div>
+  </div>
+</section>
+
+<!-- Spinach callout -->
+<section class="border-t border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-6 max-w-2xl">
+      <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+        {t(locale, 'callout.eyebrow')}
+      </p>
+      <h3 class="text-lg font-semibold text-[var(--color-ink)] tracking-tight mb-2">
+        {t(locale, 'callout.heading')}
+      </h3>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+        {t(locale, 'callout.description')}
+      </p>
+      <div class="flex gap-3 flex-wrap">
+        <a
+          href={`${prefix}/spinach`}
+          class="text-xs px-3 py-1.5 bg-[var(--color-ink)] text-[var(--color-canvas)] rounded-[var(--radius-pill)] font-medium no-underline hover:opacity-80 transition-opacity"
+        >
+          {t(locale, 'callout.spinachBtn')}
+        </a>
+        <a
+          href={`${prefix}/rice`}
+          class="text-xs px-3 py-1.5 bg-[var(--color-surface)] text-[var(--color-ink)] border border-[var(--color-hairline)] rounded-[var(--radius-pill)] font-medium no-underline hover:bg-[var(--color-hairline-soft)] transition-colors"
+        >
+          {t(locale, 'callout.riceBtn')}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why trust this data -->
+<section class="border-t border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-6">
+      {t(locale, 'usda.heading')}
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl">
+      <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+          {t(locale, 'usda.meatLabel')}
+        </p>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed" set:html={t(locale, 'usda.meatText')} />
+      </div>
+      <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+        <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+          {t(locale, 'usda.grainsLabel')}
+        </p>
+        <p class="text-sm text-[var(--color-body)] leading-relaxed" set:html={t(locale, 'usda.grainsText')} />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="border-t border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-8">
+      {t(locale, 'food.faqHeading')}
+    </h2>
+    <div class="max-w-2xl border-t border-[var(--color-hairline)]">
+      {faqItems.map(({ q, a }) => (
+        <details class="group border-b border-[var(--color-hairline)]">
+          <summary class="flex items-center justify-between gap-4 py-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
+            <span class="text-sm font-semibold text-[var(--color-ink)]">{q}</span>
+            <svg class="w-4 h-4 shrink-0 text-[var(--color-mute)] transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </summary>
+          <p class="text-sm text-[var(--color-body)] leading-relaxed pb-5 pr-8">{a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- SEO article -->
+<section class="border-t border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <article class="max-w-2xl prose-custom">
+
+      <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+        {article.heading}
+      </h2>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">
+        {article.intro}
+      </p>
+
+      <h3 class="text-base font-semibold text-[var(--color-ink)] tracking-tight mt-8 mb-3">
+        {article.whyHeading}
+      </h3>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed mb-3">{article.whyP1}</p>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">{article.whyP2}</p>
+
+      <h3 class="text-base font-semibold text-[var(--color-ink)] tracking-tight mt-8 mb-3">
+        {article.chickenHeading}
+      </h3>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed mb-3">{article.chickenP1}</p>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">{article.chickenP2}</p>
+
+      <h3 class="text-base font-semibold text-[var(--color-ink)] tracking-tight mt-8 mb-3">
+        {article.beefHeading}
+      </h3>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed mb-3">{article.beefP1}</p>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">{article.beefP2}</p>
+
+      <h3 class="text-base font-semibold text-[var(--color-ink)] tracking-tight mt-8 mb-3">
+        {article.riceHeading}
+      </h3>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed mb-3">{article.riceP1}</p>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">{article.riceP2}</p>
+
+      <h3 class="text-base font-semibold text-[var(--color-ink)] tracking-tight mt-8 mb-3">
+        {article.usdaHeading}
+      </h3>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed">{article.usdaP1}</p>
+
+    </article>
+  </div>
+</section>

@@ -1,0 +1,106 @@
+---
+import { getLangPrefix } from '../i18n';
+import type { Locale } from '../i18n';
+import { getAbout } from '../i18n/company';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const prefix = getLangPrefix(locale);
+const page = getAbout(locale);
+---
+
+<!-- Hero -->
+<section class="border-b border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+      {page.eyebrow}
+    </p>
+    <h1 class="text-3xl sm:text-4xl font-semibold text-[var(--color-ink)] tracking-[-1.5px] leading-tight mb-4">
+      {page.heading}
+    </h1>
+    <p class="text-sm text-[var(--color-body)] leading-relaxed max-w-xl">
+      {page.lede}
+    </p>
+  </div>
+</section>
+
+<!-- The problem -->
+<section class="border-b border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <div class="max-w-2xl">
+      <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+        {page.problemHeading}
+      </h2>
+      {page.problemParagraphs.map((text, i) => (
+        <p class={`text-sm text-[var(--color-body)] leading-relaxed ${i === page.problemParagraphs.length - 1 ? '' : 'mb-4'}`}>
+          {text}
+        </p>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Data sources -->
+<section class="border-b border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <div class="max-w-2xl">
+      <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+        {page.dataHeading}
+      </h2>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed mb-6">
+        {page.dataIntro}
+      </p>
+      <div class="space-y-4">
+        {page.dataCards.map((card) => (
+          <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] p-5">
+            <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-2">
+              {card.label}
+            </p>
+            <p class="text-sm text-[var(--color-body)] leading-relaxed" set:html={card.html} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="border-b border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <div class="max-w-2xl">
+      <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+        {page.howHeading}
+      </h2>
+      {page.howParagraphs.map((text, i) => (
+        <p class={`text-sm text-[var(--color-body)] leading-relaxed ${i === page.howParagraphs.length - 1 ? '' : 'mb-4'}`}>
+          {text}
+        </p>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- The tool -->
+<section>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <div class="max-w-2xl">
+      <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+        {page.toolHeading}
+      </h2>
+      {page.toolParagraphs.map((text, i) => (
+        <p class={`text-sm text-[var(--color-body)] leading-relaxed ${i === page.toolParagraphs.length - 1 ? 'mb-6' : 'mb-4'}`}>
+          {text}
+        </p>
+      ))}
+      <a
+        href={`${prefix}/`}
+        class="inline-flex items-center gap-2 text-sm font-medium text-[var(--color-link)] hover:underline"
+      >
+        {page.ctaLabel}
+      </a>
+    </div>
+  </div>
+</section>

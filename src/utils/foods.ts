@@ -1,4 +1,5 @@
 import foodData from '../food-data.json';
+import type { ExplanationKey } from '../i18n/content';
 
 export interface MacrosPer100g {
   calories: number;
@@ -55,26 +56,6 @@ export const SLUG_TO_ID: Record<string, string> = {
 const ID_TO_SLUG: Record<string, string> = Object.fromEntries(
   Object.entries(SLUG_TO_ID).map(([slug, id]) => [id, slug])
 );
-
-export const COOKING_METHOD_LABELS: Record<string, string> = {
-  baked_roasted: 'Baked / Roasted',
-  grilled: 'Grilled',
-  boiled_poached: 'Boiled / Poached',
-  pan_fried: 'Pan-fried',
-  boiled: 'Boiled',
-  boiled_rehydrated: 'Boiled / Rehydrated',
-  boiled_steamed: 'Boiled / Steamed',
-  slow_cooked_braised: 'Slow-cooked / Braised',
-  baked: 'Baked',
-  'baked/roasted': 'Baked / Roasted',
-  'pan_fried': 'Pan-fried',
-};
-
-export const CATEGORY_LABELS: Record<string, string> = {
-  meat_poultry_seafood: 'Meat, Poultry & Seafood',
-  grains_pasta_legumes: 'Grains, Pasta & Legumes',
-  vegetables: 'Vegetables',
-};
 
 function tagFoods(
   items: Omit<Food, 'category' | 'slug'>[],
@@ -151,48 +132,28 @@ export function calcResult(
   return { rawG, cookedG, yieldPct, macros };
 }
 
-export function getYieldDescription(food: Food): string {
-  if (food.yield_percent > 100) {
-    const multiplier = (food.yield_percent / 100).toFixed(1);
-    return `Expands to ${multiplier}× its dry weight when cooked`;
+/**
+ * Which i18n explanation applies to this food. The copy for each key lives in
+ * src/i18n/content.ts, one entry per locale.
+ */
+export function getExplanationKey(food: Food): ExplanationKey {
+  if (food.category === 'meat_poultry_seafood') {
+    if (food.id === 'chicken-breast' || food.id === 'chicken-thigh') return 'chicken';
+    if (food.id.startsWith('ground-beef') || food.id === 'ribeye-steak') return 'beef';
+    if (food.id.startsWith('pork')) return 'pork';
+    if (food.id === 'turkey-breast') return 'turkey';
+    if (food.id === 'salmon') return 'salmon';
+    if (food.id === 'shrimp') return 'shrimp';
+    return 'meatDefault';
   }
-  const loss = 100 - food.yield_percent;
-  return `Loses ${loss}% of its weight when cooked`;
+  if (food.category === 'grains_pasta_legumes') return 'grains';
+  if (food.id === 'spinach') return 'spinach';
+  if (food.id === 'potato' || food.id === 'sweet-potato') return 'potato';
+  return 'vegDefault';
 }
 
-export function getCategoryExplanation(food: Food): string {
-  if (food.category === 'meat_poultry_seafood') {
-    if (food.id === 'chicken-breast' || food.id === 'chicken-thigh') {
-      return 'Chicken loses weight during cooking primarily through moisture evaporation. Proteins denature and contract, squeezing out water bound within muscle fibers. Higher cooking temperatures and longer cook times increase moisture loss.';
-    }
-    if (food.id.startsWith('ground-beef') || food.id === 'ribeye-steak') {
-      return 'Beef loses moisture and some fat during cooking. Leaner cuts retain more of their weight since less fat renders out, while higher-fat cuts lose more through fat drip.';
-    }
-    if (food.id.startsWith('pork')) {
-      return 'Pork loses moisture during cooking as proteins contract and water evaporates. Slow-cooked cuts like pork shoulder lose significantly more than quick-cooked chops due to the extended cooking time.';
-    }
-    if (food.id === 'turkey-breast') {
-      return 'Turkey breast, like chicken, loses moisture through evaporation as proteins contract during cooking. Roasting produces slightly more loss than steaming or boiling.';
-    }
-    if (food.id === 'salmon') {
-      return 'Salmon loses moisture as its proteins coagulate during cooking. The fat content helps retain some weight, but water-soluble proteins still release liquid.';
-    }
-    if (food.id === 'shrimp') {
-      return 'Shrimp loses relatively little weight during cooking compared to other proteins — mostly surface moisture. Their dense protein structure retains most of the original weight.';
-    }
-    return 'Protein-rich foods lose moisture during cooking as proteins contract and water evaporates from muscle tissue.';
-  }
-  if (food.category === 'grains_pasta_legumes') {
-    return 'Grains, pasta, and legumes absorb water during cooking, which is why they expand dramatically. The starch granules absorb liquid and swell, significantly increasing weight. Macros are always calculated from the dry (raw) weight since that\'s how nutrition labels measure them.';
-  }
-  if (food.category === 'vegetables') {
-    if (food.id === 'spinach') {
-      return 'Spinach has one of the most dramatic weight reductions of any food — losing 70% of its weight when cooked. It\'s mostly water, and the cell walls collapse entirely when heated, releasing nearly all of it.';
-    }
-    if (food.id === 'potato' || food.id === 'sweet-potato') {
-      return 'Potatoes retain most of their weight when cooked because their dense starch structure holds moisture in. Only a small amount evaporates from the surface during cooking.';
-    }
-    return 'Vegetables lose some moisture during cooking as cell walls soften and water evaporates. Leafy greens lose dramatically more than dense vegetables.';
-  }
-  return '';
+/** Which i18n key names this food's data source. */
+export function getSourceKey(food: Food): 'estimate' | 'source.usdaMeatTable' | 'source.usdaFdc' {
+  if (isEstimate(food)) return 'estimate';
+  return food.source.startsWith('USDA Table') ? 'source.usdaMeatTable' : 'source.usdaFdc';
 }
