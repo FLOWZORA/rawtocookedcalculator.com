@@ -56,7 +56,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: 'Is there a quick way to estimate this without a calculator?',
-      a: 'A rough rule of thumb: for baked or roasted chicken breast, divide the cooked weight by about 0.75 to estimate the raw equivalent. But the exact percentage varies by food and cooking method — ground beef, pork, fish, vegetables, and grains all have different yield percentages, and even the same food behaves differently depending on how it is cooked. That is why a per-food calculator like this one gives more accurate results than any single blanket estimate.',
+      a: 'A rough rule of thumb: for baked or roasted chicken breast, divide the cooked weight by about 0.72 to estimate the raw equivalent. But the exact percentage varies by food and cooking method — ground beef, pork, fish, vegetables, and grains all have different yield percentages, and even the same food behaves differently depending on how it is cooked. That is why a per-food calculator like this one gives more accurate results than any single blanket estimate.',
     },
     {
       q: 'How much raw meat do I need per person?',
@@ -95,7 +95,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: '¿Hay una forma rápida de estimarlo sin calculadora?',
-      a: 'Una regla aproximada: para pechuga de pollo al horno o asada, divide el peso cocido entre 0,75 para estimar el equivalente en crudo. Pero el porcentaje exacto varía según el alimento y el método de cocción: la carne molida, el cerdo, el pescado, las verduras y los cereales tienen rendimientos distintos, y un mismo alimento se comporta de otra manera según cómo se cocine. Por eso una calculadora por alimento como esta da resultados más precisos que cualquier estimación general.',
+      a: 'Una regla aproximada: para pechuga de pollo al horno o asada, divide el peso cocido entre 0,72 para estimar el equivalente en crudo. Pero el porcentaje exacto varía según el alimento y el método de cocción: la carne molida, el cerdo, el pescado, las verduras y los cereales tienen rendimientos distintos, y un mismo alimento se comporta de otra manera según cómo se cocine. Por eso una calculadora por alimento como esta da resultados más precisos que cualquier estimación general.',
     },
     {
       q: '¿Cuánta carne cruda necesito por persona?',
@@ -134,7 +134,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: 'Existe-t-il une méthode rapide pour estimer sans calculateur ?',
-      a: 'Une règle approximative : pour un blanc de poulet au four ou rôti, divisez le poids cuit par environ 0,75 pour estimer l’équivalent cru. Mais le pourcentage exact varie selon l’aliment et le mode de cuisson : bœuf haché, porc, poisson, légumes et céréales ont des rendements différents, et un même aliment se comporte autrement selon la cuisson. C’est pourquoi un calculateur par aliment comme celui-ci donne des résultats plus justes que n’importe quelle estimation générale.',
+      a: 'Une règle approximative : pour un blanc de poulet au four ou rôti, divisez le poids cuit par environ 0,72 pour estimer l’équivalent cru. Mais le pourcentage exact varie selon l’aliment et le mode de cuisson : bœuf haché, porc, poisson, légumes et céréales ont des rendements différents, et un même aliment se comporte autrement selon la cuisson. C’est pourquoi un calculateur par aliment comme celui-ci donne des résultats plus justes que n’importe quelle estimation générale.',
     },
     {
       q: 'Quelle quantité de viande crue prévoir par personne ?',
@@ -173,7 +173,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: 'Gibt es eine schnelle Schätzung ohne Rechner?',
-      a: 'Als grobe Faustregel: Bei im Ofen gegarter oder gebratener Hähnchenbrust teilst du das Gargewicht durch etwa 0,75, um das Rohäquivalent zu schätzen. Der genaue Prozentsatz hängt aber vom Lebensmittel und der Garmethode ab — Hackfleisch, Schwein, Fisch, Gemüse und Getreide haben ganz unterschiedliche Ausbeuten, und dasselbe Lebensmittel verhält sich je nach Zubereitung anders. Deshalb liefert ein Rechner pro Lebensmittel wie dieser genauere Ergebnisse als jede pauschale Schätzung.',
+      a: 'Als grobe Faustregel: Bei im Ofen gegarter oder gebratener Hähnchenbrust teilst du das Gargewicht durch etwa 0,72, um das Rohäquivalent zu schätzen. Der genaue Prozentsatz hängt aber vom Lebensmittel und der Garmethode ab — Hackfleisch, Schwein, Fisch, Gemüse und Getreide haben ganz unterschiedliche Ausbeuten, und dasselbe Lebensmittel verhält sich je nach Zubereitung anders. Deshalb liefert ein Rechner pro Lebensmittel wie dieser genauere Ergebnisse als jede pauschale Schätzung.',
     },
     {
       q: 'Wie viel rohes Fleisch brauche ich pro Person?',
@@ -212,7 +212,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: 'Existe um jeito rápido de estimar isso sem calculadora?',
-      a: 'Uma regra aproximada: para peito de frango assado, divida o peso cozido por cerca de 0,75 para estimar o equivalente cru. Mas o percentual exato varia conforme o alimento e o método de cozimento — carne moída, suína, peixe, vegetais e grãos têm rendimentos diferentes, e o mesmo alimento se comporta de outro jeito dependendo de como é preparado. É por isso que uma calculadora por alimento como esta dá resultados mais precisos do que qualquer estimativa genérica.',
+      a: 'Uma regra aproximada: para peito de frango assado, divida o peso cozido por cerca de 0,72 para estimar o equivalente cru. Mas o percentual exato varia conforme o alimento e o método de cozimento — carne moída, suína, peixe, vegetais e grãos têm rendimentos diferentes, e o mesmo alimento se comporta de outro jeito dependendo de como é preparado. É por isso que uma calculadora por alimento como esta dá resultados mais precisos do que qualquer estimativa genérica.',
     },
     {
       q: 'Quanta carne crua eu preciso por pessoa?',
@@ -251,7 +251,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: '計算機を使わずにすばやく見積もる方法はありますか？',
-      a: '大まかな目安として、オーブン焼きやローストの鶏胸肉なら、加熱後の重量を約0.75で割ると生の重量を推定できます。ただし正確な割合は食材と加熱方法で変わります。合い挽き肉、豚肉、魚、野菜、穀物はいずれも歩留まりが異なり、同じ食材でも調理法によって挙動が変わります。だからこそ、このような食材ごとの計算機のほうが、ひとつの目安を全体に当てはめるより正確な結果になります。',
+      a: '大まかな目安として、オーブン焼きやローストの鶏胸肉なら、加熱後の重量を約0.72で割ると生の重量を推定できます。ただし正確な割合は食材と加熱方法で変わります。合い挽き肉、豚肉、魚、野菜、穀物はいずれも歩留まりが異なり、同じ食材でも調理法によって挙動が変わります。だからこそ、このような食材ごとの計算機のほうが、ひとつの目安を全体に当てはめるより正確な結果になります。',
     },
     {
       q: '1人あたり生肉はどれくらい必要ですか？',
@@ -290,7 +290,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: '계산기 없이 빠르게 어림잡는 방법이 있나요?',
-      a: '대략적인 요령: 오븐에 굽거나 로스트한 닭 가슴살이라면 조리 후 중량을 약 0.75로 나누면 생 중량을 어림할 수 있습니다. 다만 정확한 비율은 식품과 조리법에 따라 달라집니다. 다진 소고기, 돼지고기, 생선, 채소, 곡물은 수율이 모두 다르고, 같은 식품도 조리 방식에 따라 다르게 움직입니다. 그래서 이런 식품별 계산기가 하나의 일괄 추정치보다 정확한 결과를 줍니다.',
+      a: '대략적인 요령: 오븐에 굽거나 로스트한 닭 가슴살이라면 조리 후 중량을 약 0.72로 나누면 생 중량을 어림할 수 있습니다. 다만 정확한 비율은 식품과 조리법에 따라 달라집니다. 다진 소고기, 돼지고기, 생선, 채소, 곡물은 수율이 모두 다르고, 같은 식품도 조리 방식에 따라 다르게 움직입니다. 그래서 이런 식품별 계산기가 하나의 일괄 추정치보다 정확한 결과를 줍니다.',
     },
     {
       q: '1인당 생고기는 얼마나 필요할까요?',
@@ -329,7 +329,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: 'C’è un modo rapido per stimarlo senza calcolatore?',
-      a: 'Una regola pratica: per il petto di pollo al forno o arrosto, dividi il peso cotto per circa 0,75 per stimare l’equivalente da crudo. La percentuale esatta però varia in base all’alimento e al metodo di cottura: carne macinata, maiale, pesce, verdure e cereali hanno rese diverse, e lo stesso alimento si comporta in modo differente a seconda di come lo cuoci. Ecco perché un calcolatore per singolo alimento come questo dà risultati più accurati di qualsiasi stima generica.',
+      a: 'Una regola pratica: per il petto di pollo al forno o arrosto, dividi il peso cotto per circa 0,72 per stimare l’equivalente da crudo. La percentuale esatta però varia in base all’alimento e al metodo di cottura: carne macinata, maiale, pesce, verdure e cereali hanno rese diverse, e lo stesso alimento si comporta in modo differente a seconda di come lo cuoci. Ecco perché un calcolatore per singolo alimento come questo dà risultati più accurati di qualsiasi stima generica.',
     },
     {
       q: 'Quanta carne cruda serve a persona?',
@@ -368,7 +368,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: 'क्या कैलकुलेटर के बिना इसका जल्दी अंदाजा लगाने का कोई तरीका है?',
-      a: 'मोटा नियम यह है: बेक या रोस्ट किए चिकन ब्रेस्ट के लिए, पके वजन को लगभग 0.75 से भाग दें और कच्चे वजन का अनुमान मिल जाएगा। लेकिन सही प्रतिशत खाद्य पदार्थ और पकाने के तरीके से बदलता है — कीमा, पोर्क, मछली, सब्जियां और अनाज, सबके यील्ड अलग हैं, और एक ही चीज पकाने के तरीके के हिसाब से अलग व्यवहार करती है। इसीलिए इस जैसा हर खाद्य पदार्थ के लिए अलग कैलकुलेटर किसी एक सामान्य अनुमान से ज्यादा सही नतीजे देता है।',
+      a: 'मोटा नियम यह है: बेक या रोस्ट किए चिकन ब्रेस्ट के लिए, पके वजन को लगभग 0.72 से भाग दें और कच्चे वजन का अनुमान मिल जाएगा। लेकिन सही प्रतिशत खाद्य पदार्थ और पकाने के तरीके से बदलता है — कीमा, पोर्क, मछली, सब्जियां और अनाज, सबके यील्ड अलग हैं, और एक ही चीज पकाने के तरीके के हिसाब से अलग व्यवहार करती है। इसीलिए इस जैसा हर खाद्य पदार्थ के लिए अलग कैलकुलेटर किसी एक सामान्य अनुमान से ज्यादा सही नतीजे देता है।',
     },
     {
       q: 'प्रति व्यक्ति कितना कच्चा मांस चाहिए?',
@@ -396,7 +396,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     chicken: [
       {
         q: 'How much does chicken breast shrink when cooked?',
-        a: 'Chicken breast loses about 25% of its weight when cooked, meaning a 200g raw breast yields approximately 150g cooked. Yield varies slightly by method: baked/roasted = 75%, grilled = 70%, boiled/poached = 80%, pan-fried = 72% (USDA data).',
+        a: 'Chicken breast loses about 28% of its weight when cooked, meaning a 200g raw breast yields approximately 144g cooked. Yield varies slightly by method: baked/roasted = 72%, grilled = 70%, boiled/poached = 77%, pan-fried = 72% (USDA data).',
       },
       {
         q: 'Should I track chicken macros raw or cooked?',
@@ -408,23 +408,23 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'How much weight does chicken breast lose when cooked?',
-        a: 'It depends on the cooking method. USDA data shows baked or roasted chicken breast retains about 75% of its raw weight, grilled retains about 70%, boiled or poached retains about 80%, and pan-fried retains about 72%. There is no single correct number — use the cooking-method toggle on the calculator above for a more precise result.',
+        a: 'It depends on the cooking method. USDA data shows baked or roasted chicken breast retains about 72% of its raw weight, grilled retains about 70%, boiled or poached retains about 77%, and pan-fried retains about 72%. There is no single correct number — use the cooking-method toggle on the calculator above for a more precise result.',
       },
       {
         q: 'Does the cooking method actually make a meaningful difference?',
-        a: 'Yes. Higher, drier heat — like grilling — causes more moisture to evaporate from the surface than moist-heat methods like boiling or poaching. That is why grilled chicken breast has a yield of around 70% while boiled or poached chicken retains more moisture at 80%. A 10-percentage-point spread in yield is a real difference in what weight you should be logging.',
+        a: 'Yes. Higher, drier heat — like grilling — causes more moisture to evaporate from the surface than moist-heat methods like boiling or poaching. That is why grilled chicken breast has a yield of around 70% while boiled or poached chicken retains more moisture at 77%. Even a 7-percentage-point spread in yield is a real difference in what weight you should be logging.',
       },
       {
         q: 'How do I convert cooked chicken weight back to raw?',
-        a: 'Divide the cooked weight by the yield percentage as a decimal for whichever cooking method you used. For baked or roasted chicken breast: cooked weight ÷ 0.75. For grilled: ÷ 0.70. For boiled or poached: ÷ 0.80. The Cooked → Raw toggle on the calculator above handles this automatically once you select your cooking method.',
+        a: 'Divide the cooked weight by the yield percentage as a decimal for whichever cooking method you used. For baked or roasted chicken breast: cooked weight ÷ 0.72. For grilled: ÷ 0.70. For boiled or poached: ÷ 0.77. The Cooked → Raw toggle on the calculator above handles this automatically once you select your cooking method.',
       },
       {
         q: 'What is the raw to cooked ratio for chicken breast?',
-        a: 'For baked or roasted chicken breast, the ratio is roughly 4:3 — the cooked weight is about three-quarters of the raw weight. This shifts slightly by cooking method: grilling produces closer to a 10:7 ratio (70% yield), while boiling or poaching is closer to 4:3.2 (80% yield).',
+        a: 'For baked or roasted chicken breast, the ratio is roughly 4:2.9 — the cooked weight is a little under three-quarters of the raw weight. This shifts slightly by cooking method: grilling produces closer to a 10:7 ratio (70% yield), while boiling or poaching is closer to 4:3.1 (77% yield).',
       },
       {
         q: 'How much does chicken weigh after cooking?',
-        a: '100g of raw chicken breast weighs roughly 75g after baking or roasting, based on the USDA yield of 75%. Grill it and expect around 70g; boil or poach it and you will get around 80g; pan-frying lands at about 72g. Enter your starting weight in the calculator above to get the exact result for your cooking method.',
+        a: '100g of raw chicken breast weighs roughly 72g after baking or roasting, based on the USDA yield of 72%. Grill it and expect around 70g; boil or poach it and you will get around 77g; pan-frying lands at about 72g. Enter your starting weight in the calculator above to get the exact result for your cooking method.',
       },
     ],
     grains: [
@@ -450,7 +450,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     generic: [
       {
         q: 'How much weight does {food} lose when cooked?',
-        a: '{Food} has a {pct}% cooking yield, losing {loss}% of its weight when cooked. Source: USDA FoodData Central.',
+        a: '{Food} has a {pct}% cooking yield, losing {loss}% of its weight when cooked. Source: {source}.',
       },
       {
         q: 'Should I track macros for {food} raw or cooked?',
@@ -460,7 +460,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     spinach: [
       {
         q: 'How much does spinach shrink when cooked?',
-        a: 'Raw spinach shrinks down to about 30% of its original weight when cooked, based on USDA data — meaning 100g of raw leaves becomes just 30g once cooked. Leafy greens shrink so dramatically because they are exceptionally high in water content, and the leaves themselves collapse almost entirely when heat breaks down their cell structure. Firmer vegetables like broccoli or potatoes retain far more of their weight.',
+        a: 'By volume, dramatically — a full pan of raw leaves wilts down to a small handful. By weight, far less than people expect: USDA data puts spinach at a 77% cooking yield, so 100g of raw leaves becomes about 77g cooked, a loss of roughly 23%. The gap between those two impressions is what trips people up. Wilting drives out the air and structure that made the raw leaves bulky; most of the water stays put. If you are tracking macros, weigh spinach rather than judging it by how much the pan shrank.',
       },
     ],
   },
@@ -469,7 +469,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     chicken: [
       {
         q: '¿Cuánto encoge la pechuga de pollo al cocinarse?',
-        a: 'La pechuga de pollo pierde alrededor del 25% de su peso al cocinarse, así que 200 g de pechuga cruda dan unos 150 g cocidos. El rendimiento varía algo según el método: al horno o asada = 75%, a la parrilla = 70%, hervida o escalfada = 80%, a la sartén = 72% (datos del USDA).',
+        a: 'La pechuga de pollo pierde alrededor del 28% de su peso al cocinarse, así que 200 g de pechuga cruda dan unos 144 g cocidos. El rendimiento varía algo según el método: al horno o asada = 72%, a la parrilla = 70%, hervida o escalfada = 77%, a la sartén = 72% (datos del USDA).',
       },
       {
         q: '¿Los macros del pollo se cuentan en crudo o en cocido?',
@@ -481,23 +481,23 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '¿Cuánto peso pierde la pechuga de pollo al cocinarse?',
-        a: 'Depende del método. Según los datos del USDA, la pechuga al horno o asada conserva alrededor del 75% de su peso crudo, a la parrilla un 70%, hervida o escalfada un 80% y a la sartén un 72%. No hay una única cifra correcta: usa el selector de método de cocción en la calculadora de arriba para afinar el resultado.',
+        a: 'Depende del método. Según los datos del USDA, la pechuga al horno o asada conserva alrededor del 72% de su peso crudo, a la parrilla un 70%, hervida o escalfada un 77% y a la sartén un 72%. No hay una única cifra correcta: usa el selector de método de cocción en la calculadora de arriba para afinar el resultado.',
       },
       {
         q: '¿El método de cocción marca de verdad una diferencia?',
-        a: 'Sí. El calor más alto y seco, como el de la parrilla, evapora más humedad de la superficie que los métodos húmedos como hervir o escalfar. Por eso la pechuga a la parrilla tiene un rendimiento cercano al 70%, mientras que hervida o escalfada retiene más agua y llega al 80%. Diez puntos porcentuales de diferencia son una diferencia real en el peso que deberías registrar.',
+        a: 'Sí. El calor más alto y seco, como el de la parrilla, evapora más humedad de la superficie que los métodos húmedos como hervir o escalfar. Por eso la pechuga a la parrilla tiene un rendimiento cercano al 70%, mientras que hervida o escalfada retiene más agua y llega al 77%. Incluso siete puntos porcentuales de diferencia son una diferencia real en el peso que deberías registrar.',
       },
       {
         q: '¿Cómo convierto el peso del pollo cocido a crudo?',
-        a: 'Divide el peso cocido entre el rendimiento en decimal del método que hayas usado. Para pechuga al horno o asada: peso cocido ÷ 0,75. A la parrilla: ÷ 0,70. Hervida o escalfada: ÷ 0,80. El botón Cocido → Crudo de la calculadora de arriba lo hace solo en cuanto eliges el método de cocción.',
+        a: 'Divide el peso cocido entre el rendimiento en decimal del método que hayas usado. Para pechuga al horno o asada: peso cocido ÷ 0,72. A la parrilla: ÷ 0,70. Hervida o escalfada: ÷ 0,77. El botón Cocido → Crudo de la calculadora de arriba lo hace solo en cuanto eliges el método de cocción.',
       },
       {
         q: '¿Cuál es la proporción de crudo a cocido de la pechuga de pollo?',
-        a: 'Para pechuga al horno o asada, la proporción es de aproximadamente 4:3: el peso cocido es alrededor de tres cuartas partes del crudo. Cambia algo según el método: a la parrilla se acerca más a 10:7 (rendimiento del 70%), mientras que hervida o escalfada queda cerca de 4:3,2 (rendimiento del 80%).',
+        a: 'Para pechuga al horno o asada, la proporción es de aproximadamente 4:2,9: el peso cocido es algo menos de tres cuartas partes del crudo. Cambia algo según el método: a la parrilla se acerca más a 10:7 (rendimiento del 70%), mientras que hervida o escalfada queda cerca de 4:3,1 (rendimiento del 77%).',
       },
       {
         q: '¿Cuánto pesa el pollo después de cocinarlo?',
-        a: '100 g de pechuga de pollo cruda pesan aproximadamente 75 g después de hornearla o asarla, según el rendimiento del USDA del 75%. A la parrilla espera unos 70 g; hervida o escalfada, unos 80 g; a la sartén, unos 72 g. Introduce tu peso de partida en la calculadora de arriba para obtener el resultado exacto de tu método de cocción.',
+        a: '100 g de pechuga de pollo cruda pesan aproximadamente 72 g después de hornearla o asarla, según el rendimiento del USDA del 72%. A la parrilla espera unos 70 g; hervida o escalfada, unos 77 g; a la sartén, unos 72 g. Introduce tu peso de partida en la calculadora de arriba para obtener el resultado exacto de tu método de cocción.',
       },
     ],
     grains: [
@@ -523,7 +523,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     generic: [
       {
         q: '¿Cuánto peso se pierde al cocinar {food}?',
-        a: 'El rendimiento de cocción es del {pct}%: al cocinar {food} se pierde el {loss}% del peso. Fuente: USDA FoodData Central.',
+        a: 'El rendimiento de cocción es del {pct}%: al cocinar {food} se pierde el {loss}% del peso. Fuente: {source}.',
       },
       {
         q: '¿Se registran los macros pesando {food} en crudo o ya cocinado?',
@@ -533,7 +533,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     spinach: [
       {
         q: '¿Cuánto encoge la espinaca al cocinarse?',
-        a: 'La espinaca cruda se reduce a alrededor del 30% de su peso original al cocinarse, según los datos del USDA: 100 g de hojas crudas se quedan en apenas 30 g ya cocidas. Las hojas verdes encogen de forma tan drástica porque tienen un contenido de agua altísimo y las propias hojas colapsan casi por completo cuando el calor rompe su estructura celular. Verduras más firmes, como el brócoli o la papa, conservan mucho más peso.',
+        a: 'En volumen, muchísimo: una sartén llena de hojas crudas se queda en un puñado pequeño. En peso, bastante menos de lo que se cree: los datos del USDA dan a la espinaca un rendimiento del 77%, así que 100 g de hojas crudas se quedan en unos 77 g cocidas, una pérdida de alrededor del 23%. La diferencia entre esas dos impresiones es lo que confunde. Al pocharse, las hojas sueltan el aire y la estructura que las hacían voluminosas; el agua, en su mayor parte, se queda. Si llevas un registro de macros, pesa la espinaca en vez de guiarte por cuánto ha menguado la sartén.',
       },
     ],
   },
@@ -542,7 +542,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     chicken: [
       {
         q: 'De combien le blanc de poulet réduit-il à la cuisson ?',
-        a: 'Le blanc de poulet perd environ 25 % de son poids à la cuisson : 200 g crus donnent à peu près 150 g cuits. Le rendement varie légèrement selon la méthode : au four ou rôti = 75 %, grillé = 70 %, bouilli ou poché = 80 %, poêlé = 72 % (données USDA).',
+        a: 'Le blanc de poulet perd environ 28 % de son poids à la cuisson : 200 g crus donnent à peu près 144 g cuits. Le rendement varie légèrement selon la méthode : au four ou rôti = 72 %, grillé = 70 %, bouilli ou poché = 77 %, poêlé = 72 % (données USDA).',
       },
       {
         q: 'Faut-il compter les macros du poulet cru ou cuit ?',
@@ -554,23 +554,23 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Quelle quantité de poids le blanc de poulet perd-il à la cuisson ?',
-        a: 'Cela dépend du mode de cuisson. Selon l’USDA, le blanc de poulet au four ou rôti conserve environ 75 % de son poids cru, grillé environ 70 %, bouilli ou poché environ 80 %, et poêlé environ 72 %. Il n’existe pas de chiffre unique : utilisez le sélecteur de mode de cuisson du calculateur ci-dessus pour affiner le résultat.',
+        a: 'Cela dépend du mode de cuisson. Selon l’USDA, le blanc de poulet au four ou rôti conserve environ 72 % de son poids cru, grillé environ 70 %, bouilli ou poché environ 77 %, et poêlé environ 72 %. Il n’existe pas de chiffre unique : utilisez le sélecteur de mode de cuisson du calculateur ci-dessus pour affiner le résultat.',
       },
       {
         q: 'Le mode de cuisson change-t-il vraiment quelque chose ?',
-        a: 'Oui. Une chaleur plus forte et plus sèche — le gril, par exemple — fait s’évaporer davantage d’eau en surface que les cuissons humides comme l’eau bouillante ou le pochage. C’est pourquoi le blanc grillé affiche un rendement d’environ 70 %, tandis que bouilli ou poché il retient plus d’eau et atteint 80 %. Dix points d’écart, c’est une vraie différence sur le poids à enregistrer.',
+        a: 'Oui. Une chaleur plus forte et plus sèche — le gril, par exemple — fait s’évaporer davantage d’eau en surface que les cuissons humides comme l’eau bouillante ou le pochage. C’est pourquoi le blanc grillé affiche un rendement d’environ 70 %, tandis que bouilli ou poché il retient plus d’eau et atteint 77 %. Même sept points d’écart, c’est une vraie différence sur le poids à enregistrer.',
       },
       {
         q: 'Comment reconvertir un poids de poulet cuit en poids cru ?',
-        a: 'Divisez le poids cuit par le rendement exprimé en décimale, selon la cuisson utilisée. Pour un blanc au four ou rôti : poids cuit ÷ 0,75. Grillé : ÷ 0,70. Bouilli ou poché : ÷ 0,80. Le bouton Cuit → Cru du calculateur ci-dessus le fait automatiquement dès que vous sélectionnez votre mode de cuisson.',
+        a: 'Divisez le poids cuit par le rendement exprimé en décimale, selon la cuisson utilisée. Pour un blanc au four ou rôti : poids cuit ÷ 0,72. Grillé : ÷ 0,70. Bouilli ou poché : ÷ 0,77. Le bouton Cuit → Cru du calculateur ci-dessus le fait automatiquement dès que vous sélectionnez votre mode de cuisson.',
       },
       {
         q: 'Quel est le rapport cru-cuit pour le blanc de poulet ?',
-        a: 'Pour un blanc de poulet au four ou rôti, le rapport est d’environ 4:3 — le poids cuit vaut à peu près les trois quarts du poids cru. Il évolue un peu selon la cuisson : au gril on se rapproche d’un rapport 10:7 (rendement de 70 %), tandis que bouilli ou poché on est plutôt à 4:3,2 (rendement de 80 %).',
+        a: 'Pour un blanc de poulet au four ou rôti, le rapport est d’environ 4:2,9 — le poids cuit vaut un peu moins que les trois quarts du poids cru. Il évolue un peu selon la cuisson : au gril on se rapproche d’un rapport 10:7 (rendement de 70 %), tandis que bouilli ou poché on est plutôt à 4:3,1 (rendement de 77 %).',
       },
       {
         q: 'Combien pèse le poulet après cuisson ?',
-        a: '100 g de blanc de poulet cru pèsent environ 75 g après une cuisson au four ou rôtie, sur la base du rendement USDA de 75 %. Au gril, comptez plutôt 70 g ; bouilli ou poché, environ 80 g ; poêlé, environ 72 g. Saisissez votre poids de départ dans le calculateur ci-dessus pour obtenir le résultat exact selon votre cuisson.',
+        a: '100 g de blanc de poulet cru pèsent environ 72 g après une cuisson au four ou rôtie, sur la base du rendement USDA de 72 %. Au gril, comptez plutôt 70 g ; bouilli ou poché, environ 77 g ; poêlé, environ 72 g. Saisissez votre poids de départ dans le calculateur ci-dessus pour obtenir le résultat exact selon votre cuisson.',
       },
     ],
     grains: [
@@ -596,7 +596,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     generic: [
       {
         q: 'Combien de poids perd-on en faisant cuire {food} ?',
-        a: 'Le rendement de cuisson est de {pct} % : en cuisant {food}, on perd {loss} % du poids. Source : USDA FoodData Central.',
+        a: 'Le rendement de cuisson est de {pct} % : en cuisant {food}, on perd {loss} % du poids. Source : {source}.',
       },
       {
         q: 'Pour {food}, faut-il compter les macros avant ou après cuisson ?',
@@ -606,7 +606,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     spinach: [
       {
         q: 'De combien les épinards réduisent-ils à la cuisson ?',
-        a: 'Les épinards crus réduisent à environ 30 % de leur poids initial à la cuisson, d’après les données de l’USDA : 100 g de feuilles crues ne font plus que 30 g une fois cuites. Les légumes-feuilles réduisent autant parce qu’ils sont exceptionnellement riches en eau, et que les feuilles elles-mêmes s’affaissent presque entièrement lorsque la chaleur détruit leur structure cellulaire. Des légumes plus fermes comme le brocoli ou la pomme de terre conservent bien davantage de poids.',
+        a: 'En volume, énormément : une poêle pleine de feuilles crues se réduit à une petite poignée. En poids, bien moins qu’on ne l’imagine : d’après l’USDA, les épinards ont un rendement de cuisson de 77 %, donc 100 g de feuilles crues donnent environ 77 g cuits, soit une perte d’environ 23 %. C’est l’écart entre ces deux impressions qui induit en erreur. En tombant, les feuilles perdent l’air et la structure qui les rendaient volumineuses ; l’eau, elle, reste en grande partie. Si vous suivez vos macros, pesez les épinards plutôt que de vous fier à la réduction apparente dans la poêle.',
       },
     ],
   },
@@ -615,7 +615,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     chicken: [
       {
         q: 'Wie stark schrumpft Hähnchenbrust beim Garen?',
-        a: 'Hähnchenbrust verliert beim Garen etwa 25 % ihres Gewichts: Aus 200 g roh werden rund 150 g gegart. Die Ausbeute schwankt je nach Methode leicht — im Ofen gebacken oder gebraten = 75 %, gegrillt = 70 %, gekocht oder pochiert = 80 %, in der Pfanne gebraten = 72 % (USDA-Daten).',
+        a: 'Hähnchenbrust verliert beim Garen etwa 28 % ihres Gewichts: Aus 200 g roh werden rund 144 g gegart. Die Ausbeute schwankt je nach Methode leicht — im Ofen gebacken oder gebraten = 72 %, gegrillt = 70 %, gekocht oder pochiert = 77 %, in der Pfanne gebraten = 72 % (USDA-Daten).',
       },
       {
         q: 'Sollte ich die Makros von Hähnchen roh oder gegart tracken?',
@@ -627,23 +627,23 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Wie viel Gewicht verliert Hähnchenbrust beim Garen?',
-        a: 'Das hängt von der Garmethode ab. Laut USDA behält im Ofen gebackene oder gebratene Hähnchenbrust rund 75 % ihres Rohgewichts, gegrillt etwa 70 %, gekocht oder pochiert etwa 80 % und in der Pfanne gebraten etwa 72 %. Es gibt keinen einzig richtigen Wert — nutze im Rechner oben die Auswahl der Garmethode für ein genaueres Ergebnis.',
+        a: 'Das hängt von der Garmethode ab. Laut USDA behält im Ofen gebackene oder gebratene Hähnchenbrust rund 72 % ihres Rohgewichts, gegrillt etwa 70 %, gekocht oder pochiert etwa 77 % und in der Pfanne gebraten etwa 72 %. Es gibt keinen einzig richtigen Wert — nutze im Rechner oben die Auswahl der Garmethode für ein genaueres Ergebnis.',
       },
       {
         q: 'Macht die Garmethode wirklich einen spürbaren Unterschied?',
-        a: 'Ja. Höhere, trockenere Hitze — etwa beim Grillen — lässt mehr Feuchtigkeit an der Oberfläche verdunsten als feuchte Methoden wie Kochen oder Pochieren. Deshalb liegt gegrillte Hähnchenbrust bei rund 70 % Ausbeute, während gekochtes oder pochiertes Fleisch mit 80 % mehr Feuchtigkeit behält. Zehn Prozentpunkte Unterschied sind ein realer Unterschied beim Gewicht, das du eintragen solltest.',
+        a: 'Ja. Höhere, trockenere Hitze — etwa beim Grillen — lässt mehr Feuchtigkeit an der Oberfläche verdunsten als feuchte Methoden wie Kochen oder Pochieren. Deshalb liegt gegrillte Hähnchenbrust bei rund 70 % Ausbeute, während gekochtes oder pochiertes Fleisch mit 77 % mehr Feuchtigkeit behält. Schon sieben Prozentpunkte Unterschied sind ein realer Unterschied beim Gewicht, das du eintragen solltest.',
       },
       {
         q: 'Wie rechne ich gegartes Hähnchengewicht zurück auf roh?',
-        a: 'Teile das Gargewicht durch die Ausbeute als Dezimalzahl für die jeweils genutzte Methode. Für im Ofen gebackene oder gebratene Hähnchenbrust: Gargewicht ÷ 0,75. Gegrillt: ÷ 0,70. Gekocht oder pochiert: ÷ 0,80. Die Umschaltung „Gegart → Roh“ im Rechner oben erledigt das automatisch, sobald du deine Garmethode auswählst.',
+        a: 'Teile das Gargewicht durch die Ausbeute als Dezimalzahl für die jeweils genutzte Methode. Für im Ofen gebackene oder gebratene Hähnchenbrust: Gargewicht ÷ 0,72. Gegrillt: ÷ 0,70. Gekocht oder pochiert: ÷ 0,77. Die Umschaltung „Gegart → Roh“ im Rechner oben erledigt das automatisch, sobald du deine Garmethode auswählst.',
       },
       {
         q: 'Wie ist das Verhältnis roh zu gegart bei Hähnchenbrust?',
-        a: 'Bei im Ofen gebackener oder gebratener Hähnchenbrust liegt das Verhältnis bei etwa 4:3 — das Gargewicht entspricht ungefähr drei Vierteln des Rohgewichts. Je nach Methode verschiebt sich das leicht: Beim Grillen liegt es näher bei 10:7 (70 % Ausbeute), beim Kochen oder Pochieren eher bei 4:3,2 (80 % Ausbeute).',
+        a: 'Bei im Ofen gebackener oder gebratener Hähnchenbrust liegt das Verhältnis bei etwa 4:2,9 — das Gargewicht entspricht etwas weniger als drei Vierteln des Rohgewichts. Je nach Methode verschiebt sich das leicht: Beim Grillen liegt es näher bei 10:7 (70 % Ausbeute), beim Kochen oder Pochieren eher bei 4:3,1 (77 % Ausbeute).',
       },
       {
         q: 'Wie viel wiegt Hähnchen nach dem Garen?',
-        a: '100 g rohe Hähnchenbrust wiegen nach dem Backen oder Braten rund 75 g, ausgehend von der USDA-Ausbeute von 75 %. Gegrillt sind es etwa 70 g, gekocht oder pochiert rund 80 g, in der Pfanne gebraten etwa 72 g. Gib dein Ausgangsgewicht im Rechner oben ein, um das genaue Ergebnis für deine Garmethode zu erhalten.',
+        a: '100 g rohe Hähnchenbrust wiegen nach dem Backen oder Braten rund 72 g, ausgehend von der USDA-Ausbeute von 72 %. Gegrillt sind es etwa 70 g, gekocht oder pochiert rund 77 g, in der Pfanne gebraten etwa 72 g. Gib dein Ausgangsgewicht im Rechner oben ein, um das genaue Ergebnis für deine Garmethode zu erhalten.',
       },
     ],
     grains: [
@@ -669,7 +669,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     generic: [
       {
         q: 'Wie viel Gewicht verliert {Food} beim Garen?',
-        a: '{Food} hat eine Garausbeute von {pct} % und verliert beim Garen {loss} % des Gewichts. Quelle: USDA FoodData Central.',
+        a: '{Food} hat eine Garausbeute von {pct} % und verliert beim Garen {loss} % des Gewichts. Quelle: {source}.',
       },
       {
         q: 'Makros für {Food}: roh oder gegart tracken?',
@@ -679,7 +679,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     spinach: [
       {
         q: 'Wie stark schrumpft Spinat beim Garen?',
-        a: 'Roher Spinat schrumpft laut USDA-Daten beim Garen auf etwa 30 % seines Ausgangsgewichts — aus 100 g rohen Blättern werden also nur 30 g. Blattgemüse schrumpft so drastisch, weil es außergewöhnlich viel Wasser enthält und die Blätter selbst nahezu vollständig zusammenfallen, sobald die Hitze ihre Zellstruktur zerstört. Festere Gemüse wie Brokkoli oder Kartoffeln behalten weit mehr Gewicht.',
+        a: 'Im Volumen drastisch — eine volle Pfanne roher Blätter fällt auf eine kleine Handvoll zusammen. Im Gewicht deutlich weniger als erwartet: Laut USDA liegt die Garausbeute bei 77 %, aus 100 g rohen Blättern werden also rund 77 g gegart, ein Verlust von etwa 23 %. Genau diese Lücke zwischen den beiden Eindrücken führt in die Irre. Beim Zusammenfallen entweichen Luft und Struktur, die die rohen Blätter voluminös gemacht haben; das Wasser bleibt größtenteils drin. Wer Makros trackt, sollte Spinat wiegen, statt nach dem Schrumpfen in der Pfanne zu schätzen.',
       },
     ],
   },
@@ -688,7 +688,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     chicken: [
       {
         q: 'Quanto o peito de frango encolhe ao ser cozido?',
-        a: 'O peito de frango perde cerca de 25% do peso ao ser cozido, ou seja, 200 g crus rendem aproximadamente 150 g cozidos. O rendimento varia um pouco conforme o método: assado = 75%, grelhado = 70%, cozido ou escalfado = 80%, frito na frigideira = 72% (dados do USDA).',
+        a: 'O peito de frango perde cerca de 28% do peso ao ser cozido, ou seja, 200 g crus rendem aproximadamente 144 g cozidos. O rendimento varia um pouco conforme o método: assado = 72%, grelhado = 70%, cozido ou escalfado = 77%, frito na frigideira = 72% (dados do USDA).',
       },
       {
         q: 'Devo contar os macros do frango cru ou cozido?',
@@ -700,23 +700,23 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Quanto peso o peito de frango perde ao ser cozido?',
-        a: 'Depende do método de preparo. Os dados do USDA mostram que o peito de frango assado retém cerca de 75% do peso cru, grelhado cerca de 70%, cozido ou escalfado cerca de 80% e frito na frigideira cerca de 72%. Não existe um único número correto — use o seletor de método de cozimento na calculadora acima para um resultado mais preciso.',
+        a: 'Depende do método de preparo. Os dados do USDA mostram que o peito de frango assado retém cerca de 72% do peso cru, grelhado cerca de 70%, cozido ou escalfado cerca de 77% e frito na frigideira cerca de 72%. Não existe um único número correto — use o seletor de método de cozimento na calculadora acima para um resultado mais preciso.',
       },
       {
         q: 'O método de cozimento faz mesmo diferença?',
-        a: 'Faz. Calor mais alto e seco — como o da grelha — evapora mais umidade da superfície do que métodos úmidos, como cozinhar em água ou escalfar. É por isso que o peito grelhado tem rendimento em torno de 70%, enquanto cozido ou escalfado retém mais umidade e chega a 80%. Dez pontos percentuais de diferença representam uma diferença real no peso que você deve registrar.',
+        a: 'Faz. Calor mais alto e seco — como o da grelha — evapora mais umidade da superfície do que métodos úmidos, como cozinhar em água ou escalfar. É por isso que o peito grelhado tem rendimento em torno de 70%, enquanto cozido ou escalfado retém mais umidade e chega a 77%. Mesmo sete pontos percentuais de diferença representam uma diferença real no peso que você deve registrar.',
       },
       {
         q: 'Como converter o peso do frango cozido de volta para cru?',
-        a: 'Divida o peso cozido pelo rendimento em decimal do método que você usou. Para peito de frango assado: peso cozido ÷ 0,75. Grelhado: ÷ 0,70. Cozido ou escalfado: ÷ 0,80. O botão Cozido → Cru na calculadora acima faz isso automaticamente assim que você escolhe o método de cozimento.',
+        a: 'Divida o peso cozido pelo rendimento em decimal do método que você usou. Para peito de frango assado: peso cozido ÷ 0,72. Grelhado: ÷ 0,70. Cozido ou escalfado: ÷ 0,77. O botão Cozido → Cru na calculadora acima faz isso automaticamente assim que você escolhe o método de cozimento.',
       },
       {
         q: 'Qual é a proporção de cru para cozido do peito de frango?',
-        a: 'Para peito de frango assado, a proporção é de aproximadamente 4:3 — o peso cozido equivale a cerca de três quartos do peso cru. Isso muda um pouco conforme o método: grelhar chega mais perto de 10:7 (rendimento de 70%), enquanto cozinhar ou escalfar fica perto de 4:3,2 (rendimento de 80%).',
+        a: 'Para peito de frango assado, a proporção é de aproximadamente 4:2,9 — o peso cozido equivale a pouco menos de três quartos do peso cru. Isso muda um pouco conforme o método: grelhar chega mais perto de 10:7 (rendimento de 70%), enquanto cozinhar ou escalfar fica perto de 4:3,1 (rendimento de 77%).',
       },
       {
         q: 'Quanto o frango pesa depois de cozido?',
-        a: '100 g de peito de frango cru pesam por volta de 75 g depois de assados, com base no rendimento do USDA de 75%. Na grelha, espere cerca de 70 g; cozido ou escalfado, cerca de 80 g; na frigideira, cerca de 72 g. Digite seu peso inicial na calculadora acima para obter o resultado exato do seu método de preparo.',
+        a: '100 g de peito de frango cru pesam por volta de 72 g depois de assados, com base no rendimento do USDA de 72%. Na grelha, espere cerca de 70 g; cozido ou escalfado, cerca de 77 g; na frigideira, cerca de 72 g. Digite seu peso inicial na calculadora acima para obter o resultado exato do seu método de preparo.',
       },
     ],
     grains: [
@@ -742,7 +742,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     generic: [
       {
         q: 'Quanto peso se perde ao cozinhar {food}?',
-        a: 'O rendimento de cocção é de {pct}%: ao cozinhar {food}, perde-se {loss}% do peso. Fonte: USDA FoodData Central.',
+        a: 'O rendimento de cocção é de {pct}%: ao cozinhar {food}, perde-se {loss}% do peso. Fonte: {source}.',
       },
       {
         q: 'Para {food}, os macros devem ser contados no peso cru ou cozido?',
@@ -752,7 +752,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     spinach: [
       {
         q: 'Quanto o espinafre encolhe ao ser cozido?',
-        a: 'O espinafre cru encolhe para cerca de 30% do peso original ao ser cozido, segundo dados do USDA — ou seja, 100 g de folhas cruas viram apenas 30 g depois de cozidas. As folhas verdes encolhem de forma tão drástica porque têm teor de água excepcionalmente alto, e as próprias folhas colapsam quase por completo quando o calor rompe sua estrutura celular. Vegetais mais firmes, como brócolis ou batata, retêm muito mais peso.',
+        a: 'Em volume, drasticamente — uma frigideira cheia de folhas cruas murcha até virar um punhado pequeno. Em peso, bem menos do que se imagina: os dados do USDA apontam um rendimento de 77%, então 100 g de folhas cruas viram cerca de 77 g cozidas, uma perda de aproximadamente 23%. É a distância entre essas duas impressões que engana. Ao murchar, as folhas perdem o ar e a estrutura que as deixavam volumosas; a água, em boa parte, permanece. Se você acompanha macros, pese o espinafre em vez de julgar pelo tanto que a panela encolheu.',
       },
     ],
   },
@@ -761,7 +761,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     chicken: [
       {
         q: '鶏胸肉は加熱するとどれくらい縮みますか？',
-        a: '鶏胸肉は加熱すると重量の約25%を失います。つまり生200gの胸肉は加熱後およそ150gになります。歩留まりは方法によって多少変わります。オーブン焼き・ロースト=75%、グリル=70%、茹で・ポーチ=80%、フライパン焼き=72%（USDAデータ）。',
+        a: '鶏胸肉は加熱すると重量の約28%を失います。つまり生200gの胸肉は加熱後およそ144gになります。歩留まりは方法によって多少変わります。オーブン焼き・ロースト=72%、グリル=70%、茹で・ポーチ=77%、フライパン焼き=72%（USDAデータ）。',
       },
       {
         q: '鶏肉のマクロは生と加熱後、どちらで記録すべきですか？',
@@ -773,23 +773,23 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '鶏胸肉は加熱するとどれくらい重量が減りますか？',
-        a: '加熱方法によります。USDAのデータでは、オーブン焼きやローストの鶏胸肉は生重量の約75%、グリルは約70%、茹でやポーチは約80%、フライパン焼きは約72%を保ちます。唯一の正解はありません。上の計算機で加熱方法を切り替えると、より正確な結果が得られます。',
+        a: '加熱方法によります。USDAのデータでは、オーブン焼きやローストの鶏胸肉は生重量の約72%、グリルは約70%、茹でやポーチは約77%、フライパン焼きは約72%を保ちます。唯一の正解はありません。上の計算機で加熱方法を切り替えると、より正確な結果が得られます。',
       },
       {
         q: '加熱方法によって実際に違いは出ますか？',
-        a: '出ます。グリルのように高温で乾いた加熱は、茹でやポーチのような湿式加熱よりも表面から多くの水分を蒸発させます。だからグリルした鶏胸肉の歩留まりは70%前後、茹でやポーチでは水分が残り80%になります。歩留まりの10ポイント差は、記録すべき重量における実質的な差です。',
+        a: '出ます。グリルのように高温で乾いた加熱は、茹でやポーチのような湿式加熱よりも表面から多くの水分を蒸発させます。だからグリルした鶏胸肉の歩留まりは70%前後、茹でやポーチでは水分が残り77%になります。歩留まりの7ポイント差でも、記録すべき重量における実質的な差です。',
       },
       {
         q: '加熱後の鶏肉の重量を生に戻すにはどうすればいいですか？',
-        a: '使った加熱方法の歩留まりを小数にして、加熱後の重量を割ってください。オーブン焼き・ローストの鶏胸肉なら加熱後重量÷0.75、グリルなら÷0.70、茹で・ポーチなら÷0.80です。上の計算機で「加熱後→生」に切り替え、加熱方法を選べば自動で計算されます。',
+        a: '使った加熱方法の歩留まりを小数にして、加熱後の重量を割ってください。オーブン焼き・ローストの鶏胸肉なら加熱後重量÷0.72、グリルなら÷0.70、茹で・ポーチなら÷0.77です。上の計算機で「加熱後→生」に切り替え、加熱方法を選べば自動で計算されます。',
       },
       {
         q: '鶏胸肉の生と加熱後の比率はどれくらいですか？',
-        a: 'オーブン焼きやローストの鶏胸肉ではおよそ4:3で、加熱後の重量は生の約4分の3です。加熱方法によって少し変わり、グリルでは10:7（歩留まり70%）に近づき、茹でやポーチでは4:3.2（歩留まり80%）に近くなります。',
+        a: 'オーブン焼きやローストの鶏胸肉ではおよそ4:2.9で、加熱後の重量は生の4分の3をやや下回ります。加熱方法によって少し変わり、グリルでは10:7（歩留まり70%）に近づき、茹でやポーチでは4:3.1（歩留まり77%）に近くなります。',
       },
       {
         q: '鶏肉は加熱後に何グラムになりますか？',
-        a: 'USDAの歩留まり75%に基づくと、生の鶏胸肉100gはオーブン焼きやローストでおよそ75gになります。グリルなら約70g、茹でやポーチなら約80g、フライパン焼きなら約72gです。上の計算機に元の重量を入力すれば、加熱方法ごとの正確な結果が分かります。',
+        a: 'USDAの歩留まり72%に基づくと、生の鶏胸肉100gはオーブン焼きやローストでおよそ72gになります。グリルなら約70g、茹でやポーチなら約77g、フライパン焼きなら約72gです。上の計算機に元の重量を入力すれば、加熱方法ごとの正確な結果が分かります。',
       },
     ],
     grains: [
@@ -815,7 +815,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     generic: [
       {
         q: '{food}は加熱するとどれくらい重量が減りますか？',
-        a: '調理歩留まりは{pct}%です。{food}を加熱すると重量の{loss}%を失います。出典: USDA FoodData Central。',
+        a: '調理歩留まりは{pct}%です。{food}を加熱すると重量の{loss}%を失います。出典: {source}。',
       },
       {
         q: '{food}のマクロは生と加熱後のどちらで記録すべきですか？',
@@ -825,7 +825,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     spinach: [
       {
         q: 'ほうれん草は加熱するとどれくらい縮みますか？',
-        a: 'USDAのデータによると、生のほうれん草は加熱すると元の重量の約30%まで縮みます。つまり生葉100gが加熱後はわずか30gになるということです。葉物野菜がこれほど劇的に縮むのは、水分含有量が極めて高いうえ、熱で細胞構造が壊れると葉そのものがほぼ完全につぶれてしまうためです。ブロッコリーやじゃがいものような身の詰まった野菜は、はるかに多くの重量を保ちます。',
+        a: 'かさで見れば劇的です。フライパン一杯の生の葉が、ひとつかみほどまで縮みます。ただし重量で見ると、思ったほどではありません。USDAのデータではほうれん草の調理歩留まりは77%で、生の葉100gは加熱後およそ77g、つまり減るのは23%程度です。この2つの印象のずれが誤解のもとです。しんなりする過程で失われるのは、生の葉をかさ高くしていた空気と構造であり、水分の大半はそのまま残ります。マクロを記録するなら、フライパンの縮み具合で判断せず、はかりで量ってください。',
       },
     ],
   },
@@ -834,7 +834,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     chicken: [
       {
         q: '닭 가슴살은 조리하면 얼마나 줄어드나요?',
-        a: '닭 가슴살은 조리하면 무게의 약 25%가 줄어듭니다. 즉 생 200g이 조리 후 약 150g이 됩니다. 수율은 방식에 따라 조금씩 다릅니다. 오븐 구이·로스트 = 75%, 직화 구이 = 70%, 삶기·수란식 조리 = 80%, 팬 프라이 = 72%(USDA 자료).',
+        a: '닭 가슴살은 조리하면 무게의 약 28%가 줄어듭니다. 즉 생 200g이 조리 후 약 144g이 됩니다. 수율은 방식에 따라 조금씩 다릅니다. 오븐 구이·로스트 = 72%, 직화 구이 = 70%, 삶기·수란식 조리 = 77%, 팬 프라이 = 72%(USDA 자료).',
       },
       {
         q: '닭고기 영양소는 생으로 기록하나요, 조리 후로 기록하나요?',
@@ -846,23 +846,23 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '닭 가슴살은 조리하면 무게가 얼마나 줄어드나요?',
-        a: '조리법에 따라 다릅니다. USDA 자료에 따르면 오븐에 굽거나 로스트한 닭 가슴살은 생 중량의 약 75%, 직화 구이는 약 70%, 삶거나 수란식으로 조리하면 약 80%, 팬에 구우면 약 72%가 남습니다. 정답이 하나로 정해져 있지 않으니, 위 계산기의 조리법 선택으로 더 정확한 값을 확인하세요.',
+        a: '조리법에 따라 다릅니다. USDA 자료에 따르면 오븐에 굽거나 로스트한 닭 가슴살은 생 중량의 약 72%, 직화 구이는 약 70%, 삶거나 수란식으로 조리하면 약 77%, 팬에 구우면 약 72%가 남습니다. 정답이 하나로 정해져 있지 않으니, 위 계산기의 조리법 선택으로 더 정확한 값을 확인하세요.',
       },
       {
         q: '조리 방법이 실제로 의미 있는 차이를 만드나요?',
-        a: '그렇습니다. 직화 구이처럼 더 뜨겁고 건조한 열은 삶기나 수란식 조리 같은 습열 방식보다 표면에서 수분을 더 많이 증발시킵니다. 그래서 직화로 구운 닭 가슴살의 수율은 70% 안팎이고, 삶거나 수란식으로 조리하면 수분이 더 남아 80%가 됩니다. 수율 10퍼센트포인트 차이는 기록해야 할 무게에서 실제로 유의미한 차이입니다.',
+        a: '그렇습니다. 직화 구이처럼 더 뜨겁고 건조한 열은 삶기나 수란식 조리 같은 습열 방식보다 표면에서 수분을 더 많이 증발시킵니다. 그래서 직화로 구운 닭 가슴살의 수율은 70% 안팎이고, 삶거나 수란식으로 조리하면 수분이 더 남아 77%가 됩니다. 수율 7퍼센트포인트 차이도 기록해야 할 무게에서 실제로 유의미한 차이입니다.',
       },
       {
         q: '조리된 닭고기 무게를 생 무게로 되돌리려면 어떻게 하나요?',
-        a: '사용한 조리법의 수율을 소수로 바꿔 조리 후 중량을 나누세요. 오븐에 굽거나 로스트한 닭 가슴살은 조리 후 중량 ÷ 0.75, 직화 구이는 ÷ 0.70, 삶기나 수란식 조리는 ÷ 0.80입니다. 위 계산기의 "조리 후 → 생" 전환을 쓰면 조리법을 고르는 순간 자동으로 계산됩니다.',
+        a: '사용한 조리법의 수율을 소수로 바꿔 조리 후 중량을 나누세요. 오븐에 굽거나 로스트한 닭 가슴살은 조리 후 중량 ÷ 0.72, 직화 구이는 ÷ 0.70, 삶기나 수란식 조리는 ÷ 0.77입니다. 위 계산기의 "조리 후 → 생" 전환을 쓰면 조리법을 고르는 순간 자동으로 계산됩니다.',
       },
       {
         q: '닭 가슴살의 생·조리 후 비율은 어떻게 되나요?',
-        a: '오븐에 굽거나 로스트한 닭 가슴살은 대략 4:3입니다. 조리 후 무게가 생 무게의 약 4분의 3이라는 뜻이죠. 조리법에 따라 조금씩 달라져서, 직화 구이는 10:7(수율 70%)에 가깝고, 삶거나 수란식으로 조리하면 4:3.2(수율 80%)에 가깝습니다.',
+        a: '오븐에 굽거나 로스트한 닭 가슴살은 대략 4:2.9입니다. 조리 후 무게가 생 무게의 4분의 3에 조금 못 미친다는 뜻이죠. 조리법에 따라 조금씩 달라져서, 직화 구이는 10:7(수율 70%)에 가깝고, 삶거나 수란식으로 조리하면 4:3.1(수율 77%)에 가깝습니다.',
       },
       {
         q: '닭고기는 조리 후 무게가 얼마나 되나요?',
-        a: 'USDA 수율 75%를 기준으로, 생 닭 가슴살 100g은 오븐에 굽거나 로스트하면 약 75g이 됩니다. 직화로 구우면 약 70g, 삶거나 수란식으로 조리하면 약 80g, 팬에 구우면 약 72g입니다. 위 계산기에 시작 중량을 입력하면 조리법별 정확한 결과를 볼 수 있습니다.',
+        a: 'USDA 수율 72%를 기준으로, 생 닭 가슴살 100g은 오븐에 굽거나 로스트하면 약 72g이 됩니다. 직화로 구우면 약 70g, 삶거나 수란식으로 조리하면 약 77g, 팬에 구우면 약 72g입니다. 위 계산기에 시작 중량을 입력하면 조리법별 정확한 결과를 볼 수 있습니다.',
       },
     ],
     grains: [
@@ -888,7 +888,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     generic: [
       {
         q: '{food}은(는) 조리하면 무게가 얼마나 줄어드나요?',
-        a: '조리 수율은 {pct}%입니다. {food}을(를) 조리하면 무게의 {loss}%가 줄어듭니다. 출처: USDA FoodData Central.',
+        a: '조리 수율은 {pct}%입니다. {food}을(를) 조리하면 무게의 {loss}%가 줄어듭니다. 출처: {source}.',
       },
       {
         q: '{food}의 영양소는 생 기준으로 기록하나요, 조리 후 기준으로 기록하나요?',
@@ -898,7 +898,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     spinach: [
       {
         q: '시금치는 조리하면 얼마나 줄어드나요?',
-        a: 'USDA 자료에 따르면 생 시금치는 조리하면 원래 무게의 약 30%까지 줄어듭니다. 즉 생잎 100g이 조리 후 겨우 30g이 됩니다. 잎채소가 이토록 극적으로 줄어드는 이유는 수분 함량이 유난히 높고, 열이 세포 구조를 무너뜨리면 잎 자체가 거의 완전히 주저앉기 때문입니다. 브로콜리나 감자처럼 조직이 단단한 채소는 무게가 훨씬 많이 남습니다.',
+        a: '부피로 보면 극적입니다. 팬 가득했던 생잎이 한 줌 정도로 줄어듭니다. 하지만 무게로 보면 생각보다 훨씬 적습니다. USDA 자료에 따르면 시금치의 조리 수율은 77%로, 생잎 100g이 조리 후 약 77g이 되어 23%가량 줄어드는 데 그칩니다. 이 두 인상의 차이가 바로 착각의 원인입니다. 숨이 죽는 과정에서 빠지는 것은 생잎을 부피 있게 만들던 공기와 구조이고, 수분은 대부분 그대로 남습니다. 매크로를 기록한다면 팬이 얼마나 줄었는지로 판단하지 말고 시금치를 저울에 다세요.',
       },
     ],
   },
@@ -907,7 +907,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     chicken: [
       {
         q: 'Quanto si riduce il petto di pollo in cottura?',
-        a: 'Il petto di pollo perde circa il 25% del peso in cottura: 200 g crudi danno all’incirca 150 g cotti. La resa cambia leggermente secondo il metodo: al forno o arrosto = 75%, alla griglia = 70%, bollito o in camicia = 80%, in padella = 72% (dati USDA).',
+        a: 'Il petto di pollo perde circa il 28% del peso in cottura: 200 g crudi danno all’incirca 144 g cotti. La resa cambia leggermente secondo il metodo: al forno o arrosto = 72%, alla griglia = 70%, bollito o in camicia = 77%, in padella = 72% (dati USDA).',
       },
       {
         q: 'I macro del pollo si contano da crudo o da cotto?',
@@ -919,23 +919,23 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Quanto peso perde il petto di pollo in cottura?',
-        a: 'Dipende dal metodo di cottura. Secondo i dati USDA, il petto di pollo al forno o arrosto conserva circa il 75% del peso da crudo, alla griglia circa il 70%, bollito o in camicia circa l’80% e in padella circa il 72%. Non esiste un unico numero corretto: usa il selettore del metodo di cottura nel calcolatore qui sopra per un risultato più preciso.',
+        a: 'Dipende dal metodo di cottura. Secondo i dati USDA, il petto di pollo al forno o arrosto conserva circa il 72% del peso da crudo, alla griglia circa il 70%, bollito o in camicia circa il 77% e in padella circa il 72%. Non esiste un unico numero corretto: usa il selettore del metodo di cottura nel calcolatore qui sopra per un risultato più preciso.',
       },
       {
         q: 'Il metodo di cottura fa davvero differenza?',
-        a: 'Sì. Un calore più alto e più secco — come quello della griglia — fa evaporare più umidità dalla superficie rispetto ai metodi a calore umido come la bollitura o la cottura in camicia. Per questo il petto grigliato ha una resa intorno al 70%, mentre bollito o in camicia trattiene più umidità e arriva all’80%. Dieci punti percentuali di scarto sono una differenza reale sul peso che dovresti registrare.',
+        a: 'Sì. Un calore più alto e più secco — come quello della griglia — fa evaporare più umidità dalla superficie rispetto ai metodi a calore umido come la bollitura o la cottura in camicia. Per questo il petto grigliato ha una resa intorno al 70%, mentre bollito o in camicia trattiene più umidità e arriva al 77%. Anche sette punti percentuali di scarto sono una differenza reale sul peso che dovresti registrare.',
       },
       {
         q: 'Come riporto il peso del pollo da cotto a crudo?',
-        a: 'Dividi il peso da cotto per la resa espressa in decimali, secondo il metodo usato. Per il petto di pollo al forno o arrosto: peso cotto ÷ 0,75. Alla griglia: ÷ 0,70. Bollito o in camicia: ÷ 0,80. Il selettore Cotto → Crudo nel calcolatore qui sopra lo fa automaticamente appena scegli il metodo di cottura.',
+        a: 'Dividi il peso da cotto per la resa espressa in decimali, secondo il metodo usato. Per il petto di pollo al forno o arrosto: peso cotto ÷ 0,72. Alla griglia: ÷ 0,70. Bollito o in camicia: ÷ 0,77. Il selettore Cotto → Crudo nel calcolatore qui sopra lo fa automaticamente appena scegli il metodo di cottura.',
       },
       {
         q: 'Qual è il rapporto crudo-cotto del petto di pollo?',
-        a: 'Per il petto di pollo al forno o arrosto il rapporto è di circa 4:3 — il peso da cotto equivale a circa tre quarti di quello da crudo. Cambia un po’ secondo il metodo: alla griglia ci si avvicina a 10:7 (resa del 70%), mentre bollito o in camicia si arriva più vicino a 4:3,2 (resa dell’80%).',
+        a: 'Per il petto di pollo al forno o arrosto il rapporto è di circa 4:2,9 — il peso da cotto equivale a poco meno di tre quarti di quello da crudo. Cambia un po’ secondo il metodo: alla griglia ci si avvicina a 10:7 (resa del 70%), mentre bollito o in camicia si arriva più vicino a 4:3,1 (resa del 77%).',
       },
       {
         q: 'Quanto pesa il pollo dopo la cottura?',
-        a: '100 g di petto di pollo crudo pesano all’incirca 75 g dopo la cottura al forno o arrosto, sulla base della resa USDA del 75%. Alla griglia aspettati circa 70 g; bollito o in camicia circa 80 g; in padella circa 72 g. Inserisci il tuo peso di partenza nel calcolatore qui sopra per il risultato esatto del tuo metodo di cottura.',
+        a: '100 g di petto di pollo crudo pesano all’incirca 72 g dopo la cottura al forno o arrosto, sulla base della resa USDA del 72%. Alla griglia aspettati circa 70 g; bollito o in camicia circa 77 g; in padella circa 72 g. Inserisci il tuo peso di partenza nel calcolatore qui sopra per il risultato esatto del tuo metodo di cottura.',
       },
     ],
     grains: [
@@ -961,7 +961,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     generic: [
       {
         q: 'Quanto peso si perde cuocendo {food}?',
-        a: 'La resa di cottura è del {pct}%: cuocendo {food} si perde il {loss}% del peso. Fonte: USDA FoodData Central.',
+        a: 'La resa di cottura è del {pct}%: cuocendo {food} si perde il {loss}% del peso. Fonte: {source}.',
       },
       {
         q: 'Per {food}, i macro vanno contati da crudo o da cotto?',
@@ -971,7 +971,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     spinach: [
       {
         q: 'Quanto si riducono gli spinaci in cottura?',
-        a: 'Gli spinaci crudi si riducono a circa il 30% del peso iniziale in cottura, secondo i dati USDA: 100 g di foglie crude diventano appena 30 g una volta cotte. Le verdure a foglia si riducono così tanto perché hanno un contenuto d’acqua eccezionalmente alto e le foglie stesse collassano quasi del tutto quando il calore rompe la loro struttura cellulare. Verdure più sode come broccoli o patate conservano molto più peso.',
+        a: 'In volume, moltissimo: una padella piena di foglie crude si riduce a una piccola manciata. In peso, molto meno di quanto si creda: secondo i dati USDA la resa di cottura è del 77%, quindi 100 g di foglie crude diventano circa 77 g da cotte, con una perdita di circa il 23%. È proprio lo scarto tra queste due impressioni a trarre in inganno. Appassendo, le foglie perdono l’aria e la struttura che le rendevano voluminose; l’acqua invece resta in gran parte. Se tieni traccia dei macro, pesa gli spinaci invece di giudicare da quanto si è ridotta la padella.',
       },
     ],
   },
@@ -980,7 +980,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     chicken: [
       {
         q: 'चिकन ब्रेस्ट पकाने पर कितना सिकुड़ता है?',
-        a: 'चिकन ब्रेस्ट पकाने पर अपना करीब 25% वजन खो देता है, यानी 200g कच्चा ब्रेस्ट पकने पर लगभग 150g रह जाता है। यील्ड तरीके के हिसाब से थोड़ा बदलती है: बेक/रोस्ट = 75%, ग्रिल = 70%, उबला/पोच्ड = 80%, तवे पर तला = 72% (USDA डेटा)।',
+        a: 'चिकन ब्रेस्ट पकाने पर अपना करीब 28% वजन खो देता है, यानी 200g कच्चा ब्रेस्ट पकने पर लगभग 144g रह जाता है। यील्ड तरीके के हिसाब से थोड़ा बदलती है: बेक/रोस्ट = 72%, ग्रिल = 70%, उबला/पोच्ड = 77%, तवे पर तला = 72% (USDA डेटा)।',
       },
       {
         q: 'चिकन के मैक्रो कच्चे वजन पर गिनूं या पके पर?',
@@ -992,23 +992,23 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'चिकन ब्रेस्ट पकाने पर कितना वजन खोता है?',
-        a: 'यह पकाने के तरीके पर निर्भर करता है। USDA डेटा के मुताबिक बेक या रोस्ट किया चिकन ब्रेस्ट अपने कच्चे वजन का करीब 75% बनाए रखता है, ग्रिल किया करीब 70%, उबला या पोच्ड करीब 80% और तवे पर तला करीब 72%। कोई एक सही संख्या नहीं है — ज्यादा सटीक नतीजे के लिए ऊपर कैलकुलेटर में पकाने का तरीका चुनें।',
+        a: 'यह पकाने के तरीके पर निर्भर करता है। USDA डेटा के मुताबिक बेक या रोस्ट किया चिकन ब्रेस्ट अपने कच्चे वजन का करीब 72% बनाए रखता है, ग्रिल किया करीब 70%, उबला या पोच्ड करीब 77% और तवे पर तला करीब 72%। कोई एक सही संख्या नहीं है — ज्यादा सटीक नतीजे के लिए ऊपर कैलकुलेटर में पकाने का तरीका चुनें।',
       },
       {
         q: 'क्या पकाने के तरीके से सचमुच फर्क पड़ता है?',
-        a: 'हां। ग्रिल जैसी तेज और सूखी गर्मी, उबालने या पोच करने जैसी नम विधियों की तुलना में सतह से ज्यादा नमी उड़ा देती है। इसीलिए ग्रिल किए चिकन ब्रेस्ट की यील्ड करीब 70% होती है, जबकि उबला या पोच्ड चिकन ज्यादा नमी रखकर 80% पर रहता है। यील्ड में 10 प्रतिशत अंक का अंतर, आपको दर्ज करने वाले वजन में असली फर्क है।',
+        a: 'हां। ग्रिल जैसी तेज और सूखी गर्मी, उबालने या पोच करने जैसी नम विधियों की तुलना में सतह से ज्यादा नमी उड़ा देती है। इसीलिए ग्रिल किए चिकन ब्रेस्ट की यील्ड करीब 70% होती है, जबकि उबला या पोच्ड चिकन ज्यादा नमी रखकर 77% पर रहता है। यील्ड में 7 प्रतिशत अंक का अंतर भी, आपको दर्ज करने वाले वजन में असली फर्क है।',
       },
       {
         q: 'पके चिकन के वजन को वापस कच्चे में कैसे बदलूं?',
-        a: 'आपने जो तरीका इस्तेमाल किया, उसकी यील्ड को दशमलव में लेकर पके वजन को उससे भाग दें। बेक या रोस्ट किए चिकन ब्रेस्ट के लिए: पका वजन ÷ 0.75। ग्रिल के लिए: ÷ 0.70। उबले या पोच्ड के लिए: ÷ 0.80। ऊपर कैलकुलेटर में "पका → कच्चा" चुनते ही, और पकाने का तरीका चुनते ही, यह अपने आप हो जाता है।',
+        a: 'आपने जो तरीका इस्तेमाल किया, उसकी यील्ड को दशमलव में लेकर पके वजन को उससे भाग दें। बेक या रोस्ट किए चिकन ब्रेस्ट के लिए: पका वजन ÷ 0.72। ग्रिल के लिए: ÷ 0.70। उबले या पोच्ड के लिए: ÷ 0.77। ऊपर कैलकुलेटर में "पका → कच्चा" चुनते ही, और पकाने का तरीका चुनते ही, यह अपने आप हो जाता है।',
       },
       {
         q: 'चिकन ब्रेस्ट का कच्चे से पके का अनुपात क्या है?',
-        a: 'बेक या रोस्ट किए चिकन ब्रेस्ट के लिए यह अनुपात करीब 4:3 है — पका वजन कच्चे वजन का लगभग तीन-चौथाई होता है। पकाने के तरीके से यह थोड़ा बदलता है: ग्रिल करने पर यह 10:7 (70% यील्ड) के करीब पहुंचता है, जबकि उबालने या पोच करने पर 4:3.2 (80% यील्ड) के करीब रहता है।',
+        a: 'बेक या रोस्ट किए चिकन ब्रेस्ट के लिए यह अनुपात करीब 4:2.9 है — पका वजन कच्चे वजन के तीन-चौथाई से थोड़ा कम होता है। पकाने के तरीके से यह थोड़ा बदलता है: ग्रिल करने पर यह 10:7 (70% यील्ड) के करीब पहुंचता है, जबकि उबालने या पोच करने पर 4:3.1 (77% यील्ड) के करीब रहता है।',
       },
       {
         q: 'पकने के बाद चिकन का वजन कितना होता है?',
-        a: 'USDA की 75% यील्ड के आधार पर, 100g कच्चा चिकन ब्रेस्ट बेक या रोस्ट करने के बाद करीब 75g रह जाता है। ग्रिल करें तो करीब 70g, उबालें या पोच करें तो करीब 80g, और तवे पर तलें तो करीब 72g। अपने शुरुआती वजन को ऊपर कैलकुलेटर में डालें और अपने तरीके के लिए सटीक नतीजा पाएं।',
+        a: 'USDA की 72% यील्ड के आधार पर, 100g कच्चा चिकन ब्रेस्ट बेक या रोस्ट करने के बाद करीब 72g रह जाता है। ग्रिल करें तो करीब 70g, उबालें या पोच करें तो करीब 77g, और तवे पर तलें तो करीब 72g। अपने शुरुआती वजन को ऊपर कैलकुलेटर में डालें और अपने तरीके के लिए सटीक नतीजा पाएं।',
       },
     ],
     grains: [
@@ -1034,7 +1034,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     generic: [
       {
         q: '{food} पकाने पर कितना वजन घटता है?',
-        a: 'कुकिंग यील्ड {pct}% है: {food} पकाने पर वजन का {loss}% कम हो जाता है। स्रोत: USDA FoodData Central।',
+        a: 'कुकिंग यील्ड {pct}% है: {food} पकाने पर वजन का {loss}% कम हो जाता है। स्रोत: {source}।',
       },
       {
         q: '{food} के मैक्रो कच्चे वजन पर गिनें या पके पर?',
@@ -1044,7 +1044,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     spinach: [
       {
         q: 'पालक पकाने पर कितना सिकुड़ता है?',
-        a: 'USDA डेटा के अनुसार, कच्चा पालक पकाने पर अपने मूल वजन का करीब 30% रह जाता है — यानी 100g कच्चे पत्ते पकने पर सिर्फ 30g बचते हैं। पत्तेदार सब्जियां इतनी नाटकीय ढंग से इसलिए सिकुड़ती हैं क्योंकि उनमें पानी की मात्रा असाधारण रूप से ज्यादा होती है, और गर्मी से कोशिका संरचना टूटते ही पत्ते खुद लगभग पूरी तरह बैठ जाते हैं। ब्रोकोली या आलू जैसी सख्त सब्जियां कहीं ज्यादा वजन बनाए रखती हैं।',
+        a: 'मात्रा के हिसाब से बहुत ज्यादा — कड़ाही भर कच्चे पत्ते सिकुड़कर एक छोटी मुट्ठी रह जाते हैं। लेकिन वजन के हिसाब से उतना नहीं जितना लोग सोचते हैं: USDA डेटा के अनुसार पालक की कुकिंग यील्ड 77% है, यानी 100g कच्चे पत्ते पकने पर करीब 77g रह जाते हैं — घटा सिर्फ 23% के आसपास। इन्हीं दो अलग-अलग प्रभावों का फर्क लोगों को भ्रमित करता है। मुरझाते समय वह हवा और बनावट निकलती है जो कच्चे पत्तों को भारी-भरकम दिखाती थी; पानी ज्यादातर भीतर ही रह जाता है। अगर आप मैक्रो ट्रैक करते हैं, तो कड़ाही कितनी सिकुड़ी यह देखने के बजाय पालक को तराजू पर तोलें।',
       },
     ],
   },

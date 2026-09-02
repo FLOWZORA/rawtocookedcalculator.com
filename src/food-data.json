@@ -1,7 +1,8 @@
 {
   "_meta": {
     "purpose": "Starter dataset for rawtocookedcalculator.com. Cooking yield % = cooked weight as a percentage of raw weight. Macros are per 100g RAW food, sourced/cross-referenced from USDA FoodData Central and USDA Table of Cooking Yields for Meat and Poultry, Release 2.",
-    "verification_needed": "Spot-check every entry against live USDA FoodData Central (fdc.nal.usda.gov) before publishing, especially chicken (flagship page). Entries marked 'estimate' are not direct USDA cooking-yield data and should be flagged as such on the site, the same way Summer & Cinnamon discloses it for salmon/shrimp.",
+    "yield_sources": "Yield figures come from four cited authorities: the modern USDA Table of Cooking Yields for Meat and Poultry (2012/2014), USDA Agriculture Handbook No. 102 (1975), USDA FoodData Central raw-vs-cooked nutrient ratios, and — for soy chunks only, which USDA does not track — IFCT 2017, India's official Indian Food Composition Tables.",
+    "verification_needed": "Spot-check every entry against live USDA FoodData Central (fdc.nal.usda.gov) before publishing, especially chicken (flagship page). Macros for entries added after the initial dataset (veal cutlet, veal roast, spaghetti) still need the same spot-check; their yield figures are cited but their macros are standard FoodData Central raw values, not part of the cited yield sources.",
     "formula_forward": "cooked_weight = raw_weight * (yield_percent / 100)",
     "formula_reverse": "raw_weight = cooked_weight / (yield_percent / 100)"
   },
@@ -12,11 +13,11 @@
         "name": "Chicken Breast (skinless, boneless)",
         "flagship": true,
         "default_cooking_method": "baked/roasted",
-        "yield_percent": 75,
+        "yield_percent": 72,
         "yield_by_method": {
-          "baked_roasted": 75,
+          "baked_roasted": 72,
           "grilled": 70,
-          "boiled_poached": 80,
+          "boiled_poached": 77,
           "pan_fried": 72
         },
         "source": "USDA Table of Cooking Yields for Meat and Poultry",
@@ -26,7 +27,7 @@
         "id": "chicken-thigh",
         "name": "Chicken Thigh (skinless, boneless)",
         "default_cooking_method": "baked/roasted",
-        "yield_percent": 73,
+        "yield_percent": 69,
         "source": "USDA Table of Cooking Yields for Meat and Poultry",
         "macros_per_100g_raw": { "calories": 128, "protein_g": 20.4, "carbs_g": 0, "fat_g": 4.6 }
       },
@@ -76,26 +77,49 @@
         "id": "turkey-breast",
         "name": "Turkey Breast (skinless, boneless)",
         "default_cooking_method": "baked_roasted",
-        "yield_percent": 74,
-        "source": "USDA Table of Cooking Yields for Meat and Poultry",
+        "yield_percent": 79,
+        "note": "Breast-specific roasting yield. The previous 74% figure was whole-stuffed-turkey data, which is not comparable.",
+        "source": "USDA Agriculture Handbook No. 102 (1975)",
         "macros_per_100g_raw": { "calories": 114, "protein_g": 24.6, "carbs_g": 0, "fat_g": 1 }
+      },
+      {
+        "id": "veal-cutlet",
+        "name": "Veal Cutlet",
+        "default_cooking_method": "pan_broiled",
+        "yield_percent": 67,
+        "note": "Macros are standard USDA FoodData Central values for raw veal leg (top round) and still need the spot-check described in _meta.verification_needed.",
+        "source": "USDA Agriculture Handbook No. 102 (1975)",
+        "macros_per_100g_raw": { "calories": 116, "protein_g": 20.2, "carbs_g": 0, "fat_g": 2.9 }
+      },
+      {
+        "id": "veal-roast",
+        "name": "Veal Roast (boneless)",
+        "default_cooking_method": "average_all_temps",
+        "yield_percent": 71,
+        "yield_by_method": {
+          "average_all_temps": 71,
+          "medium": 75,
+          "well_done": 73,
+          "overdone": 66
+        },
+        "note": "71% is the all-temperatures average; the sub-options are doneness levels, not cooking methods. Macros are standard USDA FoodData Central values for raw veal (composite of trimmed retail cuts) and still need the spot-check described in _meta.verification_needed.",
+        "source": "USDA Agriculture Handbook No. 102 (1975)",
+        "macros_per_100g_raw": { "calories": 144, "protein_g": 19.4, "carbs_g": 0, "fat_g": 6.8 }
       },
       {
         "id": "salmon",
         "name": "Salmon Fillet",
         "default_cooking_method": "baked",
-        "yield_percent": 79,
-        "note": "USDA has not published a direct cooking-yield figure for salmon - this is an industry-standard estimate. Disclose this on the page, same as Summer & Cinnamon does.",
-        "source": "estimate - not direct USDA cooking-yield data",
+        "yield_percent": 85,
+        "source": "USDA Agriculture Handbook No. 102 (1975)",
         "macros_per_100g_raw": { "calories": 208, "protein_g": 20, "carbs_g": 0, "fat_g": 13.4 }
       },
       {
         "id": "shrimp",
         "name": "Shrimp",
         "default_cooking_method": "boiled",
-        "yield_percent": 89,
-        "note": "USDA has not published a direct cooking-yield figure for shrimp - this is an industry-standard estimate. Disclose this on the page.",
-        "source": "estimate - not direct USDA cooking-yield data",
+        "yield_percent": 75,
+        "source": "USDA Agriculture Handbook No. 102 (1975)",
         "macros_per_100g_raw": { "calories": 99, "protein_g": 24, "carbs_g": 0.2, "fat_g": 0.3 }
       }
     ],
@@ -113,8 +137,8 @@
         "id": "brown-rice",
         "name": "Brown Rice (dry)",
         "default_cooking_method": "boiled",
-        "yield_percent": 280,
-        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "yield_percent": 335,
+        "source": "USDA Agriculture Handbook No. 102 (1975)",
         "macros_per_100g_raw": { "calories": 370, "protein_g": 7.9, "carbs_g": 77, "fat_g": 2.9 }
       },
       {
@@ -122,57 +146,67 @@
         "name": "Pasta (dry)",
         "default_cooking_method": "boiled",
         "yield_percent": 225,
+        "note": "Generic dry pasta. Real yields vary meaningfully by shape - this figure sits close to Rigatoni's measured 219%; see the separate spaghetti entry for long pasta.",
         "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "macros_per_100g_raw": { "calories": 371, "protein_g": 13, "carbs_g": 75, "fat_g": 1.5 }
+      },
+      {
+        "id": "spaghetti",
+        "name": "Spaghetti (dry)",
+        "default_cooking_method": "boiled",
+        "yield_percent": 290,
+        "note": "Representative of the measured 265-312% range, which depends on doneness (al dente vs. well cooked). Macros are the same dry-pasta values used for the generic pasta entry.",
+        "source": "USDA Agriculture Handbook No. 102 (1975)",
         "macros_per_100g_raw": { "calories": 371, "protein_g": 13, "carbs_g": 75, "fat_g": 1.5 }
       },
       {
         "id": "quinoa",
         "name": "Quinoa (dry)",
         "default_cooking_method": "boiled",
-        "yield_percent": 280,
-        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "yield_percent": 314,
+        "source": "USDA FoodData Central (calculated from raw vs. cooked nutrient content ratios)",
         "macros_per_100g_raw": { "calories": 368, "protein_g": 14.1, "carbs_g": 64.2, "fat_g": 6.1 }
       },
       {
         "id": "lentils",
         "name": "Lentils (dry)",
         "default_cooking_method": "boiled",
-        "yield_percent": 230,
-        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "yield_percent": 289,
+        "source": "USDA Agriculture Handbook No. 102 (1975)",
         "macros_per_100g_raw": { "calories": 353, "protein_g": 25.8, "carbs_g": 60.1, "fat_g": 1.1 }
       },
       {
         "id": "black-beans",
         "name": "Black Beans (dry)",
         "default_cooking_method": "boiled",
-        "yield_percent": 220,
-        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "yield_percent": 250,
+        "source": "USDA FoodData Central (calculated from raw vs. cooked nutrient content ratios - calorie and protein ratios agreed within 6 points)",
         "macros_per_100g_raw": { "calories": 341, "protein_g": 21.6, "carbs_g": 62.4, "fat_g": 1.4 }
       },
       {
         "id": "chickpeas",
         "name": "Chickpeas / Garbanzo Beans (dry)",
         "default_cooking_method": "boiled",
-        "yield_percent": 240,
+        "yield_percent": 231,
         "note": "Dry legume - expands rather than shrinks, similar to lentils and black beans",
-        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "source": "USDA FoodData Central (calculated from raw vs. cooked nutrient content ratios - calorie and protein ratios agreed within 1.3 points)",
         "macros_per_100g_raw": { "calories": 378, "protein_g": 20.5, "carbs_g": 63, "fat_g": 6.0 }
       },
       {
         "id": "kidney-beans",
         "name": "Kidney Beans (dry)",
         "default_cooking_method": "boiled",
-        "yield_percent": 225,
-        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "yield_percent": 238,
+        "source": "USDA Agriculture Handbook No. 102 (1975)",
         "macros_per_100g_raw": { "calories": 333, "protein_g": 24.0, "carbs_g": 60.0, "fat_g": 0.8 }
       },
       {
         "id": "soy-chunks",
         "name": "Soy Chunks (dry / textured vegetable protein)",
         "default_cooking_method": "boiled_rehydrated",
-        "yield_percent": 280,
+        "yield_percent": 248,
         "note": "Dehydrated soy protein product, not a whole raw legume - absorbs a large amount of water when rehydrated/cooked. Popular high-protein staple in vegetarian diets, especially in India.",
-        "source": "estimate - based on commonly cited Indian Food Composition Tables (IFCT) values, not a direct USDA FoodData Central entry. Disclose this on the page, same as the salmon/shrimp estimate disclosure.",
+        "source": "IFCT 2017 (India's official Indian Food Composition Tables, calculated from raw vs. cooked nutrient content ratios - calorie and protein ratios agreed within 2 points). Not a USDA source, since USDA does not track this food, but IFCT is India's equivalent official nutrition authority.",
         "macros_per_100g_raw": { "calories": 345, "protein_g": 52.0, "carbs_g": 33.0, "fat_g": 0.5 }
       }
     ],
@@ -181,17 +215,18 @@
         "id": "broccoli",
         "name": "Broccoli",
         "default_cooking_method": "boiled_steamed",
-        "yield_percent": 90,
-        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "yield_percent": 100,
+        "note": "Essentially no net weight change when boiled - water lost from the florets is offset by water taken up during cooking",
+        "source": "USDA Agriculture Handbook No. 102 (1975)",
         "macros_per_100g_raw": { "calories": 34, "protein_g": 2.8, "carbs_g": 6.6, "fat_g": 0.4 }
       },
       {
         "id": "spinach",
         "name": "Spinach",
         "default_cooking_method": "boiled_steamed",
-        "yield_percent": 30,
-        "note": "Leafy greens lose the most volume/weight of any vegetable - real, dramatic shrinkage, worth highlighting in content",
-        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "yield_percent": 77,
+        "note": "Spinach collapses dramatically in VOLUME but only loses about 23% of its WEIGHT - the common assumption of ~70% weight loss comes from watching the volume shrink, not from measurement",
+        "source": "USDA Agriculture Handbook No. 102 (1975)",
         "macros_per_100g_raw": { "calories": 23, "protein_g": 2.9, "carbs_g": 3.6, "fat_g": 0.4 }
       },
       {
@@ -206,8 +241,8 @@
         "id": "sweet-potato",
         "name": "Sweet Potato",
         "default_cooking_method": "baked",
-        "yield_percent": 90,
-        "source": "USDA FoodData Central (raw vs. cooked entries)",
+        "yield_percent": 78,
+        "source": "USDA Agriculture Handbook No. 102 (1975)",
         "macros_per_100g_raw": { "calories": 86, "protein_g": 1.6, "carbs_g": 20.1, "fat_g": 0.1 }
       }
     ]

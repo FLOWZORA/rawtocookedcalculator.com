@@ -91,6 +91,15 @@ export function getSlugById(id: string): string {
   return ID_TO_SLUG[id] ?? id;
 }
 
+/**
+ * Whether this food has a page of its own. Only foods listed in SLUG_TO_ID get
+ * routed by [food].astro; the rest are calculator-only entries. Anything that
+ * links to a food page must filter on this, or it will emit a 404 link.
+ */
+export function hasPage(food: Food): boolean {
+  return food.id in ID_TO_SLUG;
+}
+
 export function isEstimate(food: Food): boolean {
   return food.source.startsWith('estimate');
 }
@@ -152,8 +161,32 @@ export function getExplanationKey(food: Food): ExplanationKey {
   return 'vegDefault';
 }
 
+export type SourceKey =
+  | 'estimate'
+  | 'source.usdaMeatTable'
+  | 'source.usdaHandbook102'
+  | 'source.usdaFdc'
+  | 'source.ifct';
+
 /** Which i18n key names this food's data source. */
-export function getSourceKey(food: Food): 'estimate' | 'source.usdaMeatTable' | 'source.usdaFdc' {
+export function getSourceKey(food: Food): SourceKey {
   if (isEstimate(food)) return 'estimate';
-  return food.source.startsWith('USDA Table') ? 'source.usdaMeatTable' : 'source.usdaFdc';
+  if (food.source.startsWith('USDA Table')) return 'source.usdaMeatTable';
+  if (food.source.startsWith('USDA Agriculture Handbook')) return 'source.usdaHandbook102';
+  if (food.source.startsWith('IFCT')) return 'source.ifct';
+  return 'source.usdaFdc';
+}
+
+/**
+ * Which i18n key carries the disclosure shown under the citation, if any.
+ * Estimates say USDA has no figure; IFCT-sourced foods say the figure is real
+ * but comes from India's national authority rather than USDA.
+ */
+export function getDisclosureKey(
+  food: Food
+): 'calc.estimateNote' | 'calc.ifctNote' | null {
+  const key = getSourceKey(food);
+  if (key === 'estimate') return 'calc.estimateNote';
+  if (key === 'source.ifct') return 'calc.ifctNote';
+  return null;
 }

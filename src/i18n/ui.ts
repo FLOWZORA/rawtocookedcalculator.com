@@ -29,27 +29,27 @@ export const ui = {
     'hero.description':
       'Enter a raw or cooked weight — get the converted weight plus full macros (calories, protein, carbs, fat). Covers meat, grains, and vegetables.',
     'hero.usda':
-      'All yields sourced from USDA FoodData Central and USDA Table of Cooking Yields.',
+      'All yields sourced from USDA FoodData Central, the USDA Table of Cooking Yields, and USDA Agriculture Handbook No. 102.',
 
     // Browse
     'browse.heading': 'Browse by food',
     'browse.description':
-      '20 foods across all three major categories — the broadest coverage of any raw-to-cooked calculator.',
+      '26 foods across all three major categories — the broadest coverage of any raw-to-cooked calculator.',
     'browse.catMeat': 'Meat, Poultry & Seafood',
     'browse.catGrains': 'Grains, Pasta & Legumes',
     'browse.catVeg': 'Vegetables',
-    'browse.note.chicken': 'Loses 25% when cooked',
+    'browse.note.chicken': 'Loses 28% when cooked',
     'browse.note.beef': 'Loses 27% when cooked',
-    'browse.note.salmon': 'Loses 21% when cooked',
+    'browse.note.salmon': 'Loses 15% when cooked',
     'browse.note.pork': 'Loses 22% when cooked',
     'browse.note.rice': 'Expands 3× when cooked',
     'browse.note.pasta': 'Expands 2.25× when cooked',
-    'browse.note.lentils': 'Expands 2.3× when cooked',
-    'browse.note.quinoa': 'Expands 2.8× when cooked',
-    'browse.note.spinach': 'Loses 70% when cooked',
-    'browse.note.broccoli': 'Loses 10% when cooked',
+    'browse.note.lentils': 'Expands 2.9× when cooked',
+    'browse.note.quinoa': 'Expands 3.1× when cooked',
+    'browse.note.spinach': 'Loses 23% when cooked',
+    'browse.note.broccoli': 'No net weight change',
     'browse.note.potato': 'Loses 6% when cooked',
-    'browse.note.sweetPotato': 'Loses 10% when cooked',
+    'browse.note.sweetPotato': 'Loses 22% when cooked',
 
     // Food names (browse list)
     'browse.food.chicken': 'Chicken Breast',
@@ -67,9 +67,9 @@ export const ui = {
 
     // Callout (spinach/rice)
     'callout.eyebrow': 'Surprising yields',
-    'callout.heading': 'Spinach loses 70% of its weight when cooked',
+    'callout.heading': 'Spinach collapses in volume — but only loses 23% of its weight',
     'callout.description':
-      "That bag of raw spinach shrinks to less than a third of its original weight after boiling or steaming. White rice goes the opposite direction — 100g dry becomes 300g cooked. These extremes are why weighing raw matters so much for accurate macro tracking.",
+      "A full pan of raw spinach wilts to almost nothing, so nearly everyone assumes the weight drops just as steeply. It does not: USDA measurements put spinach at a 77% cooking yield, meaning 100g of raw leaves still weighs about 77g cooked. What collapses is the volume, not the mass. White rice runs the other way — 100g dry becomes 300g cooked. Both are why a kitchen scale beats eyeballing.",
     'callout.spinachBtn': 'Spinach calculator →',
     'callout.riceBtn': 'Rice calculator →',
 
@@ -80,7 +80,7 @@ export const ui = {
       'Yields from the <strong>USDA Table of Cooking Yields for Meat and Poultry</strong> — the same source used by food manufacturers and dietitians.',
     'usda.grainsLabel': 'Grains & Vegetables',
     'usda.grainsText':
-      'Yields derived from comparing raw vs. cooked entries in <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov), the authoritative US nutrient database.',
+      'Yields from <strong>USDA Agriculture Handbook No. 102</strong> and from comparing raw vs. cooked entries in <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov), the authoritative US nutrient database.',
 
     // Calculator
     'calc.foodLabel': 'Food',
@@ -118,7 +118,9 @@ export const ui = {
     'footer.dataSources': 'Data Sources',
     'footer.usdaMeat': 'USDA Table of Cooking Yields for Meat and Poultry',
     'footer.usdaFdc': 'USDA FoodData Central',
-    'footer.estimatesNote': 'Estimates disclosed where USDA data is unavailable.',
+    'footer.usdaHandbook': "USDA Agriculture Handbook No. 102 (1975)",
+    'footer.nonUsdaNote':
+      "Soy chunks use IFCT 2017 (India’s official tables); USDA does not track that food.",
     'footer.disclaimer':
       'Values are per the USDA data above. Always weigh your food with a kitchen scale for accuracy.',
 
@@ -135,7 +137,7 @@ export const ui = {
     'food.chickenP1':
       'Skinless, boneless chicken breast delivers roughly 22.5g of protein per 100g raw — one of the highest protein-per-calorie ratios of any whole food. At only 120 calories and 2.6g of fat per 100g raw, it\'s the go-to lean protein for bodybuilders, athletes, and anyone managing a caloric deficit.',
     'food.chickenP2':
-      'The catch: because it loses 25–30% of its weight when cooked, <strong>tracking cooked weight without accounting for yield leads to underestimating your actual protein intake</strong>. A 150g cooked portion came from roughly 200g raw — that\'s the raw weight you should be logging against the USDA nutrition label.',
+      'The catch: because it loses about 28% of its weight when cooked, <strong>tracking cooked weight without accounting for yield leads to underestimating your actual protein intake</strong>. A 150g cooked portion came from roughly 210g raw — that\'s the raw weight you should be logging against the USDA nutrition label.',
     'food.calcHeading': '{name} Calculator',
     'food.faqHeading': 'Frequently asked questions',
     'food.relatedLabel': 'Related calculators',
@@ -154,7 +156,11 @@ export const ui = {
     "yield.loses": "Loses {loss}% of its weight when cooked",
     "yield.expands": "Expands to {n}× its dry weight when cooked",
     "source.usdaMeatTable": "USDA Table of Cooking Yields for Meat and Poultry",
+    "source.usdaHandbook102": "USDA Agriculture Handbook No. 102 (1975)",
     "source.usdaFdc": "USDA FoodData Central (raw vs. cooked entries)",
+    "source.ifct": "IFCT 2017 — Indian Food Composition Tables (India’s official nutrition authority)",
+    "calc.ifctNote":
+      "This yield is a real, calculated figure — but it comes from IFCT 2017, India’s official food composition tables, rather than USDA, which does not track this food.",
     "calc.noteLabel": "Note:",
 
     "footer.brand": "Raw→Cooked Calculator",
@@ -173,26 +179,26 @@ export const ui = {
     'hero.description':
       'Introduce el peso crudo o cocido y obtén el peso convertido más los macros completos (calorías, proteínas, carbohidratos, grasas). Cubre carnes, cereales y verduras.',
     'hero.usda':
-      'Todos los rendimientos provienen de USDA FoodData Central y la Tabla de Rendimientos de Cocción del USDA.',
+      'Todos los rendimientos provienen de USDA FoodData Central, la Tabla de Rendimientos de Cocción del USDA y el Manual de Agricultura n.º 102 del USDA.',
 
     'browse.heading': 'Explorar por alimento',
     'browse.description':
-      '20 alimentos en las tres categorías principales — la cobertura más amplia de cualquier calculadora crudo a cocido.',
+      '26 alimentos en las tres categorías principales — la cobertura más amplia de cualquier calculadora crudo a cocido.',
     'browse.catMeat': 'Carne, Aves y Mariscos',
     'browse.catGrains': 'Cereales, Pasta y Legumbres',
     'browse.catVeg': 'Verduras',
-    'browse.note.chicken': 'Pierde el 25% al cocinar',
+    'browse.note.chicken': 'Pierde el 28% al cocinar',
     'browse.note.beef': 'Pierde el 27% al cocinar',
-    'browse.note.salmon': 'Pierde el 21% al cocinar',
+    'browse.note.salmon': 'Pierde el 15% al cocinar',
     'browse.note.pork': 'Pierde el 22% al cocinar',
     'browse.note.rice': 'Se expande 3× al cocinar',
     'browse.note.pasta': 'Se expande 2,25× al cocinar',
-    'browse.note.lentils': 'Se expande 2,3× al cocinar',
-    'browse.note.quinoa': 'Se expande 2,8× al cocinar',
-    'browse.note.spinach': 'Pierde el 70% al cocinar',
-    'browse.note.broccoli': 'Pierde el 10% al cocinar',
+    'browse.note.lentils': 'Se expande 2,9× al cocinar',
+    'browse.note.quinoa': 'Se expande 3,1× al cocinar',
+    'browse.note.spinach': 'Pierde el 23% al cocinar',
+    'browse.note.broccoli': 'Sin cambio neto de peso',
     'browse.note.potato': 'Pierde el 6% al cocinar',
-    'browse.note.sweetPotato': 'Pierde el 10% al cocinar',
+    'browse.note.sweetPotato': 'Pierde el 22% al cocinar',
 
     'browse.food.chicken': 'Pechuga de pollo',
     'browse.food.beef': 'Carne molida (80/20)',
@@ -208,9 +214,9 @@ export const ui = {
     'browse.food.sweetPotato': 'Camote',
 
     'callout.eyebrow': 'Rendimientos sorprendentes',
-    'callout.heading': 'La espinaca pierde el 70% de su peso al cocinar',
+    'callout.heading': 'La espinaca se desploma en volumen, pero solo pierde el 23% de su peso',
     'callout.description':
-      'Esa bolsa de espinaca cruda se reduce a menos de un tercio de su peso original después de hervir o cocinar al vapor. El arroz blanco va en sentido contrario — 100g seco se convierte en 300g cocido. Estos extremos son la razón por la que pesar en crudo importa tanto para el seguimiento preciso de macros.',
+      'Una sartén llena de espinaca cruda se reduce a casi nada, así que casi todo el mundo da por hecho que el peso cae igual de rápido. No es así: las mediciones del USDA sitúan a la espinaca en un rendimiento del 77%, es decir, 100g de hojas crudas siguen pesando unos 77g ya cocidas. Lo que se desploma es el volumen, no la masa. El arroz blanco va en sentido contrario — 100g seco se convierte en 300g cocido. Por eso conviene usar una báscula en lugar de calcular a ojo.',
     'callout.spinachBtn': 'Calculadora de espinaca →',
     'callout.riceBtn': 'Calculadora de arroz →',
 
@@ -220,7 +226,7 @@ export const ui = {
       'Rendimientos de la <strong>Tabla de Rendimientos de Cocción del USDA para Carne y Aves</strong> — la misma fuente utilizada por fabricantes de alimentos y dietistas.',
     'usda.grainsLabel': 'Cereales y Verduras',
     'usda.grainsText':
-      'Rendimientos derivados de comparar entradas crudas y cocidas en <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov), la base de datos nutricional oficial de EE.UU.',
+      'Rendimientos del <strong>Manual de Agricultura n.º 102 del USDA</strong> y de comparar entradas crudas y cocidas en <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov), la base de datos nutricional oficial de EE.UU.',
 
     'calc.foodLabel': 'Alimento',
     'calc.foodPlaceholder': 'Buscar — pechuga de pollo, arroz blanco, brócoli…',
@@ -256,7 +262,9 @@ export const ui = {
     'footer.dataSources': 'Fuentes de datos',
     'footer.usdaMeat': 'Tabla de Rendimientos de Cocción del USDA para Carne y Aves',
     'footer.usdaFdc': 'USDA FoodData Central',
-    'footer.estimatesNote': 'Las estimaciones se indican cuando no hay datos del USDA disponibles.',
+    'footer.usdaHandbook': "Manual de Agricultura n.º 102 del USDA (1975)",
+    'footer.nonUsdaNote':
+      "La soja texturizada usa IFCT 2017 (tablas oficiales de la India); el USDA no cubre ese alimento.",
     'footer.disclaimer':
       'Los valores corresponden a los datos del USDA anteriores. Pesa siempre tus alimentos con una báscula de cocina para mayor precisión.',
 
@@ -272,7 +280,7 @@ export const ui = {
     'food.chickenP1':
       'La pechuga de pollo sin piel y sin hueso aporta aproximadamente 22,5g de proteína por 100g crudo — una de las mejores relaciones proteína-caloría de cualquier alimento entero. Con solo 120 calorías y 2,6g de grasa por 100g crudo, es la proteína magra favorita de culturistas, deportistas y personas que gestionan un déficit calórico.',
     'food.chickenP2':
-      'La trampa: como pierde entre el 25 y el 30% de su peso al cocinarse, <strong>registrar el peso cocido sin tener en cuenta el rendimiento lleva a subestimar tu ingesta real de proteínas</strong>. Una porción de 150g cocidos provino de aproximadamente 200g crudos — ese es el peso crudo que debes registrar.',
+      'La trampa: como pierde alrededor del 28% de su peso al cocinarse, <strong>registrar el peso cocido sin tener en cuenta el rendimiento lleva a subestimar tu ingesta real de proteínas</strong>. Una porción de 150g cocidos provino de aproximadamente 210g crudos — ese es el peso crudo que debes registrar.',
     'food.calcHeading': 'Calculadora de {name}',
     'food.faqHeading': 'Preguntas frecuentes',
     'food.relatedLabel': 'Calculadoras relacionadas',
@@ -290,7 +298,11 @@ export const ui = {
     "yield.loses": "Pérdida del {loss}% del peso al cocinarse",
     "yield.expands": "El peso se multiplica por {n} al cocinarse",
     "source.usdaMeatTable": "Tabla de Rendimientos de Cocción del USDA para Carne y Aves",
+    "source.usdaHandbook102": "Manual de Agricultura n.º 102 del USDA (1975)",
     "source.usdaFdc": "USDA FoodData Central (entradas en crudo y cocido)",
+    "source.ifct": "IFCT 2017 — Tablas de Composición de Alimentos de la India (autoridad oficial de nutrición de la India)",
+    "calc.ifctNote":
+      "Este rendimiento es una cifra real y calculada, pero procede de IFCT 2017, las tablas oficiales de composición de alimentos de la India, y no del USDA, que no cubre este alimento.",
     "calc.noteLabel": "Nota:",
 
     "footer.brand": "Calculadora Crudo→Cocido",
@@ -309,26 +321,26 @@ export const ui = {
     'hero.description':
       'Entrez un poids cru ou cuit — obtenez le poids converti plus les macros complets (calories, protéines, glucides, lipides). Couvre les viandes, céréales et légumes.',
     'hero.usda':
-      'Tous les rendements proviennent de USDA FoodData Central et du Tableau des rendements de cuisson de l\'USDA.',
+      'Tous les rendements proviennent de USDA FoodData Central, du Tableau des rendements de cuisson de l\'USDA et du Manuel agricole n° 102 de l\'USDA.',
 
     'browse.heading': 'Parcourir par aliment',
     'browse.description':
-      '20 aliments répartis dans les trois grandes catégories — la couverture la plus large de tout calculateur cru à cuit.',
+      '26 aliments répartis dans les trois grandes catégories — la couverture la plus large de tout calculateur cru à cuit.',
     'browse.catMeat': 'Viandes, Volailles & Fruits de mer',
     'browse.catGrains': 'Céréales, Pâtes & Légumineuses',
     'browse.catVeg': 'Légumes',
-    'browse.note.chicken': 'Perd 25% à la cuisson',
+    'browse.note.chicken': 'Perd 28% à la cuisson',
     'browse.note.beef': 'Perd 27% à la cuisson',
-    'browse.note.salmon': 'Perd 21% à la cuisson',
+    'browse.note.salmon': 'Perd 15% à la cuisson',
     'browse.note.pork': 'Perd 22% à la cuisson',
     'browse.note.rice': 'S\'étend à 3× à la cuisson',
     'browse.note.pasta': 'S\'étend à 2,25× à la cuisson',
-    'browse.note.lentils': 'S\'étend à 2,3× à la cuisson',
-    'browse.note.quinoa': 'S\'étend à 2,8× à la cuisson',
-    'browse.note.spinach': 'Perd 70% à la cuisson',
-    'browse.note.broccoli': 'Perd 10% à la cuisson',
+    'browse.note.lentils': 'S\'étend à 2,9× à la cuisson',
+    'browse.note.quinoa': 'S\'étend à 3,1× à la cuisson',
+    'browse.note.spinach': 'Perd 23% à la cuisson',
+    'browse.note.broccoli': 'Aucune perte nette de poids',
     'browse.note.potato': 'Perd 6% à la cuisson',
-    'browse.note.sweetPotato': 'Perd 10% à la cuisson',
+    'browse.note.sweetPotato': 'Perd 22% à la cuisson',
 
     'browse.food.chicken': 'Blanc de poulet',
     'browse.food.beef': 'Bœuf haché (80/20)',
@@ -344,9 +356,9 @@ export const ui = {
     'browse.food.sweetPotato': 'Patate douce',
 
     'callout.eyebrow': 'Rendements surprenants',
-    'callout.heading': 'Les épinards perdent 70% de leur poids à la cuisson',
+    'callout.heading': 'Les épinards s\'effondrent en volume, mais ne perdent que 23% de leur poids',
     'callout.description':
-      'Ce sachet d\'épinards crus rétrécit à moins d\'un tiers de son poids d\'origine après l\'ébullition ou la cuisson à la vapeur. Le riz blanc va dans le sens inverse — 100g sec devient 300g cuit. Ces extrêmes expliquent pourquoi peser le poids cru est si important pour un suivi précis des macros.',
+      'Une poêle pleine d\'épinards crus fond jusqu\'à presque rien : chacun en déduit que le poids chute tout aussi brutalement. C\'est faux. Les mesures de l\'USDA donnent aux épinards un rendement de cuisson de 77% : 100g de feuilles crues pèsent encore environ 77g une fois cuites. Ce qui s\'effondre, c\'est le volume, pas la masse. Le riz blanc va dans le sens inverse — 100g sec devient 300g cuit. D\'où l\'intérêt d\'une balance plutôt que d\'une estimation à l\'œil.',
     'callout.spinachBtn': 'Calculateur épinards →',
     'callout.riceBtn': 'Calculateur riz →',
 
@@ -356,7 +368,7 @@ export const ui = {
       'Rendements issus du <strong>Tableau des rendements de cuisson de l\'USDA pour la viande et la volaille</strong> — la même source utilisée par les fabricants alimentaires et les diététiciens.',
     'usda.grainsLabel': 'Céréales & Légumes',
     'usda.grainsText':
-      'Rendements dérivés de la comparaison des entrées crues et cuites dans <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov), la base de données nutritionnelles officielle américaine.',
+      'Rendements issus du <strong>Manuel agricole n° 102 de l\'USDA</strong> et de la comparaison des entrées crues et cuites dans <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov), la base de données nutritionnelles officielle américaine.',
 
     'calc.foodLabel': 'Aliment',
     'calc.foodPlaceholder': 'Rechercher — blanc de poulet, riz blanc, brocoli…',
@@ -392,7 +404,9 @@ export const ui = {
     'footer.dataSources': 'Sources de données',
     'footer.usdaMeat': 'Tableau des rendements de cuisson de l\'USDA pour la viande et la volaille',
     'footer.usdaFdc': 'USDA FoodData Central',
-    'footer.estimatesNote': 'Les estimations sont indiquées lorsque les données USDA ne sont pas disponibles.',
+    'footer.usdaHandbook': "Manuel agricole n° 102 de l’USDA (1975)",
+    'footer.nonUsdaNote':
+      "Le soja texturé s’appuie sur l’IFCT 2017 (tables officielles indiennes) ; l’USDA ne référence pas cet aliment.",
     'footer.disclaimer':
       'Les valeurs sont issues des données USDA ci-dessus. Pesez toujours vos aliments avec une balance de cuisine pour plus de précision.',
 
@@ -408,7 +422,7 @@ export const ui = {
     'food.chickenP1':
       'Le blanc de poulet sans peau et sans os apporte environ 22,5g de protéines pour 100g cru — l\'un des meilleurs ratios protéines/calories de tous les aliments entiers. Avec seulement 120 calories et 2,6g de lipides pour 100g cru, c\'est la protéine maigre de référence pour les culturistes, les sportifs et toute personne gérant un déficit calorique.',
     'food.chickenP2':
-      'Le revers : comme il perd 25 à 30% de son poids à la cuisson, <strong>enregistrer le poids cuit sans tenir compte du rendement conduit à sous-estimer votre apport réel en protéines</strong>. Une portion de 150g cuit provient d\'environ 200g cru — c\'est ce poids cru que vous devez enregistrer.',
+      'Le revers : comme il perd environ 28% de son poids à la cuisson, <strong>enregistrer le poids cuit sans tenir compte du rendement conduit à sous-estimer votre apport réel en protéines</strong>. Une portion de 150g cuit provient d\'environ 210g cru — c\'est ce poids cru que vous devez enregistrer.',
     'food.calcHeading': 'Calculateur {name}',
     'food.faqHeading': 'Questions fréquemment posées',
     'food.relatedLabel': 'Calculateurs associés',
@@ -426,7 +440,11 @@ export const ui = {
     "yield.loses": "Perte de {loss} % du poids à la cuisson",
     "yield.expands": "Poids multiplié par {n} à la cuisson",
     "source.usdaMeatTable": "Table des rendements de cuisson de l’USDA pour la viande et la volaille",
+    "source.usdaHandbook102": "Manuel agricole n° 102 de l’USDA (1975)",
     "source.usdaFdc": "USDA FoodData Central (entrées crues et cuites)",
+    "source.ifct": "IFCT 2017 — Tables indiennes de composition des aliments (autorité nutritionnelle officielle de l’Inde)",
+    "calc.ifctNote":
+      "Ce rendement est un chiffre réel et calculé, mais il provient de l’IFCT 2017, les tables officielles indiennes de composition des aliments, et non de l’USDA, qui ne référence pas cet aliment.",
     "calc.noteLabel": "Remarque :",
 
     "footer.brand": "Calculateur Cru→Cuit",
@@ -445,26 +463,26 @@ export const ui = {
     'hero.description':
       'Gib ein rohes oder gekochtes Gewicht ein — erhalte das umgerechnete Gewicht plus vollständige Makros (Kalorien, Protein, Kohlenhydrate, Fett). Abdeckung für Fleisch, Getreide und Gemüse.',
     'hero.usda':
-      'Alle Garverluste stammen aus USDA FoodData Central und der USDA-Tabelle der Garverluste.',
+      'Alle Garverluste stammen aus USDA FoodData Central, der USDA-Tabelle der Garverluste und dem USDA Agriculture Handbook Nr. 102.',
 
     'browse.heading': 'Nach Lebensmittel stöbern',
     'browse.description':
-      '20 Lebensmittel in allen drei Hauptkategorien — die breiteste Abdeckung eines Roh-zu-Gekocht-Rechners.',
+      '26 Lebensmittel in allen drei Hauptkategorien — die breiteste Abdeckung eines Roh-zu-Gekocht-Rechners.',
     'browse.catMeat': 'Fleisch, Geflügel & Meeresfrüchte',
     'browse.catGrains': 'Getreide, Nudeln & Hülsenfrüchte',
     'browse.catVeg': 'Gemüse',
-    'browse.note.chicken': 'Verliert 25% beim Garen',
+    'browse.note.chicken': 'Verliert 28% beim Garen',
     'browse.note.beef': 'Verliert 27% beim Garen',
-    'browse.note.salmon': 'Verliert 21% beim Garen',
+    'browse.note.salmon': 'Verliert 15% beim Garen',
     'browse.note.pork': 'Verliert 22% beim Garen',
     'browse.note.rice': 'Dehnt sich 3× beim Garen aus',
     'browse.note.pasta': 'Dehnt sich 2,25× beim Garen aus',
-    'browse.note.lentils': 'Dehnt sich 2,3× beim Garen aus',
-    'browse.note.quinoa': 'Dehnt sich 2,8× beim Garen aus',
-    'browse.note.spinach': 'Verliert 70% beim Garen',
-    'browse.note.broccoli': 'Verliert 10% beim Garen',
+    'browse.note.lentils': 'Dehnt sich 2,9× beim Garen aus',
+    'browse.note.quinoa': 'Dehnt sich 3,1× beim Garen aus',
+    'browse.note.spinach': 'Verliert 23% beim Garen',
+    'browse.note.broccoli': 'Keine Netto-Gewichtsänderung',
     'browse.note.potato': 'Verliert 6% beim Garen',
-    'browse.note.sweetPotato': 'Verliert 10% beim Garen',
+    'browse.note.sweetPotato': 'Verliert 22% beim Garen',
 
     'browse.food.chicken': 'Hähnchenbrust',
     'browse.food.beef': 'Hackfleisch (80/20)',
@@ -480,9 +498,9 @@ export const ui = {
     'browse.food.sweetPotato': 'Süßkartoffel',
 
     'callout.eyebrow': 'Überraschende Garverluste',
-    'callout.heading': 'Spinat verliert 70% seines Gewichts beim Kochen',
+    'callout.heading': 'Spinat fällt im Volumen zusammen — verliert aber nur 23% seines Gewichts',
     'callout.description':
-      'Diese Tüte roher Spinat schrumpft nach dem Kochen oder Dämpfen auf weniger als ein Drittel ihres ursprünglichen Gewichts. Weißer Reis geht in die entgegengesetzte Richtung — 100g trocken werden zu 300g gekocht. Diese Extreme zeigen, warum das Wiegen im rohen Zustand für genaues Makro-Tracking so wichtig ist.',
+      'Eine volle Pfanne roher Spinat fällt auf fast nichts zusammen, deshalb nimmt praktisch jeder an, das Gewicht breche genauso ein. Tut es nicht: Nach USDA-Messungen liegt die Garausbeute von Spinat bei 77% — 100g rohe Blätter wiegen gegart noch rund 77g. Was zusammenfällt, ist das Volumen, nicht die Masse. Weißer Reis geht in die entgegengesetzte Richtung — 100g trocken werden zu 300g gekocht. Beides spricht für die Küchenwaage statt fürs Augenmaß.',
     'callout.spinachBtn': 'Spinat-Rechner →',
     'callout.riceBtn': 'Reis-Rechner →',
 
@@ -492,7 +510,7 @@ export const ui = {
       'Garverluste aus der <strong>USDA-Tabelle der Garverluste für Fleisch und Geflügel</strong> — dieselbe Quelle, die von Lebensmittelherstellern und Diätassistenten verwendet wird.',
     'usda.grainsLabel': 'Getreide & Gemüse',
     'usda.grainsText':
-      'Garverluste abgeleitet aus dem Vergleich von roh und gekocht in <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov), der maßgeblichen US-amerikanischen Nährstoffdatenbank.',
+      'Garausbeuten aus dem <strong>USDA Agriculture Handbook Nr. 102</strong> und aus dem Vergleich von roh und gekocht in <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov), der maßgeblichen US-amerikanischen Nährstoffdatenbank.',
 
     'calc.foodLabel': 'Lebensmittel',
     'calc.foodPlaceholder': 'Suchen — Hähnchenbrust, weißer Reis, Brokkoli…',
@@ -528,7 +546,9 @@ export const ui = {
     'footer.dataSources': 'Datenquellen',
     'footer.usdaMeat': 'USDA-Tabelle der Garverluste für Fleisch und Geflügel',
     'footer.usdaFdc': 'USDA FoodData Central',
-    'footer.estimatesNote': 'Schätzungen werden angegeben, wenn keine USDA-Daten verfügbar sind.',
+    'footer.usdaHandbook': "USDA Agriculture Handbook Nr. 102 (1975)",
+    'footer.nonUsdaNote':
+      "Sojaschnetzel stützen sich auf IFCT 2017 (offizielle indische Tabellen); die USDA erfasst dieses Lebensmittel nicht.",
     'footer.disclaimer':
       'Die Werte basieren auf den oben genannten USDA-Daten. Wiege deine Lebensmittel stets mit einer Küchenwaage für genaue Ergebnisse.',
 
@@ -544,7 +564,7 @@ export const ui = {
     'food.chickenP1':
       'Hähnchenbrust ohne Haut und Knochen liefert etwa 22,5g Protein pro 100g roh — eines der besten Protein-Kalorien-Verhältnisse aller Vollwertkost. Mit nur 120 Kalorien und 2,6g Fett pro 100g roh ist sie das bevorzugte magere Protein für Bodybuilder, Sportler und alle, die ein Kaloriendefizit verwalten.',
     'food.chickenP2':
-      'Der Haken: Da sie beim Garen 25–30% ihres Gewichts verliert, <strong>führt das Aufzeichnen des gekochten Gewichts ohne Berücksichtigung des Garverlustes zu einer Unterschätzung der tatsächlichen Proteinaufnahme</strong>. Eine Portion von 150g gekocht stammt aus etwa 200g roh — das ist das Rohgewicht, das du erfassen solltest.',
+      'Der Haken: Da sie beim Garen rund 28% ihres Gewichts verliert, <strong>führt das Aufzeichnen des gekochten Gewichts ohne Berücksichtigung des Garverlustes zu einer Unterschätzung der tatsächlichen Proteinaufnahme</strong>. Eine Portion von 150g gekocht stammt aus etwa 210g roh — das ist das Rohgewicht, das du erfassen solltest.',
     'food.calcHeading': '{name}-Rechner',
     'food.faqHeading': 'Häufig gestellte Fragen',
     'food.relatedLabel': 'Verwandte Rechner',
@@ -562,7 +582,11 @@ export const ui = {
     "yield.loses": "{loss} % Gewichtsverlust beim Garen",
     "yield.expands": "{n}-faches Gewicht nach dem Garen",
     "source.usdaMeatTable": "USDA-Tabelle der Garausbeuten für Fleisch und Geflügel",
+    "source.usdaHandbook102": "USDA Agriculture Handbook Nr. 102 (1975)",
     "source.usdaFdc": "USDA FoodData Central (rohe und gegarte Einträge)",
+    "source.ifct": "IFCT 2017 — Indische Lebensmittel-Nährwerttabellen (Indiens offizielle Ernährungsbehörde)",
+    "calc.ifctNote":
+      "Dieser Ausbeutewert ist eine echte, berechnete Zahl — er stammt jedoch aus IFCT 2017, den offiziellen indischen Lebensmitteltabellen, und nicht von der USDA, die dieses Lebensmittel nicht erfasst.",
     "calc.noteLabel": "Hinweis:",
 
     "footer.brand": "Roh→Gekocht Rechner",
@@ -581,26 +605,26 @@ export const ui = {
     'hero.description':
       'Insira um peso cru ou cozido — obtenha o peso convertido mais os macros completos (calorias, proteínas, carboidratos, gorduras). Cobre carnes, grãos e vegetais.',
     'hero.usda':
-      'Todos os rendimentos são provenientes do USDA FoodData Central e da Tabela de Rendimentos de Cozimento do USDA.',
+      'Todos os rendimentos são provenientes do USDA FoodData Central, da Tabela de Rendimentos de Cozimento do USDA e do Manual de Agricultura n.º 102 do USDA.',
 
     'browse.heading': 'Explorar por alimento',
     'browse.description':
-      '20 alimentos nas três principais categorias — a cobertura mais ampla de qualquer calculadora de cru para cozido.',
+      '26 alimentos nas três principais categorias — a cobertura mais ampla de qualquer calculadora de cru para cozido.',
     'browse.catMeat': 'Carnes, Aves e Frutos do Mar',
     'browse.catGrains': 'Grãos, Massas e Leguminosas',
     'browse.catVeg': 'Vegetais',
-    'browse.note.chicken': 'Perde 25% ao cozinhar',
+    'browse.note.chicken': 'Perde 28% ao cozinhar',
     'browse.note.beef': 'Perde 27% ao cozinhar',
-    'browse.note.salmon': 'Perde 21% ao cozinhar',
+    'browse.note.salmon': 'Perde 15% ao cozinhar',
     'browse.note.pork': 'Perde 22% ao cozinhar',
     'browse.note.rice': 'Expande 3× ao cozinhar',
     'browse.note.pasta': 'Expande 2,25× ao cozinhar',
-    'browse.note.lentils': 'Expande 2,3× ao cozinhar',
-    'browse.note.quinoa': 'Expande 2,8× ao cozinhar',
-    'browse.note.spinach': 'Perde 70% ao cozinhar',
-    'browse.note.broccoli': 'Perde 10% ao cozinhar',
+    'browse.note.lentils': 'Expande 2,9× ao cozinhar',
+    'browse.note.quinoa': 'Expande 3,1× ao cozinhar',
+    'browse.note.spinach': 'Perde 23% ao cozinhar',
+    'browse.note.broccoli': 'Sem mudança líquida de peso',
     'browse.note.potato': 'Perde 6% ao cozinhar',
-    'browse.note.sweetPotato': 'Perde 10% ao cozinhar',
+    'browse.note.sweetPotato': 'Perde 22% ao cozinhar',
 
     'browse.food.chicken': 'Peito de frango',
     'browse.food.beef': 'Carne moída (80/20)',
@@ -616,9 +640,9 @@ export const ui = {
     'browse.food.sweetPotato': 'Batata-doce',
 
     'callout.eyebrow': 'Rendimentos surpreendentes',
-    'callout.heading': 'O espinafre perde 70% do seu peso ao cozinhar',
+    'callout.heading': 'O espinafre desaba em volume, mas perde apenas 23% do peso',
     'callout.description':
-      'Aquele saco de espinafre cru encolhe para menos de um terço do peso original após ferver ou cozinhar no vapor. O arroz branco vai na direção oposta — 100g cru vira 300g cozido. Esses extremos explicam por que pesar cru importa tanto para o acompanhamento preciso de macros.',
+      'Uma frigideira cheia de espinafre cru murcha até quase nada, então quase todo mundo supõe que o peso despenca na mesma proporção. Não despenca: as medições do USDA dão ao espinafre um rendimento de 77% — 100g de folhas cruas ainda pesam cerca de 77g depois de cozidas. O que desaba é o volume, não a massa. O arroz branco vai na direção oposta — 100g cru vira 300g cozido. Os dois casos mostram por que a balança vence o olhômetro.',
     'callout.spinachBtn': 'Calculadora de espinafre →',
     'callout.riceBtn': 'Calculadora de arroz →',
 
@@ -628,7 +652,7 @@ export const ui = {
       'Rendimentos da <strong>Tabela de Rendimentos de Cozimento do USDA para Carnes e Aves</strong> — a mesma fonte usada por fabricantes de alimentos e nutricionistas.',
     'usda.grainsLabel': 'Grãos & Vegetais',
     'usda.grainsText':
-      'Rendimentos derivados da comparação de entradas cruas e cozidas no <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov), o banco de dados nutricional oficial dos EUA.',
+      'Rendimentos do <strong>Manual de Agricultura n.º 102 do USDA</strong> e da comparação de entradas cruas e cozidas no <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov), o banco de dados nutricional oficial dos EUA.',
 
     'calc.foodLabel': 'Alimento',
     'calc.foodPlaceholder': 'Buscar — peito de frango, arroz branco, brócolis…',
@@ -664,7 +688,9 @@ export const ui = {
     'footer.dataSources': 'Fontes de dados',
     'footer.usdaMeat': 'Tabela de Rendimentos de Cozimento do USDA para Carnes e Aves',
     'footer.usdaFdc': 'USDA FoodData Central',
-    'footer.estimatesNote': 'Estimativas são indicadas quando os dados do USDA não estão disponíveis.',
+    'footer.usdaHandbook': "Manual de Agricultura n.º 102 do USDA (1975)",
+    'footer.nonUsdaNote':
+      "A soja texturizada usa o IFCT 2017 (tabelas oficiais da Índia); o USDA não cobre esse alimento.",
     'footer.disclaimer':
       'Os valores são baseados nos dados do USDA acima. Sempre pese seus alimentos com uma balança de cozinha para maior precisão.',
 
@@ -680,7 +706,7 @@ export const ui = {
     'food.chickenP1':
       'O peito de frango sem pele e sem osso fornece aproximadamente 22,5g de proteína por 100g cru — uma das melhores relações proteína-caloria de qualquer alimento integral. Com apenas 120 calorias e 2,6g de gordura por 100g cru, é a proteína magra favorita de fisiculturistas, atletas e qualquer pessoa gerenciando um déficit calórico.',
     'food.chickenP2':
-      'O problema: como perde entre 25 e 30% do seu peso ao cozinhar, <strong>registrar o peso cozido sem considerar o rendimento leva a subestimar sua ingestão real de proteínas</strong>. Uma porção de 150g cozido veio de aproximadamente 200g cru — esse é o peso cru que você deve registrar.',
+      'O problema: como perde cerca de 28% do seu peso ao cozinhar, <strong>registrar o peso cozido sem considerar o rendimento leva a subestimar sua ingestão real de proteínas</strong>. Uma porção de 150g cozido veio de aproximadamente 210g cru — esse é o peso cru que você deve registrar.',
     'food.calcHeading': 'Calculadora de {name}',
     'food.faqHeading': 'Perguntas frequentes',
     'food.relatedLabel': 'Calculadoras relacionadas',
@@ -698,7 +724,11 @@ export const ui = {
     "yield.loses": "Perda de {loss}% do peso ao cozinhar",
     "yield.expands": "O peso é multiplicado por {n} ao cozinhar",
     "source.usdaMeatTable": "Tabela de Rendimentos de Cocção do USDA para Carnes e Aves",
+    "source.usdaHandbook102": "Manual de Agricultura n.º 102 do USDA (1975)",
     "source.usdaFdc": "USDA FoodData Central (entradas cruas e cozidas)",
+    "source.ifct": "IFCT 2017 — Tabelas Indianas de Composição de Alimentos (autoridade oficial de nutrição da Índia)",
+    "calc.ifctNote":
+      "Este rendimento é um número real e calculado, mas vem do IFCT 2017, as tabelas oficiais de composição de alimentos da Índia, e não do USDA, que não cobre este alimento.",
     "calc.noteLabel": "Observação:",
 
     "footer.brand": "Calculadora Cru→Cozido",
@@ -717,26 +747,26 @@ export const ui = {
     'hero.description':
       '生または調理済みの重量を入力 — 変換後の重量と完全なマクロ（カロリー、タンパク質、炭水化物、脂質）を取得。肉類、穀物、野菜に対応。',
     'hero.usda':
-      'すべての収率はUSDA FoodData CentralおよびUSDA調理収率表から取得しています。',
+      'すべての収率はUSDA FoodData Central、USDA調理収率表、およびUSDA農業ハンドブック第102号から取得しています。',
 
     'browse.heading': '食品を選ぶ',
     'browse.description':
-      '3つの主要カテゴリにわたる20種類の食品 — あらゆる生から調理済み計算機の中で最も広い対応範囲。',
+      '3つの主要カテゴリにわたる26種類の食品 — あらゆる生から調理済み計算機の中で最も広い対応範囲。',
     'browse.catMeat': '肉類・鶏肉・魚介類',
     'browse.catGrains': '穀物・パスタ・豆類',
     'browse.catVeg': '野菜',
-    'browse.note.chicken': '調理後25%減',
+    'browse.note.chicken': '調理後28%減',
     'browse.note.beef': '調理後27%減',
-    'browse.note.salmon': '調理後21%減',
+    'browse.note.salmon': '調理後15%減',
     'browse.note.pork': '調理後22%減',
     'browse.note.rice': '調理後3倍に膨張',
     'browse.note.pasta': '調理後2.25倍に膨張',
-    'browse.note.lentils': '調理後2.3倍に膨張',
-    'browse.note.quinoa': '調理後2.8倍に膨張',
-    'browse.note.spinach': '調理後70%減',
-    'browse.note.broccoli': '調理後10%減',
+    'browse.note.lentils': '調理後2.9倍に膨張',
+    'browse.note.quinoa': '調理後3.1倍に膨張',
+    'browse.note.spinach': '調理後23%減',
+    'browse.note.broccoli': '正味の重量変化なし',
     'browse.note.potato': '調理後6%減',
-    'browse.note.sweetPotato': '調理後10%減',
+    'browse.note.sweetPotato': '調理後22%減',
 
     'browse.food.chicken': '鶏の胸肉',
     'browse.food.beef': '合い挽き肉 (80/20)',
@@ -752,9 +782,9 @@ export const ui = {
     'browse.food.sweetPotato': 'さつまいも',
 
     'callout.eyebrow': '驚きの収率',
-    'callout.heading': 'ほうれん草は調理後に重量の70%を失う',
+    'callout.heading': 'ほうれん草は「かさ」が激減するだけで、重量は23%しか減らない',
     'callout.description':
-      '生ほうれん草のあの袋は、茹でたり蒸したりすると元の重量の3分の1以下に縮んでしまいます。白米はその逆 — 乾燥100gが調理後300gになります。これらの極端な例が、正確なマクロ追跡において生の状態で計ることがいかに重要かを示しています。',
+      'フライパン一杯の生のほうれん草がわずかな量まで縮むため、重量も同じだけ落ちると思われがちです。実際は違います。USDAの測定では、ほうれん草の調理歩留まりは77%。生の葉100gは加熱後も約77gあります。激減するのは「かさ」であって「重さ」ではありません。白米はその逆 — 乾燥100gが調理後300gになります。どちらも、目分量ではなくはかりを使うべき理由です。',
     'callout.spinachBtn': 'ほうれん草計算機 →',
     'callout.riceBtn': '米計算機 →',
 
@@ -764,7 +794,7 @@ export const ui = {
       '<strong>USDAの肉類・鶏肉調理収率表</strong>からの収率 — 食品メーカーや栄養士が使用しているのと同じ情報源。',
     'usda.grainsLabel': '穀物・野菜',
     'usda.grainsText':
-      '<strong>USDA FoodData Central</strong>（fdc.nal.usda.gov）の生と調理済みの項目を比較して導き出した収率。米国の公式栄養データベース。',
+      '<strong>USDA農業ハンドブック第102号</strong>、および<strong>USDA FoodData Central</strong>（fdc.nal.usda.gov）の生と調理済みの項目の比較から導き出した収率。後者は米国の公式栄養データベースです。',
 
     'calc.foodLabel': '食品',
     'calc.foodPlaceholder': '検索 — 鶏の胸肉、白米、ブロッコリー…',
@@ -800,7 +830,9 @@ export const ui = {
     'footer.dataSources': 'データ出典',
     'footer.usdaMeat': 'USDA肉類・鶏肉調理収率表',
     'footer.usdaFdc': 'USDA FoodData Central',
-    'footer.estimatesNote': 'USDAデータが入手できない場合は推定値を表示しています。',
+    'footer.usdaHandbook': "USDA農業ハンドブック第102号（1975年）",
+    'footer.nonUsdaNote':
+      "大豆ミートはIFCT 2017（インドの公式表）に基づきます。USDAはこの食品を扱っていません。",
     'footer.disclaimer':
       '数値は上記のUSDAデータに基づいています。正確な計量のため、常に料理用スケールで食品を計ってください。',
 
@@ -816,7 +848,7 @@ export const ui = {
     'food.chickenP1':
       '皮なし・骨なしの鶏の胸肉は、生100gあたり約22.5gのタンパク質を含みます — あらゆる全食品の中で最高のタンパク質・カロリー比のひとつです。生100gあたりわずか120カロリー、2.6gの脂質で、ボディビルダー、アスリート、カロリー制限中の誰にとっても定番のリーンプロテインです。',
     'food.chickenP2':
-      '注意点：調理後に25〜30%の重量を失うため、<strong>収率を考慮せずに調理後の重量を記録すると、実際のタンパク質摂取量を過小評価してしまいます</strong>。調理済み150gの量は、生約200gから得られたもの — それがUSDA栄養ラベルと照合するための生の重量です。',
+      '注意点：調理後に約28%の重量を失うため、<strong>収率を考慮せずに調理後の重量を記録すると、実際のタンパク質摂取量を過小評価してしまいます</strong>。調理済み150gの量は、生約210gから得られたもの — それがUSDA栄養ラベルと照合するための生の重量です。',
     'food.calcHeading': '{name}計算機',
     'food.faqHeading': 'よくある質問',
     'food.relatedLabel': '関連計算機',
@@ -834,7 +866,11 @@ export const ui = {
     "yield.loses": "調理すると重量が{loss}%減ります",
     "yield.expands": "調理すると乾燥重量の{n}倍に膨らみます",
     "source.usdaMeatTable": "USDA 食肉・鶏肉の調理歩留まり表",
+    "source.usdaHandbook102": "USDA農業ハンドブック第102号（1975年）",
     "source.usdaFdc": "USDA FoodData Central（生と加熱後のデータを比較）",
+    "source.ifct": "IFCT 2017 — インド食品成分表（インドの公式栄養機関）",
+    "calc.ifctNote":
+      "この歩留まりは実測データから算出した実際の数値ですが、出典はUSDAではなく、インドの公式食品成分表であるIFCT 2017です。USDAはこの食品を扱っていません。",
     "calc.noteLabel": "注:",
 
     "footer.brand": "生→調理済み 計算機",
@@ -853,26 +889,26 @@ export const ui = {
     'hero.description':
       '생 또는 조리된 무게를 입력하면 변환된 무게와 완전한 매크로(칼로리, 단백질, 탄수화물, 지방)를 얻을 수 있습니다. 육류, 곡물, 채소를 다룹니다.',
     'hero.usda':
-      '모든 수율은 USDA FoodData Central과 USDA 조리 수율 표에서 가져왔습니다.',
+      '모든 수율은 USDA FoodData Central, USDA 조리 수율 표, USDA 농업 핸드북 제102호에서 가져왔습니다.',
 
     'browse.heading': '식품별 찾기',
     'browse.description':
-      '3가지 주요 카테고리에 걸친 20가지 식품 — 어떤 생→조리 계산기보다 넓은 범위.',
+      '3가지 주요 카테고리에 걸친 26가지 식품 — 어떤 생→조리 계산기보다 넓은 범위.',
     'browse.catMeat': '육류, 가금류 및 해산물',
     'browse.catGrains': '곡물, 파스타 및 콩류',
     'browse.catVeg': '채소',
-    'browse.note.chicken': '조리 시 25% 감소',
+    'browse.note.chicken': '조리 시 28% 감소',
     'browse.note.beef': '조리 시 27% 감소',
-    'browse.note.salmon': '조리 시 21% 감소',
+    'browse.note.salmon': '조리 시 15% 감소',
     'browse.note.pork': '조리 시 22% 감소',
     'browse.note.rice': '조리 시 3배 팽창',
     'browse.note.pasta': '조리 시 2.25배 팽창',
-    'browse.note.lentils': '조리 시 2.3배 팽창',
-    'browse.note.quinoa': '조리 시 2.8배 팽창',
-    'browse.note.spinach': '조리 시 70% 감소',
-    'browse.note.broccoli': '조리 시 10% 감소',
+    'browse.note.lentils': '조리 시 2.9배 팽창',
+    'browse.note.quinoa': '조리 시 3.1배 팽창',
+    'browse.note.spinach': '조리 시 23% 감소',
+    'browse.note.broccoli': '순 중량 변화 없음',
     'browse.note.potato': '조리 시 6% 감소',
-    'browse.note.sweetPotato': '조리 시 10% 감소',
+    'browse.note.sweetPotato': '조리 시 22% 감소',
 
     'browse.food.chicken': '닭 가슴살',
     'browse.food.beef': '다진 소고기 (80/20)',
@@ -888,9 +924,9 @@ export const ui = {
     'browse.food.sweetPotato': '고구마',
 
     'callout.eyebrow': '놀라운 수율',
-    'callout.heading': '시금치는 조리 시 무게의 70%를 잃습니다',
+    'callout.heading': '시금치는 부피가 무너질 뿐, 무게는 23%만 줄어듭니다',
     'callout.description':
-      '생 시금치 한 봉지는 끓이거나 찌면 원래 무게의 3분의 1 미만으로 줄어듭니다. 백미는 반대 방향으로 — 건조 100g이 조리 후 300g이 됩니다. 이러한 극단적인 차이가 정확한 매크로 추적을 위해 생 상태에서 무게를 재는 것이 왜 중요한지 보여줍니다.',
+      '팬 가득한 생 시금치가 얼마 안 되는 양으로 줄어들다 보니, 무게도 그만큼 빠진다고 생각하기 쉽습니다. 그렇지 않습니다. USDA 측정에 따르면 시금치의 조리 수율은 77%로, 생잎 100g은 조리 후에도 약 77g입니다. 무너지는 것은 부피이지 질량이 아닙니다. 백미는 반대 방향으로 — 건조 100g이 조리 후 300g이 됩니다. 둘 다 눈대중보다 저울이 나은 이유입니다.',
     'callout.spinachBtn': '시금치 계산기 →',
     'callout.riceBtn': '쌀 계산기 →',
 
@@ -900,7 +936,7 @@ export const ui = {
       '<strong>USDA 육류 및 가금류 조리 수율 표</strong>의 수율 — 식품 제조업체와 영양사들이 사용하는 동일한 출처.',
     'usda.grainsLabel': '곡물 및 채소',
     'usda.grainsText':
-      '<strong>USDA FoodData Central</strong>(fdc.nal.usda.gov)에서 생 및 조리된 항목을 비교하여 도출된 수율 — 미국의 권위 있는 영양 데이터베이스.',
+      '<strong>USDA 농업 핸드북 제102호</strong>, 그리고 <strong>USDA FoodData Central</strong>(fdc.nal.usda.gov)에서 생 및 조리된 항목을 비교하여 도출된 수율 — 후자는 미국의 권위 있는 영양 데이터베이스입니다.',
 
     'calc.foodLabel': '식품',
     'calc.foodPlaceholder': '검색 — 닭 가슴살, 백미, 브로콜리…',
@@ -936,7 +972,9 @@ export const ui = {
     'footer.dataSources': '데이터 출처',
     'footer.usdaMeat': 'USDA 육류 및 가금류 조리 수율 표',
     'footer.usdaFdc': 'USDA FoodData Central',
-    'footer.estimatesNote': 'USDA 데이터를 사용할 수 없는 경우 추정치가 표시됩니다.',
+    'footer.usdaHandbook': "USDA 농업 핸드북 제102호(1975)",
+    'footer.nonUsdaNote':
+      "콩고기는 IFCT 2017(인도 공식 성분표)를 사용합니다. USDA는 이 식품을 다루지 않습니다.",
     'footer.disclaimer':
       '값은 위의 USDA 데이터를 기반으로 합니다. 정확도를 위해 항상 주방 저울로 식품을 측정하세요.',
 
@@ -952,7 +990,7 @@ export const ui = {
     'food.chickenP1':
       '껍질과 뼈를 제거한 닭 가슴살은 생 100g당 약 22.5g의 단백질을 제공합니다 — 모든 전체 식품 중 가장 높은 단백질 대 칼로리 비율 중 하나입니다. 생 100g당 120칼로리와 2.6g의 지방만으로, 보디빌더, 운동선수, 칼로리 적자를 관리하는 모든 사람에게 가장 선호되는 린 단백질입니다.',
     'food.chickenP2':
-      '주의사항: 조리 시 25~30%의 무게를 잃기 때문에, <strong>수율을 고려하지 않고 조리된 무게를 기록하면 실제 단백질 섭취량을 과소평가하게 됩니다</strong>. 조리된 150g은 약 200g 생에서 나온 것입니다 — USDA 영양 라벨 기준으로 기록해야 할 생 무게가 바로 그것입니다.',
+      '주의사항: 조리 시 약 28%의 무게를 잃기 때문에, <strong>수율을 고려하지 않고 조리된 무게를 기록하면 실제 단백질 섭취량을 과소평가하게 됩니다</strong>. 조리된 150g은 약 210g 생에서 나온 것입니다 — USDA 영양 라벨 기준으로 기록해야 할 생 무게가 바로 그것입니다.',
     'food.calcHeading': '{name} 계산기',
     'food.faqHeading': '자주 묻는 질문',
     'food.relatedLabel': '관련 계산기',
@@ -970,7 +1008,11 @@ export const ui = {
     "yield.loses": "조리하면 무게의 {loss}%가 줄어듭니다",
     "yield.expands": "조리하면 건조 중량의 {n}배로 불어납니다",
     "source.usdaMeatTable": "USDA 육류·가금류 조리 수율표",
+    "source.usdaHandbook102": "USDA 농업 핸드북 제102호(1975)",
     "source.usdaFdc": "USDA FoodData Central (생·조리 항목 비교)",
+    "source.ifct": "IFCT 2017 — 인도 식품성분표(인도의 공식 영양 기관)",
+    "calc.ifctNote":
+      "이 수율은 실제로 계산된 수치이지만, 출처는 USDA가 아니라 인도의 공식 식품성분표인 IFCT 2017입니다. USDA는 이 식품을 다루지 않습니다.",
     "calc.noteLabel": "참고:",
 
     "footer.brand": "생→조리 계산기",
@@ -989,26 +1031,26 @@ export const ui = {
     'hero.description':
       'Inserisci un peso crudo o cotto — ottieni il peso convertito più i macronutrienti completi (calorie, proteine, carboidrati, grassi). Copre carni, cereali e verdure.',
     'hero.usda':
-      'Tutte le rese provengono da USDA FoodData Central e dalla Tabella delle rese di cottura USDA.',
+      'Tutte le rese provengono da USDA FoodData Central, dalla Tabella delle rese di cottura USDA e dal Manuale di Agricoltura n. 102 dell\'USDA.',
 
     'browse.heading': 'Sfoglia per alimento',
     'browse.description':
-      '20 alimenti nelle tre categorie principali — la copertura più ampia di qualsiasi calcolatore crudo-cotto.',
+      '26 alimenti nelle tre categorie principali — la copertura più ampia di qualsiasi calcolatore crudo-cotto.',
     'browse.catMeat': 'Carne, Pollame e Frutti di mare',
     'browse.catGrains': 'Cereali, Pasta e Legumi',
     'browse.catVeg': 'Verdure',
-    'browse.note.chicken': 'Perde il 25% durante la cottura',
+    'browse.note.chicken': 'Perde il 28% durante la cottura',
     'browse.note.beef': 'Perde il 27% durante la cottura',
-    'browse.note.salmon': 'Perde il 21% durante la cottura',
+    'browse.note.salmon': 'Perde il 15% durante la cottura',
     'browse.note.pork': 'Perde il 22% durante la cottura',
     'browse.note.rice': 'Si espande 3× durante la cottura',
     'browse.note.pasta': 'Si espande 2,25× durante la cottura',
-    'browse.note.lentils': 'Si espande 2,3× durante la cottura',
-    'browse.note.quinoa': 'Si espande 2,8× durante la cottura',
-    'browse.note.spinach': 'Perde il 70% durante la cottura',
-    'browse.note.broccoli': 'Perde il 10% durante la cottura',
+    'browse.note.lentils': 'Si espande 2,9× durante la cottura',
+    'browse.note.quinoa': 'Si espande 3,1× durante la cottura',
+    'browse.note.spinach': 'Perde il 23% durante la cottura',
+    'browse.note.broccoli': 'Nessuna variazione netta di peso',
     'browse.note.potato': 'Perde il 6% durante la cottura',
-    'browse.note.sweetPotato': 'Perde il 10% durante la cottura',
+    'browse.note.sweetPotato': 'Perde il 22% durante la cottura',
 
     'browse.food.chicken': 'Petto di pollo',
     'browse.food.beef': 'Carne macinata (80/20)',
@@ -1024,9 +1066,9 @@ export const ui = {
     'browse.food.sweetPotato': 'Patata dolce',
 
     'callout.eyebrow': 'Rese sorprendenti',
-    'callout.heading': 'Gli spinaci perdono il 70% del loro peso durante la cottura',
+    'callout.heading': 'Gli spinaci crollano di volume, ma perdono solo il 23% del peso',
     'callout.description':
-      'Quel sacchetto di spinaci crudi si riduce a meno di un terzo del peso originale dopo la bollitura o la cottura a vapore. Il riso bianco va nella direzione opposta — 100g secco diventa 300g cotto. Questi estremi spiegano perché pesare crudo è così importante per un tracciamento preciso dei macronutrienti.',
+      'Una padella piena di spinaci crudi appassisce fino a quasi nulla, così quasi tutti danno per scontato che anche il peso crolli allo stesso modo. Non è così: le misurazioni USDA assegnano agli spinaci una resa di cottura del 77%, quindi 100g di foglie crude pesano ancora circa 77g da cotte. A crollare è il volume, non la massa. Il riso bianco va nella direzione opposta — 100g secco diventa 300g cotto. Entrambi i casi spiegano perché la bilancia batte l\'occhio.',
     'callout.spinachBtn': 'Calcolatore spinaci →',
     'callout.riceBtn': 'Calcolatore riso →',
 
@@ -1036,7 +1078,7 @@ export const ui = {
       'Rese dalla <strong>Tabella delle rese di cottura USDA per carne e pollame</strong> — la stessa fonte utilizzata dai produttori alimentari e dai dietisti.',
     'usda.grainsLabel': 'Cereali e Verdure',
     'usda.grainsText':
-      'Rese derivate dal confronto tra voci crude e cotte in <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov), il database nutrizionale ufficiale statunitense.',
+      'Rese dal <strong>Manuale di Agricoltura n. 102 dell\'USDA</strong> e dal confronto tra voci crude e cotte in <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov), il database nutrizionale ufficiale statunitense.',
 
     'calc.foodLabel': 'Alimento',
     'calc.foodPlaceholder': 'Cerca — petto di pollo, riso bianco, broccoli…',
@@ -1072,7 +1114,9 @@ export const ui = {
     'footer.dataSources': 'Fonti dei dati',
     'footer.usdaMeat': 'Tabella delle rese di cottura USDA per carne e pollame',
     'footer.usdaFdc': 'USDA FoodData Central',
-    'footer.estimatesNote': 'Le stime sono indicate quando i dati USDA non sono disponibili.',
+    'footer.usdaHandbook': "Manuale di Agricoltura n. 102 dell’USDA (1975)",
+    'footer.nonUsdaNote':
+      "La soia texturizzata usa IFCT 2017 (tabelle ufficiali indiane); l’USDA non copre questo alimento.",
     'footer.disclaimer':
       'I valori si basano sui dati USDA sopra indicati. Pesa sempre il cibo con una bilancia da cucina per maggiore precisione.',
 
@@ -1088,7 +1132,7 @@ export const ui = {
     'food.chickenP1':
       'Il petto di pollo senza pelle e senza osso fornisce circa 22,5g di proteine per 100g crudo — uno dei migliori rapporti proteine/calorie tra tutti gli alimenti interi. Con sole 120 calorie e 2,6g di grassi per 100g crudo, è la proteina magra preferita da bodybuilder, atleti e chiunque gestisca un deficit calorico.',
     'food.chickenP2':
-      'Il problema: poiché perde il 25–30% del suo peso durante la cottura, <strong>registrare il peso cotto senza considerare la resa porta a sottostimare l\'apporto effettivo di proteine</strong>. Una porzione di 150g cotto proviene da circa 200g crudo — è il peso crudo che dovresti registrare.',
+      'Il problema: poiché perde circa il 28% del suo peso durante la cottura, <strong>registrare il peso cotto senza considerare la resa porta a sottostimare l\'apporto effettivo di proteine</strong>. Una porzione di 150g cotto proviene da circa 210g crudo — è il peso crudo che dovresti registrare.',
     'food.calcHeading': 'Calcolatore {name}',
     'food.faqHeading': 'Domande frequenti',
     'food.relatedLabel': 'Calcolatori correlati',
@@ -1106,7 +1150,11 @@ export const ui = {
     "yield.loses": "Perdita del {loss}% del peso in cottura",
     "yield.expands": "Peso moltiplicato per {n} in cottura",
     "source.usdaMeatTable": "Tabella USDA delle rese di cottura per carne e pollame",
+    "source.usdaHandbook102": "Manuale di Agricoltura n. 102 dell’USDA (1975)",
     "source.usdaFdc": "USDA FoodData Central (voci crude e cotte)",
+    "source.ifct": "IFCT 2017 — Tabelle indiane di composizione degli alimenti (autorità nutrizionale ufficiale dell’India)",
+    "calc.ifctNote":
+      "Questa resa è un dato reale e calcolato, ma proviene da IFCT 2017, le tabelle ufficiali indiane di composizione degli alimenti, e non dall’USDA, che non copre questo alimento.",
     "calc.noteLabel": "Nota:",
 
     "footer.brand": "Calcolatore Crudo→Cotto",
@@ -1125,26 +1173,26 @@ export const ui = {
     'hero.description':
       'कच्चा या पका वजन दर्ज करें — परिवर्तित वजन और पूरे मैक्रो (कैलोरी, प्रोटीन, कार्ब्स, वसा) पाएं। मांस, अनाज और सब्जियों के लिए।',
     'hero.usda':
-      'सभी यील्ड USDA FoodData Central और USDA कुकिंग यील्ड तालिका से ली गई हैं।',
+      'सभी यील्ड USDA FoodData Central, USDA कुकिंग यील्ड तालिका और USDA कृषि हैंडबुक संख्या 102 से ली गई हैं।',
 
     'browse.heading': 'खाद्य पदार्थ खोजें',
     'browse.description':
-      'तीनों प्रमुख श्रेणियों में 20 खाद्य पदार्थ — किसी भी कच्चे से पके कैलकुलेटर की सबसे व्यापक कवरेज।',
+      'तीनों प्रमुख श्रेणियों में 26 खाद्य पदार्थ — किसी भी कच्चे से पके कैलकुलेटर की सबसे व्यापक कवरेज।',
     'browse.catMeat': 'मांस, मुर्गी और समुद्री भोजन',
     'browse.catGrains': 'अनाज, पास्ता और दालें',
     'browse.catVeg': 'सब्जियां',
-    'browse.note.chicken': 'पकाने पर 25% कम',
+    'browse.note.chicken': 'पकाने पर 28% कम',
     'browse.note.beef': 'पकाने पर 27% कम',
-    'browse.note.salmon': 'पकाने पर 21% कम',
+    'browse.note.salmon': 'पकाने पर 15% कम',
     'browse.note.pork': 'पकाने पर 22% कम',
     'browse.note.rice': 'पकाने पर 3× फैलता है',
     'browse.note.pasta': 'पकाने पर 2.25× फैलता है',
-    'browse.note.lentils': 'पकाने पर 2.3× फैलता है',
-    'browse.note.quinoa': 'पकाने पर 2.8× फैलता है',
-    'browse.note.spinach': 'पकाने पर 70% कम',
-    'browse.note.broccoli': 'पकाने पर 10% कम',
+    'browse.note.lentils': 'पकाने पर 2.9× फैलता है',
+    'browse.note.quinoa': 'पकाने पर 3.1× फैलता है',
+    'browse.note.spinach': 'पकाने पर 23% कम',
+    'browse.note.broccoli': 'शुद्ध वजन में कोई बदलाव नहीं',
     'browse.note.potato': 'पकाने पर 6% कम',
-    'browse.note.sweetPotato': 'पकाने पर 10% कम',
+    'browse.note.sweetPotato': 'पकाने पर 22% कम',
 
     'browse.food.chicken': 'चिकन ब्रेस्ट',
     'browse.food.beef': 'कीमा (80/20)',
@@ -1160,9 +1208,9 @@ export const ui = {
     'browse.food.sweetPotato': 'शकरकंद',
 
     'callout.eyebrow': 'चौंकाने वाले यील्ड',
-    'callout.heading': 'पालक पकाने पर 70% वजन खो देता है',
+    'callout.heading': 'पालक की मात्रा तो ढह जाती है, पर वजन सिर्फ 23% घटता है',
     'callout.description':
-      'कच्चे पालक का वह पैकेट उबालने या भाप में पकाने के बाद अपने मूल वजन के एक तिहाई से भी कम रह जाता है। सफेद चावल इसके विपरीत होता है — 100g सूखा 300g पका बन जाता है। ये चरम उदाहरण बताते हैं कि सटीक मैक्रो ट्रैकिंग के लिए कच्चा वजन मापना क्यों जरूरी है।',
+      'कड़ाही भर कच्चा पालक सिकुड़कर मुट्ठी भर रह जाता है, इसलिए लगभग हर कोई मान लेता है कि वजन भी उतनी ही तेजी से गिरता होगा। ऐसा नहीं है। USDA की माप के अनुसार पालक की कुकिंग यील्ड 77% है — यानी 100g कच्चे पत्ते पकने के बाद भी करीब 77g रहते हैं। जो ढहता है वह मात्रा है, वजन नहीं। सफेद चावल इसके विपरीत होता है — 100g सूखा 300g पका बन जाता है। दोनों ही बताते हैं कि अंदाजे से बेहतर तराजू है।',
     'callout.spinachBtn': 'पालक कैलकुलेटर →',
     'callout.riceBtn': 'चावल कैलकुलेटर →',
 
@@ -1172,7 +1220,7 @@ export const ui = {
       'यील्ड <strong>USDA मांस और मुर्गी कुकिंग यील्ड तालिका</strong> से — वही स्रोत जो खाद्य निर्माता और पोषण विशेषज्ञ उपयोग करते हैं।',
     'usda.grainsLabel': 'अनाज और सब्जियां',
     'usda.grainsText':
-      '<strong>USDA FoodData Central</strong> (fdc.nal.usda.gov) में कच्चे और पके प्रविष्टियों की तुलना से यील्ड — अमेरिका का आधिकारिक पोषक तत्व डेटाबेस।',
+      '<strong>USDA कृषि हैंडबुक संख्या 102</strong> से, और <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov) में कच्ची और पकी प्रविष्टियों की तुलना से ली गई यील्ड — यह अमेरिका का आधिकारिक पोषक तत्व डेटाबेस है।',
 
     'calc.foodLabel': 'खाद्य पदार्थ',
     'calc.foodPlaceholder': 'खोजें — चिकन ब्रेस्ट, सफेद चावल, ब्रोकोली…',
@@ -1208,7 +1256,9 @@ export const ui = {
     'footer.dataSources': 'डेटा स्रोत',
     'footer.usdaMeat': 'USDA मांस और मुर्गी कुकिंग यील्ड तालिका',
     'footer.usdaFdc': 'USDA FoodData Central',
-    'footer.estimatesNote': 'जहां USDA डेटा उपलब्ध नहीं है, अनुमान बताए गए हैं।',
+    'footer.usdaHandbook': "USDA कृषि हैंडबुक संख्या 102 (1975)",
+    'footer.nonUsdaNote':
+      "सोया चंक्स के लिए IFCT 2017 (भारत की आधिकारिक तालिकाएं) का उपयोग होता है; USDA उस खाद्य पदार्थ को कवर नहीं करता।",
     'footer.disclaimer':
       'मान ऊपर दिए USDA डेटा के अनुसार हैं। सटीकता के लिए हमेशा रसोई तराजू से खाना तोलें।',
 
@@ -1224,7 +1274,7 @@ export const ui = {
     'food.chickenP1':
       'बिना त्वचा और हड्डी के चिकन ब्रेस्ट प्रति 100g कच्चे में लगभग 22.5g प्रोटीन देता है — किसी भी साबुत खाद्य पदार्थ का सबसे अच्छा प्रोटीन-कैलोरी अनुपात। प्रति 100g कच्चे में केवल 120 कैलोरी और 2.6g वसा के साथ, यह बॉडीबिल्डर, एथलीट और कैलोरी कम करने वाले सभी लोगों के लिए पसंदीदा लीन प्रोटीन है।',
     'food.chickenP2':
-      'पकाने पर 25-30% वजन खो देने के कारण, <strong>यील्ड को ध्यान में रखे बिना पका वजन लॉग करने से आपकी वास्तविक प्रोटीन खपत कम आंकी जाती है</strong>। 150g पका हिस्सा लगभग 200g कच्चे से आया — USDA लेबल के अनुसार यही कच्चा वजन आपको लॉग करना चाहिए।',
+      'पकाने पर करीब 28% वजन खो देने के कारण, <strong>यील्ड को ध्यान में रखे बिना पका वजन लॉग करने से आपकी वास्तविक प्रोटीन खपत कम आंकी जाती है</strong>। 150g पका हिस्सा लगभग 210g कच्चे से आया — USDA लेबल के अनुसार यही कच्चा वजन आपको लॉग करना चाहिए।',
     'food.calcHeading': '{name} कैलकुलेटर',
     'food.faqHeading': 'अक्सर पूछे जाने वाले सवाल',
     'food.relatedLabel': 'संबंधित कैलकुलेटर',
@@ -1242,7 +1292,11 @@ export const ui = {
     "yield.loses": "पकाने पर अपने वजन का {loss}% खो देता है",
     "yield.expands": "पकाने पर सूखे वजन का {n} गुना हो जाता है",
     "source.usdaMeatTable": "USDA मांस और मुर्गी कुकिंग यील्ड तालिका",
+    "source.usdaHandbook102": "USDA कृषि हैंडबुक संख्या 102 (1975)",
     "source.usdaFdc": "USDA FoodData Central (कच्ची और पकी प्रविष्टियों की तुलना)",
+    "source.ifct": "IFCT 2017 — भारतीय खाद्य संघटन तालिकाएं (भारत का आधिकारिक पोषण प्राधिकरण)",
+    "calc.ifctNote":
+      "यह यील्ड एक वास्तविक, गणना किया गया आंकड़ा है, लेकिन यह USDA से नहीं बल्कि IFCT 2017 — भारत की आधिकारिक खाद्य संघटन तालिकाओं — से आता है, क्योंकि USDA इस खाद्य पदार्थ को कवर नहीं करता।",
     "calc.noteLabel": "ध्यान दें:",
 
     "footer.brand": "कच्चा→पका कैलकुलेटर",

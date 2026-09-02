@@ -1,6 +1,6 @@
 ---
 import Calculator from './Calculator.astro';
-import { getAllFoods } from '../utils/foods';
+import { getAllFoods, hasPage } from '../utils/foods';
 import type { Food } from '../utils/foods';
 import { getExplanationKey, isEstimate } from '../utils/foods';
 import { t, tf, getLangPrefix, getYieldDescription, getFoodSource, getFoodFaqItems } from '../i18n';
@@ -24,8 +24,10 @@ const sourceText = getFoodSource(locale, food);
 const estimate = isEstimate(food);
 const faqItems = getFoodFaqItems(locale, food);
 
+// `hasPage` matters: the category also holds calculator-only foods (spaghetti,
+// veal, chickpeas…) that [food].astro never routes, so linking them 404s.
 const relatedFoods = getAllFoods()
-  .filter((f) => f.id !== food.id && f.category === food.category)
+  .filter((f) => f.id !== food.id && f.category === food.category && hasPage(f))
   .slice(0, 5);
 ---
 

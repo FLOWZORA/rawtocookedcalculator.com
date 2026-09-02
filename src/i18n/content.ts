@@ -21,7 +21,13 @@ export type MethodKey =
   | 'boiled_rehydrated'
   | 'boiled_steamed'
   | 'slow_cooked_braised'
-  | 'baked';
+  | 'baked'
+  | 'pan_broiled'
+  // Veal roast's `yield_by_method` holds doneness levels, not cooking methods.
+  | 'average_all_temps'
+  | 'medium'
+  | 'well_done'
+  | 'overdone';
 
 export const METHOD_LABELS: Record<Locale, Record<string, string>> = {
   en: {
@@ -35,6 +41,11 @@ export const METHOD_LABELS: Record<Locale, Record<string, string>> = {
     boiled_steamed: 'Boiled / Steamed',
     slow_cooked_braised: 'Slow-cooked / Braised',
     baked: 'Baked',
+    pan_broiled: 'Pan-broiled',
+    average_all_temps: 'Average (all temperatures)',
+    medium: 'Medium',
+    well_done: 'Well done',
+    overdone: 'Overdone',
   },
   es: {
     baked_roasted: 'Al horno / Asado',
@@ -47,6 +58,11 @@ export const METHOD_LABELS: Record<Locale, Record<string, string>> = {
     boiled_steamed: 'Hervido / Al vapor',
     slow_cooked_braised: 'Cocción lenta / Estofado',
     baked: 'Al horno',
+    pan_broiled: 'A la plancha',
+    average_all_temps: 'Promedio (todas las temperaturas)',
+    medium: 'Al punto',
+    well_done: 'Bien hecho',
+    overdone: 'Muy hecho',
   },
   fr: {
     baked_roasted: 'Au four / Rôti',
@@ -59,6 +75,11 @@ export const METHOD_LABELS: Record<Locale, Record<string, string>> = {
     boiled_steamed: 'Bouilli / Vapeur',
     slow_cooked_braised: 'Cuisson lente / Braisé',
     baked: 'Au four',
+    pan_broiled: 'Poêlé à sec',
+    average_all_temps: 'Moyenne (toutes températures)',
+    medium: 'À point',
+    well_done: 'Bien cuit',
+    overdone: 'Trop cuit',
   },
   de: {
     baked_roasted: 'Gebacken / Gebraten',
@@ -71,6 +92,11 @@ export const METHOD_LABELS: Record<Locale, Record<string, string>> = {
     boiled_steamed: 'Gekocht / Gedämpft',
     slow_cooked_braised: 'Schmorgaren / Geschmort',
     baked: 'Gebacken',
+    pan_broiled: 'Ohne Fett gebraten',
+    average_all_temps: 'Durchschnitt (alle Temperaturen)',
+    medium: 'Medium',
+    well_done: 'Durchgebraten',
+    overdone: 'Übergart',
   },
   pt: {
     baked_roasted: 'Ao forno / Assado',
@@ -83,6 +109,11 @@ export const METHOD_LABELS: Record<Locale, Record<string, string>> = {
     boiled_steamed: 'Cozido / No vapor',
     slow_cooked_braised: 'Cozimento lento / Brasado',
     baked: 'Ao forno',
+    pan_broiled: 'Grelhado na frigideira',
+    average_all_temps: 'Média (todas as temperaturas)',
+    medium: 'Ao ponto',
+    well_done: 'Bem passado',
+    overdone: 'Muito passado',
   },
   ja: {
     baked_roasted: 'オーブン焼き / ロースト',
@@ -95,6 +126,11 @@ export const METHOD_LABELS: Record<Locale, Record<string, string>> = {
     boiled_steamed: '茹で / 蒸し',
     slow_cooked_braised: '弱火煮込み / 煮込み',
     baked: 'オーブン焼き',
+    pan_broiled: 'フライパン蒸し焼き',
+    average_all_temps: '平均（全温度帯）',
+    medium: 'ミディアム',
+    well_done: 'ウェルダン',
+    overdone: '加熱しすぎ',
   },
   ko: {
     baked_roasted: '오븐 구이 / 로스트',
@@ -107,6 +143,11 @@ export const METHOD_LABELS: Record<Locale, Record<string, string>> = {
     boiled_steamed: '삶기 / 찌기',
     slow_cooked_braised: '저온 조리 / 브레이징',
     baked: '오븐 구이',
+    pan_broiled: '팬 브로일',
+    average_all_temps: '평균(전 온도)',
+    medium: '미디엄',
+    well_done: '웰던',
+    overdone: '과조리',
   },
   it: {
     baked_roasted: 'Al forno / Arrosto',
@@ -119,6 +160,11 @@ export const METHOD_LABELS: Record<Locale, Record<string, string>> = {
     boiled_steamed: 'Bollito / Al vapore',
     slow_cooked_braised: 'Cottura lenta / Brasato',
     baked: 'Al forno',
+    pan_broiled: 'In padella senza grassi',
+    average_all_temps: 'Media (tutte le temperature)',
+    medium: 'Media cottura',
+    well_done: 'Ben cotta',
+    overdone: 'Troppo cotta',
   },
   hi: {
     baked_roasted: 'बेक्ड / रोस्टेड',
@@ -131,6 +177,11 @@ export const METHOD_LABELS: Record<Locale, Record<string, string>> = {
     boiled_steamed: 'उबला / भाप में पका',
     slow_cooked_braised: 'धीमी आंच पर पका / दम',
     baked: 'बेक्ड',
+    pan_broiled: 'तवे पर बिना तेल पका',
+    average_all_temps: 'औसत (सभी तापमान)',
+    medium: 'मीडियम',
+    well_done: 'वेल डन',
+    overdone: 'ज्यादा पका',
   },
 };
 
@@ -176,7 +227,7 @@ export const EXPLANATIONS: Record<Locale, Record<ExplanationKey, string>> = {
     grains:
       'Grains, pasta, and legumes absorb water during cooking, which is why they expand dramatically. The starch granules absorb liquid and swell, significantly increasing weight. Macros are always calculated from the dry (raw) weight since that’s how nutrition labels measure them.',
     spinach:
-      'Spinach has one of the most dramatic weight reductions of any food — losing 70% of its weight when cooked. It’s mostly water, and the cell walls collapse entirely when heated, releasing nearly all of it.',
+      'Spinach is the most misjudged food on this site. A pan of raw leaves wilts to a fraction of its original volume, so the weight looks like it must have collapsed too — but USDA measurements put the cooking yield at 77%, meaning 100g raw still weighs about 77g cooked. The leaves lose their air and structure long before they lose their water, so the volume falls off a cliff while the weight drops only about 23%.',
     potato:
       'Potatoes retain most of their weight when cooked because their dense starch structure holds moisture in. Only a small amount evaporates from the surface during cooking.',
     vegDefault:
@@ -200,7 +251,7 @@ export const EXPLANATIONS: Record<Locale, Record<ExplanationKey, string>> = {
     grains:
       'Los cereales, la pasta y las legumbres absorben agua al cocerse, y por eso aumentan tanto de volumen. Los gránulos de almidón absorben líquido y se hinchan, lo que incrementa mucho el peso. Los macros siempre se calculan sobre el peso en seco (crudo), porque así es como los miden las etiquetas nutricionales.',
     spinach:
-      'La espinaca tiene una de las reducciones de peso más drásticas de cualquier alimento: pierde el 70% de su peso al cocinarse. Es casi toda agua, y las paredes celulares colapsan por completo con el calor, liberando prácticamente toda esa agua.',
+      'La espinaca es el alimento peor juzgado de este sitio. Una sartén de hojas crudas se reduce a una fracción de su volumen original, así que parece que el peso también tiene que haberse desplomado; pero las mediciones del USDA fijan el rendimiento de cocción en el 77%, o sea que 100 g crudos siguen pesando unos 77 g cocidos. Las hojas pierden el aire y la estructura mucho antes que el agua, de modo que el volumen se hunde mientras el peso solo baja un 23%.',
     potato:
       'Las papas conservan casi todo su peso al cocinarse porque su densa estructura de almidón retiene la humedad. Solo se evapora una pequeña cantidad desde la superficie durante la cocción.',
     vegDefault:
@@ -224,7 +275,7 @@ export const EXPLANATIONS: Record<Locale, Record<ExplanationKey, string>> = {
     grains:
       'Les céréales, les pâtes et les légumineuses absorbent l’eau pendant la cuisson, d’où leur gonflement spectaculaire. Les granules d’amidon absorbent le liquide et gonflent, ce qui augmente fortement le poids. Les macros sont toujours calculées à partir du poids sec (cru), car c’est ainsi que les étiquettes nutritionnelles les mesurent.',
     spinach:
-      'Les épinards affichent l’une des pertes de poids les plus spectaculaires de tous les aliments : 70 % de leur poids disparaît à la cuisson. Ils sont essentiellement composés d’eau, et les parois cellulaires s’effondrent complètement sous l’effet de la chaleur, libérant la quasi-totalité de cette eau.',
+      'Les épinards sont l’aliment le plus mal évalué du site. Une poêle de feuilles crues se réduit à une fraction de son volume initial, ce qui donne l’impression que le poids s’est effondré lui aussi — mais l’USDA mesure un rendement de cuisson de 77 %, soit environ 77 g cuits pour 100 g crus. Les feuilles perdent leur air et leur structure bien avant de perdre leur eau : le volume s’effondre, tandis que le poids ne baisse que d’environ 23 %.',
     potato:
       'Les pommes de terre conservent l’essentiel de leur poids à la cuisson, car leur structure amylacée dense retient l’humidité. Seule une petite quantité s’évapore en surface pendant la cuisson.',
     vegDefault:
@@ -248,7 +299,7 @@ export const EXPLANATIONS: Record<Locale, Record<ExplanationKey, string>> = {
     grains:
       'Getreide, Nudeln und Hülsenfrüchte nehmen beim Kochen Wasser auf — deshalb quellen sie so stark auf. Die Stärkekörner saugen Flüssigkeit auf und schwellen an, was das Gewicht erheblich erhöht. Die Makros werden immer aus dem Trockengewicht (roh) berechnet, denn so werden sie auch auf Nährwerttabellen angegeben.',
     spinach:
-      'Spinat zeigt einen der drastischsten Gewichtsverluste überhaupt: Beim Garen verliert er 70 % seines Gewichts. Er besteht fast nur aus Wasser, und die Zellwände brechen unter Hitze vollständig zusammen und geben nahezu alles davon frei.',
+      'Spinat wird auf dieser Seite am gründlichsten falsch eingeschätzt. Eine Pfanne roher Blätter fällt auf einen Bruchteil ihres Volumens zusammen, sodass es aussieht, als müsse auch das Gewicht eingebrochen sein — die USDA misst jedoch eine Garausbeute von 77 %, aus 100 g roh werden also rund 77 g gegart. Die Blätter verlieren Luft und Struktur lange bevor sie ihr Wasser verlieren: Das Volumen bricht ein, das Gewicht sinkt nur um etwa 23 %.',
     potato:
       'Kartoffeln behalten beim Garen den größten Teil ihres Gewichts, weil ihre dichte Stärkestruktur die Feuchtigkeit im Inneren hält. Nur eine kleine Menge verdunstet währenddessen an der Oberfläche.',
     vegDefault:
@@ -272,7 +323,7 @@ export const EXPLANATIONS: Record<Locale, Record<ExplanationKey, string>> = {
     grains:
       'Grãos, massas e leguminosas absorvem água durante o cozimento, e é por isso que expandem tanto. Os grânulos de amido absorvem líquido e incham, aumentando muito o peso. Os macros são sempre calculados sobre o peso seco (cru), porque é assim que os rótulos nutricionais os medem.',
     spinach:
-      'O espinafre tem uma das reduções de peso mais drásticas de qualquer alimento — perde 70% do peso ao ser cozido. Ele é quase todo água, e as paredes celulares colapsam completamente com o calor, liberando praticamente toda ela.',
+      'O espinafre é o alimento mais mal avaliado deste site. Uma frigideira de folhas cruas se reduz a uma fração do volume original, o que dá a impressão de que o peso também despencou — mas o USDA mede um rendimento de cozimento de 77%, ou seja, 100 g crus ainda pesam cerca de 77 g cozidos. As folhas perdem o ar e a estrutura muito antes de perderem a água: o volume desaba enquanto o peso cai apenas cerca de 23%.',
     potato:
       'As batatas retêm quase todo o seu peso ao cozinhar porque sua densa estrutura de amido segura a umidade. Apenas uma pequena parte evapora pela superfície durante o cozimento.',
     vegDefault:
@@ -296,7 +347,7 @@ export const EXPLANATIONS: Record<Locale, Record<ExplanationKey, string>> = {
     grains:
       '穀物・パスタ・豆類は加熱中に水を吸収するため、大きく膨らみます。でんぷん粒が水分を吸って膨潤し、重量が大幅に増えるのです。栄養成分表示は乾燥（生）重量を基準にしているため、マクロは常に乾燥重量から計算します。',
     spinach:
-      'ほうれん草はあらゆる食品のなかでも特に減り方が大きく、加熱すると重量の70%を失います。ほとんどが水分で、加熱すると細胞壁が完全に崩れてその水分がほぼすべて出ていきます。',
+      'ほうれん草は、このサイトで最も誤解されている食材です。生の葉はフライパンの中で元のかさのごく一部にまで縮むため、重量も同じように激減したように見えます。しかしUSDAの測定による調理歩留まりは77%で、生100gは加熱後も約77gあります。葉は水分を失うよりずっと早く空気と構造を失うため、かさは急激に減っても、重量は約23%しか落ちません。',
     potato:
       'じゃがいもは密なでんぷん構造が水分を内部に閉じ込めるため、加熱してもほとんど重量が変わりません。調理中に表面からわずかに蒸発する程度です。',
     vegDefault:
@@ -320,7 +371,7 @@ export const EXPLANATIONS: Record<Locale, Record<ExplanationKey, string>> = {
     grains:
       '곡물, 파스타, 콩류는 조리 중 물을 흡수하기 때문에 크게 불어납니다. 전분 알갱이가 수분을 빨아들여 팽창하면서 무게가 크게 늘어납니다. 영양성분표가 건조(생) 중량 기준으로 표시되므로, 영양소는 항상 건조 중량을 기준으로 계산합니다.',
     spinach:
-      '시금치는 모든 식품 가운데 무게 감소가 가장 극적인 편으로, 조리하면 무게의 70%가 사라집니다. 대부분이 수분인 데다 가열하면 세포벽이 완전히 무너지면서 그 수분이 거의 다 빠져나오기 때문입니다.',
+      '시금치는 이 사이트에서 가장 크게 오해받는 식품입니다. 팬에 담긴 생잎이 원래 부피의 일부까지 줄어들다 보니 무게도 함께 무너진 것처럼 보이지만, USDA가 측정한 조리 수율은 77%로 생 100g은 조리 후에도 약 77g입니다. 잎은 수분을 잃기 훨씬 전에 공기와 구조를 잃습니다. 그래서 부피는 급격히 꺼지지만 무게는 23% 정도만 줄어듭니다.',
     potato:
       '감자는 치밀한 전분 구조가 수분을 가둬 두기 때문에 조리해도 무게가 거의 그대로 유지됩니다. 조리 중에는 표면에서 아주 적은 양만 증발합니다.',
     vegDefault:
@@ -344,7 +395,7 @@ export const EXPLANATIONS: Record<Locale, Record<ExplanationKey, string>> = {
     grains:
       'Cereali, pasta e legumi assorbono acqua durante la cottura, ed è per questo che si gonfiano così tanto. I granuli di amido assorbono liquido e si rigonfiano, aumentando notevolmente il peso. I macronutrienti si calcolano sempre sul peso da secco (crudo), perché è così che li misurano le etichette nutrizionali.',
     spinach:
-      'Gli spinaci registrano una delle riduzioni di peso più drastiche in assoluto: perdono il 70% del peso in cottura. Sono quasi tutta acqua e, con il calore, le pareti cellulari collassano completamente rilasciandone quasi la totalità.',
+      'Gli spinaci sono l’alimento più frainteso del sito. Una padella di foglie crude si riduce a una frazione del volume iniziale, e sembra quindi che anche il peso sia crollato — ma l’USDA misura una resa di cottura del 77%: 100 g da crudo pesano ancora circa 77 g da cotti. Le foglie perdono aria e struttura molto prima di perdere acqua: il volume crolla, mentre il peso scende soltanto del 23% circa.',
     potato:
       'Le patate conservano quasi tutto il loro peso in cottura perché la densa struttura amidacea trattiene l’umidità all’interno. Durante la cottura ne evapora solo una piccola parte dalla superficie.',
     vegDefault:
@@ -368,7 +419,7 @@ export const EXPLANATIONS: Record<Locale, Record<ExplanationKey, string>> = {
     grains:
       'अनाज, पास्ता और दालें पकते समय पानी सोखते हैं, इसीलिए इनका आकार इतना बढ़ जाता है। स्टार्च के कण तरल सोखकर फूल जाते हैं और वजन काफी बढ़ जाता है। मैक्रो हमेशा सूखे (कच्चे) वजन से गिने जाते हैं, क्योंकि पोषण लेबल भी इसी आधार पर बनते हैं।',
     spinach:
-      'पालक का वजन किसी भी खाद्य पदार्थ के मुकाबले सबसे नाटकीय ढंग से घटता है — पकाने पर यह अपना 70% वजन खो देता है। यह लगभग पूरा पानी ही है, और गर्मी से इसकी कोशिका भित्तियां पूरी तरह ढह जाती हैं और लगभग सारा पानी छोड़ देती हैं।',
+      'इस साइट पर पालक ही सबसे ज्यादा गलत आंका जाने वाला खाद्य पदार्थ है। कड़ाही में कच्चे पत्ते अपनी मूल मात्रा के एक अंश तक सिमट जाते हैं, इसलिए लगता है कि वजन भी उतना ही गिरा होगा — लेकिन USDA की मापी गई कुकिंग यील्ड 77% है, यानी 100g कच्चा पकने पर भी करीब 77g रहता है। पत्ते अपना पानी खोने से बहुत पहले अपनी हवा और बनावट खो देते हैं, इसलिए मात्रा तो तेजी से गिरती है पर वजन सिर्फ 23% के आसपास ही घटता है।',
     potato:
       'आलू पकाने पर अपना ज्यादातर वजन बनाए रखते हैं, क्योंकि इनकी सघन स्टार्च संरचना नमी को भीतर रोके रखती है। पकाते समय सतह से बहुत थोड़ी नमी ही उड़ती है।',
     vegDefault:

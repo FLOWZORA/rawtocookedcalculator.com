@@ -69,6 +69,10 @@ function foodVars(locale: Locale, food: Food): Record<string, string | number> {
     pct: food.yield_percent,
     loss: 100 - food.yield_percent,
     mult: formatDecimal(locale, (food.yield_percent / 100).toFixed(1)),
+    // Foods no longer share one source: meat comes from the USDA yield table,
+    // most produce and grains from Handbook 102, the rest from FoodData
+    // Central (and soy chunks from IFCT). Templates must cite per food.
+    source: getFoodSource(locale, food),
   };
 }
 
@@ -124,7 +128,7 @@ export function getFoodPageMeta(
     return {
       title:
         food.id === 'chicken-breast'
-          ? 'Raw to Cooked Chicken Breast Calculator | USDA Yield: 75%'
+          ? 'Raw to Cooked Chicken Breast Calculator | USDA Yield: 72%'
           : `${shortName} Raw to Cooked Calculator | USDA ${yieldStr}`,
       description:
         food.yield_percent > 100

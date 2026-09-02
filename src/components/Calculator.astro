@@ -1,5 +1,5 @@
 ---
-import { getAllFoods, getSourceKey } from '../utils/foods';
+import { getAllFoods, getSourceKey, getDisclosureKey } from '../utils/foods';
 import { t } from '../i18n';
 import { METHOD_LABELS } from '../i18n/content';
 import type { Locale } from '../i18n';
@@ -40,6 +40,14 @@ const calcDataJson = JSON.stringify({
     allFoods.map((f) => {
       const key = getSourceKey(f);
       return [f.id, key === 'estimate' ? t(locale, 'calc.estimateSource') : t(locale, key)];
+    })
+  ),
+  // Foods whose figure needs a caveat under the citation: estimates, and the
+  // one food sourced from IFCT rather than USDA. Absent id = no disclosure.
+  foodDisclosures: Object.fromEntries(
+    allFoods.flatMap((f) => {
+      const key = getDisclosureKey(f);
+      return key ? [[f.id, t(locale, key)]] : [];
     })
   ),
   strings: jsStrings,
@@ -187,9 +195,9 @@ const calcDataJson = JSON.stringify({
       <span id="citation-source"></span>
     </div>
 
-    <!-- Estimate disclosure -->
+    <!-- Source disclosure (estimate, or non-USDA authority) -->
     <div id="estimate-note" hidden class="text-xs text-[var(--color-warning)] bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-sm)] px-3 py-2 mb-3">
-      <strong>{t(locale, 'calc.noteLabel')}</strong> {t(locale, 'calc.estimateNote')}
+      <strong>{t(locale, 'calc.noteLabel')}</strong> <span id="estimate-note-text"></span>
     </div>
 
     <!-- More precise toggle (only shown if food has yield_by_method) -->
@@ -268,6 +276,7 @@ const calcDataJson = JSON.stringify({
   const CATEGORY_LABELS = DATA.categoryLabels;
   const FOOD_NAMES = DATA.foodNames;
   const FOOD_SOURCES = DATA.foodSources;
+  const FOOD_DISCLOSURES = DATA.foodDisclosures;
   const STR = DATA.strings;
   const preselectedId = DATA.preselectedId;
 
@@ -304,6 +313,7 @@ const calcDataJson = JSON.stringify({
   const macFat = document.getElementById('mac-fat');
   const citationSource = document.getElementById('citation-source');
   const estimateNote = document.getElementById('estimate-note');
+  const estimateNoteText = document.getElementById('estimate-note-text');
   const preciseWrapper = document.getElementById('precise-wrapper');
   const preciseToggle = document.getElementById('precise-toggle');
   const precisePanel = document.getElementById('precise-panel');
@@ -486,9 +496,10 @@ const calcDataJson = JSON.stringify({
     macFat.textContent = result.macros.fat_g.toFixed(1) + 'g';
 
     // Citation
-    const isEstimate = state.food.source.startsWith('estimate');
     citationSource.textContent = FOOD_SOURCES[state.food.id] || state.food.source;
-    estimateNote.hidden = !isEstimate;
+    const disclosure = FOOD_DISCLOSURES[state.food.id];
+    estimateNoteText.textContent = disclosure || '';
+    estimateNote.hidden = !disclosure;
 
     // More precise panel
     const hasMethodData = state.food.yield_by_method && Object.keys(state.food.yield_by_method).length > 0;
