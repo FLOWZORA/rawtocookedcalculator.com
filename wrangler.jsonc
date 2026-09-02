@@ -10,5 +10,6 @@
 	},
 	"observability": {
 		"enabled": true
-	}
+	},
+	"workers_dev": false
 }
