@@ -64,7 +64,7 @@ export const HOME: Record<Locale, HomeSections> = {
     article: {
       heading: 'About This Raw to Cooked Weight Conversion Calculator',
       intro:
-        'This raw to cooked converter takes the guesswork out of one of the most persistent problems in food tracking: the gap between what you weigh on a kitchen scale and what a nutrition label actually describes. Most calorie databases — including USDA FoodData Central — publish macros based on raw food weights. But most people cook before eating. This free food converter lets you enter either a raw or cooked weight, then instantly calculates the equivalent on the other side along with accurate calories, protein, carbs, and fat for that specific amount.',
+        'Cooked food rarely weighs what the raw food did: meat and fish lose 15–35% of their weight, while rice, pasta, and dried beans double or triple. This raw to cooked converter applies each food’s USDA yield percentage, so you enter either a raw or cooked weight and get the equivalent on the other side, plus accurate calories, protein, carbs, and fat for that amount. Most calorie databases — including USDA FoodData Central — publish macros for raw weights, but most people cook before eating; this closes that gap.',
       whyHeading: 'Why Raw Food and Cooked Food Weigh Differently',
       whyP1:
         'The reason raw food and cooked food have different weights comes down to moisture. When you cook meat, water evaporates and fat renders out — your cooked food ends up lighter than the raw food you started with. Grains and legumes do the opposite: they absorb water during boiling, so cooked food is heavier than the raw food going in.',
@@ -72,17 +72,17 @@ export const HOME: Record<Locale, HomeSections> = {
         'This means you cannot use a single "gram = gram" assumption across your day. A raw to cooked weight conversion calculator solves that by applying each food’s specific yield percentage — the ratio of cooked weight to raw weight — which varies widely between foods. Chicken and beef lose around a quarter of their weight. Spinach loses only 23%, despite wilting to a fraction of its volume. White rice almost triples.',
       chickenHeading: 'Raw to Cooked Chicken Weight',
       chickenP1:
-        'Raw to cooked chicken weight is probably the most important conversion for anyone tracking protein. Boneless, skinless chicken breast loses approximately 28% of its weight when cooked — whether baked, grilled, or pan-fried. That means 200g raw chicken becomes about 144g cooked.',
+        'Boneless, skinless chicken breast loses approximately 28% of its weight when cooked — whether baked, grilled, or pan-fried — so 200g raw chicken becomes about 144g cooked. It is probably the most important conversion for anyone tracking protein, since the raw and cooked numbers differ enough to distort a daily total.',
       chickenP2:
         'The practical consequence: if you weigh your chicken after cooking and log it as 144g against a raw-weight nutrition label, you will be tracking the macros for only 144g raw — undercounting by 56g. The correct approach is either to weigh raw before cooking, or use a raw to cooked calculator to convert the cooked weight back to its raw equivalent before logging.',
       beefHeading: 'Ground Beef Raw to Cooked Weight',
       beefP1:
-        'Ground beef raw to cooked weight depends on fat content. Standard 80/20 ground beef loses roughly 27% of its mass as both water and fat render out during cooking. A 200g raw portion yields about 146g cooked. Leaner 90/10 ground beef loses only 18–20% because there is less fat to render.',
+        'Standard 80/20 ground beef loses roughly 27% of its weight when cooked — both water and fat render out — so a 200g raw portion yields about 146g cooked. The exact figure tracks fat content: leaner 90/10 ground beef loses only 18–20%, because there is less fat to render.',
       beefP2:
         'This raw to cooked meat weight conversion calculator uses an 80/20 default for ground beef, matching USDA-measured yield data for the most common retail fat percentage.',
       riceHeading: 'Raw to Cooked Rice Ratio',
       riceP1:
-        'The raw to cooked rice ratio runs in the opposite direction from meat. Dry white rice absorbs water during cooking and expands to roughly 3× its original weight — 100g dry rice becomes approximately 300g cooked. That means a 300g bowl of cooked rice contains only the calories of 100g dry, which surprises many people who assume cooked and dry rice have the same calorie density per gram.',
+        'Dry white rice roughly triples in weight when cooked — 100g dry becomes about 300g cooked, a 300% USDA yield — which runs opposite to meat. That means a 300g bowl of cooked rice contains only the calories of 100g dry, which surprises many people who assume cooked and dry rice have the same calorie density per gram.',
       riceP2:
         'Using an accurate raw to cooked calculator for rice is especially important because the error compounds quickly. If you eat two cups of cooked rice daily and log the cooked weight against a dry-weight label, you will be significantly overestimating the calorie content of that food.',
       usdaHeading: 'Built on Official USDA Data',
@@ -111,7 +111,7 @@ export const HOME: Record<Locale, HomeSections> = {
     article: {
       heading: 'Sobre esta calculadora de conversión de peso crudo a cocido',
       intro:
-        'Este conversor de crudo a cocido elimina las suposiciones en uno de los problemas más persistentes del seguimiento de alimentos: la diferencia entre lo que marca tu báscula de cocina y lo que realmente describe una etiqueta nutricional. La mayoría de las bases de datos de calorías —incluida USDA FoodData Central— publican los macros según el peso del alimento crudo. Pero casi todo el mundo cocina antes de comer. Este conversor gratuito te permite introducir el peso en crudo o en cocido y calcula al instante el equivalente del otro lado, junto con las calorías, proteínas, carbohidratos y grasas exactas de esa cantidad.',
+        'La comida cocida rara vez pesa lo que pesaba en crudo: la carne y el pescado pierden entre el 15% y el 35% de su peso, mientras que el arroz, la pasta y las legumbres secas lo duplican o triplican. Este conversor de crudo a cocido aplica el porcentaje de rendimiento del USDA de cada alimento, así que introduces el peso en crudo o en cocido y obtienes el equivalente del otro lado, junto con las calorías, proteínas, carbohidratos y grasas exactas de esa cantidad. La mayoría de las bases de datos de calorías —incluida USDA FoodData Central— publican los macros según el peso crudo, pero casi todo el mundo cocina antes de comer; esto salva esa diferencia.',
       whyHeading: 'Por qué el alimento crudo y el cocido pesan distinto',
       whyP1:
         'La razón de que el alimento crudo y el cocido pesen distinto está en el agua. Cuando cocinas carne, el agua se evapora y la grasa se derrite, así que el alimento cocido acaba pesando menos que el crudo del que partiste. Los cereales y las legumbres hacen justo lo contrario: absorben agua al hervir, de modo que el alimento cocido pesa más que el crudo que metiste en la olla.',
@@ -119,17 +119,17 @@ export const HOME: Record<Locale, HomeSections> = {
         'Esto significa que no puedes aplicar un simple «gramo = gramo» durante todo el día. Una calculadora de conversión de peso crudo a cocido lo resuelve aplicando el porcentaje de rendimiento específico de cada alimento —la proporción entre el peso cocido y el crudo—, que varía muchísimo de un alimento a otro. El pollo y la res pierden alrededor de una cuarta parte de su peso. La espinaca solo pierde el 23%, aunque se reduzca a una fracción de su volumen. El arroz blanco casi lo triplica.',
       chickenHeading: 'Peso del pollo de crudo a cocido',
       chickenP1:
-        'La conversión de peso del pollo de crudo a cocido es probablemente la más importante para quien controla su proteína. La pechuga de pollo sin piel ni hueso pierde aproximadamente el 28% de su peso al cocinarse, ya sea al horno, a la parrilla o a la sartén. Es decir, 200 g de pollo crudo se quedan en unos 144 g cocidos.',
+        'La pechuga de pollo sin piel ni hueso pierde aproximadamente el 28% de su peso al cocinarse —ya sea al horno, a la parrilla o a la sartén—, así que 200 g de pollo crudo se quedan en unos 144 g cocidos. Es probablemente la conversión más importante para quien controla su proteína, porque las cifras en crudo y en cocido se separan lo suficiente como para desviar el total del día.',
       chickenP2:
         'La consecuencia práctica: si pesas el pollo después de cocinarlo y registras 144 g contra una etiqueta nutricional en crudo, estarás contando los macros de solo 144 g crudos y te faltarán 56 g. Lo correcto es pesarlo en crudo antes de cocinarlo, o usar una calculadora de crudo a cocido para convertir el peso cocido a su equivalente en crudo antes de registrarlo.',
       beefHeading: 'Peso de la carne molida de crudo a cocido',
       beefP1:
-        'El peso de la carne molida de crudo a cocido depende del contenido de grasa. La carne molida estándar 80/20 pierde en torno al 27% de su masa, porque durante la cocción se van tanto el agua como la grasa. Una porción de 200 g en crudo da unos 146 g cocidos. La carne más magra 90/10 pierde solo entre un 18% y un 20%, porque tiene menos grasa que soltar.',
+        'La carne molida estándar 80/20 pierde en torno al 27% de su peso al cocinarse —se van tanto el agua como la grasa—, así que una porción de 200 g en crudo da unos 146 g cocidos. La cifra exacta sigue al contenido de grasa: la carne más magra 90/10 pierde solo entre un 18% y un 20%, porque tiene menos grasa que soltar.',
       beefP2:
         'Esta calculadora de conversión de peso de carne de crudo a cocido usa 80/20 como valor por defecto para la carne molida, en línea con los datos de rendimiento medidos por el USDA para el porcentaje de grasa más habitual en tiendas.',
       riceHeading: 'Proporción del arroz de crudo a cocido',
       riceP1:
-        'La proporción del arroz de crudo a cocido va en dirección contraria a la de la carne. El arroz blanco seco absorbe agua al cocerse y se expande hasta unas 3 veces su peso original: 100 g de arroz seco se convierten en unos 300 g cocidos. Eso significa que un plato de 300 g de arroz cocido aporta solo las calorías de 100 g en seco, algo que sorprende a mucha gente que da por hecho que el arroz seco y el cocido tienen la misma densidad calórica por gramo.',
+        'El arroz blanco seco casi triplica su peso al cocerse: 100 g en seco se convierten en unos 300 g cocidos, un rendimiento USDA del 300%, justo al revés que la carne. Eso significa que un plato de 300 g de arroz cocido aporta solo las calorías de 100 g en seco, algo que sorprende a mucha gente que da por hecho que el arroz seco y el cocido tienen la misma densidad calórica por gramo.',
       riceP2:
         'Usar una calculadora precisa de crudo a cocido para el arroz es especialmente importante porque el error se acumula rápido. Si comes dos tazas de arroz cocido al día y registras el peso cocido contra una etiqueta en seco, estarás sobrestimando muchísimo las calorías de ese alimento.',
       usdaHeading: 'Basada en datos oficiales del USDA',
@@ -158,7 +158,7 @@ export const HOME: Record<Locale, HomeSections> = {
     article: {
       heading: 'À propos de ce calculateur de conversion de poids cru-cuit',
       intro:
-        'Ce convertisseur cru-cuit élimine les approximations sur l’un des problèmes les plus tenaces du suivi alimentaire : l’écart entre ce que vous pesez sur votre balance de cuisine et ce que décrit réellement une étiquette nutritionnelle. La plupart des bases de données caloriques — y compris USDA FoodData Central — publient les macros à partir du poids cru. Mais presque tout le monde cuisine avant de manger. Ce convertisseur gratuit vous permet de saisir un poids cru ou cuit, puis calcule instantanément l’équivalent de l’autre côté, avec les calories, protéines, glucides et lipides exacts correspondant à cette quantité.',
+        'Un aliment cuit pèse rarement ce que pesait l’aliment cru : viandes et poissons perdent 15 à 35 % de leur poids, tandis que riz, pâtes et légumes secs doublent ou triplent. Ce convertisseur cru-cuit applique le pourcentage de rendement USDA propre à chaque aliment : vous saisissez un poids cru ou cuit et obtenez l’équivalent de l’autre côté, avec les calories, protéines, glucides et lipides exacts pour cette quantité. La plupart des bases de données caloriques — y compris USDA FoodData Central — publient les macros pour le poids cru, alors que presque tout le monde cuisine avant de manger ; c’est cet écart que le calculateur comble.',
       whyHeading: 'Pourquoi un aliment cru et un aliment cuit ne pèsent pas pareil',
       whyP1:
         'Si un aliment cru et un aliment cuit n’ont pas le même poids, c’est une question d’eau. Quand vous cuisez de la viande, l’eau s’évapore et la graisse fond : l’aliment cuit est plus léger que l’aliment cru de départ. Les céréales et les légumineuses font l’inverse : elles absorbent l’eau à la cuisson, si bien que l’aliment cuit est plus lourd que l’aliment cru mis dans la casserole.',
@@ -166,17 +166,17 @@ export const HOME: Record<Locale, HomeSections> = {
         'Vous ne pouvez donc pas appliquer un simple « gramme = gramme » tout au long de la journée. Un calculateur de conversion de poids cru-cuit règle le problème en appliquant le pourcentage de rendement propre à chaque aliment — le rapport entre le poids cuit et le poids cru —, qui varie énormément d’un produit à l’autre. Le poulet et le bœuf perdent environ un quart de leur poids. Les épinards n’en perdent que 23 %, alors même qu’ils réduisent à une fraction de leur volume. Le riz blanc, lui, triple presque.',
       chickenHeading: 'Poids du poulet cru-cuit',
       chickenP1:
-        'La conversion du poids du poulet cru en cuit est sans doute la plus importante pour qui suit ses apports en protéines. Le blanc de poulet sans peau ni os perd environ 28 % de son poids à la cuisson, qu’il soit au four, grillé ou poêlé. Autrement dit, 200 g de poulet cru donnent environ 144 g cuits.',
+        'Le blanc de poulet sans peau ni os perd environ 28 % de son poids à la cuisson — au four, grillé ou poêlé —, si bien que 200 g de poulet cru donnent environ 144 g cuits. C’est sans doute la conversion la plus importante pour qui suit ses apports en protéines, car les valeurs crue et cuite s’écartent assez pour fausser un total sur la journée.',
       chickenP2:
         'La conséquence concrète : si vous pesez votre poulet après cuisson et enregistrez 144 g face à une étiquette exprimée en poids cru, vous ne comptabilisez que les macros de 144 g crus — soit 56 g de moins que la réalité. La bonne méthode consiste à peser cru avant cuisson, ou à utiliser un calculateur cru-cuit pour reconvertir le poids cuit en son équivalent cru avant de l’enregistrer.',
       beefHeading: 'Poids du bœuf haché cru-cuit',
       beefP1:
-        'Le poids du bœuf haché du cru au cuit dépend de la teneur en matières grasses. Le bœuf haché classique 80/20 perd environ 27 % de sa masse, car l’eau et la graisse s’en échappent pendant la cuisson. Une portion de 200 g crue donne environ 146 g cuits. Le bœuf plus maigre 90/10 ne perd que 18 à 20 %, car il y a moins de gras à faire fondre.',
+        'Le bœuf haché classique 80/20 perd environ 27 % de son poids à la cuisson — l’eau et la graisse s’en échappent —, si bien qu’une portion de 200 g crue donne environ 146 g cuits. Le chiffre exact suit la teneur en matières grasses : le bœuf plus maigre 90/10 ne perd que 18 à 20 %, faute de gras à faire fondre.',
       beefP2:
         'Ce calculateur de conversion de poids de viande cru-cuit retient le 80/20 par défaut pour le bœuf haché, conformément aux rendements mesurés par l’USDA pour la teneur en matières grasses la plus courante en magasin.',
       riceHeading: 'Rapport riz cru-cuit',
       riceP1:
-        'Le rapport riz cru-cuit va dans le sens inverse de la viande. Le riz blanc sec absorbe l’eau pendant la cuisson et gonfle jusqu’à environ 3 fois son poids initial : 100 g de riz sec deviennent près de 300 g cuits. Un bol de 300 g de riz cuit ne contient donc que les calories de 100 g de riz sec, ce qui surprend beaucoup de gens persuadés que riz sec et riz cuit ont la même densité calorique au gramme.',
+        'Le riz blanc sec triple presque de poids à la cuisson : 100 g de riz sec deviennent près de 300 g cuits, un rendement USDA de 300 %, à l’inverse de la viande. Un bol de 300 g de riz cuit ne contient donc que les calories de 100 g de riz sec, ce qui surprend beaucoup de gens persuadés que riz sec et riz cuit ont la même densité calorique au gramme.',
       riceP2:
         'Utiliser un calculateur cru-cuit fiable pour le riz est d’autant plus important que l’erreur s’accumule vite. Si vous mangez deux bols de riz cuit par jour et enregistrez le poids cuit face à une étiquette exprimée en poids sec, vous surestimerez très largement l’apport calorique de cet aliment.',
       usdaHeading: 'Fondé sur les données officielles de l’USDA',
@@ -205,7 +205,7 @@ export const HOME: Record<Locale, HomeSections> = {
     article: {
       heading: 'Über diesen Rechner für die Umrechnung von Roh- und Gargewicht',
       intro:
-        'Dieser Roh-zu-gegart-Umrechner nimmt das Rätselraten aus einem der hartnäckigsten Probleme beim Tracken von Lebensmitteln: der Lücke zwischen dem, was die Küchenwaage anzeigt, und dem, was ein Nährwertetikett tatsächlich beschreibt. Die meisten Kaloriendatenbanken — auch USDA FoodData Central — geben Makros für das rohe Gewicht an. Gegessen wird aber meist gegart. Mit diesem kostenlosen Rechner gibst du entweder ein rohes oder ein gegartes Gewicht ein und erhältst sofort den Gegenwert der anderen Seite, samt exakter Kalorien, Proteine, Kohlenhydrate und Fette für genau diese Menge.',
+        'Gegartes Essen wiegt selten das, was das rohe wog: Fleisch und Fisch verlieren 15 bis 35 % ihres Gewichts, während Reis, Nudeln und getrocknete Hülsenfrüchte sich verdoppeln oder verdreifachen. Dieser Roh-zu-gegart-Umrechner setzt für jedes Lebensmittel dessen eigene USDA-Ausbeute an: Du gibst ein rohes oder gegartes Gewicht ein und erhältst den Gegenwert der anderen Seite, samt exakter Kalorien, Proteine, Kohlenhydrate und Fette für diese Menge. Die meisten Kaloriendatenbanken — auch USDA FoodData Central — geben Makros für das Rohgewicht an, gegessen wird aber meist gegart; genau diese Lücke schließt der Rechner.',
       whyHeading: 'Warum rohe und gegarte Lebensmittel unterschiedlich wiegen',
       whyP1:
         'Der Grund liegt im Wasser. Beim Garen von Fleisch verdunstet Wasser und Fett brät aus — das gegarte Lebensmittel ist am Ende leichter als das rohe, mit dem du angefangen hast. Getreide und Hülsenfrüchte verhalten sich genau umgekehrt: Sie nehmen beim Kochen Wasser auf, sodass das gegarte Lebensmittel schwerer ist als das rohe, das in den Topf kam.',
@@ -213,17 +213,17 @@ export const HOME: Record<Locale, HomeSections> = {
         'Ein pauschales „Gramm = Gramm“ funktioniert deshalb über den Tag hinweg nicht. Ein Rechner für die Umrechnung von Roh- und Gargewicht löst das, indem er die jeweils eigene Ausbeute eines Lebensmittels ansetzt — das Verhältnis von Gar- zu Rohgewicht —, und die fällt sehr unterschiedlich aus. Hähnchen und Rind verlieren rund ein Viertel ihres Gewichts. Spinat verliert nur 23 %, obwohl er auf einen Bruchteil seines Volumens zusammenfällt. Weißer Reis verdreifacht sich fast.',
       chickenHeading: 'Hähnchen: Roh- und Gargewicht',
       chickenP1:
-        'Die Umrechnung vom rohen zum gegarten Hähnchengewicht ist für alle, die Protein tracken, wohl die wichtigste. Hähnchenbrust ohne Haut und Knochen verliert beim Garen etwa 28 % ihres Gewichts — ob im Ofen, vom Grill oder aus der Pfanne. Aus 200 g rohem Hähnchen werden also rund 144 g gegart.',
+        'Hähnchenbrust ohne Haut und Knochen verliert beim Garen etwa 28 % ihres Gewichts — ob im Ofen, vom Grill oder aus der Pfanne —, aus 200 g rohem Hähnchen werden also rund 144 g gegart. Für alle, die Protein tracken, ist das wohl die wichtigste Umrechnung, denn Roh- und Garwert liegen weit genug auseinander, um einen Tagesgesamtwert zu verzerren.',
       chickenP2:
         'Praktisch heißt das: Wiegst du dein Hähnchen erst nach dem Garen und trägst 144 g gegen ein Etikett mit Rohwerten ein, erfasst du nur die Makros von 144 g roh — 56 g zu wenig. Richtig ist, vor dem Garen roh zu wiegen oder das Gargewicht mit einem Roh-zu-gegart-Rechner in sein Rohäquivalent zurückzurechnen, bevor du es einträgst.',
       beefHeading: 'Hackfleisch: Roh- und Gargewicht',
       beefP1:
-        'Wie stark Hackfleisch beim Garen an Gewicht verliert, hängt vom Fettanteil ab. Übliches Hackfleisch mit 80/20 verliert etwa 27 % seiner Masse, weil sowohl Wasser als auch Fett austreten. Aus 200 g roh werden rund 146 g gegart. Mageres Hackfleisch mit 90/10 verliert nur 18 bis 20 %, weil weniger Fett ausbraten kann.',
+        'Übliches Hackfleisch mit 80/20 verliert beim Garen etwa 27 % seines Gewichts — Wasser und Fett treten aus —, aus 200 g roh werden also rund 146 g gegart. Der genaue Wert folgt dem Fettanteil: Mageres Hackfleisch mit 90/10 verliert nur 18 bis 20 %, weil weniger Fett ausbraten kann.',
       beefP2:
         'Dieser Rechner für die Umrechnung von Roh- und Gargewicht bei Fleisch verwendet für Hackfleisch standardmäßig 80/20 — passend zu den vom USDA gemessenen Ausbeuten für den im Handel gängigsten Fettanteil.',
       riceHeading: 'Reis: Verhältnis roh zu gegart',
       riceP1:
-        'Beim Reis läuft das Verhältnis von roh zu gegart genau andersherum als beim Fleisch. Trockener weißer Reis nimmt beim Kochen Wasser auf und quillt auf etwa das Dreifache seines Ausgangsgewichts: Aus 100 g trockenem Reis werden rund 300 g gekocht. Eine Portion von 300 g gekochtem Reis enthält damit nur die Kalorien von 100 g trocken — was viele überrascht, die von der gleichen Kaloriendichte pro Gramm ausgehen.',
+        'Trockener weißer Reis verdreifacht beim Garen fast sein Gewicht: Aus 100 g trocken werden rund 300 g gekocht, eine USDA-Ausbeute von 300 % — genau andersherum als beim Fleisch. Eine Portion von 300 g gekochtem Reis enthält damit nur die Kalorien von 100 g trocken, was viele überrascht, die von der gleichen Kaloriendichte pro Gramm ausgehen.',
       riceP2:
         'Gerade beim Reis lohnt sich ein genauer Roh-zu-gegart-Rechner, weil sich der Fehler schnell summiert. Wer täglich zwei Schalen gekochten Reis isst und das Gargewicht gegen ein Etikett mit Trockenwerten einträgt, überschätzt dessen Kaloriengehalt erheblich.',
       usdaHeading: 'Auf offiziellen USDA-Daten aufgebaut',
@@ -252,7 +252,7 @@ export const HOME: Record<Locale, HomeSections> = {
     article: {
       heading: 'Sobre esta calculadora de conversão de peso cru para cozido',
       intro:
-        'Este conversor de cru para cozido tira o achismo de um dos problemas mais persistentes do controle alimentar: a diferença entre o que você pesa na balança de cozinha e o que o rótulo nutricional realmente descreve. A maioria das bases de dados de calorias — inclusive a USDA FoodData Central — publica os macros com base no peso cru. Só que quase todo mundo cozinha antes de comer. Este conversor gratuito permite informar o peso cru ou o cozido e calcula na hora o equivalente do outro lado, junto com as calorias, proteínas, carboidratos e gorduras exatas daquela quantidade.',
+        'A comida cozida raramente pesa o que a crua pesava: carne e peixe perdem de 15% a 35% do peso, enquanto arroz, massas e leguminosas secas dobram ou triplicam. Este conversor de cru para cozido aplica o percentual de rendimento do USDA de cada alimento: você informa um peso cru ou cozido e obtém o equivalente do outro lado, junto com as calorias, proteínas, carboidratos e gorduras exatas daquela quantidade. A maioria das bases de dados de calorias — inclusive a USDA FoodData Central — publica os macros pelo peso cru, mas quase todo mundo cozinha antes de comer; é essa diferença que a calculadora fecha.',
       whyHeading: 'Por que alimento cru e cozido pesam diferente',
       whyP1:
         'A razão de o alimento cru e o cozido terem pesos diferentes está na água. Quando você cozinha carne, a água evapora e a gordura derrete — o alimento cozido acaba mais leve do que o cru com que você começou. Grãos e leguminosas fazem o contrário: absorvem água ao cozinhar, então o alimento cozido fica mais pesado do que o cru que entrou na panela.',
@@ -260,17 +260,17 @@ export const HOME: Record<Locale, HomeSections> = {
         'Isso significa que não dá para aplicar um simples "grama = grama" ao longo do dia. Uma calculadora de conversão de peso cru para cozido resolve isso aplicando o percentual de rendimento específico de cada alimento — a razão entre o peso cozido e o cru —, que varia bastante de um item para outro. Frango e carne bovina perdem cerca de um quarto do peso. O espinafre perde apenas 23%, mesmo murchando até uma fração do seu volume. O arroz branco quase triplica.',
       chickenHeading: 'Peso do frango de cru para cozido',
       chickenP1:
-        'A conversão do peso do frango de cru para cozido é provavelmente a mais importante para quem controla a proteína. O peito de frango sem pele e sem osso perde aproximadamente 28% do peso ao ser cozido — seja assado, grelhado ou frito na frigideira. Ou seja, 200 g de frango cru viram cerca de 144 g cozido.',
+        'O peito de frango sem pele e sem osso perde aproximadamente 28% do peso ao ser cozido — assado, grelhado ou frito na frigideira —, então 200 g de frango cru viram cerca de 144 g cozido. É provavelmente a conversão mais importante para quem controla a proteína, porque os números cru e cozido se afastam o suficiente para distorcer o total do dia.',
       chickenP2:
         'A consequência prática: se você pesa o frango depois de cozinhar e registra 144 g contra um rótulo em peso cru, estará contando os macros de apenas 144 g crus — 56 g a menos. O certo é pesar cru antes de cozinhar, ou usar uma calculadora de cru para cozido para converter o peso cozido de volta ao equivalente cru antes de registrar.',
       beefHeading: 'Peso da carne moída de cru para cozido',
       beefP1:
-        'O peso da carne moída de cru para cozido depende do teor de gordura. A carne moída padrão 80/20 perde cerca de 27% da massa, já que tanto a água quanto a gordura saem durante o cozimento. Uma porção de 200 g crua rende cerca de 146 g cozida. A carne mais magra 90/10 perde apenas 18% a 20%, porque há menos gordura para derreter.',
+        'A carne moída padrão 80/20 perde cerca de 27% do peso ao ser cozida — saem tanto a água quanto a gordura —, então uma porção de 200 g crua rende cerca de 146 g cozida. O número exato acompanha o teor de gordura: a carne mais magra 90/10 perde apenas 18% a 20%, porque há menos gordura para derreter.',
       beefP2:
         'Esta calculadora de conversão de peso de carne de cru para cozido usa o padrão 80/20 para a carne moída, em linha com os rendimentos medidos pelo USDA para o teor de gordura mais comum no varejo.',
       riceHeading: 'Proporção do arroz de cru para cozido',
       riceP1:
-        'A proporção do arroz de cru para cozido vai na direção oposta à da carne. O arroz branco seco absorve água ao cozinhar e se expande para cerca de 3× o peso original: 100 g de arroz seco viram aproximadamente 300 g cozido. Isso quer dizer que uma porção de 300 g de arroz cozido tem apenas as calorias de 100 g seco, o que surpreende muita gente que imagina que arroz seco e cozido têm a mesma densidade calórica por grama.',
+        'O arroz branco seco quase triplica de peso ao cozinhar: 100 g secos viram cerca de 300 g cozido, um rendimento USDA de 300%, o oposto da carne. Isso quer dizer que uma porção de 300 g de arroz cozido tem apenas as calorias de 100 g seco, o que surpreende muita gente que imagina que arroz seco e cozido têm a mesma densidade calórica por grama.',
       riceP2:
         'Usar uma calculadora precisa de cru para cozido no caso do arroz é especialmente importante porque o erro se acumula rápido. Se você come duas xícaras de arroz cozido por dia e registra o peso cozido contra um rótulo em peso seco, vai superestimar bastante as calorias desse alimento.',
       usdaHeading: 'Construída sobre dados oficiais do USDA',
@@ -299,7 +299,7 @@ export const HOME: Record<Locale, HomeSections> = {
     article: {
       heading: 'この生・加熱後の重量換算計算機について',
       intro:
-        'この生・加熱後コンバーターは、食事管理で最も根強い問題のひとつ——キッチンスケールの数値と栄養表示が示す内容とのズレ——から当てずっぽうを取り除きます。USDA FoodData Centralを含むほとんどのカロリーデータベースは、生の重量を基準に栄養素を掲載しています。しかし多くの人は加熱してから食べます。この無料コンバーターなら、生でも加熱後でもどちらの重量を入力しても、もう一方の重量と、その分量に対応する正確なカロリー・タンパク質・炭水化物・脂質がすぐに分かります。',
+        '加熱した食べ物が生のときと同じ重さになることはめったにありません。肉と魚は重量の15〜35%を失い、米・パスタ・乾燥豆は2〜3倍になります。この生・加熱後コンバーターは食材ごとのUSDA歩留まりを当てはめるので、生でも加熱後でも重量を入力すれば、もう一方の重量と、その分量に対応する正確なカロリー・タンパク質・炭水化物・脂質が分かります。USDA FoodData Centralを含むほとんどのカロリーデータベースは生の重量で栄養素を掲載していますが、多くの人は加熱してから食べます。この計算機はそのズレを埋めます。',
       whyHeading: '生の食品と加熱後の食品で重さが変わる理由',
       whyP1:
         '生と加熱後で重さが違う理由は水分にあります。肉を加熱すると水分が蒸発し脂も落ちるため、加熱後は元の生の状態より軽くなります。穀物や豆類は逆で、茹でる間に水を吸うため、鍋に入れた生の状態より加熱後のほうが重くなります。',
@@ -307,17 +307,17 @@ export const HOME: Record<Locale, HomeSections> = {
         'つまり、1日を通して「1gは1g」という前提は使えません。生・加熱後の重量換算計算機は、食材ごとに固有の歩留まり率——加熱後重量と生重量の比——を当てはめることでこれを解決します。この比率は食材によって大きく異なります。鶏肉や牛肉は重量の約4分の1を失い、ほうれん草はかさが大きく減るわりに重量は23%しか失わず、白米はほぼ3倍になります。',
       chickenHeading: '鶏肉の生・加熱後の重量',
       chickenP1:
-        '鶏肉の生から加熱後への換算は、タンパク質を管理する人にとっておそらく最も重要な換算です。皮なし骨なしの鶏胸肉は、オーブン焼き・グリル・フライパン焼きのいずれでも、加熱すると約28%の重量を失います。つまり生200gの鶏肉は加熱後およそ144gになります。',
+        '皮なし骨なしの鶏胸肉は、オーブン焼き・グリル・フライパン焼きのいずれでも加熱すると約28%の重量を失うため、生200gの鶏肉は加熱後およそ144gになります。タンパク質を管理する人にとっておそらく最も重要な換算です。生と加熱後の数値は、1日の合計を狂わせるほど離れているからです。',
       chickenP2:
         '実務上の影響はこうです。加熱後に鶏肉を量って144gとして記録し、それを生重量基準の栄養表示に当てはめると、生144g分の栄養しか計上されず、56g分を取りこぼします。正しいやり方は、加熱前に生で量るか、生・加熱後の計算機で加熱後重量を生重量に戻してから記録することです。',
       beefHeading: '合い挽き肉の生・加熱後の重量',
       beefP1:
-        '合い挽き肉の生から加熱後への重量変化は脂の割合で決まります。標準的な80/20の合い挽き肉は、加熱中に水分と脂の両方が出るため、質量の約27%を失います。生200gなら加熱後は約146gです。より赤身の多い90/10では、落ちる脂が少ないぶん18〜20%の減少にとどまります。',
+        '標準的な80/20の合い挽き肉は、加熱すると水分と脂の両方が出て約27%の重量を失うため、生200gは加熱後およそ146gになります。正確な数値は脂肪率によって変わり、より赤身の多い90/10では落ちる脂が少ないぶん18〜20%の減少にとどまります。',
       beefP2:
         'この生・加熱後の食肉重量換算計算機は、合い挽き肉の既定値として80/20を採用しています。これは小売で最も一般的な脂肪率について、USDAが実測した歩留まりデータに合わせたものです。',
       riceHeading: '米の生・加熱後の比率',
       riceP1:
-        '米の生・加熱後の比率は、肉とは逆方向に動きます。乾燥した白米は炊く間に水を吸い、元の重量の約3倍に膨らみます——乾燥100gの米は炊き上がりでおよそ300gになります。つまり炊いたご飯300gに含まれるカロリーは乾燥100g分だけであり、乾燥米と炊いた米で1gあたりのカロリー密度が同じだと思っていた人には意外な事実です。',
+        '乾燥した白米は炊くとほぼ3倍の重量になります。乾燥100gが炊き上がりで約300g、USDA歩留まり300%で、肉とは逆方向です。つまり炊いたご飯300gに含まれるカロリーは乾燥100g分だけであり、乾燥米と炊いた米で1gあたりのカロリー密度が同じだと思っていた人には意外な事実です。',
       riceP2:
         '米では誤差が積み上がるのが速いため、正確な生・加熱後の計算機を使う意味がとりわけ大きくなります。毎日茶碗2杯の炊いた米を食べ、その加熱後重量を乾燥重量基準の表示に当てはめて記録していれば、その分のカロリーを大幅に過大評価することになります。',
       usdaHeading: 'USDAの公式データに基づいています',
@@ -346,7 +346,7 @@ export const HOME: Record<Locale, HomeSections> = {
     article: {
       heading: '생·조리 중량 변환 계산기 안내',
       intro:
-        '이 생·조리 변환기는 식단 기록에서 가장 끈질긴 문제 하나 — 주방 저울에 찍히는 숫자와 영양성분표가 실제로 말하는 값 사이의 간극 — 에서 어림짐작을 걷어냅니다. USDA FoodData Central을 포함한 대부분의 칼로리 데이터베이스는 생 중량을 기준으로 영양소를 표기합니다. 하지만 대다수 사람은 조리한 뒤에 먹습니다. 이 무료 변환기에 생 중량이든 조리 후 중량이든 입력하면, 반대편 중량과 함께 그 분량에 해당하는 정확한 칼로리·단백질·탄수화물·지방을 바로 계산해 줍니다.',
+        '조리한 음식이 생일 때와 같은 무게가 되는 일은 드뭅니다. 고기와 생선은 무게의 15~35%를 잃고, 쌀·파스타·마른 콩류는 두세 배가 됩니다. 이 생·조리 변환기는 식품마다 다른 USDA 수율을 적용하므로, 생이든 조리 후든 중량을 입력하면 반대편 중량과 그 분량에 해당하는 정확한 칼로리·단백질·탄수화물·지방을 알려 줍니다. USDA FoodData Central을 비롯한 대부분의 칼로리 데이터베이스는 생 중량으로 영양소를 표기하지만, 거의 모든 사람은 조리한 뒤에 먹습니다. 이 계산기가 그 간극을 메웁니다.',
       whyHeading: '생 식품과 조리된 식품의 무게가 다른 이유',
       whyP1:
         '생 식품과 조리된 식품의 무게가 다른 이유는 수분입니다. 고기를 익히면 물이 증발하고 지방이 빠져나가므로, 조리된 식품은 처음의 생 식품보다 가벼워집니다. 곡물과 콩류는 반대입니다. 삶는 동안 물을 흡수하기 때문에 냄비에 넣은 생 재료보다 조리 후가 더 무겁습니다.',
@@ -354,17 +354,17 @@ export const HOME: Record<Locale, HomeSections> = {
         '따라서 하루 종일 "1g은 1g"이라는 가정을 그대로 쓸 수는 없습니다. 생·조리 중량 변환 계산기는 식품마다 다른 고유 수율 — 조리 후 중량과 생 중량의 비율 — 을 적용해 이 문제를 해결합니다. 이 값은 식품에 따라 크게 달라집니다. 닭고기와 소고기는 무게의 약 4분의 1을 잃고, 시금치는 부피가 크게 줄어드는 것과 달리 무게는 23%만 잃으며, 백미는 거의 세 배가 됩니다.',
       chickenHeading: '닭고기 생·조리 중량',
       chickenP1:
-        '닭고기의 생 중량과 조리 후 중량 변환은 단백질을 관리하는 사람에게 아마 가장 중요한 계산일 것입니다. 껍질과 뼈를 제거한 닭 가슴살은 오븐에 굽든, 직화로 굽든, 팬에 굽든 조리하면 무게의 약 28%가 줄어듭니다. 생 200g이 조리 후 약 144g이 된다는 뜻입니다.',
+        '껍질과 뼈를 제거한 닭 가슴살은 오븐에 굽든, 직화로 굽든, 팬에 굽든 조리하면 약 28%의 무게가 줄어들어, 생 200g이 조리 후 약 144g이 됩니다. 단백질을 관리하는 사람에게는 아마 가장 중요한 변환입니다. 생 중량과 조리 후 중량의 차이가 하루 총량을 왜곡할 만큼 크기 때문입니다.',
       chickenP2:
         '실제로 어떤 일이 생기냐면, 조리한 뒤 닭고기를 재서 144g으로 기록하고 이를 생중량 기준 영양성분표에 대입하면 생 144g 분량의 영양소만 계산되어 56g만큼 빠집니다. 올바른 방법은 조리 전에 생으로 재거나, 생·조리 계산기로 조리 후 중량을 생중량으로 되돌린 뒤 기록하는 것입니다.',
       beefHeading: '다진 소고기 생·조리 중량',
       beefP1:
-        '다진 소고기의 생·조리 중량 차이는 지방 함량에 달려 있습니다. 일반적인 80/20 다진 소고기는 조리 중 물과 지방이 모두 빠져나가면서 질량의 약 27%가 줄어듭니다. 생 200g이면 조리 후 약 146g입니다. 지방이 적은 90/10은 빠질 지방이 적어 18~20%만 줄어듭니다.',
+        '일반적인 80/20 다진 소고기는 조리 중 물과 지방이 모두 빠져나가 약 27%의 무게가 줄어들어, 생 200g이 조리 후 약 146g이 됩니다. 정확한 수치는 지방 함량을 따라가며, 지방이 적은 90/10은 녹아 나올 지방이 적어 18~20%만 줄어듭니다.',
       beefP2:
         '이 생·조리 육류 중량 변환 계산기는 다진 소고기의 기본값으로 80/20을 사용합니다. 소매에서 가장 흔한 지방 비율에 대해 USDA가 실측한 수율 데이터에 맞춘 값입니다.',
       riceHeading: '쌀의 생·조리 비율',
       riceP1:
-        '쌀의 생·조리 비율은 고기와 정반대 방향으로 움직입니다. 마른 백미는 익는 동안 물을 흡수해 원래 무게의 약 3배로 불어납니다. 마른 쌀 100g이 조리 후 약 300g이 되는 것이죠. 즉 조리된 밥 300g에는 마른 쌀 100g만큼의 열량만 들어 있습니다. 마른 쌀과 지은 밥의 g당 열량 밀도가 같다고 생각했던 사람에게는 뜻밖의 사실입니다.',
+        '마른 백미는 익히면 무게가 거의 세 배가 됩니다. 마른 쌀 100g이 조리 후 약 300g, USDA 수율 300%로, 고기와는 정반대입니다. 즉 조리된 밥 300g에는 마른 쌀 100g만큼의 열량만 들어 있으며, 마른 쌀과 지은 밥의 g당 열량 밀도가 같다고 생각한 사람에게는 뜻밖의 사실입니다.',
       riceP2:
         '쌀은 오차가 빠르게 쌓이기 때문에 정확한 생·조리 계산기를 쓰는 것이 특히 중요합니다. 매일 밥 두 공기를 먹으면서 조리 후 중량을 마른 중량 기준 표시에 대입해 기록한다면, 그 식품의 열량을 상당히 과대평가하게 됩니다.',
       usdaHeading: 'USDA 공식 데이터를 기반으로',
@@ -393,7 +393,7 @@ export const HOME: Record<Locale, HomeSections> = {
     article: {
       heading: 'Informazioni su questo calcolatore di conversione peso crudo-cotto',
       intro:
-        'Questo convertitore crudo-cotto elimina le stime a occhio da uno dei problemi più ostinati del monitoraggio alimentare: lo scarto tra ciò che leggi sulla bilancia da cucina e ciò che descrive davvero un’etichetta nutrizionale. La maggior parte dei database calorici — inclusa USDA FoodData Central — riporta i macro sul peso da crudo. Quasi tutti però cucinano prima di mangiare. Con questo convertitore gratuito inserisci il peso da crudo oppure da cotto e ottieni subito l’equivalente dall’altro lato, insieme a calorie, proteine, carboidrati e grassi esatti per quella quantità.',
+        'Un alimento cotto pesa raramente quanto pesava da crudo: carne e pesce perdono il 15-35% del peso, mentre riso, pasta e legumi secchi raddoppiano o triplicano. Questo convertitore crudo-cotto applica la resa USDA specifica di ogni alimento: inserisci un peso da crudo o da cotto e ottieni l’equivalente dall’altro lato, con calorie, proteine, carboidrati e grassi esatti per quella quantità. La maggior parte dei database calorici — inclusa USDA FoodData Central — riporta i macro sul peso da crudo, ma quasi tutti cucinano prima di mangiare: è questo scarto che il calcolatore colma.',
       whyHeading: 'Perché crudo e cotto non pesano uguale',
       whyP1:
         'Il motivo per cui alimento crudo e alimento cotto hanno pesi diversi è l’acqua. Quando cuoci la carne l’acqua evapora e il grasso si scioglie: il cotto risulta più leggero del crudo di partenza. Cereali e legumi fanno l’opposto: assorbono acqua durante la bollitura, quindi il cotto pesa più del crudo messo in pentola.',
@@ -401,17 +401,17 @@ export const HOME: Record<Locale, HomeSections> = {
         'Non puoi quindi applicare un generico "grammo = grammo" per tutta la giornata. Un calcolatore di conversione peso crudo-cotto risolve il problema applicando la resa specifica di ciascun alimento — il rapporto tra peso cotto e peso crudo — che cambia parecchio da un prodotto all’altro. Pollo e manzo perdono circa un quarto del peso. Gli spinaci ne perdono solo il 23%, pur riducendosi a una frazione del loro volume. Il riso bianco quasi triplica.',
       chickenHeading: 'Peso del pollo da crudo a cotto',
       chickenP1:
-        'La conversione del peso del pollo da crudo a cotto è probabilmente la più importante per chi tiene sotto controllo le proteine. Il petto di pollo senza pelle e senza osso perde circa il 28% del peso in cottura, sia al forno sia alla griglia sia in padella. In pratica, 200 g di pollo crudo diventano circa 144 g cotti.',
+        'Il petto di pollo senza pelle e senza osso perde circa il 28% del peso in cottura — al forno, alla griglia o in padella —, quindi 200 g di pollo crudo diventano circa 144 g cotti. È probabilmente la conversione più importante per chi tiene sotto controllo le proteine, perché i valori da crudo e da cotto si distanziano abbastanza da falsare un totale giornaliero.',
       chickenP2:
         'La conseguenza pratica: se pesi il pollo dopo la cottura e registri 144 g rispetto a un’etichetta espressa sul crudo, conteggerai i macro di soli 144 g di crudo, con 56 g in meno. L’approccio corretto è pesare da crudo prima di cuocere, oppure usare un calcolatore crudo-cotto per riportare il peso cotto al suo equivalente da crudo prima di registrarlo.',
       beefHeading: 'Peso della carne macinata da crudo a cotto',
       beefP1:
-        'Il peso della carne macinata da crudo a cotto dipende dal contenuto di grasso. La macinata standard 80/20 perde circa il 27% della massa, perché in cottura escono sia acqua sia grasso. Una porzione di 200 g da crudo rende circa 146 g da cotta. La macinata più magra 90/10 perde solo il 18-20%, perché c’è meno grasso da sciogliere.',
+        'La carne macinata standard 80/20 perde circa il 27% del peso in cottura — escono sia acqua sia grasso —, quindi una porzione di 200 g da cruda rende circa 146 g da cotta. Il valore esatto segue il contenuto di grasso: la macinata più magra 90/10 perde solo il 18-20%, perché c’è meno grasso da sciogliere.',
       beefP2:
         'Questo calcolatore di conversione del peso della carne crudo-cotto usa per la macinata il valore predefinito 80/20, in linea con le rese misurate dall’USDA per la percentuale di grasso più diffusa al dettaglio.',
       riceHeading: 'Rapporto crudo-cotto del riso',
       riceP1:
-        'Il rapporto crudo-cotto del riso va nella direzione opposta rispetto alla carne. Il riso bianco secco assorbe acqua durante la cottura e si espande fino a circa 3 volte il peso iniziale: 100 g di riso secco diventano all’incirca 300 g cotti. Una porzione da 300 g di riso cotto contiene quindi solo le calorie di 100 g di secco, cosa che sorprende molti, convinti che riso secco e riso cotto abbiano la stessa densità calorica per grammo.',
+        'Il riso bianco secco quasi triplica il peso in cottura: 100 g da secco diventano circa 300 g cotti, una resa USDA del 300%, all’opposto della carne. Una porzione da 300 g di riso cotto contiene quindi solo le calorie di 100 g da secco, cosa che sorprende molti, convinti che riso secco e riso cotto abbiano la stessa densità calorica per grammo.',
       riceP2:
         'Usare un calcolatore crudo-cotto accurato per il riso conta parecchio, perché l’errore si accumula in fretta. Se mangi due porzioni di riso cotto al giorno e registri il peso da cotto rispetto a un’etichetta espressa sul secco, sovrastimerai in modo significativo le calorie di quell’alimento.',
       usdaHeading: 'Costruito su dati ufficiali USDA',
@@ -440,7 +440,7 @@ export const HOME: Record<Locale, HomeSections> = {
     article: {
       heading: 'इस कच्चे से पके वजन बदलने वाले कैलकुलेटर के बारे में',
       intro:
-        'यह कच्चे-से-पके कनवर्टर फूड ट्रैकिंग की सबसे जिद्दी समस्याओं में से एक से अनुमान हटा देता है: आपकी रसोई की तराजू जो दिखाती है और पोषण लेबल जो असल में बताता है, इन दोनों के बीच का फर्क। USDA FoodData Central समेत ज्यादातर कैलोरी डेटाबेस मैक्रो कच्चे वजन के आधार पर देते हैं। लेकिन ज्यादातर लोग पकाकर खाते हैं। इस मुफ्त कनवर्टर में आप कच्चा या पका, कोई भी वजन डाल सकते हैं और तुरंत दूसरी तरफ का बराबर वजन मिल जाता है, साथ ही उतनी मात्रा की सही कैलोरी, प्रोटीन, कार्ब्स और वसा भी।',
+        'पका हुआ भोजन शायद ही कभी उतना वजन रखता है जितना कच्चा था: मांस और मछली अपने वजन का 15–35% खोते हैं, जबकि चावल, पास्ता और सूखी दालें दो से तीन गुना हो जाती हैं। यह कच्चे-से-पके कनवर्टर हर खाद्य पदार्थ का अपना USDA यील्ड प्रतिशत लगाता है, इसलिए आप कच्चा या पका, कोई भी वजन डालें और दूसरी तरफ का बराबर वजन मिल जाता है, साथ ही उतनी मात्रा की सही कैलोरी, प्रोटीन, कार्ब्स और वसा भी। USDA FoodData Central समेत ज्यादातर कैलोरी डेटाबेस मैक्रो कच्चे वजन के आधार पर देते हैं, लेकिन ज्यादातर लोग पकाकर खाते हैं; यही फर्क यह कैलकुलेटर पाटता है।',
       whyHeading: 'कच्चे और पके भोजन का वजन अलग क्यों होता है',
       whyP1:
         'कच्चे और पके भोजन का वजन अलग होने की वजह नमी है। मांस पकाने पर पानी भाप बनकर उड़ता है और चर्बी पिघलकर निकल जाती है — इसलिए पका हुआ भोजन उस कच्चे भोजन से हल्का रह जाता है जिससे आपने शुरुआत की थी। अनाज और दालें इसका उल्टा करती हैं: उबालते समय वे पानी सोख लेती हैं, इसलिए पका हुआ भोजन बर्तन में डाले गए कच्चे भोजन से भारी हो जाता है।',
@@ -448,17 +448,17 @@ export const HOME: Record<Locale, HomeSections> = {
         'इसका मतलब यह है कि आप पूरे दिन "एक ग्राम मतलब एक ग्राम" नहीं मान सकते। कच्चे से पके वजन का कैलकुलेटर हर खाद्य पदार्थ का अपना यील्ड प्रतिशत — यानी पके और कच्चे वजन का अनुपात — लगाकर यह समस्या हल करता है, और यह अनुपात एक चीज से दूसरी चीज में काफी बदलता है। चिकन और बीफ अपना करीब एक-चौथाई वजन खोते हैं। पालक अपनी मात्रा के एक अंश तक सिमट जाने के बावजूद सिर्फ 23% वजन खोता है। सफेद चावल लगभग तीन गुना हो जाता है।',
       chickenHeading: 'चिकन का कच्चे से पके वजन में बदलाव',
       chickenP1:
-        'प्रोटीन ट्रैक करने वाले किसी भी व्यक्ति के लिए चिकन का कच्चे से पके वजन में बदलाव शायद सबसे जरूरी गणना है। बिना हड्डी और बिना त्वचा वाला चिकन ब्रेस्ट पकाने पर करीब 28% वजन खो देता है — चाहे बेक करें, ग्रिल करें या तवे पर तलें। यानी 200g कच्चा चिकन पकने पर लगभग 144g रह जाता है।',
+        'बिना हड्डी और बिना त्वचा वाला चिकन ब्रेस्ट, चाहे बेक करें, ग्रिल करें या तवे पर तलें, पकाने पर करीब 28% वजन खो देता है, इसलिए 200g कच्चा चिकन पकने पर लगभग 144g रह जाता है। प्रोटीन ट्रैक करने वाले किसी भी व्यक्ति के लिए यह शायद सबसे जरूरी गणना है, क्योंकि कच्चे और पके के आंकड़े इतने अलग होते हैं कि दिन भर का कुल जोड़ बिगाड़ सकते हैं।',
       chickenP2:
         'व्यावहारिक नतीजा यह है: अगर आप चिकन पकाने के बाद तौलकर 144g दर्ज करते हैं और उसे कच्चे वजन वाले पोषण लेबल पर लगाते हैं, तो आप सिर्फ 144g कच्चे के मैक्रो गिनेंगे और 56g छूट जाएगा। सही तरीका है या तो पकाने से पहले कच्चा तौलना, या कच्चे-से-पके कैलकुलेटर से पके वजन को उसके कच्चे बराबर मान में बदलकर दर्ज करना।',
       beefHeading: 'कीमे का कच्चे से पके वजन में बदलाव',
       beefP1:
-        'कीमे का कच्चे से पके वजन में बदलाव उसकी चर्बी की मात्रा पर निर्भर करता है। सामान्य 80/20 कीमा अपने द्रव्यमान का लगभग 27% खो देता है, क्योंकि पकते समय पानी और चर्बी दोनों निकलते हैं। 200g कच्चे हिस्से से करीब 146g पका कीमा मिलता है। ज्यादा लीन 90/10 कीमा सिर्फ 18–20% खोता है, क्योंकि उसमें पिघलने के लिए कम चर्बी होती है।',
+        'सामान्य 80/20 कीमा पकाने पर करीब 27% वजन खो देता है — पानी और चर्बी दोनों निकलते हैं —, इसलिए 200g कच्चे हिस्से से करीब 146g पका कीमा मिलता है। सही आंकड़ा चर्बी की मात्रा के साथ चलता है: ज्यादा लीन 90/10 कीमा सिर्फ 18–20% खोता है, क्योंकि उसमें पिघलने के लिए कम चर्बी होती है।',
       beefP2:
         'यह कच्चे से पके मांस वजन कैलकुलेटर कीमे के लिए 80/20 को डिफॉल्ट मानता है, जो बाजार में सबसे आम चर्बी अनुपात के लिए USDA द्वारा मापे गए यील्ड डेटा से मेल खाता है।',
       riceHeading: 'चावल का कच्चे से पके का अनुपात',
       riceP1:
-        'चावल का कच्चे से पके का अनुपात मांस के ठीक उल्टा चलता है। सूखा सफेद चावल पकते समय पानी सोखता है और अपने मूल वजन का करीब 3 गुना हो जाता है — 100g सूखा चावल पकने पर लगभग 300g हो जाता है। यानी 300g पके चावल के कटोरे में सिर्फ 100g सूखे चावल जितनी कैलोरी होती है, जो उन लोगों को चौंकाता है जो मानते हैं कि सूखे और पके चावल की प्रति ग्राम कैलोरी घनत्व एक जैसी होती है।',
+        'सूखा सफेद चावल पकाने पर वजन में करीब तीन गुना हो जाता है: 100g सूखा चावल पकने पर करीब 300g, यानी USDA यील्ड 300% — मांस के ठीक उलट। इसका मतलब है कि 300g पके चावल के कटोरे में सिर्फ 100g सूखे चावल जितनी कैलोरी होती है, जो उन लोगों को चौंकाता है जो मानते हैं कि सूखे और पके चावल की प्रति ग्राम कैलोरी घनत्व एक जैसी होती है।',
       riceP2:
         'चावल के लिए सटीक कच्चे-से-पके कैलकुलेटर का इस्तेमाल इसलिए खास तौर पर जरूरी है क्योंकि गलती तेजी से जुड़ती जाती है। अगर आप रोज दो कटोरी पका चावल खाते हैं और पके वजन को सूखे वजन वाले लेबल पर दर्ज करते हैं, तो आप उस भोजन की कैलोरी काफी ज्यादा आंकेंगे।',
       usdaHeading: 'आधिकारिक USDA डेटा पर आधारित',

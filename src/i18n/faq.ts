@@ -64,7 +64,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: 'Why is cooked weight lower for meat but higher for rice?',
-      a: 'The direction depends on how each food behaves under heat. Meat, poultry, seafood, and most vegetables start with a lot of water already in them — heat drives that moisture out, so the food loses weight. Dry grains, pasta, and legumes start with very little water and absorb it during boiling, so their weight increases. It is not a single universal rule; it depends on the food’s starting water content and how it interacts with heat and liquid during cooking.',
+      a: 'Meat starts full of water and loses it to heat; dry grains start with almost none and soak it up. Meat, poultry, seafood, and most vegetables are already water-rich, so heat drives that moisture out and the food loses weight. Dry grains, pasta, and legumes absorb water during boiling, so their weight goes up. There is no single universal rule — it comes down to the food’s starting water content and how it meets heat and liquid during cooking.',
     },
     {
       q: 'What does yield percentage mean in cooking?',
@@ -103,7 +103,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: '¿Por qué el peso cocido es menor en la carne pero mayor en el arroz?',
-      a: 'La dirección depende de cómo reacciona cada alimento al calor. La carne, las aves, el pescado y la mayoría de las verduras ya contienen mucha agua: el calor la expulsa y el alimento pierde peso. Los cereales secos, la pasta y las legumbres contienen muy poca agua y la absorben al hervir, así que ganan peso. No hay una regla universal; depende del agua que contenga el alimento de partida y de cómo interactúe con el calor y el líquido durante la cocción.',
+      a: 'La carne parte llena de agua y la pierde con el calor; los cereales secos apenas tienen y la absorben. La carne, las aves, el pescado y la mayoría de las verduras ya contienen mucha agua, así que el calor la expulsa y el alimento pierde peso. Los cereales secos, la pasta y las legumbres absorben agua al hervir, de modo que ganan peso. No hay una regla universal: depende del agua que contenga el alimento de partida y de cómo se encuentre con el calor y el líquido durante la cocción.',
     },
     {
       q: '¿Qué significa el porcentaje de rendimiento en cocina?',
@@ -142,7 +142,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: 'Pourquoi le poids cuit est-il plus faible pour la viande et plus élevé pour le riz ?',
-      a: 'Le sens dépend de la réaction de chaque aliment à la chaleur. Viandes, volailles, poissons et la plupart des légumes contiennent déjà beaucoup d’eau : la chaleur la fait partir, donc l’aliment perd du poids. Les céréales sèches, les pâtes et les légumineuses en contiennent très peu et en absorbent à l’ébullition, donc leur poids augmente. Il n’y a pas de règle universelle : tout dépend de la teneur en eau de départ et de la façon dont l’aliment réagit à la chaleur et au liquide.',
+      a: 'La viande part gorgée d’eau et la perd à la chaleur ; les céréales sèches n’en ont presque pas et l’absorbent. Viandes, volailles, poissons et la plupart des légumes sont déjà riches en eau, donc la chaleur la fait partir et l’aliment perd du poids. Les céréales sèches, les pâtes et les légumineuses absorbent l’eau à l’ébullition, donc leur poids augmente. Il n’y a pas de règle universelle : tout dépend de la teneur en eau de départ et de la façon dont l’aliment rencontre la chaleur et le liquide.',
     },
     {
       q: 'Que signifie le pourcentage de rendement en cuisine ?',
@@ -181,7 +181,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: 'Warum ist das Gargewicht bei Fleisch niedriger, bei Reis aber höher?',
-      a: 'Die Richtung hängt davon ab, wie das Lebensmittel auf Hitze reagiert. Fleisch, Geflügel, Fisch und die meisten Gemüse enthalten von Haus aus viel Wasser — die Hitze treibt es aus, das Gewicht sinkt. Trockenes Getreide, Nudeln und Hülsenfrüchte enthalten kaum Wasser und nehmen es beim Kochen auf, das Gewicht steigt. Eine allgemeingültige Regel gibt es nicht; entscheidend sind der Ausgangswassergehalt und das Zusammenspiel mit Hitze und Flüssigkeit.',
+      a: 'Fleisch beginnt voller Wasser und verliert es an die Hitze; trockenes Getreide hat fast keines und saugt es auf. Fleisch, Geflügel, Fisch und die meisten Gemüse sind von Haus aus wasserreich, die Hitze treibt es aus und das Gewicht sinkt. Trockenes Getreide, Nudeln und Hülsenfrüchte nehmen beim Kochen Wasser auf, das Gewicht steigt. Eine allgemeingültige Regel gibt es nicht — entscheidend sind der Ausgangswassergehalt und das Zusammenspiel mit Hitze und Flüssigkeit.',
     },
     {
       q: 'Was bedeutet die Ausbeute in Prozent beim Garen?',
@@ -220,7 +220,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: 'Por que o peso cozido é menor na carne e maior no arroz?',
-      a: 'A direção depende de como cada alimento reage ao calor. Carnes, aves, peixes e a maioria dos vegetais já contêm bastante água — o calor expulsa essa umidade e o alimento perde peso. Grãos secos, massas e leguminosas contêm muito pouca água e a absorvem ao cozinhar, então ganham peso. Não existe uma regra universal: depende do teor de água inicial e de como o alimento interage com o calor e o líquido durante o preparo.',
+      a: 'A carne começa cheia de água e a perde para o calor; os grãos secos quase não têm e a absorvem. Carnes, aves, peixes e a maioria dos vegetais já são ricos em água, então o calor expulsa essa umidade e o alimento perde peso. Grãos secos, massas e leguminosas absorvem água ao cozinhar, então ganham peso. Não existe uma regra universal — depende do teor de água inicial e de como o alimento encontra o calor e o líquido durante o preparo.',
     },
     {
       q: 'O que significa percentual de rendimento na cozinha?',
@@ -259,7 +259,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: 'なぜ肉は加熱後に軽くなり、米は重くなるのですか？',
-      a: 'どちらに動くかは、その食品が熱にどう反応するかで決まります。肉・鶏肉・魚介類とほとんどの野菜はもともと水分を多く含んでおり、熱でその水分が抜けるため軽くなります。乾燥した穀物・パスタ・豆類はほとんど水分を含まず、茹でる間に水を吸うため重くなります。万能の法則があるわけではなく、元の水分量と、加熱・水分との関わり方によって決まります。',
+      a: '肉は水分をたっぷり含んだ状態から始まり、熱でそれを失います。乾燥した穀物はほとんど水分がなく、逆に吸い込みます。肉・鶏肉・魚介類とほとんどの野菜はもともと水分が多いので、熱で水分が抜けて軽くなります。乾燥した穀物・パスタ・豆類は茹でる間に水を吸うため重くなります。万能の法則はなく、元の水分量と、加熱・水分との関わり方で決まります。',
     },
     {
       q: '調理における歩留まり率とは何ですか？',
@@ -298,7 +298,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: '왜 고기는 조리 후 무게가 줄고 쌀은 늘어나나요?',
-      a: '어느 방향으로 갈지는 그 식품이 열에 어떻게 반응하는지에 달려 있습니다. 육류, 가금류, 해산물과 대부분의 채소는 원래 물을 많이 머금고 있어서 열이 그 수분을 밀어내면 무게가 줍니다. 마른 곡물, 파스타, 콩류는 물이 거의 없는 상태에서 삶는 동안 물을 흡수하므로 무게가 늘어납니다. 하나의 보편 법칙이 있는 것이 아니라, 처음의 수분 함량과 조리 중 열·수분과의 상호작용에 따라 달라집니다.',
+      a: '고기는 물을 잔뜩 머금은 상태에서 시작해 열에 그 물을 잃고, 마른 곡물은 물이 거의 없어 오히려 빨아들입니다. 육류, 가금류, 해산물과 대부분의 채소는 원래 물이 많아서 열이 그 수분을 밀어내면 무게가 줍니다. 마른 곡물, 파스타, 콩류는 삶는 동안 물을 흡수하므로 무게가 늘어납니다. 하나의 보편 법칙은 없고, 처음의 수분 함량과 조리 중 열·수분과의 상호작용에 따라 달라집니다.',
     },
     {
       q: '조리에서 수율(%)이란 무엇인가요?',
@@ -337,7 +337,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: 'Perché il peso da cotto è minore per la carne e maggiore per il riso?',
-      a: 'La direzione dipende da come ciascun alimento reagisce al calore. Carne, pollame, pesce e la maggior parte delle verdure contengono già molta acqua: il calore la fa uscire e l’alimento perde peso. Cereali secchi, pasta e legumi ne contengono pochissima e la assorbono durante la bollitura, quindi aumentano di peso. Non esiste una regola universale: conta il contenuto d’acqua di partenza e il modo in cui l’alimento interagisce con calore e liquido.',
+      a: 'La carne parte piena d’acqua e la perde con il calore; i cereali secchi non ne hanno quasi e la assorbono. Carne, pollame, pesce e la maggior parte delle verdure sono già ricchi d’acqua, quindi il calore la fa uscire e l’alimento perde peso. Cereali secchi, pasta e legumi assorbono acqua durante la bollitura, quindi aumentano di peso. Non esiste una regola universale: conta il contenuto d’acqua di partenza e il modo in cui l’alimento incontra calore e liquido.',
     },
     {
       q: 'Che cosa significa percentuale di resa in cucina?',
@@ -376,7 +376,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
     {
       q: 'मांस का वजन पकाने पर घटता है लेकिन चावल का बढ़ता क्यों है?',
-      a: 'दिशा इस बात पर निर्भर करती है कि हर खाद्य पदार्थ गर्मी पर कैसे प्रतिक्रिया करता है। मांस, मुर्गी, समुद्री भोजन और ज्यादातर सब्जियों में पहले से बहुत पानी होता है — गर्मी उस नमी को बाहर निकाल देती है, इसलिए वजन घटता है। सूखे अनाज, पास्ता और दालों में पानी बहुत कम होता है और वे उबालते समय पानी सोखते हैं, इसलिए वजन बढ़ता है। कोई एक सार्वभौमिक नियम नहीं है; यह शुरुआती पानी की मात्रा और पकाते समय गर्मी व तरल के साथ उसकी प्रतिक्रिया पर निर्भर करता है।',
+      a: 'मांस पानी से भरा हुआ शुरू होता है और गर्मी में वह पानी खो देता है; सूखे अनाज में पानी लगभग होता ही नहीं, वे उसे सोख लेते हैं। मांस, मुर्गी, समुद्री भोजन और ज्यादातर सब्जियों में पहले से बहुत पानी होता है, इसलिए गर्मी उस नमी को बाहर निकालती है और वजन घटता है। सूखे अनाज, पास्ता और दालें उबालते समय पानी सोखते हैं, इसलिए वजन बढ़ता है। कोई एक सार्वभौमिक नियम नहीं है — यह शुरुआती पानी की मात्रा और पकाते समय गर्मी व तरल से उसके सामना पर निर्भर करता है।',
     },
     {
       q: 'खाना पकाने में यील्ड प्रतिशत का क्या मतलब है?',
@@ -400,15 +400,15 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Should I track chicken macros raw or cooked?',
-        a: 'USDA nutrition data (and most food labels) are measured on raw chicken. For accuracy, always log the raw weight and calculate macros from there. This calculator always derives macros from the raw-weight equivalent, regardless of which direction you convert.',
+        a: 'Raw. USDA nutrition data and most food labels are measured on raw chicken, so the raw weight is the one that matches the numbers — log that, or convert your cooked weight back to raw first. This calculator always derives macros from the raw-weight equivalent, regardless of which direction you convert.',
       },
       {
         q: 'Why does chicken lose weight when cooked?',
-        a: 'Chicken is roughly 70–75% water by weight. When heat is applied, that moisture evaporates out of the muscle fibers, and some fat renders out as well. The protein itself stays essentially intact — you end up with the same amount of actual nutrition packed into a smaller, denser piece.',
+        a: 'Water cooks out of it. Chicken breast is roughly 70–75% water by weight; heat makes the proteins denature and contract, forcing that moisture out of the muscle fibers, and some fat renders out as well — together that is the roughly 28% weight loss. The protein itself stays essentially intact, so you end up with the same nutrition packed into a smaller, denser piece.',
       },
       {
         q: 'How much weight does chicken breast lose when cooked?',
-        a: 'It depends on the cooking method. USDA data shows baked or roasted chicken breast retains about 72% of its raw weight, grilled retains about 70%, boiled or poached retains about 77%, and pan-fried retains about 72%. There is no single correct number — use the cooking-method toggle on the calculator above for a more precise result.',
+        a: 'About 28% — 100g of raw chicken breast comes down to roughly 72g cooked, a 72% USDA yield. It varies a little by method: baked or roasted retains about 72%, grilled about 70%, boiled or poached about 77%, and pan-fried about 72%. Use the cooking-method toggle on the calculator above for a method-specific result.',
       },
       {
         q: 'Does the cooking method actually make a meaningful difference?',
@@ -420,7 +420,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'What is the raw to cooked ratio for chicken breast?',
-        a: 'For baked or roasted chicken breast, the ratio is roughly 4:2.9 — the cooked weight is a little under three-quarters of the raw weight. This shifts slightly by cooking method: grilling produces closer to a 10:7 ratio (70% yield), while boiling or poaching is closer to 4:3.1 (77% yield).',
+        a: 'Roughly 100:72 — 100g of raw chicken breast cooks down to about 72g when baked or roasted. The ratio shifts slightly by method: grilling is closer to 100:70, while boiling or poaching retains more moisture at about 100:77.',
       },
       {
         q: 'How much does chicken weigh after cooking?',
@@ -430,7 +430,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     grains: [
       {
         q: 'Should I weigh {food} raw or cooked?',
-        a: 'USDA nutrition data is measured on the dry, uncooked product. For accurate macro tracking, weigh {food} dry and use those macros — or enter either weight here and the calculator does the conversion.',
+        a: 'Dry. USDA nutrition data is measured on the dry, uncooked product, so weigh {food} dry and track those macros — or enter either weight here and the calculator does the conversion.',
       },
       {
         q: 'How much does {food} expand when cooked?',
@@ -438,7 +438,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Why does {food} gain weight when cooked instead of losing it like meat?',
-        a: 'Unlike meat, the dry product starts with almost no water in it. When boiled, it absorbs the surrounding liquid and swells to roughly {mult}× its dry weight — so the cooked weight is significantly higher than the dry weight, not lower. Meat goes the opposite direction because it already contains a lot of water that heat drives out.',
+        a: 'It soaks up water. The dry product starts with almost none, so when boiled it absorbs the surrounding liquid and swells to roughly {mult}× its dry weight — the cooked weight ends up well above the dry weight, not below. Meat goes the opposite direction because it already contains a lot of water that heat drives out.',
       },
     ],
     rice: [
@@ -454,13 +454,13 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Should I track macros for {food} raw or cooked?',
-        a: 'USDA nutrition values are based on raw weight. For best accuracy, track the raw weight and calculate macros from there. This calculator always computes macros from the raw-weight equivalent.',
+        a: 'Raw. USDA nutrition values are based on raw weight, so track the raw weight and calculate macros from there. This calculator always computes macros from the raw-weight equivalent.',
       },
     ],
     spinach: [
       {
         q: 'How much does spinach shrink when cooked?',
-        a: 'By volume, dramatically — a full pan of raw leaves wilts down to a small handful. By weight, far less than people expect: USDA data puts spinach at a 77% cooking yield, so 100g of raw leaves becomes about 77g cooked, a loss of roughly 23%. The gap between those two impressions is what trips people up. Wilting drives out the air and structure that made the raw leaves bulky; most of the water stays put. If you are tracking macros, weigh spinach rather than judging it by how much the pan shrank.',
+        a: 'By weight, only about 23% — USDA data puts spinach at a 77% cooking yield, so 100g of raw leaves becomes about 77g cooked. By volume it is a different story: a full pan of raw leaves wilts to a small handful, and the gap between those two impressions is what trips people up. Wilting drives out the air and structure that made the raw leaves bulky; most of the water stays put. If you are tracking macros, weigh spinach rather than judging it by how much the pan shrank.',
       },
     ],
   },
@@ -473,15 +473,15 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '¿Los macros del pollo se cuentan en crudo o en cocido?',
-        a: 'Los datos nutricionales del USDA (y casi todas las etiquetas) se miden sobre el pollo crudo. Para acertar, registra siempre el peso en crudo y calcula los macros a partir de ahí. Esta calculadora siempre deriva los macros del equivalente en peso crudo, sin importar en qué dirección conviertas.',
+        a: 'En crudo. Los datos nutricionales del USDA y casi todas las etiquetas se miden sobre el pollo crudo, así que el peso en crudo es el que cuadra con esas cifras: regístralo, o convierte antes tu peso cocido a crudo. Esta calculadora siempre deriva los macros del equivalente en peso crudo, sin importar en qué dirección conviertas.',
       },
       {
         q: '¿Por qué el pollo pierde peso al cocinarse?',
-        a: 'El pollo es agua en torno a un 70–75% de su peso. Al aplicar calor, esa humedad se evapora de las fibras musculares y además se derrite algo de grasa. La proteína en sí queda prácticamente intacta: acabas con la misma cantidad de nutrientes concentrada en una pieza más pequeña y densa.',
+        a: 'El agua sale al cocinarlo. La pechuga de pollo es agua en torno a un 70–75% de su peso; el calor desnaturaliza y contrae las proteínas, que expulsan esa humedad de las fibras musculares, y además se derrite algo de grasa — en conjunto, esa es la pérdida de alrededor del 28%. La proteína en sí queda prácticamente intacta, así que acabas con los mismos nutrientes concentrados en una pieza más pequeña y densa.',
       },
       {
         q: '¿Cuánto peso pierde la pechuga de pollo al cocinarse?',
-        a: 'Depende del método. Según los datos del USDA, la pechuga al horno o asada conserva alrededor del 72% de su peso crudo, a la parrilla un 70%, hervida o escalfada un 77% y a la sartén un 72%. No hay una única cifra correcta: usa el selector de método de cocción en la calculadora de arriba para afinar el resultado.',
+        a: 'Alrededor del 28%: 100 g de pechuga de pollo cruda se quedan en unos 72 g cocidos, un rendimiento USDA del 72%. Varía algo según el método: al horno o asada conserva un 72%, a la parrilla un 70%, hervida o escalfada un 77% y a la sartén un 72%. Usa el selector de método de cocción en la calculadora de arriba para un resultado específico.',
       },
       {
         q: '¿El método de cocción marca de verdad una diferencia?',
@@ -493,7 +493,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '¿Cuál es la proporción de crudo a cocido de la pechuga de pollo?',
-        a: 'Para pechuga al horno o asada, la proporción es de aproximadamente 4:2,9: el peso cocido es algo menos de tres cuartas partes del crudo. Cambia algo según el método: a la parrilla se acerca más a 10:7 (rendimiento del 70%), mientras que hervida o escalfada queda cerca de 4:3,1 (rendimiento del 77%).',
+        a: 'Aproximadamente 100:72: 100 g de pechuga de pollo cruda se quedan en unos 72 g al horno o asada. La proporción cambia algo según el método: a la parrilla se acerca a 100:70, mientras que hervida o escalfada retiene más humedad, cerca de 100:77.',
       },
       {
         q: '¿Cuánto pesa el pollo después de cocinarlo?',
@@ -503,7 +503,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     grains: [
       {
         q: '¿Hay que pesar {food} en seco o después de cocer?',
-        a: 'Los datos nutricionales del USDA se miden sobre el producto seco y sin cocer. Para un seguimiento preciso, pesa {food} en seco y usa esos macros — o introduce aquí cualquiera de los dos pesos y la calculadora hace la conversión.',
+        a: 'En seco. Los datos nutricionales del USDA se miden sobre el producto seco y sin cocer, así que pesa {food} en seco y registra esos macros — o introduce aquí cualquiera de los dos pesos y la calculadora hace la conversión.',
       },
       {
         q: '¿Cuánto aumenta el peso al cocer {food}?',
@@ -511,7 +511,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '¿Por qué al cocer {food} el peso aumenta en vez de bajar como en la carne?',
-        a: 'A diferencia de la carne, el producto seco apenas contiene agua. Al hervirlo absorbe el líquido que lo rodea y se hincha hasta unas {mult} veces su peso en seco, así que el peso cocido es bastante mayor que el seco, no menor. La carne va en dirección contraria porque ya contiene mucha agua que el calor expulsa.',
+        a: 'Absorbe agua. El producto seco apenas tiene, así que al hervirlo absorbe el líquido que lo rodea y se hincha hasta unas {mult} veces su peso en seco — el peso cocido acaba bastante por encima del seco, no por debajo. La carne va en dirección contraria porque ya contiene mucha agua que el calor expulsa.',
       },
     ],
     rice: [
@@ -527,13 +527,13 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '¿Se registran los macros pesando {food} en crudo o ya cocinado?',
-        a: 'Los valores nutricionales del USDA se basan en el peso crudo. Para mayor precisión, registra el peso en crudo y calcula los macros a partir de ahí. Esta calculadora siempre calcula los macros desde el equivalente en peso crudo.',
+        a: 'En crudo. Los valores nutricionales del USDA se basan en el peso crudo, así que registra el peso en crudo y calcula los macros a partir de ahí. Esta calculadora siempre calcula los macros desde el equivalente en peso crudo.',
       },
     ],
     spinach: [
       {
         q: '¿Cuánto encoge la espinaca al cocinarse?',
-        a: 'En volumen, muchísimo: una sartén llena de hojas crudas se queda en un puñado pequeño. En peso, bastante menos de lo que se cree: los datos del USDA dan a la espinaca un rendimiento del 77%, así que 100 g de hojas crudas se quedan en unos 77 g cocidas, una pérdida de alrededor del 23%. La diferencia entre esas dos impresiones es lo que confunde. Al pocharse, las hojas sueltan el aire y la estructura que las hacían voluminosas; el agua, en su mayor parte, se queda. Si llevas un registro de macros, pesa la espinaca en vez de guiarte por cuánto ha menguado la sartén.',
+        a: 'En peso, solo alrededor del 23%: los datos del USDA dan a la espinaca un rendimiento del 77%, así que 100 g de hojas crudas se quedan en unos 77 g cocidas. En volumen es otra historia: una sartén llena de hojas crudas se queda en un puñado pequeño, y la diferencia entre esas dos impresiones es lo que confunde. Al pocharse, las hojas sueltan el aire y la estructura que las hacían voluminosas; el agua, en su mayor parte, se queda. Si llevas un registro de macros, pesa la espinaca en vez de guiarte por cuánto ha menguado la sartén.',
       },
     ],
   },
@@ -546,15 +546,15 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Faut-il compter les macros du poulet cru ou cuit ?',
-        a: 'Les données nutritionnelles de l’USDA (et la plupart des étiquettes) sont mesurées sur le poulet cru. Pour être précis, enregistrez toujours le poids cru et calculez les macros à partir de là. Ce calculateur part systématiquement de l’équivalent en poids cru, quel que soit le sens de la conversion.',
+        a: 'Cru. Les données nutritionnelles de l’USDA et la plupart des étiquettes sont mesurées sur le poulet cru : c’est donc le poids cru qui correspond à ces chiffres — enregistrez-le, ou reconvertissez d’abord votre poids cuit en cru. Ce calculateur part toujours de l’équivalent en poids cru, quel que soit le sens de la conversion.',
       },
       {
         q: 'Pourquoi le poulet perd-il du poids à la cuisson ?',
-        a: 'Le poulet est composé à environ 70–75 % d’eau. Sous l’effet de la chaleur, cette eau s’évapore des fibres musculaires et une partie de la graisse fond. Les protéines, elles, restent pour l’essentiel intactes : vous obtenez la même quantité de nutriments concentrée dans un morceau plus petit et plus dense.',
+        a: 'C’est l’eau qui part. Le blanc de poulet est composé à environ 70–75 % d’eau ; la chaleur dénature et contracte les protéines, qui chassent cette humidité des fibres musculaires, et une partie de la graisse fond aussi — ensemble, cela fait la perte d’environ 28 %. Les protéines, elles, restent pour l’essentiel intactes : vous obtenez les mêmes nutriments concentrés dans un morceau plus petit et plus dense.',
       },
       {
         q: 'Quelle quantité de poids le blanc de poulet perd-il à la cuisson ?',
-        a: 'Cela dépend du mode de cuisson. Selon l’USDA, le blanc de poulet au four ou rôti conserve environ 72 % de son poids cru, grillé environ 70 %, bouilli ou poché environ 77 %, et poêlé environ 72 %. Il n’existe pas de chiffre unique : utilisez le sélecteur de mode de cuisson du calculateur ci-dessus pour affiner le résultat.',
+        a: 'Environ 28 % : 100 g de blanc de poulet cru tombent à à peu près 72 g cuits, un rendement USDA de 72 %. Cela varie un peu selon la méthode : au four ou rôti on conserve environ 72 %, grillé environ 70 %, bouilli ou poché environ 77 %, poêlé environ 72 %. Utilisez le sélecteur de mode de cuisson du calculateur ci-dessus pour un résultat précis.',
       },
       {
         q: 'Le mode de cuisson change-t-il vraiment quelque chose ?',
@@ -566,7 +566,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Quel est le rapport cru-cuit pour le blanc de poulet ?',
-        a: 'Pour un blanc de poulet au four ou rôti, le rapport est d’environ 4:2,9 — le poids cuit vaut un peu moins que les trois quarts du poids cru. Il évolue un peu selon la cuisson : au gril on se rapproche d’un rapport 10:7 (rendement de 70 %), tandis que bouilli ou poché on est plutôt à 4:3,1 (rendement de 77 %).',
+        a: 'Environ 100:72 — 100 g de blanc de poulet cru donnent à peu près 72 g au four ou rôti. Le rapport évolue un peu selon la cuisson : au gril il se rapproche de 100:70, tandis que bouilli ou poché il retient plus d’eau, autour de 100:77.',
       },
       {
         q: 'Combien pèse le poulet après cuisson ?',
@@ -576,7 +576,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     grains: [
       {
         q: 'Faut-il peser {food} avant ou après cuisson ?',
-        a: 'Les données nutritionnelles de l’USDA portent sur le produit sec, non cuit. Pour un suivi précis, pesez {food} avant cuisson et utilisez ces macros — ou saisissez ici l’un ou l’autre poids, le calculateur fait la conversion.',
+        a: 'Avant cuisson. Les données nutritionnelles de l’USDA portent sur le produit sec, non cuit : pesez donc {food} à sec et enregistrez ces macros — ou saisissez ici l’un ou l’autre poids, le calculateur fait la conversion.',
       },
       {
         q: 'De combien le poids augmente-t-il quand on fait cuire {food} ?',
@@ -584,7 +584,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Pourquoi le poids augmente-t-il quand on fait cuire {food}, alors que la viande en perd ?',
-        a: 'Contrairement à la viande, le produit sec ne contient presque pas d’eau. À l’ébullition, il absorbe le liquide qui l’entoure et gonfle jusqu’à environ {mult} fois son poids sec : le poids cuit est donc nettement supérieur au poids sec, et non inférieur. La viande évolue dans l’autre sens parce qu’elle contient déjà beaucoup d’eau que la chaleur fait partir.',
+        a: 'Il absorbe l’eau. Le produit sec n’en contient presque pas : à l’ébullition, il absorbe le liquide qui l’entoure et gonfle jusqu’à environ {mult} fois son poids sec — le poids cuit finit donc nettement au-dessus du poids sec, et non en dessous. La viande évolue dans l’autre sens parce qu’elle contient déjà beaucoup d’eau que la chaleur fait partir.',
       },
     ],
     rice: [
@@ -600,13 +600,13 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Pour {food}, faut-il compter les macros avant ou après cuisson ?',
-        a: 'Les valeurs nutritionnelles de l’USDA se basent sur le poids cru. Pour un maximum de précision, enregistrez le poids cru et calculez les macros à partir de là. Ce calculateur part toujours de l’équivalent en poids cru.',
+        a: 'Avant cuisson. Les valeurs nutritionnelles de l’USDA se basent sur le poids cru : enregistrez le poids cru et calculez les macros à partir de là. Ce calculateur part toujours de l’équivalent en poids cru.',
       },
     ],
     spinach: [
       {
         q: 'De combien les épinards réduisent-ils à la cuisson ?',
-        a: 'En volume, énormément : une poêle pleine de feuilles crues se réduit à une petite poignée. En poids, bien moins qu’on ne l’imagine : d’après l’USDA, les épinards ont un rendement de cuisson de 77 %, donc 100 g de feuilles crues donnent environ 77 g cuits, soit une perte d’environ 23 %. C’est l’écart entre ces deux impressions qui induit en erreur. En tombant, les feuilles perdent l’air et la structure qui les rendaient volumineuses ; l’eau, elle, reste en grande partie. Si vous suivez vos macros, pesez les épinards plutôt que de vous fier à la réduction apparente dans la poêle.',
+        a: 'En poids, seulement 23 % environ : d’après l’USDA, les épinards ont un rendement de cuisson de 77 %, donc 100 g de feuilles crues donnent environ 77 g cuits. En volume, c’est une autre histoire : une poêle pleine de feuilles crues se réduit à une petite poignée, et c’est l’écart entre ces deux impressions qui induit en erreur. En tombant, les feuilles perdent l’air et la structure qui les rendaient volumineuses ; l’eau, elle, reste en grande partie. Si vous suivez vos macros, pesez les épinards plutôt que de vous fier à la réduction apparente dans la poêle.',
       },
     ],
   },
@@ -619,15 +619,15 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Sollte ich die Makros von Hähnchen roh oder gegart tracken?',
-        a: 'Die USDA-Nährwerte (und die meisten Etiketten) beziehen sich auf rohes Hähnchen. Trage deshalb immer das Rohgewicht ein und berechne die Makros daraus. Dieser Rechner leitet die Makros grundsätzlich aus dem Rohgewichts-Äquivalent ab, egal in welche Richtung du umrechnest.',
+        a: 'Roh. Die USDA-Nährwerte und die meisten Etiketten beziehen sich auf rohes Hähnchen — das Rohgewicht ist also der Wert, der zu diesen Zahlen passt. Trage es ein oder rechne dein Gargewicht zuerst auf roh zurück. Dieser Rechner leitet die Makros immer aus dem Rohgewichts-Äquivalent ab, egal in welche Richtung du umrechnest.',
       },
       {
         q: 'Warum verliert Hähnchen beim Garen an Gewicht?',
-        a: 'Hähnchen besteht zu etwa 70–75 % aus Wasser. Unter Hitze verdunstet diese Feuchtigkeit aus den Muskelfasern, und ein Teil des Fetts brät aus. Das Protein selbst bleibt praktisch unverändert — dieselbe Nährstoffmenge steckt am Ende in einem kleineren, dichteren Stück.',
+        a: 'Das Wasser gart heraus. Hähnchenbrust besteht zu etwa 70–75 % aus Wasser; die Hitze denaturiert die Proteine und zieht sie zusammen, wodurch diese Feuchtigkeit aus den Muskelfasern gepresst wird, und ein Teil des Fetts brät aus — zusammen ergibt das den Verlust von rund 28 %. Das Protein selbst bleibt praktisch unverändert, du hast am Ende dieselben Nährstoffe in einem kleineren, dichteren Stück.',
       },
       {
         q: 'Wie viel Gewicht verliert Hähnchenbrust beim Garen?',
-        a: 'Das hängt von der Garmethode ab. Laut USDA behält im Ofen gebackene oder gebratene Hähnchenbrust rund 72 % ihres Rohgewichts, gegrillt etwa 70 %, gekocht oder pochiert etwa 77 % und in der Pfanne gebraten etwa 72 %. Es gibt keinen einzig richtigen Wert — nutze im Rechner oben die Auswahl der Garmethode für ein genaueres Ergebnis.',
+        a: 'Etwa 28 %: 100 g rohe Hähnchenbrust kommen auf rund 72 g gegart, eine USDA-Ausbeute von 72 %. Je nach Methode schwankt das etwas: im Ofen gebacken oder gebraten bleiben rund 72 %, gegrillt etwa 70 %, gekocht oder pochiert etwa 77 %, in der Pfanne gebraten etwa 72 %. Nutze im Rechner oben die Auswahl der Garmethode für ein methodenspezifisches Ergebnis.',
       },
       {
         q: 'Macht die Garmethode wirklich einen spürbaren Unterschied?',
@@ -639,7 +639,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Wie ist das Verhältnis roh zu gegart bei Hähnchenbrust?',
-        a: 'Bei im Ofen gebackener oder gebratener Hähnchenbrust liegt das Verhältnis bei etwa 4:2,9 — das Gargewicht entspricht etwas weniger als drei Vierteln des Rohgewichts. Je nach Methode verschiebt sich das leicht: Beim Grillen liegt es näher bei 10:7 (70 % Ausbeute), beim Kochen oder Pochieren eher bei 4:3,1 (77 % Ausbeute).',
+        a: 'Etwa 100:72 — 100 g rohe Hähnchenbrust ergeben im Ofen gebacken oder gebraten rund 72 g. Je nach Methode verschiebt sich das Verhältnis leicht: Beim Grillen liegt es näher bei 100:70, beim Kochen oder Pochieren bleibt mehr Feuchtigkeit erhalten, etwa 100:77.',
       },
       {
         q: 'Wie viel wiegt Hähnchen nach dem Garen?',
@@ -649,7 +649,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     grains: [
       {
         q: '{Food}: trocken oder gegart abwiegen?',
-        a: 'Die USDA-Nährwerte beziehen sich auf das trockene, ungegarte Produkt. Für genaues Makro-Tracking wiegst du die trockene Menge ab und rechnest damit — oder du gibst hier eines der beiden Gewichte ein und der Rechner übernimmt die Umrechnung.',
+        a: 'Trocken. Die USDA-Nährwerte beziehen sich auf das trockene, ungegarte Produkt, also wiege die trockene Menge ab und tracke diese Makros — oder gib hier eines der beiden Gewichte ein und der Rechner übernimmt die Umrechnung.',
       },
       {
         q: 'Wie stark quillt {Food} beim Kochen auf?',
@@ -657,7 +657,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Warum nimmt {Food} beim Kochen an Gewicht zu, statt wie Fleisch zu verlieren?',
-        a: 'Anders als Fleisch enthält das trockene Produkt kaum Wasser. Beim Kochen saugt es die umgebende Flüssigkeit auf und quillt auf etwa das {mult}-Fache seines Trockengewichts auf — das Gargewicht liegt also deutlich über dem Trockengewicht, nicht darunter. Fleisch geht in die andere Richtung, weil es bereits viel Wasser enthält, das die Hitze austreibt.',
+        a: 'Es saugt Wasser auf. Das trockene Produkt enthält fast keines, also saugt es beim Kochen die umgebende Flüssigkeit auf und quillt auf etwa das {mult}-Fache seines Trockengewichts — das Gargewicht liegt am Ende deutlich über dem Trockengewicht, nicht darunter. Fleisch geht in die andere Richtung, weil es bereits viel Wasser enthält, das die Hitze austreibt.',
       },
     ],
     rice: [
@@ -673,13 +673,13 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Makros für {Food}: roh oder gegart tracken?',
-        a: 'Die USDA-Nährwerte beziehen sich auf das Rohgewicht. Am genauesten ist es, das Rohgewicht zu tracken und die Makros daraus zu berechnen. Dieser Rechner ermittelt die Makros immer aus dem Rohgewichts-Äquivalent.',
+        a: 'Roh. Die USDA-Nährwerte beziehen sich auf das Rohgewicht, also tracke das Rohgewicht und berechne die Makros daraus. Dieser Rechner ermittelt die Makros immer aus dem Rohgewichts-Äquivalent.',
       },
     ],
     spinach: [
       {
         q: 'Wie stark schrumpft Spinat beim Garen?',
-        a: 'Im Volumen drastisch — eine volle Pfanne roher Blätter fällt auf eine kleine Handvoll zusammen. Im Gewicht deutlich weniger als erwartet: Laut USDA liegt die Garausbeute bei 77 %, aus 100 g rohen Blättern werden also rund 77 g gegart, ein Verlust von etwa 23 %. Genau diese Lücke zwischen den beiden Eindrücken führt in die Irre. Beim Zusammenfallen entweichen Luft und Struktur, die die rohen Blätter voluminös gemacht haben; das Wasser bleibt größtenteils drin. Wer Makros trackt, sollte Spinat wiegen, statt nach dem Schrumpfen in der Pfanne zu schätzen.',
+        a: 'Im Gewicht nur etwa 23 % — laut USDA liegt die Garausbeute bei 77 %, aus 100 g rohen Blättern werden also rund 77 g gegart. Im Volumen sieht es ganz anders aus: Eine volle Pfanne roher Blätter fällt auf eine kleine Handvoll zusammen, und genau diese Lücke zwischen den beiden Eindrücken führt in die Irre. Beim Zusammenfallen entweichen Luft und Struktur, die die rohen Blätter voluminös gemacht haben; das Wasser bleibt größtenteils drin. Wer Makros trackt, sollte Spinat wiegen, statt nach dem Schrumpfen in der Pfanne zu schätzen.',
       },
     ],
   },
@@ -692,15 +692,15 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Devo contar os macros do frango cru ou cozido?',
-        a: 'Os dados nutricionais do USDA (e a maioria dos rótulos) são medidos no frango cru. Para acertar, registre sempre o peso cru e calcule os macros a partir dele. Esta calculadora sempre deriva os macros do equivalente em peso cru, independentemente da direção da conversão.',
+        a: 'Cru. Os dados nutricionais do USDA e a maioria dos rótulos são medidos no frango cru, então o peso cru é o que combina com esses números — registre-o, ou converta antes o peso cozido de volta para cru. Esta calculadora sempre deriva os macros do equivalente em peso cru, não importa a direção da conversão.',
       },
       {
         q: 'Por que o frango perde peso ao ser cozido?',
-        a: 'O frango é composto por cerca de 70–75% de água. Com o calor, essa umidade evapora das fibras musculares e parte da gordura derrete. A proteína em si permanece praticamente intacta — você fica com a mesma quantidade de nutrientes concentrada em um pedaço menor e mais denso.',
+        a: 'É a água que sai. O peito de frango é composto por cerca de 70–75% de água; o calor desnatura e contrai as proteínas, que expulsam essa umidade das fibras musculares, e parte da gordura também derrete — juntos, isso dá a perda de cerca de 28%. A proteína em si permanece praticamente intacta, então você fica com os mesmos nutrientes concentrados em um pedaço menor e mais denso.',
       },
       {
         q: 'Quanto peso o peito de frango perde ao ser cozido?',
-        a: 'Depende do método de preparo. Os dados do USDA mostram que o peito de frango assado retém cerca de 72% do peso cru, grelhado cerca de 70%, cozido ou escalfado cerca de 77% e frito na frigideira cerca de 72%. Não existe um único número correto — use o seletor de método de cozimento na calculadora acima para um resultado mais preciso.',
+        a: 'Cerca de 28%: 100 g de peito de frango cru caem para aproximadamente 72 g cozidos, um rendimento USDA de 72%. Varia um pouco conforme o método: assado retém cerca de 72%, grelhado cerca de 70%, cozido ou escalfado cerca de 77% e frito na frigideira cerca de 72%. Use o seletor de método de cozimento na calculadora acima para um resultado específico.',
       },
       {
         q: 'O método de cozimento faz mesmo diferença?',
@@ -712,7 +712,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Qual é a proporção de cru para cozido do peito de frango?',
-        a: 'Para peito de frango assado, a proporção é de aproximadamente 4:2,9 — o peso cozido equivale a pouco menos de três quartos do peso cru. Isso muda um pouco conforme o método: grelhar chega mais perto de 10:7 (rendimento de 70%), enquanto cozinhar ou escalfar fica perto de 4:3,1 (rendimento de 77%).',
+        a: 'Aproximadamente 100:72 — 100 g de peito de frango cru rendem cerca de 72 g quando assados. A proporção muda um pouco conforme o método: grelhar chega perto de 100:70, enquanto cozinhar ou escalfar retém mais umidade, cerca de 100:77.',
       },
       {
         q: 'Quanto o frango pesa depois de cozido?',
@@ -722,7 +722,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     grains: [
       {
         q: 'Devo pesar {food} seco ou depois de cozinhar?',
-        a: 'Os dados nutricionais do USDA são medidos no produto seco e cru. Para um controle preciso de macros, pese {food} ainda seco e use esses macros — ou informe aqui qualquer um dos dois pesos e a calculadora faz a conversão.',
+        a: 'Seco. Os dados nutricionais do USDA são medidos no produto seco e cru, então pese {food} ainda seco e registre esses macros — ou informe aqui qualquer um dos dois pesos e a calculadora faz a conversão.',
       },
       {
         q: 'Quanto o peso aumenta ao cozinhar {food}?',
@@ -730,7 +730,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Por que ao cozinhar {food} o peso aumenta em vez de cair como acontece com a carne?',
-        a: 'Ao contrário da carne, o produto seco quase não tem água. Ao ser cozido, absorve o líquido ao redor e incha até cerca de {mult} vezes o peso seco — então o peso cozido fica bem acima do peso seco, e não abaixo. A carne vai na direção oposta porque já contém muita água, que o calor expulsa.',
+        a: 'Ele absorve água. O produto seco quase não tem, então ao ser cozido absorve o líquido ao redor e incha até cerca de {mult} vezes o peso seco — o peso cozido acaba bem acima do peso seco, e não abaixo. A carne vai na direção oposta porque já contém muita água, que o calor expulsa.',
       },
     ],
     rice: [
@@ -746,13 +746,13 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Para {food}, os macros devem ser contados no peso cru ou cozido?',
-        a: 'Os valores nutricionais do USDA se baseiam no peso cru. Para maior precisão, registre o peso cru e calcule os macros a partir dele. Esta calculadora sempre calcula os macros pelo equivalente em peso cru.',
+        a: 'Cru. Os valores nutricionais do USDA se baseiam no peso cru, então registre o peso cru e calcule os macros a partir dele. Esta calculadora sempre calcula os macros pelo equivalente em peso cru.',
       },
     ],
     spinach: [
       {
         q: 'Quanto o espinafre encolhe ao ser cozido?',
-        a: 'Em volume, drasticamente — uma frigideira cheia de folhas cruas murcha até virar um punhado pequeno. Em peso, bem menos do que se imagina: os dados do USDA apontam um rendimento de 77%, então 100 g de folhas cruas viram cerca de 77 g cozidas, uma perda de aproximadamente 23%. É a distância entre essas duas impressões que engana. Ao murchar, as folhas perdem o ar e a estrutura que as deixavam volumosas; a água, em boa parte, permanece. Se você acompanha macros, pese o espinafre em vez de julgar pelo tanto que a panela encolheu.',
+        a: 'Em peso, só cerca de 23%: os dados do USDA apontam um rendimento de 77%, então 100 g de folhas cruas viram cerca de 77 g cozidas. Em volume é outra história: uma frigideira cheia de folhas cruas murcha até virar um punhado pequeno, e é a distância entre essas duas impressões que engana. Ao murchar, as folhas perdem o ar e a estrutura que as deixavam volumosas; a água, em boa parte, permanece. Se você acompanha macros, pese o espinafre em vez de julgar pelo tanto que a panela encolheu.',
       },
     ],
   },
@@ -765,15 +765,15 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '鶏肉のマクロは生と加熱後、どちらで記録すべきですか？',
-        a: 'USDAの栄養データ（および多くの食品表示）は生の鶏肉で測定されています。正確を期すため、必ず生の重量を記録し、そこからマクロを計算してください。この計算機は換算の向きにかかわらず、常に生重量に換算した値からマクロを算出します。',
+        a: '生で記録します。USDAの栄養データも多くの食品表示も生の鶏肉で測定されているため、その数値と一致するのは生の重量です。生の重量を記録するか、加熱後の重量をまず生に戻してください。この計算機は換算の向きにかかわらず、常に生重量に換算した値からマクロを算出します。',
       },
       {
         q: 'なぜ鶏肉は加熱すると軽くなるのですか？',
-        a: '鶏肉は重量のおよそ70〜75%が水分です。加熱すると、その水分が筋繊維から蒸発し、脂も一部溶け出します。タンパク質自体はほぼそのまま残るので、同じ量の栄養がより小さく密度の高い状態に凝縮されることになります。',
+        a: '水分が抜けるからです。鶏胸肉は重量の約70〜75%が水分で、加熱するとタンパク質が変性・収縮してその水分を筋繊維から押し出し、脂も一部溶け出します——合わせて約28%の減量になります。タンパク質自体はほぼそのまま残るので、同じ栄養がより小さく密度の高い状態に凝縮されます。',
       },
       {
         q: '鶏胸肉は加熱するとどれくらい重量が減りますか？',
-        a: '加熱方法によります。USDAのデータでは、オーブン焼きやローストの鶏胸肉は生重量の約72%、グリルは約70%、茹でやポーチは約77%、フライパン焼きは約72%を保ちます。唯一の正解はありません。上の計算機で加熱方法を切り替えると、より正確な結果が得られます。',
+        a: '約28%です。生の鶏胸肉100gは加熱後およそ72g（USDA歩留まり72%）になります。方法によって多少変わり、オーブン焼き・ローストで約72%、グリルで約70%、茹で・ポーチで約77%、フライパン焼きで約72%を保ちます。方法別の結果は上の計算機の加熱方法切り替えで確認できます。',
       },
       {
         q: '加熱方法によって実際に違いは出ますか？',
@@ -785,7 +785,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '鶏胸肉の生と加熱後の比率はどれくらいですか？',
-        a: 'オーブン焼きやローストの鶏胸肉ではおよそ4:2.9で、加熱後の重量は生の4分の3をやや下回ります。加熱方法によって少し変わり、グリルでは10:7（歩留まり70%）に近づき、茹でやポーチでは4:3.1（歩留まり77%）に近くなります。',
+        a: 'およそ100:72です——生の鶏胸肉100gはオーブン焼きやローストでおよそ72gになります。加熱方法によって少し変わり、グリルでは100:70に近づき、茹でやポーチでは水分が残って約100:77になります。',
       },
       {
         q: '鶏肉は加熱後に何グラムになりますか？',
@@ -795,7 +795,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     grains: [
       {
         q: '{food}は乾燥状態と加熱後、どちらで量るべきですか？',
-        a: 'USDAの栄養データは乾燥した未調理の状態で測定されています。正確に管理するには{food}を乾燥状態で量り、その値を使ってください。あるいはここにどちらの重量を入力しても、計算機が換算します。',
+        a: '乾燥状態で量ります。USDAの栄養データは乾燥した未調理の状態で測定されているため、{food}は乾燥状態で量ってその値を記録してください。あるいはここにどちらの重量を入力しても、計算機が換算します。',
       },
       {
         q: '{food}は加熱するとどれくらい重くなりますか？',
@@ -803,7 +803,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'なぜ{food}は肉と違って加熱すると重くなるのですか？',
-        a: '肉とは違い、乾燥した状態ではほとんど水分を含んでいません。茹でると周囲の水分を吸収して乾燥重量の約{mult}倍に膨らむため、加熱後の重量は乾燥時より大幅に増えます。肉は最初から多くの水分を含んでおり、加熱でそれが失われるので逆方向になります。',
+        a: '水を吸うからです。乾燥した状態ではほとんど水分がなく、茹でると周囲の水分を吸収して乾燥重量の約{mult}倍に膨らみます——加熱後の重量は乾燥時より大幅に増えます。肉は最初から多くの水分を含んでおり、加熱でそれが失われるので逆方向になります。',
       },
     ],
     rice: [
@@ -819,13 +819,13 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '{food}のマクロは生と加熱後のどちらで記録すべきですか？',
-        a: 'USDAの栄養値は生の重量が基準です。正確を期すなら生の重量で記録し、そこからマクロを計算してください。この計算機は常に生重量に換算した値からマクロを算出します。',
+        a: '生の重量で記録します。USDAの栄養値は生の重量が基準なので、生の重量で記録し、そこからマクロを計算してください。この計算機は常に生重量に換算した値からマクロを算出します。',
       },
     ],
     spinach: [
       {
         q: 'ほうれん草は加熱するとどれくらい縮みますか？',
-        a: 'かさで見れば劇的です。フライパン一杯の生の葉が、ひとつかみほどまで縮みます。ただし重量で見ると、思ったほどではありません。USDAのデータではほうれん草の調理歩留まりは77%で、生の葉100gは加熱後およそ77g、つまり減るのは23%程度です。この2つの印象のずれが誤解のもとです。しんなりする過程で失われるのは、生の葉をかさ高くしていた空気と構造であり、水分の大半はそのまま残ります。マクロを記録するなら、フライパンの縮み具合で判断せず、はかりで量ってください。',
+        a: '重量で見れば約23%だけです。USDAのデータではほうれん草の調理歩留まりは77%で、生の葉100gは加熱後およそ77gになります。かさで見ると話は別で、フライパン一杯の生の葉がひとつかみほどまで縮みます。この2つの印象のずれが誤解のもとです。しんなりする過程で失われるのは、生の葉をかさ高くしていた空気と構造であり、水分の大半はそのまま残ります。マクロを記録するなら、フライパンの縮み具合で判断せず、はかりで量ってください。',
       },
     ],
   },
@@ -838,15 +838,15 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '닭고기 영양소는 생으로 기록하나요, 조리 후로 기록하나요?',
-        a: 'USDA 영양 데이터(그리고 대부분의 식품 라벨)는 생닭을 기준으로 측정됩니다. 정확하게 하려면 항상 생 중량을 기록하고 거기서 영양소를 계산하세요. 이 계산기는 변환 방향과 관계없이 언제나 생중량 기준으로 영양소를 산출합니다.',
+        a: '생으로 기록하세요. USDA 영양 데이터와 대부분의 식품 라벨은 생닭을 기준으로 측정되므로, 그 수치와 맞는 것은 생 중량입니다. 생 중량을 기록하거나, 조리 후 중량을 먼저 생 중량으로 되돌리세요. 이 계산기는 변환 방향과 관계없이 항상 생중량 기준으로 영양소를 산출합니다.',
       },
       {
         q: '닭고기는 왜 조리하면 무게가 줄어드나요?',
-        a: '닭고기는 무게의 약 70~75%가 물입니다. 열을 가하면 그 수분이 근섬유에서 증발하고 지방도 일부 빠져나옵니다. 단백질 자체는 거의 그대로 남기 때문에, 같은 양의 영양이 더 작고 밀도 높은 덩어리에 담기게 됩니다.',
+        a: '물이 빠져나가기 때문입니다. 닭 가슴살은 무게의 약 70~75%가 물인데, 열이 단백질을 변성·수축시키면서 그 수분을 근섬유 밖으로 밀어내고 지방도 일부 빠져나옵니다 — 이 둘을 합친 것이 약 28%의 무게 감소입니다. 단백질 자체는 거의 그대로 남아서, 같은 영양이 더 작고 밀도 높은 덩어리에 담기게 됩니다.',
       },
       {
         q: '닭 가슴살은 조리하면 무게가 얼마나 줄어드나요?',
-        a: '조리법에 따라 다릅니다. USDA 자료에 따르면 오븐에 굽거나 로스트한 닭 가슴살은 생 중량의 약 72%, 직화 구이는 약 70%, 삶거나 수란식으로 조리하면 약 77%, 팬에 구우면 약 72%가 남습니다. 정답이 하나로 정해져 있지 않으니, 위 계산기의 조리법 선택으로 더 정확한 값을 확인하세요.',
+        a: '약 28%입니다. 생 닭 가슴살 100g은 조리 후 약 72g으로 줄며, USDA 수율 72%에 해당합니다. 방식에 따라 조금 달라져서 오븐 구이·로스트는 약 72%, 직화 구이는 약 70%, 삶기·수란식은 약 77%, 팬 프라이는 약 72%가 남습니다. 방식별 결과는 위 계산기의 조리법 선택으로 확인하세요.',
       },
       {
         q: '조리 방법이 실제로 의미 있는 차이를 만드나요?',
@@ -858,7 +858,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '닭 가슴살의 생·조리 후 비율은 어떻게 되나요?',
-        a: '오븐에 굽거나 로스트한 닭 가슴살은 대략 4:2.9입니다. 조리 후 무게가 생 무게의 4분의 3에 조금 못 미친다는 뜻이죠. 조리법에 따라 조금씩 달라져서, 직화 구이는 10:7(수율 70%)에 가깝고, 삶거나 수란식으로 조리하면 4:3.1(수율 77%)에 가깝습니다.',
+        a: '대략 100:72입니다 — 생 닭 가슴살 100g은 오븐에 굽거나 로스트하면 약 72g이 됩니다. 비율은 조리법에 따라 조금씩 달라져서, 직화 구이는 100:70에 가깝고, 삶거나 수란식으로 조리하면 수분이 더 남아 약 100:77이 됩니다.',
       },
       {
         q: '닭고기는 조리 후 무게가 얼마나 되나요?',
@@ -868,7 +868,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     grains: [
       {
         q: '{food}은(는) 건조 상태로 재야 하나요, 조리 후에 재야 하나요?',
-        a: 'USDA 영양 데이터는 조리하지 않은 마른 상태를 기준으로 측정됩니다. 정확하게 기록하려면 {food}을(를) 마른 상태로 재고 그 값을 쓰세요. 아니면 여기에 어느 쪽 중량을 입력하든 계산기가 변환해 줍니다.',
+        a: '마른 상태로 재세요. USDA 영양 데이터는 조리하지 않은 마른 상태를 기준으로 측정되므로, {food}을(를) 마른 상태로 재고 그 영양소를 기록하세요. 아니면 여기에 어느 쪽 중량을 입력하든 계산기가 변환해 줍니다.',
       },
       {
         q: '{food}은(는) 조리하면 무게가 얼마나 늘어나나요?',
@@ -876,7 +876,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '{food}은(는) 왜 고기처럼 줄지 않고 조리하면 무거워지나요?',
-        a: '고기와 달리 마른 상태에서는 물이 거의 없습니다. 삶으면 주변의 물을 흡수해 건조 중량의 약 {mult}배로 불어나므로, 조리 후 중량이 마른 중량보다 훨씬 커집니다. 고기는 이미 물을 많이 머금고 있고 열이 그 물을 밀어내기 때문에 반대 방향으로 움직입니다.',
+        a: '물을 빨아들이기 때문입니다. 마른 상태에서는 물이 거의 없어서, 삶으면 주변의 물을 흡수해 건조 중량의 약 {mult}배로 불어납니다 — 조리 후 중량이 마른 중량보다 훨씬 커집니다. 고기는 이미 물을 많이 머금고 있고 열이 그 물을 밀어내기 때문에 반대 방향으로 움직입니다.',
       },
     ],
     rice: [
@@ -892,13 +892,13 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '{food}의 영양소는 생 기준으로 기록하나요, 조리 후 기준으로 기록하나요?',
-        a: 'USDA 영양 수치는 생 중량이 기준입니다. 가장 정확하게 하려면 생 중량을 기록하고 거기서 영양소를 계산하세요. 이 계산기는 항상 생중량 기준으로 영양소를 계산합니다.',
+        a: '생 기준입니다. USDA 영양 수치는 생 중량이 기준이므로, 생 중량을 기록하고 거기서 영양소를 계산하세요. 이 계산기는 항상 생중량 기준으로 영양소를 계산합니다.',
       },
     ],
     spinach: [
       {
         q: '시금치는 조리하면 얼마나 줄어드나요?',
-        a: '부피로 보면 극적입니다. 팬 가득했던 생잎이 한 줌 정도로 줄어듭니다. 하지만 무게로 보면 생각보다 훨씬 적습니다. USDA 자료에 따르면 시금치의 조리 수율은 77%로, 생잎 100g이 조리 후 약 77g이 되어 23%가량 줄어드는 데 그칩니다. 이 두 인상의 차이가 바로 착각의 원인입니다. 숨이 죽는 과정에서 빠지는 것은 생잎을 부피 있게 만들던 공기와 구조이고, 수분은 대부분 그대로 남습니다. 매크로를 기록한다면 팬이 얼마나 줄었는지로 판단하지 말고 시금치를 저울에 다세요.',
+        a: '무게로 보면 약 23%뿐입니다. USDA 자료에 따르면 시금치의 조리 수율은 77%로, 생잎 100g이 조리 후 약 77g이 됩니다. 부피로 보면 이야기가 다릅니다. 팬 가득했던 생잎이 한 줌 정도로 줄어들고, 이 두 인상의 차이가 바로 착각의 원인입니다. 숨이 죽는 과정에서 빠지는 것은 생잎을 부피 있게 만들던 공기와 구조이고, 수분은 대부분 그대로 남습니다. 매크로를 기록한다면 팬이 얼마나 줄었는지로 판단하지 말고 시금치를 저울에 다세요.',
       },
     ],
   },
@@ -911,15 +911,15 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'I macro del pollo si contano da crudo o da cotto?',
-        a: 'I dati nutrizionali USDA (e la maggior parte delle etichette) sono misurati sul pollo crudo. Per essere precisi, registra sempre il peso da crudo e calcola i macro da lì. Questo calcolatore ricava i macro sempre dall’equivalente in peso da crudo, in qualunque direzione tu stia convertendo.',
+        a: 'Da crudo. I dati nutrizionali USDA e la maggior parte delle etichette sono misurati sul pollo crudo: è quindi il peso da crudo a corrispondere a quei numeri — registra quello, oppure riporta prima il peso da cotto a crudo. Questo calcolatore ricava sempre i macro dall’equivalente in peso da crudo, in qualunque direzione tu stia convertendo.',
       },
       {
         q: 'Perché il pollo perde peso in cottura?',
-        a: 'Il pollo è composto per circa il 70–75% di acqua. Con il calore quell’umidità evapora dalle fibre muscolari e una parte del grasso si scioglie. Le proteine invece restano sostanzialmente intatte: ti ritrovi la stessa quantità di nutrienti concentrata in un pezzo più piccolo e più denso.',
+        a: 'È l’acqua che se ne va. Il petto di pollo è composto per circa il 70–75% di acqua; il calore denatura e contrae le proteine, che spingono quell’umidità fuori dalle fibre muscolari, e una parte del grasso si scioglie — insieme, è la perdita di circa il 28%. Le proteine restano sostanzialmente intatte, quindi ti ritrovi gli stessi nutrienti concentrati in un pezzo più piccolo e denso.',
       },
       {
         q: 'Quanto peso perde il petto di pollo in cottura?',
-        a: 'Dipende dal metodo di cottura. Secondo i dati USDA, il petto di pollo al forno o arrosto conserva circa il 72% del peso da crudo, alla griglia circa il 70%, bollito o in camicia circa il 77% e in padella circa il 72%. Non esiste un unico numero corretto: usa il selettore del metodo di cottura nel calcolatore qui sopra per un risultato più preciso.',
+        a: 'Circa il 28%: 100 g di petto di pollo crudo scendono a circa 72 g da cotti, una resa USDA del 72%. Varia un po’ secondo il metodo: al forno o arrosto conserva circa il 72%, alla griglia circa il 70%, bollito o in camicia circa il 77%, in padella circa il 72%. Usa il selettore del metodo di cottura nel calcolatore qui sopra per un risultato specifico.',
       },
       {
         q: 'Il metodo di cottura fa davvero differenza?',
@@ -931,7 +931,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Qual è il rapporto crudo-cotto del petto di pollo?',
-        a: 'Per il petto di pollo al forno o arrosto il rapporto è di circa 4:2,9 — il peso da cotto equivale a poco meno di tre quarti di quello da crudo. Cambia un po’ secondo il metodo: alla griglia ci si avvicina a 10:7 (resa del 70%), mentre bollito o in camicia si arriva più vicino a 4:3,1 (resa del 77%).',
+        a: 'Circa 100:72 — 100 g di petto di pollo crudo danno circa 72 g al forno o arrosto. Il rapporto cambia un po’ secondo il metodo: alla griglia si avvicina a 100:70, mentre bollito o in camicia trattiene più umidità, intorno a 100:77.',
       },
       {
         q: 'Quanto pesa il pollo dopo la cottura?',
@@ -941,7 +941,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     grains: [
       {
         q: 'Bisogna pesare {food} da secco o dopo la cottura?',
-        a: 'I dati nutrizionali USDA sono misurati sul prodotto secco e non cotto. Per un conteggio preciso dei macro, pesa {food} da secco e usa quei valori — oppure inserisci qui uno dei due pesi e il calcolatore fa la conversione.',
+        a: 'Da secco. I dati nutrizionali USDA sono misurati sul prodotto secco e non cotto, quindi pesa {food} da secco e registra quei macro — oppure inserisci qui uno dei due pesi e il calcolatore fa la conversione.',
       },
       {
         q: 'Di quanto aumenta il peso cuocendo {food}?',
@@ -949,7 +949,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Perché cuocendo {food} il peso aumenta invece di calare come nella carne?',
-        a: 'A differenza della carne, il prodotto secco non contiene quasi acqua. Durante la bollitura assorbe il liquido circostante e si gonfia fino a circa {mult} volte il peso da secco: il peso da cotto risulta quindi nettamente superiore a quello da secco, non inferiore. La carne va nella direzione opposta perché contiene già molta acqua, che il calore fa uscire.',
+        a: 'Assorbe acqua. Il prodotto secco non ne contiene quasi, quindi durante la bollitura assorbe il liquido circostante e si gonfia fino a circa {mult} volte il peso da secco — il peso da cotto risulta nettamente superiore a quello da secco, non inferiore. La carne va nella direzione opposta perché contiene già molta acqua, che il calore fa uscire.',
       },
     ],
     rice: [
@@ -965,13 +965,13 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'Per {food}, i macro vanno contati da crudo o da cotto?',
-        a: 'I valori nutrizionali USDA si basano sul peso da crudo. Per la massima precisione, registra il peso da crudo e calcola i macro da lì. Questo calcolatore ricava sempre i macro dall’equivalente in peso da crudo.',
+        a: 'Da crudo. I valori nutrizionali USDA si basano sul peso da crudo, quindi registra il peso da crudo e calcola i macro da lì. Questo calcolatore ricava sempre i macro dall’equivalente in peso da crudo.',
       },
     ],
     spinach: [
       {
         q: 'Quanto si riducono gli spinaci in cottura?',
-        a: 'In volume, moltissimo: una padella piena di foglie crude si riduce a una piccola manciata. In peso, molto meno di quanto si creda: secondo i dati USDA la resa di cottura è del 77%, quindi 100 g di foglie crude diventano circa 77 g da cotte, con una perdita di circa il 23%. È proprio lo scarto tra queste due impressioni a trarre in inganno. Appassendo, le foglie perdono l’aria e la struttura che le rendevano voluminose; l’acqua invece resta in gran parte. Se tieni traccia dei macro, pesa gli spinaci invece di giudicare da quanto si è ridotta la padella.',
+        a: 'In peso, solo il 23% circa: secondo i dati USDA la resa di cottura è del 77%, quindi 100 g di foglie crude diventano circa 77 g da cotte. In volume è tutta un’altra storia: una padella piena di foglie crude si riduce a una piccola manciata, ed è proprio lo scarto tra queste due impressioni a trarre in inganno. Appassendo, le foglie perdono l’aria e la struttura che le rendevano voluminose; l’acqua invece resta in gran parte. Se tieni traccia dei macro, pesa gli spinaci invece di giudicare da quanto si è ridotta la padella.',
       },
     ],
   },
@@ -984,15 +984,15 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'चिकन के मैक्रो कच्चे वजन पर गिनूं या पके पर?',
-        a: 'USDA का पोषण डेटा (और ज्यादातर फूड लेबल) कच्चे चिकन पर मापे जाते हैं। सटीकता के लिए हमेशा कच्चा वजन दर्ज करें और उसी से मैक्रो निकालें। यह कैलकुलेटर किसी भी दिशा में बदलाव करने पर हमेशा कच्चे वजन के बराबर मान से मैक्रो निकालता है।',
+        a: 'कच्चे वजन पर। USDA का पोषण डेटा और ज्यादातर फूड लेबल कच्चे चिकन पर मापे जाते हैं, इसलिए उन आंकड़ों से जो मेल खाता है वह कच्चा वजन है — उसे दर्ज करें, या पहले अपने पके वजन को कच्चे में बदल लें। यह कैलकुलेटर किसी भी दिशा में बदलाव करने पर हमेशा कच्चे वजन के बराबर मान से मैक्रो निकालता है।',
       },
       {
         q: 'चिकन पकाने पर वजन क्यों खोता है?',
-        a: 'चिकन के वजन का करीब 70–75% हिस्सा पानी होता है। गर्मी लगने पर वह नमी मांसपेशी रेशों से भाप बनकर उड़ जाती है और कुछ चर्बी भी पिघलकर निकल जाती है। प्रोटीन लगभग जस का तस रहता है — उतना ही पोषण एक छोटे, ज्यादा सघन टुकड़े में सिमट जाता है।',
+        a: 'इसमें से पानी निकल जाता है। चिकन ब्रेस्ट के वजन का करीब 70–75% हिस्सा पानी होता है; गर्मी प्रोटीन को विकृत करके सिकोड़ती है, जिससे वह नमी मांसपेशी रेशों से बाहर निकलती है, और कुछ चर्बी भी पिघल जाती है — दोनों मिलाकर यही करीब 28% वजन की कमी है। प्रोटीन खुद लगभग जस का तस रहता है, इसलिए उतना ही पोषण एक छोटे, ज्यादा सघन टुकड़े में सिमट जाता है।',
       },
       {
         q: 'चिकन ब्रेस्ट पकाने पर कितना वजन खोता है?',
-        a: 'यह पकाने के तरीके पर निर्भर करता है। USDA डेटा के मुताबिक बेक या रोस्ट किया चिकन ब्रेस्ट अपने कच्चे वजन का करीब 72% बनाए रखता है, ग्रिल किया करीब 70%, उबला या पोच्ड करीब 77% और तवे पर तला करीब 72%। कोई एक सही संख्या नहीं है — ज्यादा सटीक नतीजे के लिए ऊपर कैलकुलेटर में पकाने का तरीका चुनें।',
+        a: 'करीब 28%। 100g कच्चा चिकन ब्रेस्ट पकने पर घटकर करीब 72g रह जाता है, यानी USDA यील्ड 72%। तरीके के हिसाब से थोड़ा बदलता है: बेक या रोस्ट करीब 72%, ग्रिल करीब 70%, उबला या पोच्ड करीब 77%, और तवे पर तला करीब 72% बनाए रखता है। तरीके के हिसाब से नतीजे के लिए ऊपर कैलकुलेटर में पकाने का तरीका चुनें।',
       },
       {
         q: 'क्या पकाने के तरीके से सचमुच फर्क पड़ता है?',
@@ -1004,7 +1004,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: 'चिकन ब्रेस्ट का कच्चे से पके का अनुपात क्या है?',
-        a: 'बेक या रोस्ट किए चिकन ब्रेस्ट के लिए यह अनुपात करीब 4:2.9 है — पका वजन कच्चे वजन के तीन-चौथाई से थोड़ा कम होता है। पकाने के तरीके से यह थोड़ा बदलता है: ग्रिल करने पर यह 10:7 (70% यील्ड) के करीब पहुंचता है, जबकि उबालने या पोच करने पर 4:3.1 (77% यील्ड) के करीब रहता है।',
+        a: 'करीब 100:72 — 100g कच्चा चिकन ब्रेस्ट बेक या रोस्ट करने पर करीब 72g देता है। तरीके के हिसाब से अनुपात थोड़ा बदलता है: ग्रिल करने पर यह 100:70 के करीब पहुंचता है, जबकि उबालने या पोच करने पर ज्यादा नमी बचती है, करीब 100:77।',
       },
       {
         q: 'पकने के बाद चिकन का वजन कितना होता है?',
@@ -1014,7 +1014,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     grains: [
       {
         q: '{food} को सूखा तौलूं या पकाने के बाद?',
-        a: 'USDA का पोषण डेटा सूखे, बिना पके उत्पाद पर मापा जाता है। सही मैक्रो ट्रैकिंग के लिए {food} को सूखा तौलें और वही मैक्रो इस्तेमाल करें — या यहां दोनों में से कोई भी वजन डालें, कैलकुलेटर बदलाव कर देगा।',
+        a: 'सूखा। USDA का पोषण डेटा सूखे, बिना पके उत्पाद पर मापा जाता है, इसलिए {food} को सूखा तौलें और वही मैक्रो दर्ज करें — या यहां दोनों में से कोई भी वजन डालें, कैलकुलेटर बदलाव कर देगा।',
       },
       {
         q: '{food} पकाने पर वजन कितना बढ़ता है?',
@@ -1022,7 +1022,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '{food} पकाने पर वजन मांस की तरह घटने के बजाय बढ़ता क्यों है?',
-        a: 'मांस के उलट, सूखे उत्पाद में लगभग पानी होता ही नहीं। उबालने पर यह आसपास का तरल सोख लेता है और सूखे वजन का करीब {mult} गुना फूल जाता है — इसलिए पका वजन सूखे वजन से काफी ज्यादा होता है, कम नहीं। मांस उल्टी दिशा में जाता है क्योंकि उसमें पहले से बहुत पानी होता है जिसे गर्मी बाहर निकाल देती है।',
+        a: 'यह पानी सोख लेता है। सूखे उत्पाद में लगभग पानी होता ही नहीं, इसलिए उबालने पर यह आसपास का तरल सोख लेता है और सूखे वजन का करीब {mult} गुना फूल जाता है — पका वजन सूखे वजन से काफी ज्यादा हो जाता है, कम नहीं। मांस उल्टी दिशा में जाता है क्योंकि उसमें पहले से बहुत पानी होता है जिसे गर्मी बाहर निकाल देती है।',
       },
     ],
     rice: [
@@ -1038,13 +1038,13 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
       },
       {
         q: '{food} के मैक्रो कच्चे वजन पर गिनें या पके पर?',
-        a: 'USDA के पोषण मान कच्चे वजन पर आधारित होते हैं। सबसे सटीक नतीजे के लिए कच्चा वजन दर्ज करें और उसी से मैक्रो निकालें। यह कैलकुलेटर हमेशा कच्चे वजन के बराबर मान से मैक्रो निकालता है।',
+        a: 'कच्चे वजन पर। USDA के पोषण मान कच्चे वजन पर आधारित होते हैं, इसलिए कच्चा वजन दर्ज करें और उसी से मैक्रो निकालें। यह कैलकुलेटर हमेशा कच्चे वजन के बराबर मान से मैक्रो निकालता है।',
       },
     ],
     spinach: [
       {
         q: 'पालक पकाने पर कितना सिकुड़ता है?',
-        a: 'मात्रा के हिसाब से बहुत ज्यादा — कड़ाही भर कच्चे पत्ते सिकुड़कर एक छोटी मुट्ठी रह जाते हैं। लेकिन वजन के हिसाब से उतना नहीं जितना लोग सोचते हैं: USDA डेटा के अनुसार पालक की कुकिंग यील्ड 77% है, यानी 100g कच्चे पत्ते पकने पर करीब 77g रह जाते हैं — घटा सिर्फ 23% के आसपास। इन्हीं दो अलग-अलग प्रभावों का फर्क लोगों को भ्रमित करता है। मुरझाते समय वह हवा और बनावट निकलती है जो कच्चे पत्तों को भारी-भरकम दिखाती थी; पानी ज्यादातर भीतर ही रह जाता है। अगर आप मैक्रो ट्रैक करते हैं, तो कड़ाही कितनी सिकुड़ी यह देखने के बजाय पालक को तराजू पर तोलें।',
+        a: 'वजन के हिसाब से सिर्फ करीब 23%: USDA डेटा के अनुसार पालक की कुकिंग यील्ड 77% है, यानी 100g कच्चे पत्ते पकने पर करीब 77g रह जाते हैं। मात्रा के हिसाब से बात अलग है — कड़ाही भर कच्चे पत्ते सिकुड़कर एक छोटी मुट्ठी रह जाते हैं, और इन्हीं दो अलग-अलग प्रभावों का फर्क लोगों को भ्रमित करता है। मुरझाते समय वह हवा और बनावट निकलती है जो कच्चे पत्तों को भारी-भरकम दिखाती थी; पानी ज्यादातर भीतर ही रह जाता है। अगर आप मैक्रो ट्रैक करते हैं, तो कड़ाही कितनी सिकुड़ी यह देखने के बजाय पालक को तराजू पर तोलें।',
       },
     ],
   },

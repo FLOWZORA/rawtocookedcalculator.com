@@ -27,7 +27,7 @@ export const ui = {
     'hero.eyebrow': 'Based on USDA cooking yield data',
     'hero.heading': 'Raw to Cooked Calculator',
     'hero.description':
-      'Enter a raw or cooked weight — get the converted weight plus full macros (calories, protein, carbs, fat). Covers meat, grains, and vegetables.',
+      'Cooked meat weighs 15–35% less than raw; rice and pasta weigh two to three times more. Enter any weight, raw or cooked, to convert it — with full macros (calories, protein, carbs, fat) for meat, grains, and vegetables.',
     'hero.usda':
       'All yields sourced from USDA FoodData Central, the USDA Table of Cooking Yields, and USDA Agriculture Handbook No. 102.',
 
@@ -69,7 +69,7 @@ export const ui = {
     'callout.eyebrow': 'Surprising yields',
     'callout.heading': 'Spinach collapses in volume — but only loses 23% of its weight',
     'callout.description':
-      "A full pan of raw spinach wilts to almost nothing, so nearly everyone assumes the weight drops just as steeply. It does not: USDA measurements put spinach at a 77% cooking yield, meaning 100g of raw leaves still weighs about 77g cooked. What collapses is the volume, not the mass. White rice runs the other way — 100g dry becomes 300g cooked. Both are why a kitchen scale beats eyeballing.",
+      "Spinach has a 77% cooking yield — 100g of raw leaves still weighs about 77g cooked, a loss of just 23%. A full pan of raw spinach wilts to almost nothing, so nearly everyone assumes the weight drops just as steeply, but what collapses is the volume, not the mass. White rice runs the other way: 100g dry becomes 300g cooked. Both are why a kitchen scale beats eyeballing.",
     'callout.spinachBtn': 'Spinach calculator →',
     'callout.riceBtn': 'Rice calculator →',
 
@@ -137,7 +137,7 @@ export const ui = {
     'food.chickenP1':
       'Skinless, boneless chicken breast delivers roughly 22.5g of protein per 100g raw — one of the highest protein-per-calorie ratios of any whole food. At only 120 calories and 2.6g of fat per 100g raw, it\'s the go-to lean protein for bodybuilders, athletes, and anyone managing a caloric deficit.',
     'food.chickenP2':
-      'The catch: because it loses about 28% of its weight when cooked, <strong>tracking cooked weight without accounting for yield leads to underestimating your actual protein intake</strong>. A 150g cooked portion came from roughly 210g raw — that\'s the raw weight you should be logging against the USDA nutrition label.',
+      'Because chicken breast loses about 28% of its weight when cooked, <strong>logging the cooked weight against a raw-weight label undercounts your actual protein</strong>. A 150g cooked portion came from roughly 210g raw — 210g is the number to log against the USDA nutrition label.',
     'food.calcHeading': '{name} Calculator',
     'food.faqHeading': 'Frequently asked questions',
     'food.relatedLabel': 'Related calculators',
@@ -177,7 +177,7 @@ export const ui = {
     'hero.eyebrow': 'Basado en datos de rendimiento del USDA',
     'hero.heading': 'Calculadora Crudo a Cocido',
     'hero.description':
-      'Introduce el peso crudo o cocido y obtén el peso convertido más los macros completos (calorías, proteínas, carbohidratos, grasas). Cubre carnes, cereales y verduras.',
+      'La carne cocida pesa entre un 15% y un 35% menos que en crudo; el arroz y la pasta pesan dos o tres veces más. Introduce cualquier peso, crudo o cocido, para convertirlo — con los macros completos (calorías, proteínas, carbohidratos, grasas) para carnes, cereales y verduras.',
     'hero.usda':
       'Todos los rendimientos provienen de USDA FoodData Central, la Tabla de Rendimientos de Cocción del USDA y el Manual de Agricultura n.º 102 del USDA.',
 
@@ -216,7 +216,7 @@ export const ui = {
     'callout.eyebrow': 'Rendimientos sorprendentes',
     'callout.heading': 'La espinaca se desploma en volumen, pero solo pierde el 23% de su peso',
     'callout.description':
-      'Una sartén llena de espinaca cruda se reduce a casi nada, así que casi todo el mundo da por hecho que el peso cae igual de rápido. No es así: las mediciones del USDA sitúan a la espinaca en un rendimiento del 77%, es decir, 100g de hojas crudas siguen pesando unos 77g ya cocidas. Lo que se desploma es el volumen, no la masa. El arroz blanco va en sentido contrario — 100g seco se convierte en 300g cocido. Por eso conviene usar una báscula en lugar de calcular a ojo.',
+      'La espinaca tiene un rendimiento de cocción del 77%: 100 g de hojas crudas siguen pesando unos 77 g ya cocidas, una pérdida de solo el 23%. Una sartén llena de espinaca cruda se reduce a casi nada, así que casi todo el mundo da por hecho que el peso cae igual de rápido, pero lo que se desploma es el volumen, no la masa. El arroz blanco va en sentido contrario: 100 g seco se convierte en 300 g cocido. Por eso conviene usar una báscula en lugar de calcular a ojo.',
     'callout.spinachBtn': 'Calculadora de espinaca →',
     'callout.riceBtn': 'Calculadora de arroz →',
 
@@ -280,7 +280,7 @@ export const ui = {
     'food.chickenP1':
       'La pechuga de pollo sin piel y sin hueso aporta aproximadamente 22,5g de proteína por 100g crudo — una de las mejores relaciones proteína-caloría de cualquier alimento entero. Con solo 120 calorías y 2,6g de grasa por 100g crudo, es la proteína magra favorita de culturistas, deportistas y personas que gestionan un déficit calórico.',
     'food.chickenP2':
-      'La trampa: como pierde alrededor del 28% de su peso al cocinarse, <strong>registrar el peso cocido sin tener en cuenta el rendimiento lleva a subestimar tu ingesta real de proteínas</strong>. Una porción de 150g cocidos provino de aproximadamente 210g crudos — ese es el peso crudo que debes registrar.',
+      'Como la pechuga de pollo pierde alrededor del 28% de su peso al cocinarse, <strong>registrar el peso cocido contra una etiqueta en crudo subestima tu proteína real</strong>. Una porción de 150 g cocidos provino de unos 210 g crudos — 210 g es el número que debes registrar contra la etiqueta nutricional del USDA.',
     'food.calcHeading': 'Calculadora de {name}',
     'food.faqHeading': 'Preguntas frecuentes',
     'food.relatedLabel': 'Calculadoras relacionadas',
@@ -319,7 +319,7 @@ export const ui = {
     'hero.eyebrow': 'Basé sur les données de rendement de cuisson de l\'USDA',
     'hero.heading': 'Calculateur Cru à Cuit',
     'hero.description':
-      'Entrez un poids cru ou cuit — obtenez le poids converti plus les macros complets (calories, protéines, glucides, lipides). Couvre les viandes, céréales et légumes.',
+      'La viande cuite pèse 15 à 35 % de moins que crue ; le riz et les pâtes pèsent deux à trois fois plus. Saisissez n’importe quel poids, cru ou cuit, pour le convertir — avec les macros complets (calories, protéines, glucides, lipides) pour les viandes, céréales et légumes.',
     'hero.usda':
       'Tous les rendements proviennent de USDA FoodData Central, du Tableau des rendements de cuisson de l\'USDA et du Manuel agricole n° 102 de l\'USDA.',
 
@@ -358,7 +358,7 @@ export const ui = {
     'callout.eyebrow': 'Rendements surprenants',
     'callout.heading': 'Les épinards s\'effondrent en volume, mais ne perdent que 23% de leur poids',
     'callout.description':
-      'Une poêle pleine d\'épinards crus fond jusqu\'à presque rien : chacun en déduit que le poids chute tout aussi brutalement. C\'est faux. Les mesures de l\'USDA donnent aux épinards un rendement de cuisson de 77% : 100g de feuilles crues pèsent encore environ 77g une fois cuites. Ce qui s\'effondre, c\'est le volume, pas la masse. Le riz blanc va dans le sens inverse — 100g sec devient 300g cuit. D\'où l\'intérêt d\'une balance plutôt que d\'une estimation à l\'œil.',
+      'Les épinards ont un rendement de cuisson de 77 % : 100 g de feuilles crues pèsent encore environ 77 g une fois cuites, une perte de seulement 23 %. Une poêle pleine d\'épinards crus fond jusqu\'à presque rien, si bien que chacun en déduit que le poids chute tout aussi brutalement, mais ce qui s\'effondre, c\'est le volume, pas la masse. Le riz blanc va dans le sens inverse : 100 g sec devient 300 g cuit. D\'où l\'intérêt d\'une balance plutôt que d\'une estimation à l\'œil.',
     'callout.spinachBtn': 'Calculateur épinards →',
     'callout.riceBtn': 'Calculateur riz →',
 
@@ -422,7 +422,7 @@ export const ui = {
     'food.chickenP1':
       'Le blanc de poulet sans peau et sans os apporte environ 22,5g de protéines pour 100g cru — l\'un des meilleurs ratios protéines/calories de tous les aliments entiers. Avec seulement 120 calories et 2,6g de lipides pour 100g cru, c\'est la protéine maigre de référence pour les culturistes, les sportifs et toute personne gérant un déficit calorique.',
     'food.chickenP2':
-      'Le revers : comme il perd environ 28% de son poids à la cuisson, <strong>enregistrer le poids cuit sans tenir compte du rendement conduit à sous-estimer votre apport réel en protéines</strong>. Une portion de 150g cuit provient d\'environ 210g cru — c\'est ce poids cru que vous devez enregistrer.',
+      'Comme le blanc de poulet perd environ 28 % de son poids à la cuisson, <strong>enregistrer le poids cuit face à une étiquette exprimée en cru sous-estime vos protéines réelles</strong>. Une portion de 150 g cuit provient d\'environ 210 g cru — c\'est 210 g qu\'il faut enregistrer face à l\'étiquette nutritionnelle de l\'USDA.',
     'food.calcHeading': 'Calculateur {name}',
     'food.faqHeading': 'Questions fréquemment posées',
     'food.relatedLabel': 'Calculateurs associés',
@@ -461,7 +461,7 @@ export const ui = {
     'hero.eyebrow': 'Basierend auf USDA-Garverlustdaten',
     'hero.heading': 'Roh-zu-Gekocht-Rechner',
     'hero.description':
-      'Gib ein rohes oder gekochtes Gewicht ein — erhalte das umgerechnete Gewicht plus vollständige Makros (Kalorien, Protein, Kohlenhydrate, Fett). Abdeckung für Fleisch, Getreide und Gemüse.',
+      'Gegartes Fleisch wiegt 15 bis 35 % weniger als rohes; Reis und Nudeln wiegen zwei- bis dreimal mehr. Gib ein beliebiges Gewicht ein, roh oder gegart, um es umzurechnen — mit vollständigen Makros (Kalorien, Protein, Kohlenhydrate, Fett) für Fleisch, Getreide und Gemüse.',
     'hero.usda':
       'Alle Garverluste stammen aus USDA FoodData Central, der USDA-Tabelle der Garverluste und dem USDA Agriculture Handbook Nr. 102.',
 
@@ -500,7 +500,7 @@ export const ui = {
     'callout.eyebrow': 'Überraschende Garverluste',
     'callout.heading': 'Spinat fällt im Volumen zusammen — verliert aber nur 23% seines Gewichts',
     'callout.description':
-      'Eine volle Pfanne roher Spinat fällt auf fast nichts zusammen, deshalb nimmt praktisch jeder an, das Gewicht breche genauso ein. Tut es nicht: Nach USDA-Messungen liegt die Garausbeute von Spinat bei 77% — 100g rohe Blätter wiegen gegart noch rund 77g. Was zusammenfällt, ist das Volumen, nicht die Masse. Weißer Reis geht in die entgegengesetzte Richtung — 100g trocken werden zu 300g gekocht. Beides spricht für die Küchenwaage statt fürs Augenmaß.',
+      'Spinat hat eine Garausbeute von 77 %: 100 g rohe Blätter wiegen gegart noch rund 77 g, ein Verlust von nur 23 %. Eine volle Pfanne roher Spinat fällt auf fast nichts zusammen, deshalb nimmt praktisch jeder an, das Gewicht breche genauso ein, doch was zusammenfällt, ist das Volumen, nicht die Masse. Weißer Reis geht in die entgegengesetzte Richtung: 100 g trocken werden zu 300 g gekocht. Beides spricht für die Küchenwaage statt fürs Augenmaß.',
     'callout.spinachBtn': 'Spinat-Rechner →',
     'callout.riceBtn': 'Reis-Rechner →',
 
@@ -564,7 +564,7 @@ export const ui = {
     'food.chickenP1':
       'Hähnchenbrust ohne Haut und Knochen liefert etwa 22,5g Protein pro 100g roh — eines der besten Protein-Kalorien-Verhältnisse aller Vollwertkost. Mit nur 120 Kalorien und 2,6g Fett pro 100g roh ist sie das bevorzugte magere Protein für Bodybuilder, Sportler und alle, die ein Kaloriendefizit verwalten.',
     'food.chickenP2':
-      'Der Haken: Da sie beim Garen rund 28% ihres Gewichts verliert, <strong>führt das Aufzeichnen des gekochten Gewichts ohne Berücksichtigung des Garverlustes zu einer Unterschätzung der tatsächlichen Proteinaufnahme</strong>. Eine Portion von 150g gekocht stammt aus etwa 210g roh — das ist das Rohgewicht, das du erfassen solltest.',
+      'Da Hähnchenbrust beim Garen rund 28 % ihres Gewichts verliert, <strong>zählt das Eintragen des Gargewichts gegen ein Etikett mit Rohwerten dein tatsächliches Protein zu niedrig</strong>. Eine Portion von 150 g gegart stammt aus etwa 210 g roh — 210 g ist die Zahl, die du gegen das USDA-Nährwertetikett einträgst.',
     'food.calcHeading': '{name}-Rechner',
     'food.faqHeading': 'Häufig gestellte Fragen',
     'food.relatedLabel': 'Verwandte Rechner',
@@ -603,7 +603,7 @@ export const ui = {
     'hero.eyebrow': 'Baseado em dados de rendimento de cozimento do USDA',
     'hero.heading': 'Calculadora de Cru para Cozido',
     'hero.description':
-      'Insira um peso cru ou cozido — obtenha o peso convertido mais os macros completos (calorias, proteínas, carboidratos, gorduras). Cobre carnes, grãos e vegetais.',
+      'A carne cozida pesa de 15% a 35% menos que crua; arroz e massas pesam duas a três vezes mais. Insira qualquer peso, cru ou cozido, para convertê-lo — com os macros completos (calorias, proteínas, carboidratos, gorduras) para carnes, grãos e vegetais.',
     'hero.usda':
       'Todos os rendimentos são provenientes do USDA FoodData Central, da Tabela de Rendimentos de Cozimento do USDA e do Manual de Agricultura n.º 102 do USDA.',
 
@@ -642,7 +642,7 @@ export const ui = {
     'callout.eyebrow': 'Rendimentos surpreendentes',
     'callout.heading': 'O espinafre desaba em volume, mas perde apenas 23% do peso',
     'callout.description':
-      'Uma frigideira cheia de espinafre cru murcha até quase nada, então quase todo mundo supõe que o peso despenca na mesma proporção. Não despenca: as medições do USDA dão ao espinafre um rendimento de 77% — 100g de folhas cruas ainda pesam cerca de 77g depois de cozidas. O que desaba é o volume, não a massa. O arroz branco vai na direção oposta — 100g cru vira 300g cozido. Os dois casos mostram por que a balança vence o olhômetro.',
+      'O espinafre tem um rendimento de cozimento de 77%: 100 g de folhas cruas ainda pesam cerca de 77 g depois de cozidas, uma perda de apenas 23%. Uma frigideira cheia de espinafre cru murcha até quase nada, então quase todo mundo supõe que o peso despenca na mesma proporção, mas o que desaba é o volume, não a massa. O arroz branco vai na direção oposta: 100 g cru vira 300 g cozido. Os dois casos mostram por que a balança vence o olhômetro.',
     'callout.spinachBtn': 'Calculadora de espinafre →',
     'callout.riceBtn': 'Calculadora de arroz →',
 
@@ -706,7 +706,7 @@ export const ui = {
     'food.chickenP1':
       'O peito de frango sem pele e sem osso fornece aproximadamente 22,5g de proteína por 100g cru — uma das melhores relações proteína-caloria de qualquer alimento integral. Com apenas 120 calorias e 2,6g de gordura por 100g cru, é a proteína magra favorita de fisiculturistas, atletas e qualquer pessoa gerenciando um déficit calórico.',
     'food.chickenP2':
-      'O problema: como perde cerca de 28% do seu peso ao cozinhar, <strong>registrar o peso cozido sem considerar o rendimento leva a subestimar sua ingestão real de proteínas</strong>. Uma porção de 150g cozido veio de aproximadamente 210g cru — esse é o peso cru que você deve registrar.',
+      'Como o peito de frango perde cerca de 28% do peso ao ser cozido, <strong>registrar o peso cozido contra um rótulo em peso cru subestima sua proteína real</strong>. Uma porção de 150 g cozido veio de aproximadamente 210 g cru — 210 g é o número a registrar contra o rótulo nutricional do USDA.',
     'food.calcHeading': 'Calculadora de {name}',
     'food.faqHeading': 'Perguntas frequentes',
     'food.relatedLabel': 'Calculadoras relacionadas',
@@ -745,7 +745,7 @@ export const ui = {
     'hero.eyebrow': 'USDA調理収率データに基づく',
     'hero.heading': '生から調理済み計算機',
     'hero.description':
-      '生または調理済みの重量を入力 — 変換後の重量と完全なマクロ（カロリー、タンパク質、炭水化物、脂質）を取得。肉類、穀物、野菜に対応。',
+      '加熱した肉は生より15〜35%軽く、米やパスタは2〜3倍重くなります。生でも加熱後でも重量を入力すれば変換でき、肉類・穀物・野菜の完全なマクロ（カロリー、タンパク質、炭水化物、脂質）も分かります。',
     'hero.usda':
       'すべての収率はUSDA FoodData Central、USDA調理収率表、およびUSDA農業ハンドブック第102号から取得しています。',
 
@@ -784,7 +784,7 @@ export const ui = {
     'callout.eyebrow': '驚きの収率',
     'callout.heading': 'ほうれん草は「かさ」が激減するだけで、重量は23%しか減らない',
     'callout.description':
-      'フライパン一杯の生のほうれん草がわずかな量まで縮むため、重量も同じだけ落ちると思われがちです。実際は違います。USDAの測定では、ほうれん草の調理歩留まりは77%。生の葉100gは加熱後も約77gあります。激減するのは「かさ」であって「重さ」ではありません。白米はその逆 — 乾燥100gが調理後300gになります。どちらも、目分量ではなくはかりを使うべき理由です。',
+      'ほうれん草の調理歩留まりは77%で、生の葉100gは加熱後も約77g、減るのは23%だけです。フライパン一杯の生のほうれん草がわずかな量まで縮むため、重量も同じだけ落ちると思われがちですが、激減するのは「かさ」であって「重さ」ではありません。白米はその逆で、乾燥100gが調理後300gになります。どちらも、目分量ではなくはかりを使うべき理由です。',
     'callout.spinachBtn': 'ほうれん草計算機 →',
     'callout.riceBtn': '米計算機 →',
 
@@ -848,7 +848,7 @@ export const ui = {
     'food.chickenP1':
       '皮なし・骨なしの鶏の胸肉は、生100gあたり約22.5gのタンパク質を含みます — あらゆる全食品の中で最高のタンパク質・カロリー比のひとつです。生100gあたりわずか120カロリー、2.6gの脂質で、ボディビルダー、アスリート、カロリー制限中の誰にとっても定番のリーンプロテインです。',
     'food.chickenP2':
-      '注意点：調理後に約28%の重量を失うため、<strong>収率を考慮せずに調理後の重量を記録すると、実際のタンパク質摂取量を過小評価してしまいます</strong>。調理済み150gの量は、生約210gから得られたもの — それがUSDA栄養ラベルと照合するための生の重量です。',
+      '鶏胸肉は加熱すると約28%の重量を失うため、<strong>生重量基準の表示に対して加熱後の重量を記録すると、実際のタンパク質を少なく見積もることになります</strong>。加熱済み150gの分量は生約210gから得られたもので、USDAの栄養表示に対して記録すべき数値は210gです。',
     'food.calcHeading': '{name}計算機',
     'food.faqHeading': 'よくある質問',
     'food.relatedLabel': '関連計算機',
@@ -887,7 +887,7 @@ export const ui = {
     'hero.eyebrow': 'USDA 조리 수율 데이터 기반',
     'hero.heading': '생 → 조리 계산기',
     'hero.description':
-      '생 또는 조리된 무게를 입력하면 변환된 무게와 완전한 매크로(칼로리, 단백질, 탄수화물, 지방)를 얻을 수 있습니다. 육류, 곡물, 채소를 다룹니다.',
+      '조리한 고기는 생보다 15~35% 가볍고, 쌀과 파스타는 두세 배 무겁습니다. 생이든 조리 후든 무게를 입력하면 변환되고, 육류·곡물·채소의 완전한 매크로(칼로리, 단백질, 탄수화물, 지방)도 함께 나옵니다.',
     'hero.usda':
       '모든 수율은 USDA FoodData Central, USDA 조리 수율 표, USDA 농업 핸드북 제102호에서 가져왔습니다.',
 
@@ -926,7 +926,7 @@ export const ui = {
     'callout.eyebrow': '놀라운 수율',
     'callout.heading': '시금치는 부피가 무너질 뿐, 무게는 23%만 줄어듭니다',
     'callout.description':
-      '팬 가득한 생 시금치가 얼마 안 되는 양으로 줄어들다 보니, 무게도 그만큼 빠진다고 생각하기 쉽습니다. 그렇지 않습니다. USDA 측정에 따르면 시금치의 조리 수율은 77%로, 생잎 100g은 조리 후에도 약 77g입니다. 무너지는 것은 부피이지 질량이 아닙니다. 백미는 반대 방향으로 — 건조 100g이 조리 후 300g이 됩니다. 둘 다 눈대중보다 저울이 나은 이유입니다.',
+      '시금치의 조리 수율은 77%로, 생잎 100g은 조리 후에도 약 77g이고 줄어드는 것은 23%뿐입니다. 팬 가득한 생 시금치가 얼마 안 되는 양으로 줄어들다 보니 무게도 그만큼 빠진다고 생각하기 쉽지만, 무너지는 것은 부피이지 질량이 아닙니다. 백미는 반대 방향으로, 건조 100g이 조리 후 300g이 됩니다. 둘 다 눈대중보다 저울이 나은 이유입니다.',
     'callout.spinachBtn': '시금치 계산기 →',
     'callout.riceBtn': '쌀 계산기 →',
 
@@ -990,7 +990,7 @@ export const ui = {
     'food.chickenP1':
       '껍질과 뼈를 제거한 닭 가슴살은 생 100g당 약 22.5g의 단백질을 제공합니다 — 모든 전체 식품 중 가장 높은 단백질 대 칼로리 비율 중 하나입니다. 생 100g당 120칼로리와 2.6g의 지방만으로, 보디빌더, 운동선수, 칼로리 적자를 관리하는 모든 사람에게 가장 선호되는 린 단백질입니다.',
     'food.chickenP2':
-      '주의사항: 조리 시 약 28%의 무게를 잃기 때문에, <strong>수율을 고려하지 않고 조리된 무게를 기록하면 실제 단백질 섭취량을 과소평가하게 됩니다</strong>. 조리된 150g은 약 210g 생에서 나온 것입니다 — USDA 영양 라벨 기준으로 기록해야 할 생 무게가 바로 그것입니다.',
+      '닭 가슴살은 조리하면 약 28%의 무게가 줄어들기 때문에, <strong>생중량 기준 라벨에 조리 후 무게를 기록하면 실제 단백질이 적게 계산됩니다</strong>. 조리된 150g은 생 약 210g에서 나온 것으로, USDA 영양 라벨에 기록해야 할 숫자는 210g입니다.',
     'food.calcHeading': '{name} 계산기',
     'food.faqHeading': '자주 묻는 질문',
     'food.relatedLabel': '관련 계산기',
@@ -1029,7 +1029,7 @@ export const ui = {
     'hero.eyebrow': 'Basato sui dati di resa di cottura USDA',
     'hero.heading': 'Calcolatore da Crudo a Cotto',
     'hero.description':
-      'Inserisci un peso crudo o cotto — ottieni il peso convertito più i macronutrienti completi (calorie, proteine, carboidrati, grassi). Copre carni, cereali e verdure.',
+      'La carne cotta pesa il 15-35% in meno rispetto a cruda; riso e pasta pesano due o tre volte di più. Inserisci qualsiasi peso, da crudo o da cotto, per convertirlo — con i macronutrienti completi (calorie, proteine, carboidrati, grassi) per carni, cereali e verdure.',
     'hero.usda':
       'Tutte le rese provengono da USDA FoodData Central, dalla Tabella delle rese di cottura USDA e dal Manuale di Agricoltura n. 102 dell\'USDA.',
 
@@ -1068,7 +1068,7 @@ export const ui = {
     'callout.eyebrow': 'Rese sorprendenti',
     'callout.heading': 'Gli spinaci crollano di volume, ma perdono solo il 23% del peso',
     'callout.description':
-      'Una padella piena di spinaci crudi appassisce fino a quasi nulla, così quasi tutti danno per scontato che anche il peso crolli allo stesso modo. Non è così: le misurazioni USDA assegnano agli spinaci una resa di cottura del 77%, quindi 100g di foglie crude pesano ancora circa 77g da cotte. A crollare è il volume, non la massa. Il riso bianco va nella direzione opposta — 100g secco diventa 300g cotto. Entrambi i casi spiegano perché la bilancia batte l\'occhio.',
+      'Gli spinaci hanno una resa di cottura del 77%: 100 g di foglie crude pesano ancora circa 77 g da cotte, una perdita di appena il 23%. Una padella piena di spinaci crudi appassisce fino a quasi nulla, così quasi tutti danno per scontato che anche il peso crolli allo stesso modo, ma a crollare è il volume, non la massa. Il riso bianco va nella direzione opposta: 100 g secco diventa 300 g cotto. Entrambi i casi spiegano perché la bilancia batte l\'occhio.',
     'callout.spinachBtn': 'Calcolatore spinaci →',
     'callout.riceBtn': 'Calcolatore riso →',
 
@@ -1132,7 +1132,7 @@ export const ui = {
     'food.chickenP1':
       'Il petto di pollo senza pelle e senza osso fornisce circa 22,5g di proteine per 100g crudo — uno dei migliori rapporti proteine/calorie tra tutti gli alimenti interi. Con sole 120 calorie e 2,6g di grassi per 100g crudo, è la proteina magra preferita da bodybuilder, atleti e chiunque gestisca un deficit calorico.',
     'food.chickenP2':
-      'Il problema: poiché perde circa il 28% del suo peso durante la cottura, <strong>registrare il peso cotto senza considerare la resa porta a sottostimare l\'apporto effettivo di proteine</strong>. Una porzione di 150g cotto proviene da circa 210g crudo — è il peso crudo che dovresti registrare.',
+      'Poiché il petto di pollo perde circa il 28% del suo peso in cottura, <strong>registrare il peso cotto rispetto a un\'etichetta espressa sul crudo fa sottostimare le proteine reali</strong>. Una porzione di 150 g cotto proviene da circa 210 g crudo — 210 g è il numero da registrare rispetto all\'etichetta nutrizionale USDA.',
     'food.calcHeading': 'Calcolatore {name}',
     'food.faqHeading': 'Domande frequenti',
     'food.relatedLabel': 'Calcolatori correlati',
@@ -1171,7 +1171,7 @@ export const ui = {
     'hero.eyebrow': 'USDA कुकिंग यील्ड डेटा पर आधारित',
     'hero.heading': 'कच्चे से पके का कैलकुलेटर',
     'hero.description':
-      'कच्चा या पका वजन दर्ज करें — परिवर्तित वजन और पूरे मैक्रो (कैलोरी, प्रोटीन, कार्ब्स, वसा) पाएं। मांस, अनाज और सब्जियों के लिए।',
+      'पका मांस कच्चे से 15–35% हल्का होता है; चावल और पास्ता दो से तीन गुना भारी। कच्चा या पका, कोई भी वजन डालकर बदलें — मांस, अनाज और सब्जियों के लिए पूरे मैक्रो (कैलोरी, प्रोटीन, कार्ब्स, वसा) के साथ।',
     'hero.usda':
       'सभी यील्ड USDA FoodData Central, USDA कुकिंग यील्ड तालिका और USDA कृषि हैंडबुक संख्या 102 से ली गई हैं।',
 
@@ -1210,7 +1210,7 @@ export const ui = {
     'callout.eyebrow': 'चौंकाने वाले यील्ड',
     'callout.heading': 'पालक की मात्रा तो ढह जाती है, पर वजन सिर्फ 23% घटता है',
     'callout.description':
-      'कड़ाही भर कच्चा पालक सिकुड़कर मुट्ठी भर रह जाता है, इसलिए लगभग हर कोई मान लेता है कि वजन भी उतनी ही तेजी से गिरता होगा। ऐसा नहीं है। USDA की माप के अनुसार पालक की कुकिंग यील्ड 77% है — यानी 100g कच्चे पत्ते पकने के बाद भी करीब 77g रहते हैं। जो ढहता है वह मात्रा है, वजन नहीं। सफेद चावल इसके विपरीत होता है — 100g सूखा 300g पका बन जाता है। दोनों ही बताते हैं कि अंदाजे से बेहतर तराजू है।',
+      'पालक की कुकिंग यील्ड 77% है: 100g कच्चे पत्ते पकने के बाद भी करीब 77g रहते हैं, यानी सिर्फ 23% की कमी। कड़ाही भर कच्चा पालक सिकुड़कर मुट्ठी भर रह जाता है, इसलिए लगभग हर कोई मान लेता है कि वजन भी उतनी ही तेजी से गिरता होगा, पर जो ढहता है वह मात्रा है, वजन नहीं। सफेद चावल इसके विपरीत होता है: 100g सूखा 300g पका बन जाता है। दोनों ही बताते हैं कि अंदाजे से बेहतर तराजू है।',
     'callout.spinachBtn': 'पालक कैलकुलेटर →',
     'callout.riceBtn': 'चावल कैलकुलेटर →',
 

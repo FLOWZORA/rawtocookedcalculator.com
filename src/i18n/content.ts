@@ -211,219 +211,219 @@ export type ExplanationKey =
 export const EXPLANATIONS: Record<Locale, Record<ExplanationKey, string>> = {
   en: {
     chicken:
-      'Chicken loses weight during cooking primarily through moisture evaporation. Proteins denature and contract, squeezing out water bound within muscle fibers. Higher cooking temperatures and longer cook times increase moisture loss.',
+      'Chicken breast loses about 28% of its weight when cooked and chicken thigh about 31% — USDA yields of 72% and 69%. The loss is almost all water: as the meat heats, its proteins denature and contract and squeeze moisture out of the muscle fibers, with a little fat rendering out too. Higher temperatures and longer cook times push the loss further; low, moist heat like poaching keeps it closer to 23%.',
     beef:
-      'Beef loses moisture and some fat during cooking. Leaner cuts retain more of their weight since less fat renders out, while higher-fat cuts lose more through fat drip.',
+      'Beef loses roughly 15–30% of its weight when cooked, depending on the cut and its fat content. Leaner cuts retain more since less fat renders out; higher-fat cuts lose more as both water and fat drip away.',
     pork:
-      'Pork loses moisture during cooking as proteins contract and water evaporates. Slow-cooked cuts like pork shoulder lose significantly more than quick-cooked chops due to the extended cooking time.',
+      'Pork loses about 22% of its weight as a quick-cooked chop, and up to 35% braised low and slow. Proteins contract and water evaporates; the longer a cut cooks, the more moisture it drives off, which is why pork shoulder loses far more than a pan-fried chop.',
     turkey:
-      'Turkey breast, like chicken, loses moisture through evaporation as proteins contract during cooking. Roasting produces slightly more loss than steaming or boiling.',
+      'Turkey breast loses about 21% of its weight when roasted — a 79% USDA yield. Like chicken, it loses that weight as proteins contract and moisture evaporates; roasting drives off slightly more than steaming or boiling.',
     salmon:
-      'Salmon loses moisture as its proteins coagulate during cooking. The fat content helps retain some weight, but water-soluble proteins still release liquid.',
+      'Salmon loses about 15% of its weight when cooked — an 85% USDA yield, the highest of any meat or fish here. Its proteins coagulate and release some liquid, but the high fat content holds most of the weight in place.',
     shrimp:
-      'Shrimp loses relatively little weight during cooking compared to other proteins — mostly surface moisture. Their dense protein structure retains most of the original weight.',
+      'Shrimp loses about 25% of its weight when cooked — a 75% USDA yield. The loss is mostly surface and shell moisture; the dense muscle itself holds together, so the pieces lighten more than they visibly shrink.',
     meatDefault:
-      'Protein-rich foods lose moisture during cooking as proteins contract and water evaporates from muscle tissue.',
+      'Meat and fish generally lose 20–35% of their weight when cooked. Proteins contract and water evaporates from the muscle tissue, and fattier cuts also lose weight as fat renders out.',
     grains:
-      'Grains, pasta, and legumes absorb water during cooking, which is why they expand dramatically. The starch granules absorb liquid and swell, significantly increasing weight. Macros are always calculated from the dry (raw) weight since that’s how nutrition labels measure them.',
+      'Grains, pasta, and legumes roughly double or triple in weight when cooked — yields run from about 220% to 335%. The starch granules absorb the cooking liquid and swell, so the cooked weight is far higher than the dry weight. Macros are always calculated from the dry (raw) weight, since that is how nutrition labels measure them.',
     spinach:
-      'Spinach is the most misjudged food on this site. A pan of raw leaves wilts to a fraction of its original volume, so the weight looks like it must have collapsed too — but USDA measurements put the cooking yield at 77%, meaning 100g raw still weighs about 77g cooked. The leaves lose their air and structure long before they lose their water, so the volume falls off a cliff while the weight drops only about 23%.',
+      'Spinach loses only about 23% of its weight when cooked — a 77% USDA yield, so 100g of raw leaves still weighs about 77g cooked. It is the most misjudged food on this site: a pan of raw leaves wilts to a fraction of its volume, so the weight looks like it must have collapsed too. The leaves lose their air and structure long before they lose their water, so the volume falls off a cliff while the weight barely moves.',
     potato:
-      'Potatoes retain most of their weight when cooked because their dense starch structure holds moisture in. Only a small amount evaporates from the surface during cooking.',
+      'A boiled potato loses only about 6% of its weight; a baked sweet potato loses closer to 22%. The dense starch structure holds moisture in, so only a small amount evaporates from the surface during cooking.',
     vegDefault:
-      'Vegetables lose some moisture during cooking as cell walls soften and water evaporates. Leafy greens lose dramatically more than dense vegetables.',
+      'Most vegetables lose between 0% and about 25% of their weight when cooked — broccoli comes out roughly even, while leafy greens lose the most. Cell walls soften and some water evaporates as they cook.',
   },
   es: {
     chicken:
-      'El pollo pierde peso al cocinarse sobre todo por la evaporación del agua. Las proteínas se desnaturalizan y se contraen, expulsando el agua retenida en las fibras musculares. A mayor temperatura y más tiempo de cocción, mayor es la pérdida de humedad.',
+      'La pechuga de pollo pierde alrededor del 28% de su peso al cocinarse y el muslo alrededor del 31%: rendimientos USDA del 72% y del 69%. Casi toda la pérdida es agua: al calentarse, las proteínas se desnaturalizan, se contraen y expulsan la humedad de las fibras musculares, y además se derrite algo de grasa. Más temperatura y más tiempo de cocción aumentan la pérdida; el calor suave y húmedo, como escalfar, la deja más cerca del 23%.',
     beef:
-      'La carne de res pierde agua y parte de su grasa al cocinarse. Los cortes magros conservan más peso porque se derrite menos grasa, mientras que los cortes más grasos pierden más al soltarla.',
+      'La carne de res pierde en torno al 15–30% de su peso al cocinarse, según el corte y su contenido de grasa. Los cortes magros conservan más porque se derrite menos grasa; los más grasos pierden más al soltar agua y grasa a la vez.',
     pork:
-      'El cerdo pierde humedad durante la cocción a medida que las proteínas se contraen y el agua se evapora. Los cortes de cocción lenta, como la paleta, pierden bastante más que una chuleta hecha rápido, por el tiempo de cocción prolongado.',
+      'El cerdo pierde alrededor del 22% de su peso como chuleta hecha rápido, y hasta un 35% cuando se estofa a fuego lento. Las proteínas se contraen y el agua se evapora: cuanto más tiempo se cocina un corte, más humedad suelta, y por eso la paleta pierde mucho más que una chuleta a la sartén.',
     turkey:
-      'La pechuga de pavo, igual que el pollo, pierde humedad por evaporación cuando las proteínas se contraen al cocinarse. Asarla produce algo más de pérdida que cocerla al vapor o hervirla.',
+      'La pechuga de pavo pierde alrededor del 21% de su peso al asarse: un rendimiento USDA del 79%. Igual que el pollo, pierde ese peso cuando las proteínas se contraen y la humedad se evapora; asarla suelta algo más que cocerla al vapor o hervirla.',
     salmon:
-      'El salmón pierde humedad a medida que sus proteínas coagulan durante la cocción. Su contenido graso ayuda a retener algo de peso, pero las proteínas solubles en agua siguen soltando líquido.',
+      'El salmón pierde alrededor del 15% de su peso al cocinarse: un rendimiento USDA del 85%, el más alto de cualquier carne o pescado de esta lista. Sus proteínas coagulan y sueltan algo de líquido, pero su alto contenido graso mantiene casi todo el peso.',
     shrimp:
-      'Los camarones pierden relativamente poco peso al cocinarse en comparación con otras proteínas: sobre todo humedad superficial. Su estructura proteica densa conserva casi todo el peso original.',
+      'Los camarones pierden alrededor del 25% de su peso al cocinarse: un rendimiento USDA del 75%. Esa pérdida es sobre todo humedad de la superficie y del caparazón; el músculo denso se mantiene, así que las piezas se aligeran más de lo que parecen encoger.',
     meatDefault:
-      'Los alimentos ricos en proteína pierden humedad al cocinarse: las proteínas se contraen y el agua del tejido muscular se evapora.',
+      'La carne y el pescado suelen perder entre el 20% y el 35% de su peso al cocinarse. Las proteínas se contraen y el agua del tejido muscular se evapora, y los cortes más grasos pierden además peso al derretirse la grasa.',
     grains:
-      'Los cereales, la pasta y las legumbres absorben agua al cocerse, y por eso aumentan tanto de volumen. Los gránulos de almidón absorben líquido y se hinchan, lo que incrementa mucho el peso. Los macros siempre se calculan sobre el peso en seco (crudo), porque así es como los miden las etiquetas nutricionales.',
+      'Los cereales, la pasta y las legumbres duplican o triplican su peso al cocerse: los rendimientos van de alrededor del 220% al 335%. Los gránulos de almidón absorben el líquido de cocción y se hinchan, así que el peso cocido es muy superior al peso en seco. Los macros siempre se calculan sobre el peso en seco (crudo), porque así es como los miden las etiquetas nutricionales.',
     spinach:
-      'La espinaca es el alimento peor juzgado de este sitio. Una sartén de hojas crudas se reduce a una fracción de su volumen original, así que parece que el peso también tiene que haberse desplomado; pero las mediciones del USDA fijan el rendimiento de cocción en el 77%, o sea que 100 g crudos siguen pesando unos 77 g cocidos. Las hojas pierden el aire y la estructura mucho antes que el agua, de modo que el volumen se hunde mientras el peso solo baja un 23%.',
+      'La espinaca solo pierde alrededor del 23% de su peso al cocinarse: un rendimiento USDA del 77%, así que 100 g de hojas crudas siguen pesando unos 77 g cocidas. Es el alimento peor juzgado de este sitio: una sartén de hojas crudas se reduce a una fracción de su volumen, así que parece que el peso también tiene que haberse desplomado. Las hojas pierden el aire y la estructura mucho antes que el agua, de modo que el volumen se hunde mientras el peso apenas se mueve.',
     potato:
-      'Las papas conservan casi todo su peso al cocinarse porque su densa estructura de almidón retiene la humedad. Solo se evapora una pequeña cantidad desde la superficie durante la cocción.',
+      'Una papa hervida solo pierde alrededor del 6% de su peso; un boniato al horno pierde más bien un 22%. La densa estructura de almidón retiene la humedad, así que solo se evapora una pequeña cantidad desde la superficie durante la cocción.',
     vegDefault:
-      'Las verduras pierden algo de humedad al cocinarse, ya que las paredes celulares se ablandan y el agua se evapora. Las hojas verdes pierden muchísimo más que las verduras densas.',
+      'La mayoría de las verduras pierden entre el 0% y alrededor del 25% de su peso al cocinarse: el brócoli queda más o menos igual, mientras que las hojas verdes son las que más pierden. Las paredes celulares se ablandan y algo de agua se evapora al cocinarlas.',
   },
   fr: {
     chicken:
-      'Le poulet perd du poids à la cuisson principalement par évaporation de l’eau. Les protéines se dénaturent et se contractent, chassant l’eau retenue dans les fibres musculaires. Plus la température est élevée et la cuisson longue, plus la perte d’humidité est importante.',
+      'Le blanc de poulet perd environ 28 % de son poids à la cuisson et la cuisse environ 31 % — des rendements USDA de 72 % et de 69 %. Cette perte est presque entièrement de l’eau : à la chaleur, les protéines se dénaturent et se contractent en chassant l’humidité des fibres musculaires, et un peu de graisse fond au passage. Une température plus élevée et une cuisson plus longue accentuent la perte ; une chaleur douce et humide comme le pochage la maintient plus près de 23 %.',
     beef:
-      'Le bœuf perd de l’eau et une partie de sa graisse à la cuisson. Les morceaux maigres conservent davantage de poids puisqu’il y a moins de gras à fondre, tandis que les morceaux plus gras en perdent plus par écoulement.',
+      'Le bœuf perd environ 15 à 30 % de son poids à la cuisson, selon le morceau et sa teneur en gras. Les morceaux maigres en conservent davantage puisqu’il y a moins de graisse à fondre ; les morceaux plus gras en perdent plus, l’eau et la graisse s’écoulant ensemble.',
     pork:
-      'Le porc perd de l’humidité à la cuisson, les protéines se contractant et l’eau s’évaporant. Les morceaux cuits lentement, comme l’épaule, en perdent nettement plus que les côtelettes saisies rapidement, en raison du temps de cuisson prolongé.',
+      'Le porc perd environ 22 % de son poids sous forme de côtelette saisie rapidement, et jusqu’à 35 % braisé longuement à basse température. Les protéines se contractent et l’eau s’évapore : plus un morceau cuit longtemps, plus il chasse d’humidité, et c’est pourquoi l’épaule en perd bien plus qu’une côtelette poêlée.',
     turkey:
-      'Le blanc de dinde, comme le poulet, perd de l’humidité par évaporation lorsque les protéines se contractent à la cuisson. Le rôtissage entraîne une perte légèrement supérieure à la cuisson vapeur ou à l’eau.',
+      'Le blanc de dinde perd environ 21 % de son poids au rôtissage — un rendement USDA de 79 %. Comme le poulet, il perd ce poids parce que les protéines se contractent et que l’humidité s’évapore ; le rôtissage en chasse un peu plus que la cuisson vapeur ou à l’eau.',
     salmon:
-      'Le saumon perd de l’humidité à mesure que ses protéines coagulent pendant la cuisson. Sa teneur en gras aide à retenir une partie du poids, mais les protéines hydrosolubles libèrent tout de même du liquide.',
+      'Le saumon perd environ 15 % de son poids à la cuisson — un rendement USDA de 85 %, le plus élevé de toutes les viandes et de tous les poissons ici. Ses protéines coagulent et libèrent un peu de liquide, mais sa forte teneur en gras retient l’essentiel du poids.',
     shrimp:
-      'Les crevettes perdent relativement peu de poids à la cuisson par rapport aux autres sources de protéines — surtout l’humidité de surface. Leur structure protéique dense conserve l’essentiel du poids initial.',
+      'Les crevettes perdent environ 25 % de leur poids à la cuisson — un rendement USDA de 75 %. Cette perte est surtout l’humidité de surface et de carapace ; la chair dense, elle, se tient, si bien que les crevettes s’allègent plus qu’elles ne semblent rétrécir.',
     meatDefault:
-      'Les aliments riches en protéines perdent de l’humidité à la cuisson : les protéines se contractent et l’eau s’évapore des tissus musculaires.',
+      'La viande et le poisson perdent en général 20 à 35 % de leur poids à la cuisson. Les protéines se contractent et l’eau s’évapore des tissus musculaires ; les morceaux plus gras perdent en plus du poids à mesure que la graisse fond.',
     grains:
-      'Les céréales, les pâtes et les légumineuses absorbent l’eau pendant la cuisson, d’où leur gonflement spectaculaire. Les granules d’amidon absorbent le liquide et gonflent, ce qui augmente fortement le poids. Les macros sont toujours calculées à partir du poids sec (cru), car c’est ainsi que les étiquettes nutritionnelles les mesurent.',
+      'Les céréales, les pâtes et les légumineuses doublent ou triplent à peu près de poids à la cuisson — les rendements vont d’environ 220 % à 335 %. Les granules d’amidon absorbent le liquide de cuisson et gonflent, si bien que le poids cuit dépasse largement le poids sec. Les macros sont toujours calculées à partir du poids sec (cru), car c’est ainsi que les étiquettes nutritionnelles les mesurent.',
     spinach:
-      'Les épinards sont l’aliment le plus mal évalué du site. Une poêle de feuilles crues se réduit à une fraction de son volume initial, ce qui donne l’impression que le poids s’est effondré lui aussi — mais l’USDA mesure un rendement de cuisson de 77 %, soit environ 77 g cuits pour 100 g crus. Les feuilles perdent leur air et leur structure bien avant de perdre leur eau : le volume s’effondre, tandis que le poids ne baisse que d’environ 23 %.',
+      'Les épinards ne perdent qu’environ 23 % de leur poids à la cuisson — un rendement USDA de 77 %, si bien que 100 g de feuilles crues pèsent encore environ 77 g une fois cuites. C’est l’aliment le plus mal évalué du site : une poêle de feuilles crues se réduit à une fraction de son volume, ce qui donne l’impression que le poids s’est effondré lui aussi. Les feuilles perdent leur air et leur structure bien avant de perdre leur eau : le volume s’effondre tandis que le poids bouge à peine.',
     potato:
-      'Les pommes de terre conservent l’essentiel de leur poids à la cuisson, car leur structure amylacée dense retient l’humidité. Seule une petite quantité s’évapore en surface pendant la cuisson.',
+      'Une pomme de terre cuite à l’eau ne perd qu’environ 6 % de son poids ; une patate douce au four en perd plutôt 22 %. La structure amylacée dense retient l’humidité à l’intérieur, et seule une petite quantité s’évapore en surface pendant la cuisson.',
     vegDefault:
-      'Les légumes perdent un peu d’humidité à la cuisson : les parois cellulaires s’assouplissent et l’eau s’évapore. Les légumes-feuilles en perdent bien plus que les légumes denses.',
+      'La plupart des légumes perdent entre 0 et 25 % environ de leur poids à la cuisson — le brocoli en ressort quasiment à l’identique, tandis que les légumes-feuilles en perdent le plus. Les parois cellulaires s’assouplissent et un peu d’eau s’évapore pendant la cuisson.',
   },
   de: {
     chicken:
-      'Hähnchen verliert beim Garen vor allem durch verdunstendes Wasser an Gewicht. Die Proteine denaturieren und ziehen sich zusammen, wodurch das in den Muskelfasern gebundene Wasser herausgepresst wird. Höhere Gartemperaturen und längere Garzeiten erhöhen den Feuchtigkeitsverlust.',
+      'Hähnchenbrust verliert beim Garen etwa 28 % ihres Gewichts, Hähnchenschenkel etwa 31 % — USDA-Ausbeuten von 72 % und 69 %. Der Verlust ist fast nur Wasser: In der Hitze denaturieren die Proteine, ziehen sich zusammen und pressen die Feuchtigkeit aus den Muskelfasern, dazu brät etwas Fett aus. Höhere Temperaturen und längere Garzeiten treiben den Verlust weiter hoch; sanfte, feuchte Hitze wie Pochieren hält ihn näher bei 23 %.',
     beef:
-      'Rindfleisch verliert beim Garen Wasser und einen Teil seines Fetts. Magere Teilstücke behalten mehr Gewicht, weil weniger Fett ausbrät, während fettreichere Stücke durch das abtropfende Fett mehr verlieren.',
+      'Rindfleisch verliert beim Garen etwa 15 bis 30 % seines Gewichts, je nach Teilstück und Fettgehalt. Magere Stücke behalten mehr, weil weniger Fett ausbrät; fettreichere verlieren mehr, da Wasser und Fett zugleich abtropfen.',
     pork:
-      'Schweinefleisch verliert beim Garen Feuchtigkeit, weil sich die Proteine zusammenziehen und Wasser verdunstet. Langsam gegarte Stücke wie die Schulter verlieren wegen der langen Garzeit deutlich mehr als schnell gebratene Koteletts.',
+      'Schweinefleisch verliert als schnell gebratenes Kotelett etwa 22 % seines Gewichts und langsam geschmort bis zu 35 %. Die Proteine ziehen sich zusammen und Wasser verdunstet: Je länger ein Stück gart, desto mehr Feuchtigkeit treibt es aus — deshalb verliert die Schulter weit mehr als ein Pfannenkotelett.',
     turkey:
-      'Putenbrust verliert wie Hähnchen Feuchtigkeit durch Verdunstung, wenn sich die Proteine beim Garen zusammenziehen. Im Ofen gebraten fällt der Verlust etwas höher aus als beim Dämpfen oder Kochen.',
+      'Putenbrust verliert beim Braten im Ofen etwa 21 % ihres Gewichts — eine USDA-Ausbeute von 79 %. Wie beim Hähnchen entsteht der Verlust, weil sich die Proteine zusammenziehen und Feuchtigkeit verdunstet; Braten treibt etwas mehr aus als Dämpfen oder Kochen.',
     salmon:
-      'Lachs verliert Feuchtigkeit, sobald seine Proteine beim Garen gerinnen. Der Fettgehalt hilft, einen Teil des Gewichts zu halten, doch wasserlösliche Proteine geben trotzdem Flüssigkeit ab.',
+      'Lachs verliert beim Garen etwa 15 % seines Gewichts — eine USDA-Ausbeute von 85 %, die höchste aller Fleisch- und Fischsorten hier. Seine Proteine gerinnen und geben etwas Flüssigkeit ab, doch der hohe Fettgehalt hält den Großteil des Gewichts.',
     shrimp:
-      'Garnelen verlieren beim Garen im Vergleich zu anderen Proteinquellen relativ wenig Gewicht — überwiegend Oberflächenfeuchtigkeit. Ihre dichte Proteinstruktur hält den größten Teil des Ausgangsgewichts.',
+      'Garnelen verlieren beim Garen etwa 25 % ihres Gewichts — eine USDA-Ausbeute von 75 %. Der Verlust ist überwiegend Oberflächen- und Schalenfeuchtigkeit; das dichte Muskelfleisch selbst hält zusammen, sodass die Stücke stärker leichter werden, als sie sichtbar schrumpfen.',
     meatDefault:
-      'Proteinreiche Lebensmittel verlieren beim Garen Feuchtigkeit: Die Proteine ziehen sich zusammen und Wasser verdunstet aus dem Muskelgewebe.',
+      'Fleisch und Fisch verlieren beim Garen in der Regel 20 bis 35 % ihres Gewichts. Die Proteine ziehen sich zusammen und Wasser verdunstet aus dem Muskelgewebe; fettreichere Stücke verlieren zusätzlich Gewicht, wenn Fett ausbrät.',
     grains:
-      'Getreide, Nudeln und Hülsenfrüchte nehmen beim Kochen Wasser auf — deshalb quellen sie so stark auf. Die Stärkekörner saugen Flüssigkeit auf und schwellen an, was das Gewicht erheblich erhöht. Die Makros werden immer aus dem Trockengewicht (roh) berechnet, denn so werden sie auch auf Nährwerttabellen angegeben.',
+      'Getreide, Nudeln und Hülsenfrüchte verdoppeln oder verdreifachen beim Garen ungefähr ihr Gewicht — die Ausbeuten reichen von etwa 220 % bis 335 %. Die Stärkekörner saugen die Kochflüssigkeit auf und quellen, sodass das Gargewicht weit über dem Trockengewicht liegt. Die Makros werden immer aus dem Trockengewicht (roh) berechnet, denn so geben sie auch die Nährwerttabellen an.',
     spinach:
-      'Spinat wird auf dieser Seite am gründlichsten falsch eingeschätzt. Eine Pfanne roher Blätter fällt auf einen Bruchteil ihres Volumens zusammen, sodass es aussieht, als müsse auch das Gewicht eingebrochen sein — die USDA misst jedoch eine Garausbeute von 77 %, aus 100 g roh werden also rund 77 g gegart. Die Blätter verlieren Luft und Struktur lange bevor sie ihr Wasser verlieren: Das Volumen bricht ein, das Gewicht sinkt nur um etwa 23 %.',
+      'Spinat verliert beim Garen nur etwa 23 % seines Gewichts — eine USDA-Ausbeute von 77 %, aus 100 g roher Blätter werden also noch rund 77 g gegart. Er ist das am gründlichsten falsch eingeschätzte Lebensmittel dieser Seite: Eine Pfanne roher Blätter fällt auf einen Bruchteil ihres Volumens zusammen, sodass es aussieht, als müsse auch das Gewicht eingebrochen sein. Die Blätter verlieren Luft und Struktur lange vor ihrem Wasser — das Volumen bricht ein, während sich das Gewicht kaum bewegt.',
     potato:
-      'Kartoffeln behalten beim Garen den größten Teil ihres Gewichts, weil ihre dichte Stärkestruktur die Feuchtigkeit im Inneren hält. Nur eine kleine Menge verdunstet währenddessen an der Oberfläche.',
+      'Eine gekochte Kartoffel verliert nur etwa 6 % ihres Gewichts; eine im Ofen gebackene Süßkartoffel eher 22 %. Die dichte Stärkestruktur hält die Feuchtigkeit im Inneren, und nur eine kleine Menge verdunstet beim Garen an der Oberfläche.',
     vegDefault:
-      'Gemüse verliert beim Garen etwas Feuchtigkeit, da die Zellwände weich werden und Wasser verdunstet. Blattgemüse verliert dabei ungleich mehr als festes Gemüse.',
+      'Die meisten Gemüse verlieren beim Garen zwischen 0 und etwa 25 % ihres Gewichts — Brokkoli kommt praktisch unverändert heraus, Blattgemüse verliert am meisten. Die Zellwände werden weich und etwas Wasser verdunstet beim Garen.',
   },
   pt: {
     chicken:
-      'O frango perde peso ao cozinhar principalmente pela evaporação da água. As proteínas desnaturam e se contraem, expulsando a água retida nas fibras musculares. Temperaturas mais altas e tempos de cozimento mais longos aumentam a perda de umidade.',
+      'O peito de frango perde cerca de 28% do peso ao ser cozido e a coxa cerca de 31% — rendimentos USDA de 72% e 69%. A perda é quase toda água: com o calor, as proteínas desnaturam e se contraem, espremendo a umidade para fora das fibras musculares, e um pouco de gordura também derrete. Temperaturas mais altas e tempos mais longos aumentam a perda; calor brando e úmido, como escalfar, mantém a perda mais perto de 23%.',
     beef:
-      'A carne bovina perde água e parte da gordura ao cozinhar. Cortes magros retêm mais peso, porque menos gordura derrete, enquanto cortes mais gordurosos perdem mais com a gordura que escorre.',
+      'A carne bovina perde cerca de 15% a 30% do peso ao ser cozida, dependendo do corte e do teor de gordura. Cortes magros retêm mais, porque menos gordura derrete; cortes mais gordurosos perdem mais, com água e gordura escorrendo juntas.',
     pork:
-      'A carne suína perde umidade ao cozinhar, à medida que as proteínas se contraem e a água evapora. Cortes de cozimento lento, como a paleta, perdem bem mais do que costeletas feitas rapidamente, por causa do tempo prolongado de cozimento.',
+      'A carne suína perde cerca de 22% do peso como costeleta de preparo rápido, e até 35% quando brasada em fogo baixo e lento. As proteínas se contraem e a água evapora: quanto mais tempo um corte cozinha, mais umidade ele expulsa, e por isso a paleta perde muito mais do que uma costeleta na frigideira.',
     turkey:
-      'O peito de peru, assim como o frango, perde umidade por evaporação quando as proteínas se contraem durante o cozimento. Assar gera uma perda um pouco maior do que cozinhar no vapor ou na água.',
+      'O peito de peru perde cerca de 21% do peso quando assado — um rendimento USDA de 79%. Como o frango, ele perde esse peso porque as proteínas se contraem e a umidade evapora; assar expulsa um pouco mais do que cozinhar no vapor ou na água.',
     salmon:
-      'O salmão perde umidade à medida que suas proteínas coagulam durante o cozimento. O teor de gordura ajuda a reter parte do peso, mas as proteínas solúveis em água ainda liberam líquido.',
+      'O salmão perde cerca de 15% do peso ao ser cozido — um rendimento USDA de 85%, o mais alto de qualquer carne ou peixe aqui. Suas proteínas coagulam e liberam algum líquido, mas o alto teor de gordura mantém a maior parte do peso.',
     shrimp:
-      'O camarão perde relativamente pouco peso ao cozinhar em comparação com outras proteínas — sobretudo umidade superficial. Sua estrutura proteica densa retém quase todo o peso original.',
+      'O camarão perde cerca de 25% do peso ao ser cozido — um rendimento USDA de 75%. A perda é sobretudo umidade da superfície e da casca; a carne densa em si se mantém, então as peças ficam mais leves do que parecem encolher.',
     meatDefault:
-      'Alimentos ricos em proteína perdem umidade ao cozinhar: as proteínas se contraem e a água evapora do tecido muscular.',
+      'Carne e peixe costumam perder de 20% a 35% do peso ao serem cozidos. As proteínas se contraem e a água evapora do tecido muscular, e cortes mais gordurosos perdem peso também à medida que a gordura derrete.',
     grains:
-      'Grãos, massas e leguminosas absorvem água durante o cozimento, e é por isso que expandem tanto. Os grânulos de amido absorvem líquido e incham, aumentando muito o peso. Os macros são sempre calculados sobre o peso seco (cru), porque é assim que os rótulos nutricionais os medem.',
+      'Grãos, massas e leguminosas mais ou menos dobram ou triplicam de peso ao serem cozidos — os rendimentos vão de cerca de 220% a 335%. Os grânulos de amido absorvem o líquido do cozimento e incham, então o peso cozido fica bem acima do peso seco. Os macros são sempre calculados a partir do peso seco (cru), porque é assim que os rótulos nutricionais os medem.',
     spinach:
-      'O espinafre é o alimento mais mal avaliado deste site. Uma frigideira de folhas cruas se reduz a uma fração do volume original, o que dá a impressão de que o peso também despencou — mas o USDA mede um rendimento de cozimento de 77%, ou seja, 100 g crus ainda pesam cerca de 77 g cozidos. As folhas perdem o ar e a estrutura muito antes de perderem a água: o volume desaba enquanto o peso cai apenas cerca de 23%.',
+      'O espinafre perde apenas cerca de 23% do peso ao ser cozido — um rendimento USDA de 77%, então 100 g de folhas cruas ainda pesam cerca de 77 g cozidas. É o alimento mais mal avaliado deste site: uma frigideira de folhas cruas murcha até uma fração do volume, o que dá a impressão de que o peso também despencou. As folhas perdem o ar e a estrutura muito antes de perderem a água, então o volume desaba enquanto o peso mal se move.',
     potato:
-      'As batatas retêm quase todo o seu peso ao cozinhar porque sua densa estrutura de amido segura a umidade. Apenas uma pequena parte evapora pela superfície durante o cozimento.',
+      'Uma batata cozida perde apenas cerca de 6% do peso; uma batata-doce assada perde mais perto de 22%. A densa estrutura de amido segura a umidade por dentro, e só uma pequena parte evapora pela superfície durante o cozimento.',
     vegDefault:
-      'Os vegetais perdem alguma umidade ao cozinhar, pois as paredes celulares amolecem e a água evapora. As folhas verdes perdem muitíssimo mais do que os vegetais densos.',
+      'A maioria dos vegetais perde entre 0% e cerca de 25% do peso ao ser cozida — o brócolis sai praticamente igual, enquanto as folhas verdes perdem mais. As paredes celulares amolecem e um pouco de água evapora durante o cozimento.',
   },
   ja: {
     chicken:
-      '鶏肉が加熱で軽くなる主な理由は水分の蒸発です。タンパク質が変性して収縮し、筋繊維に含まれていた水分が押し出されます。加熱温度が高いほど、また加熱時間が長いほど、水分の損失は大きくなります。',
+      '鶏胸肉は加熱すると重量の約28%を、鶏もも肉は約31%を失います——USDA歩留まりはそれぞれ72%と69%です。失われるのはほぼ水分です。加熱するとタンパク質が変性・収縮して筋繊維から水分を押し出し、脂も少し溶け出します。温度が高く加熱時間が長いほど損失は大きくなり、ポーチのような低温・湿式の加熱では23%前後にとどまります。',
     beef:
-      '牛肉は加熱すると水分と脂の一部を失います。赤身の多い部位は溶け出す脂が少ないため重量が残りやすく、脂の多い部位は脂が落ちる分だけ大きく減ります。',
+      '牛肉は加熱すると、部位と脂の量に応じて重量の約15〜30%を失います。赤身の多い部位は溶け出す脂が少ないぶん重量が残り、脂の多い部位は水分と脂が一緒に滴り落ちてより多く減ります。',
     pork:
-      '豚肉は加熱によりタンパク質が収縮し、水分が蒸発して軽くなります。豚肩肉のように低温で長時間煮込む部位は、短時間で焼くポークチョップよりも減り方がかなり大きくなります。',
+      '豚肉は、短時間で焼くポークチョップなら重量の約22%、低温で長時間煮込む場合は最大35%を失います。タンパク質が収縮して水分が蒸発し、長く加熱するほど水分が抜けます。だから豚肩肉はフライパンで焼くチョップよりはるかに大きく減ります。',
     turkey:
-      '七面鳥の胸肉も鶏肉と同様に、加熱でタンパク質が収縮する際に水分が蒸発して軽くなります。ローストは蒸したり茹でたりする場合よりわずかに減少幅が大きくなります。',
+      '七面鳥の胸肉はローストすると重量の約21%を失います——USDA歩留まり79%です。鶏肉と同じく、タンパク質が収縮して水分が蒸発することで失われ、ローストは蒸す・茹でるよりわずかに多く水分を飛ばします。',
     salmon:
-      'サーモンは加熱によってタンパク質が凝固する過程で水分を失います。脂質が多いぶん重量は残りやすいものの、水溶性タンパク質からは水分が出ていきます。',
+      'サーモンは加熱すると重量の約15%を失います——USDA歩留まり85%で、ここに挙げた肉・魚の中で最も高い値です。タンパク質が凝固して多少の水分を放出しますが、脂質が多いため重量の大部分は保たれます。',
     shrimp:
-      'エビは他のタンパク質源に比べて加熱による減量が比較的小さく、失われるのは主に表面の水分です。密なタンパク質構造のおかげで元の重量の大部分が保たれます。',
+      'エビは加熱すると重量の約25%を失います——USDA歩留まり75%です。失われるのは主に表面と殻の水分で、身自体は密で崩れないため、見た目の縮み以上に軽くなります。',
     meatDefault:
-      'タンパク質の多い食品は、加熱するとタンパク質が収縮し、筋組織から水分が蒸発するため軽くなります。',
+      '肉と魚は加熱すると、通常は重量の20〜35%を失います。タンパク質が収縮して筋組織から水分が蒸発し、脂の多い部位は脂が溶け出すぶんさらに軽くなります。',
     grains:
-      '穀物・パスタ・豆類は加熱中に水を吸収するため、大きく膨らみます。でんぷん粒が水分を吸って膨潤し、重量が大幅に増えるのです。栄養成分表示は乾燥（生）重量を基準にしているため、マクロは常に乾燥重量から計算します。',
+      '穀物・パスタ・豆類は加熱すると重量がおよそ2〜3倍になります——歩留まりは約220%から335%です。でんぷん粒が煮汁を吸って膨らむため、加熱後の重量は乾燥重量をはるかに上回ります。栄養成分表示が乾燥（生）重量を基準にしているため、マクロは常に乾燥重量から計算します。',
     spinach:
-      'ほうれん草は、このサイトで最も誤解されている食材です。生の葉はフライパンの中で元のかさのごく一部にまで縮むため、重量も同じように激減したように見えます。しかしUSDAの測定による調理歩留まりは77%で、生100gは加熱後も約77gあります。葉は水分を失うよりずっと早く空気と構造を失うため、かさは急激に減っても、重量は約23%しか落ちません。',
+      'ほうれん草は加熱しても重量の約23%しか失いません——USDA歩留まり77%で、生100gの葉は加熱後も約77gあります。このサイトで最も誤解されている食材です。生の葉はフライパンの中で元のかさのごく一部にまで縮むため、重量も同じように激減したように見えます。葉は水分を失うずっと前に空気と構造を失うので、かさは急激に減っても重量はほとんど動きません。',
     potato:
-      'じゃがいもは密なでんぷん構造が水分を内部に閉じ込めるため、加熱してもほとんど重量が変わりません。調理中に表面からわずかに蒸発する程度です。',
+      '茹でたじゃがいもは重量の約6%しか失いませんが、焼いたさつまいもは22%近く失います。密なでんぷん構造が水分を内部に閉じ込めるため、加熱中に表面から蒸発するのはわずかです。',
     vegDefault:
-      '野菜は加熱で細胞壁がやわらかくなり水分が蒸発するため、多少軽くなります。葉物野菜は、身の詰まった野菜よりもはるかに大きく減ります。',
+      'ほとんどの野菜は加熱すると重量の0%から約25%を失います——ブロッコリーはほぼ変わらず、葉物野菜が最も多く失います。加熱すると細胞壁がやわらかくなり、水分が多少蒸発します。',
   },
   ko: {
     chicken:
-      '닭고기가 조리 과정에서 가벼워지는 주된 이유는 수분 증발입니다. 단백질이 변성되면서 수축해 근섬유에 붙잡혀 있던 물을 밀어냅니다. 조리 온도가 높고 시간이 길수록 수분 손실은 더 커집니다.',
+      '닭 가슴살은 조리하면 무게의 약 28%가, 닭 넓적다리살은 약 31%가 줄어듭니다 — USDA 수율은 각각 72%와 69%입니다. 줄어드는 것은 거의 다 물입니다. 열을 받으면 단백질이 변성·수축하면서 근섬유에서 수분을 밀어내고, 지방도 조금 녹아 나옵니다. 온도가 높고 조리 시간이 길수록 손실이 커지고, 수란처럼 낮고 촉촉한 열에서는 23%에 가깝게 유지됩니다.',
     beef:
-      '소고기는 조리하면서 수분과 지방 일부를 잃습니다. 기름기가 적은 부위는 녹아 나오는 지방이 적어 무게가 더 남고, 지방이 많은 부위는 기름이 빠지면서 더 많이 줄어듭니다.',
+      '소고기는 조리하면 부위와 지방 함량에 따라 무게의 약 15~30%가 줄어듭니다. 기름기가 적은 부위는 녹아 나오는 지방이 적어 더 많이 남고, 지방이 많은 부위는 물과 지방이 함께 빠지면서 더 많이 줄어듭니다.',
     pork:
-      '돼지고기는 조리 중 단백질이 수축하고 물이 증발하면서 수분을 잃습니다. 앞다리처럼 오래 익히는 부위는 조리 시간이 길기 때문에, 빠르게 굽는 갈비보다 훨씬 많이 줄어듭니다.',
+      '돼지고기는 빠르게 굽는 갈비로는 무게의 약 22%, 낮은 온도에서 오래 브레이징하면 최대 35%가 줄어듭니다. 단백질이 수축하고 물이 증발하는데, 오래 익힐수록 더 많은 수분이 빠집니다. 그래서 앞다리는 팬에 구운 갈비보다 훨씬 많이 줄어듭니다.',
     turkey:
-      '칠면조 가슴살도 닭고기와 마찬가지로 조리 중 단백질이 수축하면서 수분이 증발해 무게가 줄어듭니다. 오븐에 구우면 찌거나 삶을 때보다 손실이 조금 더 큽니다.',
+      '칠면조 가슴살은 오븐에 구우면 무게의 약 21%가 줄어듭니다 — USDA 수율 79%입니다. 닭고기처럼 단백질이 수축하고 수분이 증발하면서 줄어들며, 굽는 방식은 찌거나 삶는 것보다 수분을 조금 더 날립니다.',
     salmon:
-      '연어는 조리 과정에서 단백질이 응고하면서 수분을 잃습니다. 지방 함량 덕분에 무게가 어느 정도 유지되지만, 수용성 단백질에서는 여전히 수분이 빠져나옵니다.',
+      '연어는 조리하면 무게의 약 15%가 줄어듭니다 — USDA 수율 85%로, 여기 실린 어떤 고기나 생선보다도 높습니다. 단백질이 응고하면서 약간의 액체를 내보내지만, 높은 지방 함량이 무게의 대부분을 잡아 둡니다.',
     shrimp:
-      '새우는 다른 단백질 식품에 비해 조리 시 무게가 비교적 적게 줄어들며, 빠지는 것은 대부분 표면의 수분입니다. 조직이 치밀해 원래 무게의 대부분이 그대로 남습니다.',
+      '새우는 조리하면 무게의 약 25%가 줄어듭니다 — USDA 수율 75%입니다. 빠지는 것은 대부분 표면과 껍질의 수분이고, 치밀한 살 자체는 뭉쳐 있어서 눈에 보이는 것보다 더 가벼워집니다.',
     meatDefault:
-      '단백질이 풍부한 식품은 조리 중 단백질이 수축하고 근육 조직에서 물이 증발하면서 수분을 잃습니다.',
+      '고기와 생선은 조리하면 보통 무게의 20~35%가 줄어듭니다. 단백질이 수축하고 근육 조직에서 물이 증발하며, 지방이 많은 부위는 지방이 녹아 나오면서 무게가 더 줄어듭니다.',
     grains:
-      '곡물, 파스타, 콩류는 조리 중 물을 흡수하기 때문에 크게 불어납니다. 전분 알갱이가 수분을 빨아들여 팽창하면서 무게가 크게 늘어납니다. 영양성분표가 건조(생) 중량 기준으로 표시되므로, 영양소는 항상 건조 중량을 기준으로 계산합니다.',
+      '곡물, 파스타, 콩류는 조리하면 무게가 대략 두세 배가 됩니다 — 수율은 약 220%에서 335%에 이릅니다. 전분 알갱이가 조리 액체를 흡수해 부풀기 때문에, 조리 후 무게가 건조 무게를 훨씬 넘어섭니다. 영양성분표가 건조(생) 중량 기준이므로, 영양소는 항상 건조 중량으로 계산합니다.',
     spinach:
-      '시금치는 이 사이트에서 가장 크게 오해받는 식품입니다. 팬에 담긴 생잎이 원래 부피의 일부까지 줄어들다 보니 무게도 함께 무너진 것처럼 보이지만, USDA가 측정한 조리 수율은 77%로 생 100g은 조리 후에도 약 77g입니다. 잎은 수분을 잃기 훨씬 전에 공기와 구조를 잃습니다. 그래서 부피는 급격히 꺼지지만 무게는 23% 정도만 줄어듭니다.',
+      '시금치는 조리해도 무게의 약 23%만 줄어듭니다 — USDA 수율 77%로, 생잎 100g은 조리 후에도 약 77g입니다. 이 사이트에서 가장 크게 오해받는 식품입니다. 팬에 담긴 생잎이 원래 부피의 일부까지 줄어들다 보니 무게도 함께 무너진 것처럼 보입니다. 잎은 수분을 잃기 훨씬 전에 공기와 구조를 잃기 때문에, 부피는 급격히 꺼져도 무게는 거의 움직이지 않습니다.',
     potato:
-      '감자는 치밀한 전분 구조가 수분을 가둬 두기 때문에 조리해도 무게가 거의 그대로 유지됩니다. 조리 중에는 표면에서 아주 적은 양만 증발합니다.',
+      '삶은 감자는 무게의 약 6%만 줄지만, 구운 고구마는 22%에 가깝게 줄어듭니다. 치밀한 전분 구조가 수분을 안에 가둬 두기 때문에, 조리 중 표면에서 아주 적은 양만 증발합니다.',
     vegDefault:
-      '채소는 조리하면 세포벽이 물러지고 물이 증발하면서 수분이 어느 정도 빠집니다. 잎채소는 조직이 단단한 채소보다 훨씬 많이 줄어듭니다.',
+      '대부분의 채소는 조리하면 무게의 0%에서 약 25%가 줄어듭니다 — 브로콜리는 거의 그대로 나오고, 잎채소가 가장 많이 줄어듭니다. 조리하면 세포벽이 물러지고 물이 어느 정도 증발합니다.',
   },
   it: {
     chicken:
-      'Il pollo perde peso in cottura soprattutto per l’evaporazione dell’acqua. Le proteine si denaturano e si contraggono, spremendo fuori l’acqua trattenuta nelle fibre muscolari. Temperature più alte e tempi di cottura più lunghi aumentano la perdita di umidità.',
+      'Il petto di pollo perde circa il 28% del suo peso in cottura e la coscia circa il 31% — rese USDA del 72% e del 69%. La perdita è quasi tutta acqua: con il calore le proteine si denaturano e si contraggono, spremendo l’umidità fuori dalle fibre muscolari, e un po’ di grasso si scioglie. Temperature più alte e tempi più lunghi aumentano la perdita; un calore dolce e umido come la cottura in camicia la mantiene più vicina al 23%.',
     beef:
-      'Il manzo perde acqua e parte del grasso durante la cottura. I tagli magri conservano più peso perché si scioglie meno grasso, mentre quelli più grassi ne perdono di più con il grasso che cola.',
+      'Il manzo perde all’incirca il 15-30% del suo peso in cottura, a seconda del taglio e del contenuto di grasso. I tagli magri ne conservano di più perché si scioglie meno grasso; quelli più grassi ne perdono di più, con acqua e grasso che colano insieme.',
     pork:
-      'Il maiale perde umidità in cottura, man mano che le proteine si contraggono e l’acqua evapora. I tagli a cottura lenta, come la spalla, perdono molto più delle braciole cotte rapidamente, proprio per via del tempo di cottura prolungato.',
+      'Il maiale perde circa il 22% del suo peso come braciola a cottura rapida, e fino al 35% brasato a lungo e a bassa temperatura. Le proteine si contraggono e l’acqua evapora: più a lungo cuoce un taglio, più umidità elimina, ed è per questo che la spalla perde molto più di una braciola in padella.',
     turkey:
-      'Il petto di tacchino, come il pollo, perde umidità per evaporazione quando le proteine si contraggono durante la cottura. L’arrosto comporta una perdita leggermente maggiore rispetto alla cottura al vapore o in acqua.',
+      'Il petto di tacchino perde circa il 21% del suo peso quando è arrostito — una resa USDA del 79%. Come il pollo, perde quel peso perché le proteine si contraggono e l’umidità evapora; l’arrosto ne elimina un po’ più della cottura al vapore o in acqua.',
     salmon:
-      'Il salmone perde umidità mentre le sue proteine coagulano durante la cottura. Il contenuto di grassi aiuta a trattenere parte del peso, ma le proteine idrosolubili rilasciano comunque liquido.',
+      'Il salmone perde circa il 15% del suo peso in cottura — una resa USDA dell’85%, la più alta tra tutte le carni e i pesci qui presenti. Le sue proteine coagulano e rilasciano un po’ di liquido, ma l’elevato contenuto di grassi trattiene gran parte del peso.',
     shrimp:
-      'I gamberi perdono relativamente poco peso in cottura rispetto ad altre fonti proteiche: si tratta soprattutto di umidità superficiale. La loro struttura proteica densa conserva quasi tutto il peso iniziale.',
+      'I gamberi perdono circa il 25% del loro peso in cottura — una resa USDA del 75%. La perdita è soprattutto umidità della superficie e del guscio; la carne densa tiene, quindi i gamberi si alleggeriscono più di quanto sembrino rimpicciolirsi.',
     meatDefault:
-      'Gli alimenti ricchi di proteine perdono umidità in cottura: le proteine si contraggono e l’acqua evapora dal tessuto muscolare.',
+      'Carne e pesce perdono di norma il 20-35% del loro peso in cottura. Le proteine si contraggono e l’acqua evapora dal tessuto muscolare, e i tagli più grassi perdono peso anche perché il grasso si scioglie.',
     grains:
-      'Cereali, pasta e legumi assorbono acqua durante la cottura, ed è per questo che si gonfiano così tanto. I granuli di amido assorbono liquido e si rigonfiano, aumentando notevolmente il peso. I macronutrienti si calcolano sempre sul peso da secco (crudo), perché è così che li misurano le etichette nutrizionali.',
+      'Cereali, pasta e legumi più o meno raddoppiano o triplicano il proprio peso in cottura — le rese vanno da circa il 220% al 335%. I granuli di amido assorbono il liquido di cottura e si rigonfiano, così il peso da cotto supera di molto quello da secco. I macronutrienti si calcolano sempre sul peso da secco (crudo), perché è così che li misurano le etichette nutrizionali.',
     spinach:
-      'Gli spinaci sono l’alimento più frainteso del sito. Una padella di foglie crude si riduce a una frazione del volume iniziale, e sembra quindi che anche il peso sia crollato — ma l’USDA misura una resa di cottura del 77%: 100 g da crudo pesano ancora circa 77 g da cotti. Le foglie perdono aria e struttura molto prima di perdere acqua: il volume crolla, mentre il peso scende soltanto del 23% circa.',
+      'Gli spinaci perdono solo il 23% circa del loro peso in cottura — una resa USDA del 77%, quindi 100 g di foglie crude pesano ancora circa 77 g da cotte. È l’alimento più frainteso del sito: una padella di foglie crude si riduce a una frazione del suo volume, e sembra quindi che anche il peso sia crollato. Le foglie perdono aria e struttura molto prima dell’acqua, così il volume crolla mentre il peso si muove appena.',
     potato:
-      'Le patate conservano quasi tutto il loro peso in cottura perché la densa struttura amidacea trattiene l’umidità all’interno. Durante la cottura ne evapora solo una piccola parte dalla superficie.',
+      'Una patata lessata perde solo il 6% circa del suo peso; una patata dolce al forno ne perde quasi il 22%. La densa struttura amidacea trattiene l’umidità all’interno, e solo una piccola parte evapora dalla superficie durante la cottura.',
     vegDefault:
-      'Le verdure perdono un po’ di umidità in cottura, poiché le pareti cellulari si ammorbidiscono e l’acqua evapora. Le verdure a foglia ne perdono molto più di quelle compatte.',
+      'La maggior parte delle verdure perde tra lo 0% e il 25% circa del proprio peso in cottura — i broccoli escono praticamente invariati, mentre le verdure a foglia perdono di più. Le pareti cellulari si ammorbidiscono e un po’ d’acqua evapora durante la cottura.',
   },
   hi: {
     chicken:
-      'चिकन पकाने पर मुख्य रूप से नमी के भाप बनकर उड़ने से वजन कम होता है। प्रोटीन विकृत होकर सिकुड़ते हैं और मांसपेशी रेशों में बंधा पानी बाहर निकाल देते हैं। जितना अधिक तापमान और जितनी देर पकाएंगे, नमी उतनी ही ज्यादा घटेगी।',
+      'चिकन ब्रेस्ट पकाने पर अपने वजन का करीब 28% और चिकन थाई करीब 31% खोता है — USDA यील्ड क्रमशः 72% और 69%। यह कमी लगभग पूरी तरह पानी की होती है: गर्मी लगते ही प्रोटीन विकृत होकर सिकुड़ते हैं और मांसपेशी रेशों से नमी बाहर निचोड़ देते हैं, साथ ही थोड़ी चर्बी भी पिघल जाती है। ज्यादा तापमान और ज्यादा देर पकाने से कमी और बढ़ती है; पोचिंग जैसी धीमी, नम आंच पर यह 23% के आसपास रहती है।',
     beef:
-      'बीफ पकाने पर नमी और कुछ चर्बी खो देता है। कम चर्बी वाले कट ज्यादा वजन बनाए रखते हैं क्योंकि उनमें कम चर्बी पिघलती है, जबकि ज्यादा चर्बी वाले कट चर्बी टपकने से ज्यादा वजन खोते हैं।',
+      'बीफ पकाने पर कट और उसकी चर्बी की मात्रा के हिसाब से अपने वजन का करीब 15–30% खोता है। कम चर्बी वाले कट ज्यादा बनाए रखते हैं क्योंकि कम चर्बी पिघलती है; ज्यादा चर्बी वाले कट पानी और चर्बी दोनों टपकने से ज्यादा खोते हैं।',
     pork:
-      'पोर्क पकाते समय प्रोटीन सिकुड़ते हैं और पानी भाप बनकर उड़ता है, जिससे नमी घटती है। पोर्क शोल्डर जैसे धीमी आंच पर पकने वाले कट, लंबे समय तक पकने के कारण जल्दी पकने वाले चॉप से कहीं ज्यादा वजन खोते हैं।',
+      'पोर्क जल्दी पकने वाले चॉप के रूप में अपने वजन का करीब 22% खोता है, और धीमी आंच पर लंबे समय तक दम देने पर 35% तक। प्रोटीन सिकुड़ते हैं और पानी भाप बनकर उड़ता है; कट जितनी देर पकता है, उतनी ज्यादा नमी निकलती है, इसीलिए पोर्क शोल्डर तवे पर पके चॉप से कहीं ज्यादा खोता है।',
     turkey:
-      'टर्की ब्रेस्ट भी चिकन की तरह पकते समय प्रोटीन के सिकुड़ने पर नमी भाप बनकर खो देता है। भूनने में भाप देने या उबालने की तुलना में थोड़ा ज्यादा नुकसान होता है।',
+      'टर्की ब्रेस्ट रोस्ट करने पर अपने वजन का करीब 21% खोता है — USDA यील्ड 79%। चिकन की तरह यह वजन इसलिए घटता है क्योंकि प्रोटीन सिकुड़ते हैं और नमी भाप बनकर उड़ती है; भूनने में भाप देने या उबालने की तुलना में थोड़ी ज्यादा नमी निकलती है।',
     salmon:
-      'सैल्मन पकते समय उसके प्रोटीन जमने लगते हैं और नमी निकल जाती है। इसमें मौजूद वसा कुछ वजन बनाए रखने में मदद करती है, फिर भी पानी में घुलनशील प्रोटीन तरल छोड़ते हैं।',
+      'सैल्मन पकाने पर अपने वजन का करीब 15% खोता है — USDA यील्ड 85%, जो यहां दी गई किसी भी मांस या मछली में सबसे ज्यादा है। इसके प्रोटीन जमते हैं और कुछ तरल छोड़ते हैं, लेकिन ज्यादा वसा होने के कारण वजन का बड़ा हिस्सा बना रहता है।',
     shrimp:
-      'झींगा अन्य प्रोटीन स्रोतों की तुलना में पकाने पर काफी कम वजन खोता है — ज्यादातर ऊपरी सतह की नमी ही जाती है। इसकी सघन प्रोटीन संरचना मूल वजन का बड़ा हिस्सा बनाए रखती है।',
+      'झींगा पकाने पर अपने वजन का करीब 25% खोता है — USDA यील्ड 75%। यह कमी ज्यादातर ऊपरी सतह और छिलके की नमी की होती है; सघन मांस खुद जुड़ा रहता है, इसलिए झींगे जितना सिकुड़ते दिखते हैं उससे ज्यादा हल्के हो जाते हैं।',
     meatDefault:
-      'प्रोटीन से भरपूर खाद्य पदार्थ पकाने पर नमी खोते हैं, क्योंकि प्रोटीन सिकुड़ते हैं और मांसपेशी ऊतक से पानी भाप बनकर उड़ जाता है।',
+      'मांस और मछली पकाने पर आम तौर पर अपने वजन का 20–35% खोते हैं। प्रोटीन सिकुड़ते हैं और मांसपेशी ऊतक से पानी भाप बनकर उड़ता है, और ज्यादा चर्बी वाले कट चर्बी पिघलने से और वजन खोते हैं।',
     grains:
-      'अनाज, पास्ता और दालें पकते समय पानी सोखते हैं, इसीलिए इनका आकार इतना बढ़ जाता है। स्टार्च के कण तरल सोखकर फूल जाते हैं और वजन काफी बढ़ जाता है। मैक्रो हमेशा सूखे (कच्चे) वजन से गिने जाते हैं, क्योंकि पोषण लेबल भी इसी आधार पर बनते हैं।',
+      'अनाज, पास्ता और दालें पकाने पर वजन में करीब दो से तीन गुना हो जाते हैं — यील्ड लगभग 220% से 335% तक होती है। स्टार्च के कण पकाने का तरल सोखकर फूल जाते हैं, इसलिए पका वजन सूखे वजन से कहीं ज्यादा होता है। मैक्रो हमेशा सूखे (कच्चे) वजन से गिने जाते हैं, क्योंकि पोषण लेबल भी इसी आधार पर मापते हैं।',
     spinach:
-      'इस साइट पर पालक ही सबसे ज्यादा गलत आंका जाने वाला खाद्य पदार्थ है। कड़ाही में कच्चे पत्ते अपनी मूल मात्रा के एक अंश तक सिमट जाते हैं, इसलिए लगता है कि वजन भी उतना ही गिरा होगा — लेकिन USDA की मापी गई कुकिंग यील्ड 77% है, यानी 100g कच्चा पकने पर भी करीब 77g रहता है। पत्ते अपना पानी खोने से बहुत पहले अपनी हवा और बनावट खो देते हैं, इसलिए मात्रा तो तेजी से गिरती है पर वजन सिर्फ 23% के आसपास ही घटता है।',
+      'पालक पकाने पर अपने वजन का सिर्फ करीब 23% खोता है — USDA यील्ड 77%, यानी 100g कच्चे पत्ते पकने पर भी करीब 77g रहते हैं। यह इस साइट पर सबसे ज्यादा गलत आंका जाने वाला खाद्य पदार्थ है: कड़ाही में कच्चे पत्ते अपनी मात्रा के एक अंश तक सिमट जाते हैं, इसलिए लगता है कि वजन भी उतना ही गिरा होगा। पत्ते अपना पानी खोने से बहुत पहले अपनी हवा और बनावट खो देते हैं, इसलिए मात्रा तो तेजी से गिरती है पर वजन मुश्किल से बदलता है।',
     potato:
-      'आलू पकाने पर अपना ज्यादातर वजन बनाए रखते हैं, क्योंकि इनकी सघन स्टार्च संरचना नमी को भीतर रोके रखती है। पकाते समय सतह से बहुत थोड़ी नमी ही उड़ती है।',
+      'उबला आलू अपने वजन का सिर्फ करीब 6% खोता है; बेक की हुई शकरकंद करीब 22% खोती है। सघन स्टार्च संरचना नमी को भीतर रोके रखती है, इसलिए पकाते समय सतह से बहुत थोड़ी नमी ही उड़ती है।',
     vegDefault:
-      'सब्जियां पकाते समय कुछ नमी खोती हैं, क्योंकि कोशिका भित्तियां नरम पड़ती हैं और पानी भाप बनकर उड़ता है। पत्तेदार सब्जियां सघन सब्जियों से कहीं ज्यादा वजन खोती हैं।',
+      'ज्यादातर सब्जियां पकाने पर अपने वजन का 0% से करीब 25% तक खोती हैं — ब्रोकली लगभग जस की तस निकलती है, जबकि पत्तेदार सब्जियां सबसे ज्यादा खोती हैं। पकाते समय कोशिका भित्तियां नरम पड़ती हैं और कुछ पानी भाप बनकर उड़ता है।',
   },
 };
 
