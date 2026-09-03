@@ -68,11 +68,36 @@ function tagFoods(
   }));
 }
 
-const ALL_FOODS: Food[] = [
+const CATEGORISED_FOODS: Food[] = [
   ...tagFoods(foodData.categories.meat_poultry_seafood as any, 'meat_poultry_seafood'),
   ...tagFoods(foodData.categories.grains_pasta_legumes as any, 'grains_pasta_legumes'),
   ...tagFoods(foodData.categories.vegetables as any, 'vegetables'),
 ];
+
+/**
+ * Listing order for the calculator dropdown. White and brown rice are pulled up
+ * to sit directly after the chicken cuts — the pairing people search for most —
+ * while keeping their own "grains" category tag. Everything else stays in
+ * category order.
+ */
+const PROMOTED_AFTER_CHICKEN = ['white-rice', 'brown-rice'];
+
+const ALL_FOODS: Food[] = (() => {
+  const promoted = PROMOTED_AFTER_CHICKEN.map((id) =>
+    CATEGORISED_FOODS.find((f) => f.id === id)
+  ).filter((f): f is Food => f !== undefined);
+
+  const rest = CATEGORISED_FOODS.filter(
+    (f) => !PROMOTED_AFTER_CHICKEN.includes(f.id)
+  );
+
+  let insertAt = 0;
+  rest.forEach((f, i) => {
+    if (f.id.startsWith('chicken-')) insertAt = i + 1;
+  });
+  rest.splice(insertAt, 0, ...promoted);
+  return rest;
+})();
 
 export function getAllFoods(): Food[] {
   return ALL_FOODS;
@@ -147,7 +172,13 @@ export function calcResult(
  */
 export function getExplanationKey(food: Food): ExplanationKey {
   if (food.category === 'meat_poultry_seafood') {
-    if (food.id === 'chicken-breast' || food.id === 'chicken-thigh') return 'chicken';
+    if (
+      food.id === 'chicken-breast' ||
+      food.id === 'chicken-thigh' ||
+      food.id === 'chicken-drumstick' ||
+      food.id === 'chicken-wings'
+    )
+      return 'chicken';
     if (food.id.startsWith('ground-beef') || food.id === 'ribeye-steak') return 'beef';
     if (food.id.startsWith('pork')) return 'pork';
     if (food.id === 'turkey-breast') return 'turkey';
