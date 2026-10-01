@@ -13,9 +13,10 @@ interface Props {
   locale?: Locale;
   hreflangUrls?: Record<string, string>;
   ogImage?: string;
+  noindex?: boolean;
 }
 
-const { title, description, canonicalUrl, jsonLd, locale = 'en', hreflangUrls, ogImage } = Astro.props;
+const { title, description, canonicalUrl, jsonLd, locale = 'en', hreflangUrls, ogImage, noindex } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
@@ -30,6 +31,7 @@ const currentPath = Astro.url.pathname;
       jsonLd={jsonLd}
       hreflangUrls={hreflangUrls}
       ogImage={ogImage}
+      noindex={noindex}
     />
   </head>
   <body class="bg-[var(--color-canvas)] text-[var(--color-ink)] font-sans">

@@ -1,4 +1,9 @@
 import type { Locale } from './ui';
+import { FOOD_FAQ_ES_BY_ID } from './faq-food/es';
+import { FOOD_FAQ_FR_BY_ID } from './faq-food/fr';
+import { FOOD_FAQ_DE_BY_ID } from './faq-food/de';
+import { FOOD_FAQ_PT_BY_ID } from './faq-food/pt';
+import { FOOD_FAQ_IT_BY_ID } from './faq-food/it';
 
 /**
  * FAQ copy, per locale.
@@ -232,83 +237,7 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
   ],
 
-  ja: [
-    {
-      q: '栄養成分表示は生の重量と加熱後の重量、どちらが基準ですか？',
-      a: 'USDA FoodData Centralを含め、ほとんどの成分表示やデータベースは、明示的に「加熱後」と書かれていない限り生の重量を基準にしています。これが記録ミスの最大の原因です。表示されているグラム数は生の食品を指しているのに、多くの人は加熱後に量ってしまいます。',
-    },
-    {
-      q: '加熱するとカロリーや栄養素は変わりますか？',
-      a: '加熱そのものによって食品全体のカロリーや三大栄養素の総量が変わることはありません。変わるのは重量です。加熱中に水分（時には脂）が失われたり、逆に吸収されたりします。つまり縮む食品では同じ量のタンパク質・炭水化物・脂質がより少ないグラム数に凝縮され、米のように膨らむ食品ではより多いグラム数に分散します。縮めば1gあたりのカロリー密度は高く、膨らめば低くなりますが、栄養素の絶対量は変わりません。',
-    },
-    {
-      q: '栄養管理では食品を生と加熱後、どちらで量るべきですか？',
-      a: '一般には生で量るほうが正確で安定します。特に肉は、加熱時間と加熱方法が最終的な重量に予測しにくい形で影響するためです。米やパスタなどの穀物は、まとめて調理してから小分けにする都合で加熱後に量る人も多く、データベースの項目（乾燥・生か、加熱後か）と重量が対応していれば問題ありません。大事なのは一貫性です。どちらかに決め、アプリの項目がそれと一致していることを確認してください。',
-    },
-    {
-      q: 'なぜアプリによって同じ食品のカロリーが違うのですか？',
-      a: '最も多い理由は、一方の項目が生の重量、もう一方が同じ食品の加熱後の重量を指しているためです。加熱で水分量が変わるので、1gあたりのカロリーは生と加熱後で大きく異なります。うっかり違うほうを選んでしまうのはよくあることです。記録する前に、使っている項目が「生」なのか「加熱後」なのかを必ず確認してください。',
-    },
-    {
-      q: '計算機を使わずにすばやく見積もる方法はありますか？',
-      a: '大まかな目安として、オーブン焼きやローストの鶏胸肉なら、加熱後の重量を約0.72で割ると生の重量を推定できます。ただし正確な割合は食材と加熱方法で変わります。合い挽き肉、豚肉、魚、野菜、穀物はいずれも歩留まりが異なり、同じ食材でも調理法によって挙動が変わります。だからこそ、このような食材ごとの計算機のほうが、ひとつの目安を全体に当てはめるより正確な結果になります。',
-    },
-    {
-      q: '1人あたり生肉はどれくらい必要ですか？',
-      a: '献立を組む際の一般的な目安は、通常の1食あたり生のタンパク質で約110〜170gです。これは歩留まりデータとは別の、一般的な1人前の目安です。実際に食べる加熱後の分量は水分が抜けるぶん小さくなります。何人分でも、この計算機で必要な生の量を割り出せます。',
-    },
-    {
-      q: 'なぜ肉は加熱後に軽くなり、米は重くなるのですか？',
-      a: '肉は水分をたっぷり含んだ状態から始まり、熱でそれを失います。乾燥した穀物はほとんど水分がなく、逆に吸い込みます。肉・鶏肉・魚介類とほとんどの野菜はもともと水分が多いので、熱で水分が抜けて軽くなります。乾燥した穀物・パスタ・豆類は茹でる間に水を吸うため重くなります。万能の法則はなく、元の水分量と、加熱・水分との関わり方で決まります。',
-    },
-    {
-      q: '調理における歩留まり率とは何ですか？',
-      a: '歩留まり率とは、加熱後の重量を生の重量に対する百分率で表したものです。歩留まり75%なら、生100gが加熱後75gになるということで、重量が減ったことを意味します。100%を超える場合は重量が増えたということで、たとえば白米の歩留まりは300%、つまり乾燥100gが炊き上がりで約300gになります。100%未満は減量（ほとんどの肉と野菜）、100%超は増量（穀物・パスタ・豆類）を示します。このページの計算式セクションに出てくるのと同じ数値です。',
-    },
-    {
-      q: 'これらの歩留まり率はどれくらい正確ですか？',
-      a: 'USDAのデータに基づく研究上の平均値であり、あなたの手元の食材について保証するものではありません。実際の結果は、部位、大きさ、元の水分量、加熱方法をどれだけ厳密に管理するかによって変わり、これらは調理のたびに異なります。目的は実験室並みの精度ではなく、加熱による減少をまったく考慮しない場合より確実に正確に近づけることです。日常の記録の範囲では、これらの平均値を使う誤差は、生と加熱後の重量を同じとみなす誤差よりはるかに小さくなります。',
-    },
-  ],
 
-  ko: [
-    {
-      q: '영양성분표는 생 중량 기준인가요, 조리 후 기준인가요?',
-      a: 'USDA FoodData Central을 포함해 거의 모든 영양성분표와 데이터베이스는 라벨에 "조리됨"이라고 명시되지 않는 한 생 중량을 기준으로 값을 표기합니다. 이것이 기록 오류의 가장 흔한 원인입니다. 라벨의 그램 수는 생 식품을 가리키는데, 대부분의 사람은 조리한 뒤에 무게를 재기 때문입니다.',
-    },
-    {
-      q: '조리하면 열량과 영양소가 달라지나요?',
-      a: '조리 자체로 식품에 든 총 열량과 다량영양소가 달라지지는 않습니다. 달라지는 것은 무게입니다. 조리 중에 물(때로는 지방)이 빠져나가거나 반대로 흡수됩니다. 즉 줄어드는 식품에서는 같은 양의 단백질·탄수화물·지방이 더 적은 그램 수에 담기고, 쌀처럼 불어나는 식품에서는 더 많은 그램 수에 퍼집니다. 줄어들면 g당 열량 밀도가 높아지고 불어나면 낮아지지만, 영양소의 절대량은 그대로입니다.',
-    },
-    {
-      q: '영양소를 기록할 때 생으로 재야 하나요, 조리 후에 재야 하나요?',
-      a: '보통은 생으로 재는 쪽이 더 정확하고 일관됩니다. 특히 고기는 조리 시간과 방식이 최종 중량에 예측하기 어려운 방식으로 영향을 주기 때문입니다. 쌀·파스타 같은 곡물은 한꺼번에 조리한 뒤 나눠 담는 경우가 많아 조리 후에 재는 사람도 많은데, 중량을 데이터베이스의 알맞은 항목(건조·생 또는 조리 후)과 맞추기만 하면 문제없습니다. 중요한 것은 일관성입니다. 한 가지 방식을 정하고, 사용하는 앱 항목이 그 방식과 맞는지 확인하세요.',
-    },
-    {
-      q: '왜 앱마다 같은 식품의 열량이 다르게 나오나요?',
-      a: '가장 흔한 이유는 한 항목은 생 중량, 다른 항목은 같은 식품의 조리 후 중량을 가리키기 때문입니다. 조리하면 수분량이 달라지므로 g당 열량이 생과 조리 후 사이에서 크게 차이 납니다. 실수로 엉뚱한 항목을 고르기 쉽습니다. 기록하기 전에 지금 쓰는 항목이 "생"인지 "조리 후"인지 항상 확인하세요.',
-    },
-    {
-      q: '계산기 없이 빠르게 어림잡는 방법이 있나요?',
-      a: '대략적인 요령: 오븐에 굽거나 로스트한 닭 가슴살이라면 조리 후 중량을 약 0.72로 나누면 생 중량을 어림할 수 있습니다. 다만 정확한 비율은 식품과 조리법에 따라 달라집니다. 다진 소고기, 돼지고기, 생선, 채소, 곡물은 수율이 모두 다르고, 같은 식품도 조리 방식에 따라 다르게 움직입니다. 그래서 이런 식품별 계산기가 하나의 일괄 추정치보다 정확한 결과를 줍니다.',
-    },
-    {
-      q: '1인당 생고기는 얼마나 필요할까요?',
-      a: '식단을 짤 때 흔히 쓰는 기준은 일반적인 한 끼에 1인당 생 단백질 약 110~170g입니다. 이는 수율 데이터와는 별개인 일반적인 1인분 추정치이며, 실제로 먹는 조리 후 분량은 수분이 빠져 더 작아집니다. 계산기를 쓰면 원하는 인분 수에 맞춰 생고기를 얼마나 준비해야 할지 알 수 있습니다.',
-    },
-    {
-      q: '왜 고기는 조리 후 무게가 줄고 쌀은 늘어나나요?',
-      a: '고기는 물을 잔뜩 머금은 상태에서 시작해 열에 그 물을 잃고, 마른 곡물은 물이 거의 없어 오히려 빨아들입니다. 육류, 가금류, 해산물과 대부분의 채소는 원래 물이 많아서 열이 그 수분을 밀어내면 무게가 줍니다. 마른 곡물, 파스타, 콩류는 삶는 동안 물을 흡수하므로 무게가 늘어납니다. 하나의 보편 법칙은 없고, 처음의 수분 함량과 조리 중 열·수분과의 상호작용에 따라 달라집니다.',
-    },
-    {
-      q: '조리에서 수율(%)이란 무엇인가요?',
-      a: '수율은 조리 후 중량을 생 중량에 대한 백분율로 나타낸 값입니다. 수율 75%는 생 100g이 조리 후 75g이 된다는 뜻으로, 무게가 줄었다는 의미입니다. 100%를 넘으면 무게가 늘었다는 뜻으로, 예를 들어 백미의 수율은 300%이므로 마른 쌀 100g이 조리 후 약 300g이 됩니다. 100% 미만은 감소(대부분의 육류와 채소), 100% 초과는 증가(곡물, 파스타, 콩류)를 나타냅니다. 이 페이지의 공식 섹션에 나오는 것과 같은 값입니다.',
-    },
-    {
-      q: '이 수율 값은 얼마나 정확한가요?',
-      a: 'USDA 데이터에 기반한 연구 평균값이며, 여러분이 지금 손에 든 식재료에 대한 보장은 아닙니다. 실제 결과는 정확한 부위, 크기, 처음의 수분 함량, 조리법을 얼마나 정밀하게 통제하는지에 따라 달라지며, 이 변수들은 조리할 때마다 다릅니다. 목표는 실험실 수준의 정밀도가 아니라, 조리 손실을 아예 무시할 때보다 훨씬 정확한 값에 가까워지게 하는 것입니다. 대부분의 기록 목적에서는 이 평균값을 쓰는 오차가 생 중량과 조리 후 중량을 같다고 보는 오차보다 훨씬 작습니다.',
-    },
-  ],
 
   it: [
     {
@@ -349,44 +278,6 @@ export const HOME_FAQ: Record<Locale, FaqItem[]> = {
     },
   ],
 
-  hi: [
-    {
-      q: 'पोषण लेबल कच्चे वजन पर आधारित होते हैं या पके वजन पर?',
-      a: 'USDA FoodData Central समेत लगभग सभी लेबल और डेटाबेस मान कच्चे वजन के आधार पर देते हैं, बशर्ते लेबल पर साफ तौर पर "पका हुआ" न लिखा हो। ट्रैकिंग में गलती की यह सबसे आम वजह है: लेबल पर लिखे ग्राम कच्चे भोजन के होते हैं, लेकिन ज्यादातर लोग पकाने के बाद तौलते हैं।',
-    },
-    {
-      q: 'क्या पकाने से कैलोरी और मैक्रो बदल जाते हैं?',
-      a: 'पकाने भर से भोजन में मौजूद कुल कैलोरी और मैक्रोन्यूट्रिएंट नहीं बदलते। जो बदलता है वह है वजन: पकाते समय पानी (और कभी-कभी चर्बी) निकल जाता है या सोख लिया जाता है। यानी सिकुड़ने वाले खाद्य पदार्थों में उतना ही प्रोटीन, कार्ब्स और वसा कम ग्राम में सिमट जाता है, और चावल जैसे फैलने वाले पदार्थों में ज्यादा ग्राम में फैल जाता है। सिकुड़ने पर प्रति ग्राम कैलोरी घनत्व बढ़ता है और फैलने पर घटता है — लेकिन पोषक तत्वों की कुल मात्रा वही रहती है।',
-    },
-    {
-      q: 'मैक्रो ट्रैक करते समय भोजन कच्चा तौलूं या पका?',
-      a: 'आमतौर पर कच्चा तौलना ज्यादा सटीक और एकसमान होता है, खास तौर पर मांस के लिए, क्योंकि पकाने का समय और तरीका दोनों अंतिम वजन को ऐसे प्रभावित करते हैं जिनका अंदाजा लगाना मुश्किल है। चावल, पास्ता और दूसरे अनाजों के लिए कई लोग पका हुआ तौलना पसंद करते हैं, क्योंकि वे एक साथ पकाकर बाद में हिस्से बांटते हैं — यह ठीक काम करता है, बशर्ते वजन डेटाबेस की सही प्रविष्टि (सूखा/कच्चा या पका) से मेल खाता हो। असली बात एकरूपता है: एक तरीका चुनें और देखें कि ऐप की प्रविष्टि उसी से मेल खाती हो।',
-    },
-    {
-      q: 'एक ही खाद्य पदार्थ के लिए अलग-अलग ऐप अलग कैलोरी क्यों दिखाते हैं?',
-      a: 'सबसे आम वजह यह है कि एक प्रविष्टि उसी खाद्य पदार्थ के कच्चे वजन की है और दूसरी पके वजन की। पकाने से भोजन में पानी की मात्रा बदल जाती है, इसलिए कच्ची और पकी प्रविष्टियों में प्रति ग्राम कैलोरी काफी अलग होती है। गलती से गलत प्रविष्टि चुन लेना बहुत आसान है। दर्ज करने से पहले हमेशा जांच लें कि आप जो प्रविष्टि इस्तेमाल कर रहे हैं उसमें "कच्चा" लिखा है या "पका"।',
-    },
-    {
-      q: 'क्या कैलकुलेटर के बिना इसका जल्दी अंदाजा लगाने का कोई तरीका है?',
-      a: 'मोटा नियम यह है: बेक या रोस्ट किए चिकन ब्रेस्ट के लिए, पके वजन को लगभग 0.72 से भाग दें और कच्चे वजन का अनुमान मिल जाएगा। लेकिन सही प्रतिशत खाद्य पदार्थ और पकाने के तरीके से बदलता है — कीमा, पोर्क, मछली, सब्जियां और अनाज, सबके यील्ड अलग हैं, और एक ही चीज पकाने के तरीके के हिसाब से अलग व्यवहार करती है। इसीलिए इस जैसा हर खाद्य पदार्थ के लिए अलग कैलकुलेटर किसी एक सामान्य अनुमान से ज्यादा सही नतीजे देता है।',
-    },
-    {
-      q: 'प्रति व्यक्ति कितना कच्चा मांस चाहिए?',
-      a: 'योजना बनाने का आम नियम है कि सामान्य भोजन में प्रति व्यक्ति करीब 110–170 ग्राम कच्चा प्रोटीन रखें। यह हिस्से का सामान्य अनुमान है और यील्ड डेटा से अलग है — पकने के बाद असली हिस्सा नमी घटने की वजह से छोटा रह जाएगा। आप कैलकुलेटर से जान सकते हैं कि किसी भी संख्या में हिस्सों के लिए कितने कच्चे प्रोटीन से शुरुआत करनी है।',
-    },
-    {
-      q: 'मांस का वजन पकाने पर घटता है लेकिन चावल का बढ़ता क्यों है?',
-      a: 'मांस पानी से भरा हुआ शुरू होता है और गर्मी में वह पानी खो देता है; सूखे अनाज में पानी लगभग होता ही नहीं, वे उसे सोख लेते हैं। मांस, मुर्गी, समुद्री भोजन और ज्यादातर सब्जियों में पहले से बहुत पानी होता है, इसलिए गर्मी उस नमी को बाहर निकालती है और वजन घटता है। सूखे अनाज, पास्ता और दालें उबालते समय पानी सोखते हैं, इसलिए वजन बढ़ता है। कोई एक सार्वभौमिक नियम नहीं है — यह शुरुआती पानी की मात्रा और पकाते समय गर्मी व तरल से उसके सामना पर निर्भर करता है।',
-    },
-    {
-      q: 'खाना पकाने में यील्ड प्रतिशत का क्या मतलब है?',
-      a: 'यील्ड प्रतिशत यानी पका वजन, कच्चे वजन के प्रतिशत के रूप में। 75% यील्ड का मतलब है कि 100g कच्चा भोजन पकने के बाद 75g रह जाता है — यानी वजन घटा। 100% से ऊपर का यील्ड मतलब वजन बढ़ा; जैसे सफेद चावल का यील्ड 300% है, यानी 100g सूखा चावल पकने पर करीब 300g हो जाता है। 100% से नीचे का कोई भी आंकड़ा वजन घटने का संकेत है (ज्यादातर मांस और सब्जियां), और 100% से ऊपर का आंकड़ा वजन बढ़ने का (अनाज, पास्ता, दालें)। यह वही आंकड़ा है जो इस पेज के फॉर्मूला हिस्से में दिखता है।',
-    },
-    {
-      q: 'ये यील्ड प्रतिशत कितने सटीक हैं?',
-      a: 'ये USDA डेटा पर आधारित शोधजन्य औसत हैं, आपके किसी खास टुकड़े के लिए गारंटी नहीं। असली नतीजे कट, आकार, शुरुआती नमी और आप पकाने के तरीके को कितनी सटीकता से नियंत्रित करते हैं, इन सब पर बदलते हैं — और ये चीजें हर बार अलग होती हैं। मकसद प्रयोगशाला जैसी सटीकता देना नहीं, बल्कि आपको उस स्थिति से कहीं ज्यादा सही आंकड़े के करीब लाना है जहां पकाने में होने वाली कमी को गिना ही न जाए। रोजमर्रा की ट्रैकिंग में इन औसतों से होने वाली गलती, कच्चे और पके वजन को एक मान लेने की गलती से कहीं छोटी है।',
-    },
-  ],
 };
 
 // ── Food-page FAQ ──────────────────────────────────────────────────────────
@@ -757,151 +648,7 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     ],
   },
 
-  ja: {
-    chicken: [
-      {
-        q: '鶏胸肉は加熱するとどれくらい縮みますか？',
-        a: '鶏胸肉は加熱すると重量の約28%を失います。つまり生200gの胸肉は加熱後およそ144gになります。歩留まりは方法によって多少変わります。オーブン焼き・ロースト=72%、グリル=70%、茹で・ポーチ=77%、フライパン焼き=72%（USDAデータ）。',
-      },
-      {
-        q: '鶏肉のマクロは生と加熱後、どちらで記録すべきですか？',
-        a: '生で記録します。USDAの栄養データも多くの食品表示も生の鶏肉で測定されているため、その数値と一致するのは生の重量です。生の重量を記録するか、加熱後の重量をまず生に戻してください。この計算機は換算の向きにかかわらず、常に生重量に換算した値からマクロを算出します。',
-      },
-      {
-        q: 'なぜ鶏肉は加熱すると軽くなるのですか？',
-        a: '水分が抜けるからです。鶏胸肉は重量の約70〜75%が水分で、加熱するとタンパク質が変性・収縮してその水分を筋繊維から押し出し、脂も一部溶け出します——合わせて約28%の減量になります。タンパク質自体はほぼそのまま残るので、同じ栄養がより小さく密度の高い状態に凝縮されます。',
-      },
-      {
-        q: '鶏胸肉は加熱するとどれくらい重量が減りますか？',
-        a: '約28%です。生の鶏胸肉100gは加熱後およそ72g（USDA歩留まり72%）になります。方法によって多少変わり、オーブン焼き・ローストで約72%、グリルで約70%、茹で・ポーチで約77%、フライパン焼きで約72%を保ちます。方法別の結果は上の計算機の加熱方法切り替えで確認できます。',
-      },
-      {
-        q: '加熱方法によって実際に違いは出ますか？',
-        a: '出ます。グリルのように高温で乾いた加熱は、茹でやポーチのような湿式加熱よりも表面から多くの水分を蒸発させます。だからグリルした鶏胸肉の歩留まりは70%前後、茹でやポーチでは水分が残り77%になります。歩留まりの7ポイント差でも、記録すべき重量における実質的な差です。',
-      },
-      {
-        q: '加熱後の鶏肉の重量を生に戻すにはどうすればいいですか？',
-        a: '使った加熱方法の歩留まりを小数にして、加熱後の重量を割ってください。オーブン焼き・ローストの鶏胸肉なら加熱後重量÷0.72、グリルなら÷0.70、茹で・ポーチなら÷0.77です。上の計算機で「加熱後→生」に切り替え、加熱方法を選べば自動で計算されます。',
-      },
-      {
-        q: '鶏胸肉の生と加熱後の比率はどれくらいですか？',
-        a: 'およそ100:72です——生の鶏胸肉100gはオーブン焼きやローストでおよそ72gになります。加熱方法によって少し変わり、グリルでは100:70に近づき、茹でやポーチでは水分が残って約100:77になります。',
-      },
-      {
-        q: '鶏肉は加熱後に何グラムになりますか？',
-        a: 'USDAの歩留まり72%に基づくと、生の鶏胸肉100gはオーブン焼きやローストでおよそ72gになります。グリルなら約70g、茹でやポーチなら約77g、フライパン焼きなら約72gです。上の計算機に元の重量を入力すれば、加熱方法ごとの正確な結果が分かります。',
-      },
-    ],
-    grains: [
-      {
-        q: '{food}は乾燥状態と加熱後、どちらで量るべきですか？',
-        a: '乾燥状態で量ります。USDAの栄養データは乾燥した未調理の状態で測定されているため、{food}は乾燥状態で量ってその値を記録してください。あるいはここにどちらの重量を入力しても、計算機が換算します。',
-      },
-      {
-        q: '{food}は加熱するとどれくらい重くなりますか？',
-        a: '歩留まりは{pct}%です。{food}を加熱すると、重量は乾燥時の約{mult}倍になります。乾燥100gが加熱後およそ{pct}gになります。',
-      },
-      {
-        q: 'なぜ{food}は肉と違って加熱すると重くなるのですか？',
-        a: '水を吸うからです。乾燥した状態ではほとんど水分がなく、茹でると周囲の水分を吸収して乾燥重量の約{mult}倍に膨らみます——加熱後の重量は乾燥時より大幅に増えます。肉は最初から多くの水分を含んでおり、加熱でそれが失われるので逆方向になります。',
-      },
-    ],
-    rice: [
-      {
-        q: '乾燥した米からご飯はどれくらいできますか？',
-        a: '乾燥した白米100gからは、およそ300gの炊いたご飯ができます。炊く間に水を吸うため重量が3倍になるのです。これは白米の歩留まり300%（USDA）に基づいています。レシピで炊いたご飯300gが必要なら、乾燥100gから始めればよいことになります。乾燥米と炊いた米では1gあたりのカロリー密度が大きく異なるので、記録する重量を正しい項目に合わせることが重要です。',
-      },
-    ],
-    generic: [
-      {
-        q: '{food}は加熱するとどれくらい重量が減りますか？',
-        a: '調理歩留まりは{pct}%です。{food}を加熱すると重量の{loss}%を失います。出典: {source}。',
-      },
-      {
-        q: '{food}のマクロは生と加熱後のどちらで記録すべきですか？',
-        a: '生の重量で記録します。USDAの栄養値は生の重量が基準なので、生の重量で記録し、そこからマクロを計算してください。この計算機は常に生重量に換算した値からマクロを算出します。',
-      },
-    ],
-    spinach: [
-      {
-        q: 'ほうれん草は加熱するとどれくらい縮みますか？',
-        a: '重量で見れば約23%だけです。USDAのデータではほうれん草の調理歩留まりは77%で、生の葉100gは加熱後およそ77gになります。かさで見ると話は別で、フライパン一杯の生の葉がひとつかみほどまで縮みます。この2つの印象のずれが誤解のもとです。しんなりする過程で失われるのは、生の葉をかさ高くしていた空気と構造であり、水分の大半はそのまま残ります。マクロを記録するなら、フライパンの縮み具合で判断せず、はかりで量ってください。',
-      },
-    ],
-  },
 
-  ko: {
-    chicken: [
-      {
-        q: '닭 가슴살은 조리하면 얼마나 줄어드나요?',
-        a: '닭 가슴살은 조리하면 무게의 약 28%가 줄어듭니다. 즉 생 200g이 조리 후 약 144g이 됩니다. 수율은 방식에 따라 조금씩 다릅니다. 오븐 구이·로스트 = 72%, 직화 구이 = 70%, 삶기·수란식 조리 = 77%, 팬 프라이 = 72%(USDA 자료).',
-      },
-      {
-        q: '닭고기 영양소는 생으로 기록하나요, 조리 후로 기록하나요?',
-        a: '생으로 기록하세요. USDA 영양 데이터와 대부분의 식품 라벨은 생닭을 기준으로 측정되므로, 그 수치와 맞는 것은 생 중량입니다. 생 중량을 기록하거나, 조리 후 중량을 먼저 생 중량으로 되돌리세요. 이 계산기는 변환 방향과 관계없이 항상 생중량 기준으로 영양소를 산출합니다.',
-      },
-      {
-        q: '닭고기는 왜 조리하면 무게가 줄어드나요?',
-        a: '물이 빠져나가기 때문입니다. 닭 가슴살은 무게의 약 70~75%가 물인데, 열이 단백질을 변성·수축시키면서 그 수분을 근섬유 밖으로 밀어내고 지방도 일부 빠져나옵니다 — 이 둘을 합친 것이 약 28%의 무게 감소입니다. 단백질 자체는 거의 그대로 남아서, 같은 영양이 더 작고 밀도 높은 덩어리에 담기게 됩니다.',
-      },
-      {
-        q: '닭 가슴살은 조리하면 무게가 얼마나 줄어드나요?',
-        a: '약 28%입니다. 생 닭 가슴살 100g은 조리 후 약 72g으로 줄며, USDA 수율 72%에 해당합니다. 방식에 따라 조금 달라져서 오븐 구이·로스트는 약 72%, 직화 구이는 약 70%, 삶기·수란식은 약 77%, 팬 프라이는 약 72%가 남습니다. 방식별 결과는 위 계산기의 조리법 선택으로 확인하세요.',
-      },
-      {
-        q: '조리 방법이 실제로 의미 있는 차이를 만드나요?',
-        a: '그렇습니다. 직화 구이처럼 더 뜨겁고 건조한 열은 삶기나 수란식 조리 같은 습열 방식보다 표면에서 수분을 더 많이 증발시킵니다. 그래서 직화로 구운 닭 가슴살의 수율은 70% 안팎이고, 삶거나 수란식으로 조리하면 수분이 더 남아 77%가 됩니다. 수율 7퍼센트포인트 차이도 기록해야 할 무게에서 실제로 유의미한 차이입니다.',
-      },
-      {
-        q: '조리된 닭고기 무게를 생 무게로 되돌리려면 어떻게 하나요?',
-        a: '사용한 조리법의 수율을 소수로 바꿔 조리 후 중량을 나누세요. 오븐에 굽거나 로스트한 닭 가슴살은 조리 후 중량 ÷ 0.72, 직화 구이는 ÷ 0.70, 삶기나 수란식 조리는 ÷ 0.77입니다. 위 계산기의 "조리 후 → 생" 전환을 쓰면 조리법을 고르는 순간 자동으로 계산됩니다.',
-      },
-      {
-        q: '닭 가슴살의 생·조리 후 비율은 어떻게 되나요?',
-        a: '대략 100:72입니다 — 생 닭 가슴살 100g은 오븐에 굽거나 로스트하면 약 72g이 됩니다. 비율은 조리법에 따라 조금씩 달라져서, 직화 구이는 100:70에 가깝고, 삶거나 수란식으로 조리하면 수분이 더 남아 약 100:77이 됩니다.',
-      },
-      {
-        q: '닭고기는 조리 후 무게가 얼마나 되나요?',
-        a: 'USDA 수율 72%를 기준으로, 생 닭 가슴살 100g은 오븐에 굽거나 로스트하면 약 72g이 됩니다. 직화로 구우면 약 70g, 삶거나 수란식으로 조리하면 약 77g, 팬에 구우면 약 72g입니다. 위 계산기에 시작 중량을 입력하면 조리법별 정확한 결과를 볼 수 있습니다.',
-      },
-    ],
-    grains: [
-      {
-        q: '{food}은(는) 건조 상태로 재야 하나요, 조리 후에 재야 하나요?',
-        a: '마른 상태로 재세요. USDA 영양 데이터는 조리하지 않은 마른 상태를 기준으로 측정되므로, {food}을(를) 마른 상태로 재고 그 영양소를 기록하세요. 아니면 여기에 어느 쪽 중량을 입력하든 계산기가 변환해 줍니다.',
-      },
-      {
-        q: '{food}은(는) 조리하면 무게가 얼마나 늘어나나요?',
-        a: '수율은 {pct}%입니다. {food}을(를) 조리하면 무게가 건조 중량의 약 {mult}배가 됩니다. 마른 상태 100g이 조리 후 약 {pct}g이 됩니다.',
-      },
-      {
-        q: '{food}은(는) 왜 고기처럼 줄지 않고 조리하면 무거워지나요?',
-        a: '물을 빨아들이기 때문입니다. 마른 상태에서는 물이 거의 없어서, 삶으면 주변의 물을 흡수해 건조 중량의 약 {mult}배로 불어납니다 — 조리 후 중량이 마른 중량보다 훨씬 커집니다. 고기는 이미 물을 많이 머금고 있고 열이 그 물을 밀어내기 때문에 반대 방향으로 움직입니다.',
-      },
-    ],
-    rice: [
-      {
-        q: '마른 쌀로 밥을 지으면 얼마나 나오나요?',
-        a: '마른 백미 100g으로는 약 300g의 밥이 나옵니다. 익으면서 물을 흡수해 무게가 세 배가 되기 때문입니다. 이는 백미의 USDA 수율 300%를 근거로 합니다. 따라서 조리법에서 밥 300g이 필요하다면 마른 쌀 약 100g으로 시작하면 됩니다. 마른 쌀과 지은 밥은 g당 열량 밀도가 크게 다르므로, 기록하는 중량을 알맞은 항목에 맞추는 것이 중요합니다.',
-      },
-    ],
-    generic: [
-      {
-        q: '{food}은(는) 조리하면 무게가 얼마나 줄어드나요?',
-        a: '조리 수율은 {pct}%입니다. {food}을(를) 조리하면 무게의 {loss}%가 줄어듭니다. 출처: {source}.',
-      },
-      {
-        q: '{food}의 영양소는 생 기준으로 기록하나요, 조리 후 기준으로 기록하나요?',
-        a: '생 기준입니다. USDA 영양 수치는 생 중량이 기준이므로, 생 중량을 기록하고 거기서 영양소를 계산하세요. 이 계산기는 항상 생중량 기준으로 영양소를 계산합니다.',
-      },
-    ],
-    spinach: [
-      {
-        q: '시금치는 조리하면 얼마나 줄어드나요?',
-        a: '무게로 보면 약 23%뿐입니다. USDA 자료에 따르면 시금치의 조리 수율은 77%로, 생잎 100g이 조리 후 약 77g이 됩니다. 부피로 보면 이야기가 다릅니다. 팬 가득했던 생잎이 한 줌 정도로 줄어들고, 이 두 인상의 차이가 바로 착각의 원인입니다. 숨이 죽는 과정에서 빠지는 것은 생잎을 부피 있게 만들던 공기와 구조이고, 수분은 대부분 그대로 남습니다. 매크로를 기록한다면 팬이 얼마나 줄었는지로 판단하지 말고 시금치를 저울에 다세요.',
-      },
-    ],
-  },
 
   it: {
     chicken: [
@@ -976,78 +723,6 @@ export const FOOD_FAQ: Record<Locale, FoodFaqSet> = {
     ],
   },
 
-  hi: {
-    chicken: [
-      {
-        q: 'चिकन ब्रेस्ट पकाने पर कितना सिकुड़ता है?',
-        a: 'चिकन ब्रेस्ट पकाने पर अपना करीब 28% वजन खो देता है, यानी 200g कच्चा ब्रेस्ट पकने पर लगभग 144g रह जाता है। यील्ड तरीके के हिसाब से थोड़ा बदलती है: बेक/रोस्ट = 72%, ग्रिल = 70%, उबला/पोच्ड = 77%, तवे पर तला = 72% (USDA डेटा)।',
-      },
-      {
-        q: 'चिकन के मैक्रो कच्चे वजन पर गिनूं या पके पर?',
-        a: 'कच्चे वजन पर। USDA का पोषण डेटा और ज्यादातर फूड लेबल कच्चे चिकन पर मापे जाते हैं, इसलिए उन आंकड़ों से जो मेल खाता है वह कच्चा वजन है — उसे दर्ज करें, या पहले अपने पके वजन को कच्चे में बदल लें। यह कैलकुलेटर किसी भी दिशा में बदलाव करने पर हमेशा कच्चे वजन के बराबर मान से मैक्रो निकालता है।',
-      },
-      {
-        q: 'चिकन पकाने पर वजन क्यों खोता है?',
-        a: 'इसमें से पानी निकल जाता है। चिकन ब्रेस्ट के वजन का करीब 70–75% हिस्सा पानी होता है; गर्मी प्रोटीन को विकृत करके सिकोड़ती है, जिससे वह नमी मांसपेशी रेशों से बाहर निकलती है, और कुछ चर्बी भी पिघल जाती है — दोनों मिलाकर यही करीब 28% वजन की कमी है। प्रोटीन खुद लगभग जस का तस रहता है, इसलिए उतना ही पोषण एक छोटे, ज्यादा सघन टुकड़े में सिमट जाता है।',
-      },
-      {
-        q: 'चिकन ब्रेस्ट पकाने पर कितना वजन खोता है?',
-        a: 'करीब 28%। 100g कच्चा चिकन ब्रेस्ट पकने पर घटकर करीब 72g रह जाता है, यानी USDA यील्ड 72%। तरीके के हिसाब से थोड़ा बदलता है: बेक या रोस्ट करीब 72%, ग्रिल करीब 70%, उबला या पोच्ड करीब 77%, और तवे पर तला करीब 72% बनाए रखता है। तरीके के हिसाब से नतीजे के लिए ऊपर कैलकुलेटर में पकाने का तरीका चुनें।',
-      },
-      {
-        q: 'क्या पकाने के तरीके से सचमुच फर्क पड़ता है?',
-        a: 'हां। ग्रिल जैसी तेज और सूखी गर्मी, उबालने या पोच करने जैसी नम विधियों की तुलना में सतह से ज्यादा नमी उड़ा देती है। इसीलिए ग्रिल किए चिकन ब्रेस्ट की यील्ड करीब 70% होती है, जबकि उबला या पोच्ड चिकन ज्यादा नमी रखकर 77% पर रहता है। यील्ड में 7 प्रतिशत अंक का अंतर भी, आपको दर्ज करने वाले वजन में असली फर्क है।',
-      },
-      {
-        q: 'पके चिकन के वजन को वापस कच्चे में कैसे बदलूं?',
-        a: 'आपने जो तरीका इस्तेमाल किया, उसकी यील्ड को दशमलव में लेकर पके वजन को उससे भाग दें। बेक या रोस्ट किए चिकन ब्रेस्ट के लिए: पका वजन ÷ 0.72। ग्रिल के लिए: ÷ 0.70। उबले या पोच्ड के लिए: ÷ 0.77। ऊपर कैलकुलेटर में "पका → कच्चा" चुनते ही, और पकाने का तरीका चुनते ही, यह अपने आप हो जाता है।',
-      },
-      {
-        q: 'चिकन ब्रेस्ट का कच्चे से पके का अनुपात क्या है?',
-        a: 'करीब 100:72 — 100g कच्चा चिकन ब्रेस्ट बेक या रोस्ट करने पर करीब 72g देता है। तरीके के हिसाब से अनुपात थोड़ा बदलता है: ग्रिल करने पर यह 100:70 के करीब पहुंचता है, जबकि उबालने या पोच करने पर ज्यादा नमी बचती है, करीब 100:77।',
-      },
-      {
-        q: 'पकने के बाद चिकन का वजन कितना होता है?',
-        a: 'USDA की 72% यील्ड के आधार पर, 100g कच्चा चिकन ब्रेस्ट बेक या रोस्ट करने के बाद करीब 72g रह जाता है। ग्रिल करें तो करीब 70g, उबालें या पोच करें तो करीब 77g, और तवे पर तलें तो करीब 72g। अपने शुरुआती वजन को ऊपर कैलकुलेटर में डालें और अपने तरीके के लिए सटीक नतीजा पाएं।',
-      },
-    ],
-    grains: [
-      {
-        q: '{food} को सूखा तौलूं या पकाने के बाद?',
-        a: 'सूखा। USDA का पोषण डेटा सूखे, बिना पके उत्पाद पर मापा जाता है, इसलिए {food} को सूखा तौलें और वही मैक्रो दर्ज करें — या यहां दोनों में से कोई भी वजन डालें, कैलकुलेटर बदलाव कर देगा।',
-      },
-      {
-        q: '{food} पकाने पर वजन कितना बढ़ता है?',
-        a: 'यील्ड {pct}% है: {food} पकाने पर वजन सूखे वजन का करीब {mult} गुना हो जाता है। 100g सूखा पकने पर लगभग {pct}g हो जाता है।',
-      },
-      {
-        q: '{food} पकाने पर वजन मांस की तरह घटने के बजाय बढ़ता क्यों है?',
-        a: 'यह पानी सोख लेता है। सूखे उत्पाद में लगभग पानी होता ही नहीं, इसलिए उबालने पर यह आसपास का तरल सोख लेता है और सूखे वजन का करीब {mult} गुना फूल जाता है — पका वजन सूखे वजन से काफी ज्यादा हो जाता है, कम नहीं। मांस उल्टी दिशा में जाता है क्योंकि उसमें पहले से बहुत पानी होता है जिसे गर्मी बाहर निकाल देती है।',
-      },
-    ],
-    rice: [
-      {
-        q: 'सूखे चावल से कितना पका चावल बनता है?',
-        a: '100g सूखे सफेद चावल से करीब 300g पका चावल बनता है — पकते समय पानी सोखने के कारण वजन तीन गुना हो जाता है। यह सफेद चावल के लिए USDA की 300% यील्ड पर आधारित है। यानी अगर किसी रेसिपी में 300g पका चावल चाहिए, तो आप करीब 100g सूखे से शुरू करेंगे। सूखे और पके चावल की प्रति ग्राम कैलोरी घनत्व बहुत अलग होती है, इसीलिए दर्ज किए वजन का सही प्रविष्टि से मेल खाना जरूरी है।',
-      },
-    ],
-    generic: [
-      {
-        q: '{food} पकाने पर कितना वजन घटता है?',
-        a: 'कुकिंग यील्ड {pct}% है: {food} पकाने पर वजन का {loss}% कम हो जाता है। स्रोत: {source}।',
-      },
-      {
-        q: '{food} के मैक्रो कच्चे वजन पर गिनें या पके पर?',
-        a: 'कच्चे वजन पर। USDA के पोषण मान कच्चे वजन पर आधारित होते हैं, इसलिए कच्चा वजन दर्ज करें और उसी से मैक्रो निकालें। यह कैलकुलेटर हमेशा कच्चे वजन के बराबर मान से मैक्रो निकालता है।',
-      },
-    ],
-    spinach: [
-      {
-        q: 'पालक पकाने पर कितना सिकुड़ता है?',
-        a: 'वजन के हिसाब से सिर्फ करीब 23%: USDA डेटा के अनुसार पालक की कुकिंग यील्ड 77% है, यानी 100g कच्चे पत्ते पकने पर करीब 77g रह जाते हैं। मात्रा के हिसाब से बात अलग है — कड़ाही भर कच्चे पत्ते सिकुड़कर एक छोटी मुट्ठी रह जाते हैं, और इन्हीं दो अलग-अलग प्रभावों का फर्क लोगों को भ्रमित करता है। मुरझाते समय वह हवा और बनावट निकलती है जो कच्चे पत्तों को भारी-भरकम दिखाती थी; पानी ज्यादातर भीतर ही रह जाता है। अगर आप मैक्रो ट्रैक करते हैं, तो कड़ाही कितनी सिकुड़ी यह देखने के बजाय पालक को तराजू पर तोलें।',
-      },
-    ],
-  },
 };
 
 export function getHomeFaq(locale: Locale): FaqItem[] {
@@ -1056,4 +731,459 @@ export function getHomeFaq(locale: Locale): FaqItem[] {
 
 export function getFoodFaqSet(locale: Locale): FoodFaqSet {
   return FOOD_FAQ[locale] ?? FOOD_FAQ.en;
+}
+
+// ── Per-food FAQ ──────────────────────────────────────────────────────────
+//
+// Hand-written question sets specific to one food, keyed by food id. These
+// replace the templated `FOOD_FAQ` sets when an entry exists for the locale;
+// any locale without a per-food set, and any food not listed, still gets the
+// templated set above. No `{placeholder}` tokens — the copy is literal so it
+// can quote the exact figure for that food. English is the source; the
+// translations in `./faq-food/*` keep every figure identical.
+
+const FOOD_FAQ_EN_BY_ID: Record<string, FaqItem[]> = {
+  'chicken-breast': [
+    {
+      q: 'Does marinating chicken change the cooked yield?',
+      a: 'An oil-and-acid marinade barely moves it — a point or two at most. A salt brine or a heavy salt-and-sugar marinade is different: the meat takes on water beforehand, so it starts heavier and can lose slightly more than the usual 28% as that added water cooks off. Weigh the breast before it goes in the marinade for the cleanest number.',
+    },
+    {
+      q: 'Why did my chicken breast lose more than 28%?',
+      a: 'Usually overcooking. Past an internal 74°C every extra minute drives off more water and can push the loss to 35% or more. Thin cutlets and small tenders also lose a bigger share than a thick whole breast because they have more surface area. Grilling over direct flame costs a few points versus baking.',
+    },
+    {
+      q: 'Is the yield different for chicken tenderloins or diced breast?',
+      a: 'Slightly lower. Tenderloins and diced pieces expose more surface to the heat per gram, so they dry a little faster than a whole breast — expect roughly 68–70% instead of 72% when pan-cooked. The macros per gram are the same as breast; only the water loss differs.',
+    },
+    {
+      q: 'How do I log chicken breast if I cooked a big batch and portioned it later?',
+      a: 'Weigh the whole batch raw and write it down. After cooking, weigh the whole cooked batch, then each portion. Each portion\'s raw-equivalent is (portion cooked weight ÷ total cooked weight) × total raw weight. Or weigh one portion cooked and divide by 0.72 for a baked batch.',
+    },
+    {
+      q: 'Does the 72% yield include the juices left in the pan?',
+      a: 'No. The yield is the weight of the drained cooked meat as a share of the raw weight. The juices and rendered fat left in the pan are part of the ~28% that left the meat. If you make a pan sauce from those juices and eat it, the protein loss is negligible but you are adding back a little fat.',
+    },
+  ],
+
+  'chicken-thigh': [
+    {
+      q: 'Why does chicken thigh lose more weight than chicken breast?',
+      a: 'Thigh is dark meat with more intramuscular fat (about 4.6g per 100g raw vs 2.6g for breast) and more connective tissue. When it cooks, water is squeezed out as usual and the extra fat renders and drips away too, so the total loss is higher — a 69% baked yield versus 72% for breast.',
+    },
+    {
+      q: 'Is bone-in, skin-on thigh yield the same as boneless skinless?',
+      a: 'No. The 69% figure is for boneless skinless meat only. A bone-in skin-on thigh is 25–35% bone and skin by weight, and the skin is almost pure fat. Weigh the meat you actually eat after pulling it off the bone, then convert that.',
+    },
+    {
+      q: 'Why is the deep-fried breaded yield (80%) higher than baked?',
+      a: 'Because the breading and absorbed oil add weight that was never chicken. The lean thigh meat inside still lost water — the number looks high only because of the coating. Do not use the 80% figure to back-calculate plain chicken macros; that portion has far more fat and carbs.',
+    },
+    {
+      q: 'Which method yield should I use for a thigh curry or stew?',
+      a: 'The braised figure, 73%. Thighs simmered in a sauce are surrounded by liquid, so they hold more weight than any dry-heat method. A 150g raw thigh comes out to about 110g in the curry.',
+    },
+    {
+      q: 'Do boneless thighs from the store come trimmed of fat?',
+      a: 'Partly. Most retail boneless skinless thighs still carry visible fat pockets that a lot of people trim off before or after cooking. If you trim significant fat, log a slightly lower raw-equivalent than the full thigh weight, since you are not eating all of it.',
+    },
+  ],
+
+  'ground-beef-80-20': [
+    {
+      q: 'Should I log ground beef by the raw weight or the drained cooked weight?',
+      a: 'Raw weight is the consistent choice and matches the USDA label. The drained cooked weight is unreliable because it depends on how much grease you poured off. If you do want to log cooked, use a cooked-ground-beef database entry, not a raw one — cooked crumbles are far more calorie-dense per gram.',
+    },
+    {
+      q: 'If I drain the fat, am I still eating all the calories in the raw macros?',
+      a: 'No. With 80/20, a meaningful share of that 20% fat renders out and gets poured away, so your real intake is somewhat below the raw-weight conversion. The gap is whatever fat is in the pan. Leaner 93/7 loses very little fat, so its raw conversion is close to accurate.',
+    },
+    {
+      q: 'Why does 80/20 shrink more than 93/7?',
+      a: 'Fat. 80/20 has 20g of fat per 100g raw and much of it melts and drips out; 93/7 has only 7g, so there is far less to lose. That is why 80/20 yields about 73% pan-browned and 93/7 holds about 77%.',
+    },
+    {
+      q: 'How much cooked beef does a pound of raw ground beef make?',
+      a: 'About 331g (11.7oz) of drained crumbles for 80/20 pan-browned, or about 350g for 93/7. Broiling under the element loses a little more. That is enough to feed four in tacos or a meat sauce.',
+    },
+    {
+      q: 'Does browning beef for a sauce (not draining) change how I log it?',
+      a: 'If you keep all the fat and juices in the pan and eat them in the sauce, then the raw-weight macros are accurate — nothing was thrown away. Draining is what makes the raw conversion overstate your fat.',
+    },
+  ],
+
+  'ground-beef-93-7': [
+    {
+      q: 'Is the raw-weight macro conversion accurate for 93/7, or does fat drain off like with 80/20?',
+      a: 'It is accurate. 93/7 has only about 7g of fat per 100g raw and very little of it renders out, so the cooked crumbles keep almost all of it. Converting your cooked portion back to raw weight gives a reliable calorie and fat read — unlike 80/20, where a lot of fat ends up in the pan.',
+    },
+    {
+      q: 'Why does lean ground beef come out dry?',
+      a: 'There is little fat to keep the crumbles moist, so on high heat it goes from juicy to chalky fast, and the yield slides from 77% toward the low 70s. Brown it gently and pull it off the heat while a little pink remains to stay near 77%.',
+    },
+    {
+      q: 'Can I use 80/20 macros for 93/7 if that is all my app has?',
+      a: 'No — the difference is large. 80/20 is 254 calories and 20g fat per 100g raw; 93/7 is 152 calories and 7.2g fat. Using the wrong entry misstates your fat intake by nearly threefold. Pick the entry that matches the pack.',
+    },
+    {
+      q: 'How much cooked meat does a pound of 93/7 make?',
+      a: 'About 350g (12.3oz) pan-browned — noticeably more than the ~331g you get from 80/20, because lean beef loses less fat. That is roughly four generous taco or chilli servings.',
+    },
+  ],
+
+  'ribeye-steak': [
+    {
+      q: 'Does doneness change the ribeye yield?',
+      a: 'Yes, more than for most cuts. Rare holds a few points above the 84% average because it has barely given up any moisture; well-done drops below 80% as the extended heat drives out more water and renders more fat. The 84% figure is a medium result.',
+    },
+    {
+      q: 'Why does ribeye keep more weight than a lean steak like sirloin?',
+      a: 'Marbling. Ribeye is about 23g fat per 100g raw, threaded through the muscle, and fat displaces water — so there is less water to lose. The melted fat also bastes the surface and slows evaporation. A lean cut has more water and less self-basting, so it loses more.',
+    },
+    {
+      q: 'If I trim the fat cap after cooking, how should I log it?',
+      a: 'Log a smaller raw-equivalent than the whole steak. The simplest way: weigh the trimmed cooked meat you actually eat, divide by about 0.84, and log that. You are leaving behind fat that the whole-steak macros would otherwise count.',
+    },
+    {
+      q: 'Is bone-in ribeye (rib steak / tomahawk) yield the same?',
+      a: 'The meat behaves the same, but 10–20% of a bone-in steak\'s raw weight is bone you do not eat. Weigh the meat off the bone after cooking and convert that, or subtract the bone estimate from the raw weight first.',
+    },
+  ],
+
+  'pork-chop': [
+    {
+      q: 'Why does pulled pork shrink so much more than a pork chop?',
+      a: 'A chop cooks in minutes and loses about 22%. Pork shoulder is cooked for hours, which renders out most of its fat and keeps evaporating water the whole time — it loses about 35% (a 65% yield). Use the pork shoulder page for carnitas or pulled pork.',
+    },
+    {
+      q: 'Why did grilling my chop give a higher yield than pan-frying?',
+      a: 'Hard direct heat sears the surface fast, setting a crust that traps moisture before the inside overcooks. USDA puts broiled/grilled chop at 83% versus 78% pan-fried. Braising, despite the liquid, comes in at 76% because the longer cook time works against it.',
+    },
+    {
+      q: 'Should I cook pork chops to 145°F or 160°F, and does it matter for tracking?',
+      a: 'Modern guidance is 145°F (63°C) plus a 3-minute rest, where the chop is faintly pink and near the 78% yield. Taking it to the old 160°F "no pink" standard drives off more water and can drop the yield into the low 70s — and dries the chop out.',
+    },
+    {
+      q: 'How do I handle a bone-in pork chop?',
+      a: 'Bone is 15–25% of a bone-in chop\'s weight and you do not eat it. Weigh the meat off the bone after cooking and divide by 0.78, or estimate the bone and subtract it from the raw weight before converting.',
+    },
+    {
+      q: 'Does the pork chop yield apply to pork tenderloin?',
+      a: 'Roughly. Tenderloin is similarly lean and quick-cooking and lands in the same high-70s range when roasted, though it dries fast if overcooked. For a rough log, using the 78% chop figure is close enough.',
+    },
+  ],
+
+  'pork-shoulder': [
+    {
+      q: 'How much pulled pork will a 2kg raw shoulder make?',
+      a: 'About 1.3kg of cooked, shredded meat — a 65% yield. Bone-in shoulder loses the bone on top of that, so figure another 8–12% less. Plan on roughly 150g cooked pulled pork per sandwich.',
+    },
+    {
+      q: 'Why does pork shoulder lose so much more than other cuts?',
+      a: 'It is fatty and full of connective tissue, and it is cooked low and slow for hours specifically to melt that collagen. Over that long cook almost all the fat renders out and water keeps evaporating — far more than a quick-cooked chop ever loses.',
+    },
+    {
+      q: 'Should I log pulled pork before or after adding BBQ sauce?',
+      a: 'Before. Weigh the plain shredded meat and convert it to raw weight, then log the sauce separately — BBQ sauce is mostly sugar and adds real calories that are not in the pork.',
+    },
+    {
+      q: 'Is my fat intake really as high as the raw-weight conversion says?',
+      a: 'Probably a bit lower. A lot of fat renders into the drip tray over a long cook. If you skim or discard the drippings rather than mixing them back in, nudge the fat figure down — the difference is the fat you poured off.',
+    },
+    {
+      q: 'Does the 65% yield cover smoking as well as oven and slow cooker?',
+      a: 'Yes. Smoked, oven-roasted and slow-cooked shoulder all land close to 65% because the endpoint is the same — you cook until it shreds, around 90–96°C internal, not to a fixed time.',
+    },
+  ],
+
+  'turkey-breast': [
+    {
+      q: 'Why is turkey breast yield (79%) higher than chicken breast (72%)?',
+      a: 'Mostly size. A whole turkey breast is a much larger piece of meat, so proportionally less of it is exposed to drying heat and the interior is buffered by surrounding mass. Cut turkey breast into thin cutlets and the yield drops toward chicken-breast territory.',
+    },
+    {
+      q: 'Can I use the whole-roast-turkey yield for a plain breast?',
+      a: 'No. Whole-turkey and stuffed-turkey figures (often quoted around 70–74%) average in dark meat, skin and cavity losses. A skinless breast on its own holds about 79%.',
+    },
+    {
+      q: 'How do I log supermarket "self-basting" or brined turkey breast?',
+      a: 'Those carry an injected solution that is 8–15% of the weight — water, salt and sometimes fat. It cooks off partly, so the yield is unpredictable. If the pack has a nutrition label, log from that; otherwise weigh raw and expect to lose a little more than 21%.',
+    },
+    {
+      q: 'Is deli roast turkey the same as home-roasted breast?',
+      a: 'No. Deli turkey is brined and often has added water and starch, with its own cooked-weight nutrition label. Use that label at roughly the weight of the slices — do not convert it as if it were raw breast.',
+    },
+  ],
+
+  'salmon': [
+    {
+      q: 'Why does salmon only lose about 15% when chicken loses 28%?',
+      a: 'Salmon is an oily fish — about 13g fat per 100g raw — built in short, delicate muscle flakes with almost no connective tissue. It firms up gently instead of contracting hard, and the fat keeps it moist rather than draining away. So most of the weight stays in the fillet: an 85% yield.',
+    },
+    {
+      q: 'Is farmed salmon yield different from wild?',
+      a: 'Slightly. Farmed salmon is fattier, so it holds a touch more weight than lean wild sockeye or coho cooked the same way. The difference is small — a couple of percentage points — and the 85% figure works for both.',
+    },
+    {
+      q: 'How do I log a skin-on fillet?',
+      a: 'The skin is 5–8% of the weight and stays on the scale even after it renders its fat. Weigh skinless if you can. If you cook skin-on and remove the skin before eating, weigh the cooked flesh alone and divide by 0.85.',
+    },
+    {
+      q: 'Does the salmon yield apply to canned or smoked salmon?',
+      a: 'No. Canned salmon is already cooked and packed, sometimes with added salt or oil; smoked salmon is cured, not cooked. Both have their own labels and should be logged directly from the weight you eat.',
+    },
+    {
+      q: 'What about the white stuff that comes out of the salmon?',
+      a: 'That is albumin, a water-soluble protein pushed out as the flesh cooks. The amount is tiny relative to the fillet\'s total protein and does not meaningfully change your macros — it just looks unappetising. More of it appears when the fish is cooked fast or overcooked.',
+    },
+  ],
+
+  'shrimp': [
+    {
+      q: 'Why does shrimp look like it shrinks more than 25%?',
+      a: 'Because it curls and clenches. The muscle contracts hard and fast — that is the raw-straight-to-tight-C curl — concentrating the same mass into a smaller, denser shape. It is not really shedding a quarter of its bulk; the scale shows the true 25% loss.',
+    },
+    {
+      q: 'How do I account for shrimp sold "treated" with sodium phosphate?',
+      a: 'Treated shrimp is brined to hold water, so it weighs more raw and can lose more than 25% when cooked because it is shedding that added water. If the ingredient list mentions salt or sodium tripolyphosphate, expect a lower cooked weight than a "dry" pack of the same size.',
+    },
+    {
+      q: 'Is shell-on shrimp weight the same as peeled?',
+      a: 'No. The shell, tail and head are 30–45% of a shell-on shrimp\'s weight. Weigh peeled shrimp, or if you cook shell-on, peel after cooking and convert only the peeled cooked weight.',
+    },
+    {
+      q: 'How should I log pre-cooked frozen shrimp?',
+      a: 'It has already lost its cooking water, so do not convert it as raw. Log it from a cooked-shrimp entry at roughly the weight in the bag (drained of any glaze or ice).',
+    },
+    {
+      q: 'What does "16/20" or "31/40" mean on a shrimp bag?',
+      a: 'It is the count of shrimp per pound — "16/20" means 16 to 20 shrimp per 454g, so each raw shrimp is about 23–28g. Lower numbers are bigger shrimp. It helps you estimate portions without weighing every piece.',
+    },
+  ],
+
+  'white-rice': [
+    {
+      q: 'Why is my rice heavier or stickier than 3× the dry weight?',
+      a: 'You added more water, cooked it longer, or used a stickier variety. Rice cooked soft, or short-grain and sushi rice, absorb more and can push past 320–330%. A firm, separate-grained pilaf sits lower, nearer 260–280%. The 308% figure is a middle-of-the-road boiled result.',
+    },
+    {
+      q: 'Does the type of rice change the yield?',
+      a: 'Yes. Plain boiled white rice is about 308%. Parboiled ("converted") rice reaches about 358% and instant rice about 350%, because their starch is pre-gelatinised and holds more water. Brown rice is about 335% and has its own page. Basmati and jasmine sit close to plain white.',
+    },
+    {
+      q: 'If I rinse rice before cooking, does that affect tracking?',
+      a: 'Rinsing removes surface starch and a very small amount of the grain, which slightly lowers the final cooked weight and makes the grains less sticky. The effect on macros is negligible — keep logging from the dry weight you measured before rinsing.',
+    },
+    {
+      q: 'How much dry rice is one cup of cooked rice?',
+      a: 'About 50–55g of dry white rice makes roughly 160–170g (one cup) cooked. A cup of dry rice, about 185g, makes close to 570g cooked — three to four side portions.',
+    },
+    {
+      q: 'Can I weigh rice cooked instead of dry?',
+      a: 'Yes, as long as your database entry is for cooked rice. The danger is logging a cooked weight against a dry "per 100g" entry, which roughly triples your calories. This calculator converts either direction so you can weigh whenever is convenient.',
+    },
+  ],
+
+  'brown-rice': [
+    {
+      q: 'Why does brown rice expand more than white rice?',
+      a: 'The bran and germ layers are fibrous and water-resistant, so brown rice needs more water and a longer cook — and ends up absorbing more of it. Its yield is about 335% versus 308% for white.',
+    },
+    {
+      q: 'Can I log brown rice as white rice to save time?',
+      a: 'Not accurately. Brown rice has a different yield (335% vs 308%) and different macros — more fat and fibre from the germ and bran. Logging it as white understates fat and fibre and misjudges the portion.',
+    },
+    {
+      q: 'Does brown basmati or short-grain brown rice match this figure?',
+      a: 'Closely enough for tracking. All wholegrain brown rices land in the 320–345% range. Use the 335% figure unless your package gives specific cooked-weight data.',
+    },
+    {
+      q: 'How much dry brown rice per person?',
+      a: 'About 48–60g dry for a 160–200g cooked side portion. That is slightly less dry rice than white for the same cooked serving, because brown expands more.',
+    },
+  ],
+
+  'pasta': [
+    {
+      q: 'Why is my cooked pasta not exactly 2.25× the dry weight?',
+      a: 'Doneness. Drained at firm al dente, dry pasta is closer to 200%. Cooked soft, or left sitting in sauce, it keeps absorbing and climbs past 240%. The 225% figure is a normal just-past-al-dente result.',
+    },
+    {
+      q: 'Does pasta shape change the yield?',
+      a: 'Somewhat. Thin and small shapes absorb faster and more evenly; thick rigatoni and large shells sit a little lower. Long pasta like spaghetti runs higher — closer to 290% — and has its own entry. This page is a general dry-pasta average.',
+    },
+    {
+      q: 'Is fresh pasta the same as dry?',
+      a: 'No. Fresh egg pasta already contains a lot of moisture, so it gains far less when cooked — roughly 140–170% — and has different macros. Do not use the dry-pasta yield for fresh.',
+    },
+    {
+      q: 'A restaurant pasta dish is huge — how much dry is that?',
+      a: 'A 300–400g plate of cooked pasta is about 130–180g dry, two to three times the 57g box "serving." Worth knowing when you log a meal out.',
+    },
+    {
+      q: 'Should I weigh pasta before or after adding sauce?',
+      a: 'Weigh it drained, before sauce. Once it sits in sauce it absorbs both sauce and more water, and you can no longer separate the pasta weight from the sauce. Log the sauce as its own item.',
+    },
+  ],
+
+  'quinoa': [
+    {
+      q: 'Is quinoa\'s yield the same as rice?',
+      a: 'Close by weight — quinoa is about 314% and white rice about 308% — but the macros are very different. Quinoa has nearly double the protein and much more fat per dry gram, so the entries are not interchangeable.',
+    },
+    {
+      q: 'Does rinsing quinoa change the cooked weight?',
+      a: 'Barely. Rinsing removes the bitter saponin coating and a trace of the seed. It affects flavour, not the yield or macros in any way worth tracking — keep logging from the dry weight.',
+    },
+    {
+      q: 'Why is my quinoa fluffier and lighter than expected?',
+      a: 'Cooked with less water, or drained and steamed dry, quinoa sits toward the lower end of its range. Cooked with extra water until very soft, it holds more. The 314% figure assumes the standard 1-to-1.75 absorption method.',
+    },
+    {
+      q: 'How much dry quinoa for a grain bowl?',
+      a: 'About 60–70g dry per person when quinoa is the base of the bowl, cooking to roughly 190–220g. As a side alongside a protein, 50g dry is enough.',
+    },
+  ],
+
+  'lentils': [
+    {
+      q: 'Why are my lentils firmer and lighter than the calculator says?',
+      a: 'You cooked them briefly. USDA puts a 20-minute simmer at 261% versus 289% for lentils boiled or baked until fully soft — a real 28g difference per 100g dry. Use the lower figure if you like your lentils with bite.',
+    },
+    {
+      q: 'Do red, green and Puy lentils have the same yield?',
+      a: 'Roughly, with a spread. Red and yellow split lentils collapse and absorb a lot, landing at the high end. Firm green and Puy lentils cooked to just-tender stay intact and absorb less. The 289% figure is a fully-cooked average.',
+    },
+    {
+      q: 'How do I log canned lentils?',
+      a: 'A 400g can drains to about 240g, equivalent to roughly 85g dry. Divide the drained weight by about 2.85 for the dry-equivalent, or log directly from the can\'s cooked-weight label if it has one.',
+    },
+    {
+      q: 'Do lentils need soaking, and does soaking change the yield?',
+      a: 'They do not need soaking — they are small and thin-skinned. Soaking shortens the cook time slightly and can nudge the final hydrated weight up a little, but the effect on macros is negligible. Log from the dry weight either way.',
+    },
+  ],
+
+  'black-beans': [
+    {
+      q: 'Why do my home-cooked beans yield less than 2.5×?',
+      a: 'Old beans and hard, mineral-rich water both resist hydration. Beans more than a year old, or cooked without soaking, swell less and can land nearer 220–235%. A long soak, fresh beans and soft water push toward or past 250%.',
+    },
+    {
+      q: 'How much dry black beans equals one can?',
+      a: 'A 400g can drains to about 240–260g of beans, which is roughly 100g dry. So a 1lb bag of dry beans is about four and a half cans\' worth of beans once cooked, far cheaper.',
+    },
+    {
+      q: 'Should I log canned beans with or without the liquid?',
+      a: 'Drain and rinse first, then weigh. The canning liquid (aquafaba) adds weight and sodium and is usually discarded. If a recipe uses the liquid, account for it separately.',
+    },
+    {
+      q: 'Do black beans, pinto and kidney beans share a yield?',
+      a: 'They are close but not identical. Black beans are about 250%, kidney beans about 238%, pinto beans similar to black. Lentils are higher at 289%. Use the specific entry where you can.',
+    },
+  ],
+
+  'broccoli': [
+    {
+      q: 'Does boiled broccoli really not lose any weight?',
+      a: 'Essentially none. Water lost as the tissue softens is offset by boiling water the florets absorb, for a net 100% yield. Raw and boiled broccoli weigh the same, so you can log either.',
+    },
+    {
+      q: 'What about roasted broccoli?',
+      a: 'Roasting is a different story — dry oven heat drives off real water and a roasted portion can weigh 30–50% less than raw. This dataset does not score roasted broccoli, so weigh it after roasting and log against a roasted entry, plus any oil.',
+    },
+    {
+      q: 'Is frozen broccoli different from fresh?',
+      a: 'No. Frozen broccoli is blanched before freezing but behaves the same on the scale when you cook it — the boiled yield is still about 100%.',
+    },
+    {
+      q: 'Does the stalk count the same as the florets?',
+      a: 'Nutritionally the stalk is similar to the florets once peeled, and it cooks with the same near-100% yield. It is just denser, so it takes a minute or two longer to soften.',
+    },
+  ],
+
+  'spinach': [
+    {
+      q: 'Why does my spinach look like it lost 80% when the yield is 77%?',
+      a: 'You are seeing volume, not weight. Raw spinach leaves are mostly air and rigid structure. Heat collapses that structure instantly, so the pile shrinks dramatically — but the water inside the cells, which is what weighs something, mostly stays. The weight loss is only about 23%.',
+    },
+    {
+      q: 'Does steaming really hold that much more than boiling?',
+      a: 'Yes. Steamed spinach is about 93% versus 77% boiled — a 16-point gap, wider than for almost any other vegetable. Pressure-cooking goes the other way, down to about 68%. How you cook spinach changes the number more than it does for most foods.',
+    },
+    {
+      q: 'How do I log spinach after I squeeze the water out?',
+      a: 'Squeezing removes water that the yield figure assumes is still there. Weigh what remains after squeezing and treat it as a lower raw-equivalent — hard-squeezed cooked spinach can be closer to 50–60% of the raw weight.',
+    },
+    {
+      q: 'Is frozen spinach equivalent to a certain amount of fresh?',
+      a: 'Roughly. A 250g block of frozen chopped spinach is already blanched and drained and is equivalent to about 700–800g of raw leaves. Log it from a cooked-spinach entry.',
+    },
+    {
+      q: 'A recipe says "10 cups raw spinach" — how much is that cooked?',
+      a: 'About 280–300g of raw leaves, which cooks down to roughly 215–230g boiled — a bit more than a cup. The cup count sounds enormous because raw spinach is almost all air.',
+    },
+  ],
+
+  'potato': [
+    {
+      q: 'Why do fries lose so much more weight than a boiled potato?',
+      a: 'Frying boils off a large fraction of the potato\'s water at high heat and replaces only some of it with oil. A boiled potato keeps about 94% of its weight; fries drop to about 55% — and then carry absorbed oil the raw-potato macros do not include.',
+    },
+    {
+      q: 'How should I log roast potatoes?',
+      a: 'Use the oiled-skin baked yield, about 81%, for the potato itself, then add the roasting oil separately — usually 5–10g of fat per portion. Logging roast potato as plain boiled potato misses both the water loss and the oil.',
+    },
+    {
+      q: 'Does mashed potato use the same yield?',
+      a: 'The potato part loses only a little in boiling (about 94%), but mash also contains milk, butter or cream. Weigh the potato before mashing and log the dairy and fat separately, or you will undercount calories.',
+    },
+    {
+      q: 'Is a baked potato in foil different from one baked directly on the rack?',
+      a: 'Yes. Foil traps steam, so a foil-baked potato holds about 95% of its weight. Baked directly with an oiled skin, more water escapes and it drops to about 81%.',
+    },
+    {
+      q: 'How much raw potato do I need for mashed potato for four?',
+      a: 'About 800g–1kg of raw potato — 200–250g per person — before adding milk and butter. It loses only a little weight boiling, so the raw weight is close to the cooked-potato weight you start mashing.',
+    },
+  ],
+
+  'sweet-potato': [
+    {
+      q: 'Why does baked sweet potato lose weight but boiled sweet potato gain it?',
+      a: 'Dry oven heat evaporates water and concentrates the flesh — a 78% baked yield. Boiling does the opposite: the flesh absorbs a little cooking water, ending slightly heavier than it started, a 101% yield. Same potato, opposite direction, depending on method.',
+    },
+    {
+      q: 'Can I use regular potato yields for sweet potato?',
+      a: 'No. Baked sweet potato loses about 22%, while a foil-baked regular potato loses only about 5%. Sweet potato is wetter and sugarier and behaves differently under heat.',
+    },
+    {
+      q: 'Why does baked sweet potato taste so much sweeter than boiled?',
+      a: 'Baking removes water and concentrates the sugars, and the dry heat lets them caramelise. The total sugar is the same as the raw potato — it is just packed into fewer grams, which is also why the baked yield is only 78%.',
+    },
+    {
+      q: 'How do I log sweet potato fries?',
+      a: 'Weigh them cooked and log against a sweet-potato-fries entry, or estimate the raw potato and add the frying oil separately. Like regular fries, they lose a lot of water and pick up oil the plain-potato macros miss.',
+    },
+  ],
+};
+
+/**
+ * Per-food FAQ by locale. English is the source; es/fr/de/pt/it are full
+ * translations. A locale not listed here falls through to the templated set.
+ */
+export const FOOD_FAQ_BY_ID: Partial<Record<Locale, Record<string, FaqItem[]>>> = {
+  en: FOOD_FAQ_EN_BY_ID,
+  es: FOOD_FAQ_ES_BY_ID,
+  fr: FOOD_FAQ_FR_BY_ID,
+  de: FOOD_FAQ_DE_BY_ID,
+  pt: FOOD_FAQ_PT_BY_ID,
+  it: FOOD_FAQ_IT_BY_ID,
+};
+
+/** Per-food FAQ for this locale, or null if this food uses the templated set. */
+export function getFoodFaqById(locale: Locale, foodId: string): FaqItem[] | null {
+  const byLocale = FOOD_FAQ_BY_ID[locale];
+  if (!byLocale) return null;
+  return byLocale[foodId] ?? FOOD_FAQ_EN_BY_ID[foodId] ?? null;
 }

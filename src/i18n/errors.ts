@@ -82,26 +82,6 @@ export const NOT_FOUND: Record<Locale, NotFoundPage> = {
     popularLabel: 'Calculadoras populares',
     allFoods: 'Todos os alimentos →',
   },
-  ja: {
-    metaTitle: 'ページが見つかりません | 生・加熱後計算機',
-    metaDescription:
-      'お探しのページは見つかりませんでした。生・加熱後計算機で、食材の生と加熱後の重量を換算できます。',
-    heading: 'ページが見つかりません',
-    body: 'このページは存在しないか、移動された可能性があります。URLを手入力された場合は、入力ミスがないかご確認ください。そうでなければ、以下のリンクからお探しの内容にたどり着けます。',
-    homeCta: '← ホームに戻る',
-    popularLabel: 'よく使われる計算機',
-    allFoods: 'すべての食材 →',
-  },
-  ko: {
-    metaTitle: '페이지를 찾을 수 없습니다 | 생·조리 계산기',
-    metaDescription:
-      '찾으시는 페이지가 존재하지 않습니다. 생·조리 계산기로 식품의 생 중량과 조리 후 중량을 변환해 보세요.',
-    heading: '페이지를 찾을 수 없습니다',
-    body: '이 페이지는 존재하지 않거나 위치가 바뀌었습니다. 주소를 직접 입력하셨다면 오타가 없는지 확인해 주세요. 그렇지 않다면 아래 링크에서 원하시는 내용을 찾으실 수 있습니다.',
-    homeCta: '← 홈으로 돌아가기',
-    popularLabel: '많이 쓰는 계산기',
-    allFoods: '전체 식품 →',
-  },
   it: {
     metaTitle: 'Pagina non trovata | Calcolatore Crudo-Cotto',
     metaDescription:
@@ -111,16 +91,6 @@ export const NOT_FOUND: Record<Locale, NotFoundPage> = {
     homeCta: '← Torna alla home',
     popularLabel: 'Calcolatori più usati',
     allFoods: 'Tutti gli alimenti →',
-  },
-  hi: {
-    metaTitle: 'पेज नहीं मिला | कच्चे से पके का कैलकुलेटर',
-    metaDescription:
-      'आप जो पेज ढूंढ रहे हैं वह मौजूद नहीं है। कच्चे और पके भोजन का वजन बदलने के लिए कच्चे से पके का कैलकुलेटर इस्तेमाल करें।',
-    heading: 'पेज नहीं मिला',
-    body: 'यह पेज मौजूद नहीं है या हटाया जा चुका है। अगर आपने पता खुद टाइप किया है, तो वर्तनी जांच लें। वरना नीचे दिए लिंक आपको सही जगह पहुंचा देंगे।',
-    homeCta: '← होमपेज पर वापस जाएं',
-    popularLabel: 'लोकप्रिय कैलकुलेटर',
-    allFoods: 'सभी खाद्य पदार्थ →',
   },
 };
 
@@ -185,30 +155,6 @@ export const SERVER_ERROR: Record<Locale, ServerErrorPage> = {
     helpBefore: 'Escreva para',
     helpAfter: 'e nós vamos verificar.',
   },
-  ja: {
-    metaTitle: 'サーバーエラー | 生・加熱後計算機',
-    metaDescription:
-      'サーバー側で問題が発生しました。生・加熱後計算機はまもなく復旧します。',
-    heading: '問題が発生しました',
-    body: 'サーバー側で予期しないエラーが発生しました。多くの場合は一時的なものです。ページを再読み込みしてみてください。解消しない場合は、数分後に改めてお試しください。',
-    homeCta: '← ホームに戻る',
-    reload: 'ページを再読み込み',
-    helpLabel: '繰り返し発生する場合',
-    helpBefore: 'お手数ですが',
-    helpAfter: 'までご連絡ください。確認いたします。',
-  },
-  ko: {
-    metaTitle: '서버 오류 | 생·조리 계산기',
-    metaDescription:
-      '서버 쪽에서 문제가 발생했습니다. 생·조리 계산기는 곧 정상으로 돌아옵니다.',
-    heading: '문제가 발생했습니다',
-    body: '서버 쪽에서 예기치 못한 오류가 발생했습니다. 대개는 일시적인 문제이니 페이지를 새로고침해 보세요. 계속된다면 몇 분 뒤에 다시 확인해 주세요.',
-    homeCta: '← 홈으로 돌아가기',
-    reload: '페이지 새로고침',
-    helpLabel: '문제가 계속된다면',
-    helpBefore: '이메일',
-    helpAfter: '(으)로 알려주시면 확인하겠습니다.',
-  },
   it: {
     metaTitle: 'Errore del server | Calcolatore Crudo-Cotto',
     metaDescription:
@@ -220,17 +166,5 @@ export const SERVER_ERROR: Record<Locale, ServerErrorPage> = {
     helpLabel: 'Se continua a succedere',
     helpBefore: 'Scrivici a',
     helpAfter: 'e ce ne occuperemo.',
-  },
-  hi: {
-    metaTitle: 'सर्वर त्रुटि | कच्चे से पके का कैलकुलेटर',
-    metaDescription:
-      'हमारी तरफ कुछ गड़बड़ हो गई। कच्चे से पके का कैलकुलेटर जल्द ही वापस आ जाएगा।',
-    heading: 'कुछ गड़बड़ हो गई',
-    body: 'हमारी तरफ एक अप्रत्याशित त्रुटि हुई है। यह आमतौर पर अस्थायी होती है — पेज को रीलोड करके देखें। अगर दिक्कत बनी रहे, तो कुछ मिनट बाद फिर आजमाएं।',
-    homeCta: '← होमपेज पर वापस जाएं',
-    reload: 'पेज रीलोड करें',
-    helpLabel: 'अगर यह बार-बार हो रहा है',
-    helpBefore: 'हमें',
-    helpAfter: 'पर ईमेल करें, हम देख लेंगे।',
   },
 };

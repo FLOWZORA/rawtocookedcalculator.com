@@ -4,6 +4,7 @@ import FoodContent from '../../components/FoodContent.astro';
 import { SLUG_TO_ID, getFoodBySlug } from '../../utils/foods';
 import { LOCALES, isValidLocale, getFoodFaqItems, getFoodPageMeta } from '../../i18n';
 import type { Locale } from '../../i18n';
+import { foodPageHasFullContent } from '../../i18n/food-content';
 
 export function getStaticPaths() {
   const paths = [];
@@ -26,14 +27,36 @@ if (!food) return Astro.redirect(`/${locale}/`);
 const { title, description } = getFoodPageMeta(locale, food);
 
 const BASE = 'https://rawtocookedcalculator.com';
-const hreflangUrls: Record<string, string> = { en: `${BASE}/${slug}` };
-for (const l of LOCALES) {
-  if (l !== 'en') hreflangUrls[l] = `${BASE}/${l}/${slug}`;
-}
+
+// Localized food pages render the shorter templated layout until their long-form
+// content is translated. Until then they're `noindex, follow`: crawlable, link
+// equity preserved, but kept out of the index (and the sitemap) so the thin
+// pages aren't judged as scaled/duplicate content.
+const indexable = foodPageHasFullContent(locale);
+
+// While the localized pages are noindex'd, the only alternate worth advertising
+// is the fully-built English page. Once a locale is indexable, restore the full
+// hreflang cluster across every indexable locale.
+const hreflangUrls: Record<string, string> = indexable
+  ? Object.fromEntries(
+      LOCALES.filter(foodPageHasFullContent).map((l) => [
+        l,
+        l === 'en' ? `${BASE}/${slug}` : `${BASE}/${l}/${slug}`,
+      ])
+    )
+  : { en: `${BASE}/${slug}` };
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  ...(indexable
+    ? {
+        url: `${BASE}/${locale}/${slug}`,
+        dateModified: '2026-09-09',
+        author: { '@type': 'Person', name: 'Vaibhav Tiwari', url: `${BASE}/methodology` },
+        publisher: { '@type': 'Organization', name: 'Raw to Cooked Calculator', url: BASE },
+      }
+    : {}),
   mainEntity: getFoodFaqItems(locale, food).map(({ q, a }) => ({
     '@type': 'Question',
     name: q,
@@ -49,6 +72,7 @@ const jsonLd = {
   jsonLd={jsonLd}
   locale={locale}
   hreflangUrls={hreflangUrls}
+  noindex={!indexable}
 >
   <FoodContent locale={locale} food={food} />
 </BaseLayout>

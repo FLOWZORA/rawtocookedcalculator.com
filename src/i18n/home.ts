@@ -5,7 +5,7 @@ import type { Locale } from './ui';
  * closing article. Rendered identically on every locale's homepage.
  *
  * Strings ending in `Html` are injected with `set:html` and may contain
- * <strong> tags — no other markup.
+ * <strong> tags, plus <a> tags in `calorieTargetHtml` — no other markup.
  */
 
 export interface HomeArticle {
@@ -25,6 +25,8 @@ export interface HomeArticle {
   riceP2: string;
   usdaHeading: string;
   usdaP1: string;
+  calorieTargetHeading: string;
+  calorieTargetHtml: string;
 }
 
 export interface HomeSections {
@@ -88,6 +90,9 @@ export const HOME: Record<Locale, HomeSections> = {
       usdaHeading: 'Built on Official USDA Data',
       usdaP1:
         'Every yield figure powering this raw to cooked converter comes from official USDA sources — the same databases used by dietitians, food manufacturers, and health researchers. Meat and poultry yields come from the USDA Table of Cooking Yields for Meat and Poultry. Grain and vegetable yields come from USDA Agriculture Handbook No. 102 and from comparing raw and cooked entries in USDA FoodData Central. This makes our raw to cooked calculator more reliable than fitness apps that use crowdsourced estimates or unverified averages. Whether you are converting raw to cooked chicken weight, checking ground beef raw to cooked weight, or working out the raw to cooked rice ratio, every answer here is anchored in published, peer-reviewed science.',
+      calorieTargetHeading: 'Turning Accurate Weights Into a Calorie Target',
+      calorieTargetHtml:
+        'Weighing your food correctly only pays off once you have a daily number to weigh it against. If you have not set that target yet, a <a href="https://freemaintenancecaloriescalculator.com/" class="text-[var(--color-link)] hover:underline" rel="sponsored nofollow noopener">maintenance calorie calculator</a> estimates your total daily energy expenditure from the Mifflin-St Jeor and Katch-McArdle equations — the maintenance figure you then raise for muscle gain or lower for fat loss. Pair that target with accurate cooked-weight conversions and your daily log finally reflects what you actually ate.',
     },
   },
 
@@ -135,6 +140,9 @@ export const HOME: Record<Locale, HomeSections> = {
       usdaHeading: 'Basada en datos oficiales del USDA',
       usdaP1:
         'Cada cifra de rendimiento que usa este conversor de crudo a cocido procede de fuentes oficiales del USDA, las mismas bases de datos que utilizan dietistas, fabricantes de alimentos e investigadores en salud. Los rendimientos de carne y aves salen de la Tabla de Rendimientos de Cocción del USDA para Carne y Aves. Los de cereales y verduras salen del Manual de Agricultura n.º 102 del USDA y de comparar las entradas en crudo y en cocido de USDA FoodData Central. Eso hace que nuestra calculadora sea más fiable que las apps de fitness que se basan en estimaciones colaborativas o promedios sin verificar. Ya estés convirtiendo el peso del pollo de crudo a cocido, comprobando el de la carne molida o calculando la proporción del arroz, cada respuesta se apoya en ciencia publicada y revisada.',
+      calorieTargetHeading: 'Convertir pesos precisos en un objetivo de calorías',
+      calorieTargetHtml:
+        'Pesar bien la comida solo sirve cuando tienes una cifra diaria con la que compararla. Si aún no has fijado ese objetivo, una <a href="https://freemaintenancecaloriescalculator.com/" class="text-[var(--color-link)] hover:underline" rel="sponsored nofollow noopener">calculadora de calorías de mantenimiento</a> estima tu gasto energético diario total con las ecuaciones de Mifflin-St Jeor y Katch-McArdle: la cifra de mantenimiento que luego subes para ganar músculo o bajas para perder grasa. Combina ese objetivo con conversiones precisas de peso cocido y tu registro diario reflejará por fin lo que realmente comiste.',
     },
   },
 
@@ -182,6 +190,9 @@ export const HOME: Record<Locale, HomeSections> = {
       usdaHeading: 'Fondé sur les données officielles de l’USDA',
       usdaP1:
         'Chaque rendement utilisé par ce convertisseur cru-cuit provient de sources officielles de l’USDA — les bases de données auxquelles se réfèrent diététiciens, industriels de l’agroalimentaire et chercheurs en santé. Les rendements des viandes et volailles viennent de la Table des rendements de cuisson de l’USDA pour la viande et la volaille. Ceux des céréales et des légumes proviennent du Manuel agricole n° 102 de l’USDA et de la comparaison des entrées crues et cuites de USDA FoodData Central. Notre calculateur est donc plus fiable que les applications de fitness fondées sur des estimations collaboratives ou des moyennes non vérifiées. Que vous convertissiez le poids du poulet cru en cuit, que vous vérifiiez celui du bœuf haché ou que vous calculiez le rapport riz cru-cuit, chaque réponse s’appuie ici sur des données publiées et validées.',
+      calorieTargetHeading: 'Transformer des poids précis en objectif calorique',
+      calorieTargetHtml:
+        'Bien peser vos aliments ne sert que si vous avez un chiffre quotidien auquel les comparer. Si vous n’avez pas encore défini cet objectif, un <a href="https://freemaintenancecaloriescalculator.com/" class="text-[var(--color-link)] hover:underline" rel="sponsored nofollow noopener">calculateur de calories de maintenance</a> estime votre dépense énergétique journalière totale à partir des équations de Mifflin-St Jeor et de Katch-McArdle : la valeur de maintenance que vous augmentez ensuite pour la prise de muscle ou réduisez pour la perte de gras. Associez cet objectif à des conversions de poids cuit précises et votre journal quotidien reflétera enfin ce que vous avez vraiment mangé.',
     },
   },
 
@@ -229,6 +240,9 @@ export const HOME: Record<Locale, HomeSections> = {
       usdaHeading: 'Auf offiziellen USDA-Daten aufgebaut',
       usdaP1:
         'Jeder Ausbeutewert hinter diesem Roh-zu-gegart-Umrechner stammt aus offiziellen USDA-Quellen — denselben Datenbanken, mit denen Ernährungsberatung, Lebensmittelhersteller und Gesundheitsforschung arbeiten. Die Werte für Fleisch und Geflügel stammen aus der USDA-Tabelle der Garausbeuten für Fleisch und Geflügel. Die Werte für Getreide und Gemüse stammen aus dem USDA Agriculture Handbook Nr. 102 und aus dem Vergleich roher und gegarter Einträge in USDA FoodData Central. Das macht unseren Rechner verlässlicher als Fitness-Apps, die auf Community-Schätzungen oder ungeprüften Durchschnittswerten beruhen. Ob du Hähnchen von roh auf gegart umrechnest, das Gargewicht von Hackfleisch prüfst oder das Reisverhältnis bestimmst — jede Antwort hier stützt sich auf veröffentlichte, geprüfte Daten.',
+      calorieTargetHeading: 'Aus genauen Gewichten ein Kalorienziel machen',
+      calorieTargetHtml:
+        'Das richtige Abwiegen zahlt sich erst aus, wenn du einen Tageswert hast, an dem du dich orientierst. Falls du dieses Ziel noch nicht festgelegt hast: Ein <a href="https://freemaintenancecaloriescalculator.com/" class="text-[var(--color-link)] hover:underline" rel="sponsored nofollow noopener">Rechner für den Erhaltungskalorienbedarf</a> schätzt deinen Gesamtumsatz anhand der Mifflin-St-Jeor- und Katch-McArdle-Formeln — den Erhaltungswert, den du dann für Muskelaufbau anhebst oder für Fettabbau senkst. Kombiniere dieses Ziel mit genauen Umrechnungen des Gargewichts, und dein Ernährungstagebuch bildet endlich ab, was du wirklich gegessen hast.',
     },
   },
 
@@ -276,102 +290,13 @@ export const HOME: Record<Locale, HomeSections> = {
       usdaHeading: 'Construída sobre dados oficiais do USDA',
       usdaP1:
         'Cada número de rendimento por trás deste conversor de cru para cozido vem de fontes oficiais do USDA — as mesmas bases usadas por nutricionistas, indústrias de alimentos e pesquisadores da área da saúde. Os rendimentos de carnes e aves vêm da Tabela de Rendimentos de Cocção do USDA para Carnes e Aves. Os de grãos e vegetais vêm do Manual de Agricultura n.º 102 do USDA e da comparação das entradas cruas e cozidas na USDA FoodData Central. Isso torna nossa calculadora mais confiável do que aplicativos de fitness baseados em estimativas colaborativas ou médias não verificadas. Seja convertendo o peso do frango de cru para cozido, conferindo o da carne moída ou calculando a proporção do arroz, cada resposta aqui está ancorada em ciência publicada e revisada.',
+      calorieTargetHeading: 'Transformar pesos precisos em uma meta de calorias',
+      calorieTargetHtml:
+        'Pesar a comida corretamente só compensa quando você tem um número diário para comparar. Se ainda não definiu essa meta, uma <a href="https://freemaintenancecaloriescalculator.com/" class="text-[var(--color-link)] hover:underline" rel="sponsored nofollow noopener">calculadora de calorias de manutenção</a> estima seu gasto energético diário total pelas equações de Mifflin-St Jeor e Katch-McArdle: o valor de manutenção que você depois aumenta para ganhar músculo ou reduz para perder gordura. Combine essa meta com conversões precisas de peso cozido e seu registro diário passa a refletir o que você realmente comeu.',
     },
   },
 
-  ja: {
-    formulaHeading: '換算の仕組み',
-    formulaIntro:
-      'すべての計算は、USDAデータに基づく1つの歩留まり率だけを使います。どの食材にも同じ2つの式が当てはまります。',
-    cookedEqRaw: '加熱後 = 生 ×',
-    rawEqCooked: '生 = 加熱後 ÷',
-    yieldExpr: '(歩留まり% ÷ 100)',
-    rtcExampleHtml:
-      '例: 生の鶏肉200g × 0.72 = <strong class="text-[var(--color-ink)]">加熱後144g</strong>',
-    ctrExampleHtml:
-      '例: 加熱後の鶏肉144g ÷ 0.72 = <strong class="text-[var(--color-ink)]">生200g</strong>',
-    macroRuleLabel: '栄養素の計算ルール',
-    macroPre: '栄養素 =',
-    macroVar: '(生g ÷ 100)',
-    macroPost: '× 生100gあたりの栄養素',
-    macroTextHtml:
-      '栄養素はどちら向きに換算した場合でも、必ず<strong class="text-[var(--color-ink)]">生の重量に換算した値</strong>から算出します。USDAの栄養データは生の状態で測定されているため、この方式なら表示される栄養素が常に食品表示と一致します。',
-    article: {
-      heading: 'この生・加熱後の重量換算計算機について',
-      intro:
-        '加熱した食べ物が生のときと同じ重さになることはめったにありません。肉と魚は重量の15〜35%を失い、米・パスタ・乾燥豆は2〜3倍になります。この生・加熱後コンバーターは食材ごとのUSDA歩留まりを当てはめるので、生でも加熱後でも重量を入力すれば、もう一方の重量と、その分量に対応する正確なカロリー・タンパク質・炭水化物・脂質が分かります。USDA FoodData Centralを含むほとんどのカロリーデータベースは生の重量で栄養素を掲載していますが、多くの人は加熱してから食べます。この計算機はそのズレを埋めます。',
-      whyHeading: '生の食品と加熱後の食品で重さが変わる理由',
-      whyP1:
-        '生と加熱後で重さが違う理由は水分にあります。肉を加熱すると水分が蒸発し脂も落ちるため、加熱後は元の生の状態より軽くなります。穀物や豆類は逆で、茹でる間に水を吸うため、鍋に入れた生の状態より加熱後のほうが重くなります。',
-      whyP2:
-        'つまり、1日を通して「1gは1g」という前提は使えません。生・加熱後の重量換算計算機は、食材ごとに固有の歩留まり率——加熱後重量と生重量の比——を当てはめることでこれを解決します。この比率は食材によって大きく異なります。鶏肉や牛肉は重量の約4分の1を失い、ほうれん草はかさが大きく減るわりに重量は23%しか失わず、白米はほぼ3倍になります。',
-      chickenHeading: '鶏肉の生・加熱後の重量',
-      chickenP1:
-        '皮なし骨なしの鶏胸肉は、オーブン焼き・グリル・フライパン焼きのいずれでも加熱すると約28%の重量を失うため、生200gの鶏肉は加熱後およそ144gになります。タンパク質を管理する人にとっておそらく最も重要な換算です。生と加熱後の数値は、1日の合計を狂わせるほど離れているからです。',
-      chickenP2:
-        '実務上の影響はこうです。加熱後に鶏肉を量って144gとして記録し、それを生重量基準の栄養表示に当てはめると、生144g分の栄養しか計上されず、56g分を取りこぼします。正しいやり方は、加熱前に生で量るか、生・加熱後の計算機で加熱後重量を生重量に戻してから記録することです。',
-      beefHeading: '合い挽き肉の生・加熱後の重量',
-      beefP1:
-        '標準的な80/20の合い挽き肉は、加熱すると水分と脂の両方が出て約27%の重量を失うため、生200gは加熱後およそ146gになります。正確な数値は脂肪率によって変わり、より赤身の多い90/10では落ちる脂が少ないぶん18〜20%の減少にとどまります。',
-      beefP2:
-        'この生・加熱後の食肉重量換算計算機は、合い挽き肉の既定値として80/20を採用しています。これは小売で最も一般的な脂肪率について、USDAが実測した歩留まりデータに合わせたものです。',
-      riceHeading: '米の生・加熱後の比率',
-      riceP1:
-        '乾燥した白米は炊くとほぼ3倍の重量になります。乾燥100gが炊き上がりで約300g、USDA歩留まり300%で、肉とは逆方向です。つまり炊いたご飯300gに含まれるカロリーは乾燥100g分だけであり、乾燥米と炊いた米で1gあたりのカロリー密度が同じだと思っていた人には意外な事実です。',
-      riceP2:
-        '米では誤差が積み上がるのが速いため、正確な生・加熱後の計算機を使う意味がとりわけ大きくなります。毎日茶碗2杯の炊いた米を食べ、その加熱後重量を乾燥重量基準の表示に当てはめて記録していれば、その分のカロリーを大幅に過大評価することになります。',
-      usdaHeading: 'USDAの公式データに基づいています',
-      usdaP1:
-        'この生・加熱後コンバーターを支える歩留まりの数値はすべて、USDAの公式データ——管理栄養士、食品メーカー、健康分野の研究者が使うのと同じデータベース——に基づいています。食肉と鶏肉の歩留まりはUSDAの食肉・鶏肉調理歩留まり表から、穀物と野菜の歩留まりはUSDA農業ハンドブック第102号、およびUSDA FoodData Centralの生と加熱後のデータの比較から求めています。そのため、利用者の投稿による推定値や未検証の平均値に頼るフィットネスアプリよりも信頼できます。鶏肉の生から加熱後への換算でも、合い挽き肉の重量確認でも、米の比率の計算でも、ここでの答えはすべて公表・査読済みのデータに基づいています。',
-    },
-  },
 
-  ko: {
-    formulaHeading: '변환 방식',
-    formulaIntro:
-      '모든 계산은 USDA 데이터에서 가져온 하나의 수율 값만 사용합니다. 어떤 식품이든 아래 두 공식이 똑같이 적용됩니다.',
-    cookedEqRaw: '조리 후 = 생 ×',
-    rawEqCooked: '생 = 조리 후 ÷',
-    yieldExpr: '(수율 % ÷ 100)',
-    rtcExampleHtml:
-      '예: 생닭 200g × 0.72 = <strong class="text-[var(--color-ink)]">조리 후 144g</strong>',
-    ctrExampleHtml:
-      '예: 조리된 닭고기 144g ÷ 0.72 = <strong class="text-[var(--color-ink)]">생 200g</strong>',
-    macroRuleLabel: '영양소 계산 규칙',
-    macroPre: '영양소 =',
-    macroVar: '(생중량_g ÷ 100)',
-    macroPost: '× 생 100g당 영양소',
-    macroTextHtml:
-      '영양소는 변환 방향과 관계없이 항상 <strong class="text-[var(--color-ink)]">생중량 기준</strong>으로 계산됩니다. USDA 영양 데이터가 생 식품을 기준으로 측정되기 때문에, 이렇게 해야 표시되는 값이 영양성분표와 일치합니다.',
-    article: {
-      heading: '생·조리 중량 변환 계산기 안내',
-      intro:
-        '조리한 음식이 생일 때와 같은 무게가 되는 일은 드뭅니다. 고기와 생선은 무게의 15~35%를 잃고, 쌀·파스타·마른 콩류는 두세 배가 됩니다. 이 생·조리 변환기는 식품마다 다른 USDA 수율을 적용하므로, 생이든 조리 후든 중량을 입력하면 반대편 중량과 그 분량에 해당하는 정확한 칼로리·단백질·탄수화물·지방을 알려 줍니다. USDA FoodData Central을 비롯한 대부분의 칼로리 데이터베이스는 생 중량으로 영양소를 표기하지만, 거의 모든 사람은 조리한 뒤에 먹습니다. 이 계산기가 그 간극을 메웁니다.',
-      whyHeading: '생 식품과 조리된 식품의 무게가 다른 이유',
-      whyP1:
-        '생 식품과 조리된 식품의 무게가 다른 이유는 수분입니다. 고기를 익히면 물이 증발하고 지방이 빠져나가므로, 조리된 식품은 처음의 생 식품보다 가벼워집니다. 곡물과 콩류는 반대입니다. 삶는 동안 물을 흡수하기 때문에 냄비에 넣은 생 재료보다 조리 후가 더 무겁습니다.',
-      whyP2:
-        '따라서 하루 종일 "1g은 1g"이라는 가정을 그대로 쓸 수는 없습니다. 생·조리 중량 변환 계산기는 식품마다 다른 고유 수율 — 조리 후 중량과 생 중량의 비율 — 을 적용해 이 문제를 해결합니다. 이 값은 식품에 따라 크게 달라집니다. 닭고기와 소고기는 무게의 약 4분의 1을 잃고, 시금치는 부피가 크게 줄어드는 것과 달리 무게는 23%만 잃으며, 백미는 거의 세 배가 됩니다.',
-      chickenHeading: '닭고기 생·조리 중량',
-      chickenP1:
-        '껍질과 뼈를 제거한 닭 가슴살은 오븐에 굽든, 직화로 굽든, 팬에 굽든 조리하면 약 28%의 무게가 줄어들어, 생 200g이 조리 후 약 144g이 됩니다. 단백질을 관리하는 사람에게는 아마 가장 중요한 변환입니다. 생 중량과 조리 후 중량의 차이가 하루 총량을 왜곡할 만큼 크기 때문입니다.',
-      chickenP2:
-        '실제로 어떤 일이 생기냐면, 조리한 뒤 닭고기를 재서 144g으로 기록하고 이를 생중량 기준 영양성분표에 대입하면 생 144g 분량의 영양소만 계산되어 56g만큼 빠집니다. 올바른 방법은 조리 전에 생으로 재거나, 생·조리 계산기로 조리 후 중량을 생중량으로 되돌린 뒤 기록하는 것입니다.',
-      beefHeading: '다진 소고기 생·조리 중량',
-      beefP1:
-        '일반적인 80/20 다진 소고기는 조리 중 물과 지방이 모두 빠져나가 약 27%의 무게가 줄어들어, 생 200g이 조리 후 약 146g이 됩니다. 정확한 수치는 지방 함량을 따라가며, 지방이 적은 90/10은 녹아 나올 지방이 적어 18~20%만 줄어듭니다.',
-      beefP2:
-        '이 생·조리 육류 중량 변환 계산기는 다진 소고기의 기본값으로 80/20을 사용합니다. 소매에서 가장 흔한 지방 비율에 대해 USDA가 실측한 수율 데이터에 맞춘 값입니다.',
-      riceHeading: '쌀의 생·조리 비율',
-      riceP1:
-        '마른 백미는 익히면 무게가 거의 세 배가 됩니다. 마른 쌀 100g이 조리 후 약 300g, USDA 수율 300%로, 고기와는 정반대입니다. 즉 조리된 밥 300g에는 마른 쌀 100g만큼의 열량만 들어 있으며, 마른 쌀과 지은 밥의 g당 열량 밀도가 같다고 생각한 사람에게는 뜻밖의 사실입니다.',
-      riceP2:
-        '쌀은 오차가 빠르게 쌓이기 때문에 정확한 생·조리 계산기를 쓰는 것이 특히 중요합니다. 매일 밥 두 공기를 먹으면서 조리 후 중량을 마른 중량 기준 표시에 대입해 기록한다면, 그 식품의 열량을 상당히 과대평가하게 됩니다.',
-      usdaHeading: 'USDA 공식 데이터를 기반으로',
-      usdaP1:
-        '이 생·조리 변환기를 뒷받침하는 모든 수율 수치는 USDA 공식 자료 — 영양사, 식품 제조사, 보건 연구자가 사용하는 것과 같은 데이터베이스 — 에서 나옵니다. 육류와 가금류 수율은 USDA 육류·가금류 조리 수율표에서 가져왔고, 곡물과 채소 수율은 USDA 농업 핸드북 제102호와 USDA FoodData Central의 생·조리 항목 비교에서 산출했습니다. 그래서 이용자 제보 추정치나 검증되지 않은 평균값에 의존하는 피트니스 앱보다 신뢰할 수 있습니다. 닭고기의 생·조리 중량을 변환하든, 다진 소고기의 중량을 확인하든, 쌀의 비율을 따지든, 여기서 나오는 모든 답은 공개·검증된 데이터에 근거합니다.',
-    },
-  },
 
   it: {
     formulaHeading: 'Come funziona la conversione',
@@ -417,55 +342,12 @@ export const HOME: Record<Locale, HomeSections> = {
       usdaHeading: 'Costruito su dati ufficiali USDA',
       usdaP1:
         'Ogni valore di resa alla base di questo convertitore crudo-cotto proviene da fonti ufficiali USDA, gli stessi database usati da dietisti, industrie alimentari e ricercatori in ambito sanitario. Le rese di carne e pollame provengono dalla Tabella USDA delle rese di cottura per carne e pollame. Quelle di cereali e verdure provengono dal Manuale di Agricoltura n. 102 dell’USDA e dal confronto tra le voci crude e cotte in USDA FoodData Central. Questo rende il nostro calcolatore più affidabile delle app di fitness basate su stime degli utenti o medie non verificate. Che tu stia convertendo il peso del pollo da crudo a cotto, controllando quello della carne macinata o calcolando il rapporto del riso, ogni risposta qui poggia su dati pubblicati e verificati.',
+      calorieTargetHeading: 'Trasformare pesi precisi in un obiettivo calorico',
+      calorieTargetHtml:
+        'Pesare bene il cibo serve solo quando hai un numero giornaliero con cui confrontarlo. Se non hai ancora fissato quell’obiettivo, un <a href="https://freemaintenancecaloriescalculator.com/" class="text-[var(--color-link)] hover:underline" rel="sponsored nofollow noopener">calcolatore delle calorie di mantenimento</a> stima il tuo dispendio energetico giornaliero totale con le equazioni di Mifflin-St Jeor e Katch-McArdle: il valore di mantenimento che poi alzi per mettere massa o abbassi per perdere grasso. Unisci quell’obiettivo a conversioni precise del peso da cotto e il tuo diario giornaliero rispecchierà finalmente ciò che hai davvero mangiato.',
     },
   },
 
-  hi: {
-    formulaHeading: 'यह गणना कैसे काम करती है',
-    formulaIntro:
-      'हर गणना USDA डेटा से लिए गए एक ही यील्ड प्रतिशत पर आधारित है। ये दो फॉर्मूले हर खाद्य पदार्थ पर लागू होते हैं।',
-    cookedEqRaw: 'पका = कच्चा ×',
-    rawEqCooked: 'कच्चा = पका ÷',
-    yieldExpr: '(यील्ड % ÷ 100)',
-    rtcExampleHtml:
-      'उदाहरण: 200g कच्चा चिकन × 0.72 = <strong class="text-[var(--color-ink)]">144g पका</strong>',
-    ctrExampleHtml:
-      'उदाहरण: 144g पका चिकन ÷ 0.72 = <strong class="text-[var(--color-ink)]">200g कच्चा</strong>',
-    macroRuleLabel: 'मैक्रो गणना का नियम',
-    macroPre: 'मैक्रो =',
-    macroVar: '(कच्चा_ग्राम ÷ 100)',
-    macroPost: '× प्रति_100g_कच्चे_के_मैक्रो',
-    macroTextHtml:
-      'आप किसी भी दिशा में बदलें, मैक्रो हमेशा <strong class="text-[var(--color-ink)]">कच्चे वजन के बराबर मान</strong> से निकाले जाते हैं। USDA का पोषण डेटा कच्चे खाद्य पदार्थ पर मापा जाता है, इसलिए इस तरह सभी मैक्रो लेबल पर लिखे मानों से मेल खाते हैं।',
-    article: {
-      heading: 'इस कच्चे से पके वजन बदलने वाले कैलकुलेटर के बारे में',
-      intro:
-        'पका हुआ भोजन शायद ही कभी उतना वजन रखता है जितना कच्चा था: मांस और मछली अपने वजन का 15–35% खोते हैं, जबकि चावल, पास्ता और सूखी दालें दो से तीन गुना हो जाती हैं। यह कच्चे-से-पके कनवर्टर हर खाद्य पदार्थ का अपना USDA यील्ड प्रतिशत लगाता है, इसलिए आप कच्चा या पका, कोई भी वजन डालें और दूसरी तरफ का बराबर वजन मिल जाता है, साथ ही उतनी मात्रा की सही कैलोरी, प्रोटीन, कार्ब्स और वसा भी। USDA FoodData Central समेत ज्यादातर कैलोरी डेटाबेस मैक्रो कच्चे वजन के आधार पर देते हैं, लेकिन ज्यादातर लोग पकाकर खाते हैं; यही फर्क यह कैलकुलेटर पाटता है।',
-      whyHeading: 'कच्चे और पके भोजन का वजन अलग क्यों होता है',
-      whyP1:
-        'कच्चे और पके भोजन का वजन अलग होने की वजह नमी है। मांस पकाने पर पानी भाप बनकर उड़ता है और चर्बी पिघलकर निकल जाती है — इसलिए पका हुआ भोजन उस कच्चे भोजन से हल्का रह जाता है जिससे आपने शुरुआत की थी। अनाज और दालें इसका उल्टा करती हैं: उबालते समय वे पानी सोख लेती हैं, इसलिए पका हुआ भोजन बर्तन में डाले गए कच्चे भोजन से भारी हो जाता है।',
-      whyP2:
-        'इसका मतलब यह है कि आप पूरे दिन "एक ग्राम मतलब एक ग्राम" नहीं मान सकते। कच्चे से पके वजन का कैलकुलेटर हर खाद्य पदार्थ का अपना यील्ड प्रतिशत — यानी पके और कच्चे वजन का अनुपात — लगाकर यह समस्या हल करता है, और यह अनुपात एक चीज से दूसरी चीज में काफी बदलता है। चिकन और बीफ अपना करीब एक-चौथाई वजन खोते हैं। पालक अपनी मात्रा के एक अंश तक सिमट जाने के बावजूद सिर्फ 23% वजन खोता है। सफेद चावल लगभग तीन गुना हो जाता है।',
-      chickenHeading: 'चिकन का कच्चे से पके वजन में बदलाव',
-      chickenP1:
-        'बिना हड्डी और बिना त्वचा वाला चिकन ब्रेस्ट, चाहे बेक करें, ग्रिल करें या तवे पर तलें, पकाने पर करीब 28% वजन खो देता है, इसलिए 200g कच्चा चिकन पकने पर लगभग 144g रह जाता है। प्रोटीन ट्रैक करने वाले किसी भी व्यक्ति के लिए यह शायद सबसे जरूरी गणना है, क्योंकि कच्चे और पके के आंकड़े इतने अलग होते हैं कि दिन भर का कुल जोड़ बिगाड़ सकते हैं।',
-      chickenP2:
-        'व्यावहारिक नतीजा यह है: अगर आप चिकन पकाने के बाद तौलकर 144g दर्ज करते हैं और उसे कच्चे वजन वाले पोषण लेबल पर लगाते हैं, तो आप सिर्फ 144g कच्चे के मैक्रो गिनेंगे और 56g छूट जाएगा। सही तरीका है या तो पकाने से पहले कच्चा तौलना, या कच्चे-से-पके कैलकुलेटर से पके वजन को उसके कच्चे बराबर मान में बदलकर दर्ज करना।',
-      beefHeading: 'कीमे का कच्चे से पके वजन में बदलाव',
-      beefP1:
-        'सामान्य 80/20 कीमा पकाने पर करीब 27% वजन खो देता है — पानी और चर्बी दोनों निकलते हैं —, इसलिए 200g कच्चे हिस्से से करीब 146g पका कीमा मिलता है। सही आंकड़ा चर्बी की मात्रा के साथ चलता है: ज्यादा लीन 90/10 कीमा सिर्फ 18–20% खोता है, क्योंकि उसमें पिघलने के लिए कम चर्बी होती है।',
-      beefP2:
-        'यह कच्चे से पके मांस वजन कैलकुलेटर कीमे के लिए 80/20 को डिफॉल्ट मानता है, जो बाजार में सबसे आम चर्बी अनुपात के लिए USDA द्वारा मापे गए यील्ड डेटा से मेल खाता है।',
-      riceHeading: 'चावल का कच्चे से पके का अनुपात',
-      riceP1:
-        'सूखा सफेद चावल पकाने पर वजन में करीब तीन गुना हो जाता है: 100g सूखा चावल पकने पर करीब 300g, यानी USDA यील्ड 300% — मांस के ठीक उलट। इसका मतलब है कि 300g पके चावल के कटोरे में सिर्फ 100g सूखे चावल जितनी कैलोरी होती है, जो उन लोगों को चौंकाता है जो मानते हैं कि सूखे और पके चावल की प्रति ग्राम कैलोरी घनत्व एक जैसी होती है।',
-      riceP2:
-        'चावल के लिए सटीक कच्चे-से-पके कैलकुलेटर का इस्तेमाल इसलिए खास तौर पर जरूरी है क्योंकि गलती तेजी से जुड़ती जाती है। अगर आप रोज दो कटोरी पका चावल खाते हैं और पके वजन को सूखे वजन वाले लेबल पर दर्ज करते हैं, तो आप उस भोजन की कैलोरी काफी ज्यादा आंकेंगे।',
-      usdaHeading: 'आधिकारिक USDA डेटा पर आधारित',
-      usdaP1:
-        'इस कच्चे-से-पके कनवर्टर के पीछे का हर यील्ड आंकड़ा आधिकारिक USDA स्रोतों से आता है — वही डेटाबेस जिनका इस्तेमाल आहार विशेषज्ञ, खाद्य निर्माता और स्वास्थ्य शोधकर्ता करते हैं। मांस और मुर्गी के यील्ड USDA की मांस और मुर्गी कुकिंग यील्ड तालिका से लिए गए हैं। अनाज और सब्जियों के यील्ड USDA कृषि हैंडबुक संख्या 102 से, और USDA FoodData Central में कच्ची और पकी प्रविष्टियों की तुलना से निकाले गए हैं। इसीलिए हमारा कैलकुलेटर उन फिटनेस ऐप्स से ज्यादा भरोसेमंद है जो उपयोगकर्ताओं के अनुमानों या बिना जांचे औसतों पर चलते हैं। आप चिकन का कच्चे से पके वजन बदल रहे हों, कीमे का वजन जांच रहे हों या चावल का अनुपात निकाल रहे हों — यहां हर जवाब प्रकाशित और परखे गए डेटा पर टिका है।',
-    },
-  },
 };
 
 export function getHome(locale: Locale): HomeSections {

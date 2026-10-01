@@ -1,7 +1,7 @@
 import { ui, LOCALES } from './ui';
 import type { Locale, TranslationKey } from './ui';
 import { getFoodName, getShortFoodName, getFoodPhrase, getFoodPhraseCapitalized } from './food-names';
-import { getFoodFaqSet } from './faq';
+import { getFoodFaqSet, getFoodFaqById } from './faq';
 import type { FaqItem } from './faq';
 import type { Food } from '../utils/foods';
 import { getSourceKey } from '../utils/foods';
@@ -27,12 +27,9 @@ export function getLocalePath(locale: Locale, path: string): string {
   return prefix + (path.startsWith('/') ? path : `/${path}`);
 }
 
-/** Sentence terminators that differ from the ASCII full stop. */
-const SENTENCE_END: Record<string, string> = { ja: '。', hi: '।' };
-
-/** The character that ends a sentence in this locale. */
-export function sentenceEnd(locale: Locale): string {
-  return SENTENCE_END[locale] ?? '.';
+/** The character that ends a sentence in this locale. All current locales use the ASCII full stop. */
+export function sentenceEnd(_locale: Locale): string {
+  return '.';
 }
 
 /** Locales that write decimals with a comma. */
@@ -91,6 +88,12 @@ export function getFoodSource(locale: Locale, food: Food): string {
 
 /** The FAQ list for a food page, rendered in the requested locale. */
 export function getFoodFaqItems(locale: Locale, food: Food): FaqItem[] {
+  // English pages prefer a hand-written, food-specific question set when one
+  // exists; every other locale, and any food without one, falls through to the
+  // templated sets below.
+  const perFood = getFoodFaqById(locale, food.id);
+  if (perFood) return perFood;
+
   const set = getFoodFaqSet(locale);
   const vars = foodVars(locale, food);
 

@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MethodologyContent from '../components/MethodologyContent.astro';
+import { getMethodology } from '../i18n/methodology';
+
+// English-only page: unlike about/contact/privacy/terms it has no [lang]
+// variant. The footer link is shown only on the English site. See the header
+// of src/i18n/methodology.ts.
+const locale = 'en';
+const page = getMethodology(locale);
+
+const BASE = 'https://rawtocookedcalculator.com';
+const url = `${BASE}/methodology`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: page.heading,
+  description: page.metaDescription,
+  url,
+  mainEntityOfPage: url,
+  dateModified: '2026-09-09',
+  author: {
+    '@type': 'Person',
+    name: page.bylineName,
+    description: page.bylineBio,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Raw to Cooked Calculator',
+    url: BASE,
+  },
+};
+
+const hreflangUrls: Record<string, string> = { en: url };
+---
+
+<BaseLayout
+  title={page.metaTitle}
+  description={page.metaDescription}
+  canonicalUrl={url}
+  jsonLd={jsonLd}
+  locale={locale}
+  hreflangUrls={hreflangUrls}
+>
+  <MethodologyContent locale={locale} />
+</BaseLayout>

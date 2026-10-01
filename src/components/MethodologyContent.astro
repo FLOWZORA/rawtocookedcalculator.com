@@ -1,0 +1,80 @@
+---
+import { getLangPrefix } from '../i18n';
+import type { Locale } from '../i18n';
+import { getMethodology } from '../i18n/methodology';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const prefix = getLangPrefix(locale);
+const page = getMethodology(locale);
+---
+
+<!-- Hero -->
+<section class="border-b border-[var(--color-hairline)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-3">
+      {page.eyebrow}
+    </p>
+    <h1 class="text-3xl sm:text-4xl font-semibold text-[var(--color-ink)] tracking-[-1.5px] leading-tight mb-4">
+      {page.heading}
+    </h1>
+    <p class="text-sm text-[var(--color-body)] leading-relaxed max-w-2xl mb-6">
+      {page.lede}
+    </p>
+
+    <!-- Byline -->
+    <div class="border-t border-[var(--color-hairline)] pt-5 max-w-2xl">
+      <p class="text-xs font-mono font-medium text-[var(--color-mute)] uppercase tracking-wider mb-1">
+        {page.bylineLabel}
+      </p>
+      <p class="text-sm font-semibold text-[var(--color-ink)] mb-2">{page.bylineName}</p>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed">{page.bylineBio}</p>
+      <p class="text-xs font-mono text-[var(--color-faint)] mt-3">
+        {page.updatedLabel}: {page.updated}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Sections -->
+{page.sections.map((section) => (
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <div class="max-w-2xl">
+        <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+          {section.heading}
+        </h2>
+        {section.paragraphs?.map((text) => (
+          <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4 last:mb-0">{text}</p>
+        ))}
+        {section.list && (
+          <ul class="space-y-3 mt-2">
+            {section.list.map((item) => (
+              <li class="text-sm text-[var(--color-body)] leading-relaxed pl-4 border-l-2 border-[var(--color-hairline)]">
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
+        {section.html?.map((html) => (
+          <p class="text-sm text-[var(--color-body)] leading-relaxed mt-4" set:html={html} />
+        ))}
+      </div>
+    </div>
+  </section>
+))}
+
+<!-- CTA -->
+<section>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <a
+      href={`${prefix}/`}
+      class="inline-flex items-center gap-2 text-sm font-medium text-[var(--color-link)] hover:underline"
+    >
+      {page.ctaLabel}
+    </a>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+# Retired locales (ja, ko, hi) — removed 2026-09-09. 301 to the English
+# equivalent path so indexed URLs and inbound links don't hit 404s.
+# Cloudflare evaluates this file (and _headers) from the static assets layer
+# before the Worker, same as robots.txt.
+/ja               /            301
+/ko               /            301
+/hi               /            301
+/ja/*             /:splat      301
+/ko/*             /:splat      301
+/hi/*             /:splat      301

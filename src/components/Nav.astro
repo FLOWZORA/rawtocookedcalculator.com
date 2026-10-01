@@ -15,7 +15,8 @@ const [markBefore, markAfter] = t(locale, 'nav.wordmark').split('→');
 ---
 
 <nav class="border-b border-[var(--color-hairline)] bg-[var(--color-canvas)] sticky top-0 z-50">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+   <div class="flex items-center justify-between h-14">
     <!-- Wordmark -->
     <a
       href={`${prefix}/`}
@@ -87,6 +88,21 @@ const [markBefore, markAfter] = t(locale, 'nav.wordmark').split('→');
         <span id="theme-icon-sun" class="hidden">☀</span>
         <span id="theme-icon-moon" class="hidden">☽</span>
       </button>
+    </div>
+   </div>
+
+    <!-- Nav links (mobile) — the top bar has no room for them next to the
+         language + theme controls, so they get their own row under it. -->
+    <div class="sm:hidden flex items-center gap-1 pb-2 -mt-0.5 text-sm text-[var(--color-body)]">
+      <a href={`${prefix}/chicken`} class="px-3 py-1.5 rounded-full hover:bg-[var(--color-hairline-soft)] transition-colors">
+        {t(locale, 'nav.chicken')}
+      </a>
+      <a href={`${prefix}/rice`} class="px-3 py-1.5 rounded-full hover:bg-[var(--color-hairline-soft)] transition-colors">
+        {t(locale, 'nav.rice')}
+      </a>
+      <a href={`${prefix}/beef`} class="px-3 py-1.5 rounded-full hover:bg-[var(--color-hairline-soft)] transition-colors">
+        {t(locale, 'nav.beef')}
+      </a>
     </div>
   </div>
 </nav>

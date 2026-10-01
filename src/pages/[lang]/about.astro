@@ -26,6 +26,16 @@ const jsonLd = {
   name: page.metaTitle,
   description: page.metaDescription,
   url: `${BASE}/${locale}/about`,
+  author: {
+    '@type': 'Person',
+    name: page.bylineName,
+    description: page.bylineBio,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Raw to Cooked Calculator',
+    url: BASE,
+  },
 };
 ---
 

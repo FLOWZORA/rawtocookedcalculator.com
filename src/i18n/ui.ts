@@ -1,16 +1,13 @@
-export const LOCALES = ['en', 'es', 'ja', 'fr', 'de', 'pt', 'ko', 'it', 'hi'] as const;
+export const LOCALES = ['en', 'es', 'fr', 'de', 'pt', 'it'] as const;
 export type Locale = (typeof LOCALES)[number];
 
 export const LOCALE_NAMES: Record<Locale, string> = {
   en: 'English',
   es: 'Español',
-  ja: '日本語',
   fr: 'Français',
   de: 'Deutsch',
   pt: 'Português',
-  ko: '한국어',
   it: 'Italiano',
-  hi: 'हिन्दी',
 };
 
 export const ui = {
@@ -34,7 +31,7 @@ export const ui = {
     // Browse
     'browse.heading': 'Browse by food',
     'browse.description':
-      '26 foods across all three major categories — the broadest coverage of any raw-to-cooked calculator.',
+      '{n} foods across all three major categories, each with its USDA cooking yield and a full macro breakdown.',
     'browse.catMeat': 'Meat, Poultry & Seafood',
     'browse.catGrains': 'Grains, Pasta & Legumes',
     'browse.catVeg': 'Vegetables',
@@ -153,6 +150,7 @@ export const ui = {
     "footer.contact": "Contact",
     "footer.privacy": "Privacy Policy",
     "footer.terms": "Terms & Conditions",
+    "footer.methodology": "Methodology",
     "yield.loses": "Loses {loss}% of its weight when cooked",
     "yield.expands": "Expands to {n}× its dry weight when cooked",
     "source.usdaMeatTable": "USDA Table of Cooking Yields for Meat and Poultry",
@@ -183,7 +181,7 @@ export const ui = {
 
     'browse.heading': 'Explorar por alimento',
     'browse.description':
-      '26 alimentos en las tres categorías principales — la cobertura más amplia de cualquier calculadora crudo a cocido.',
+      '{n} alimentos en las tres categorías principales, cada uno con su rendimiento de cocción del USDA y el desglose completo de macros.',
     'browse.catMeat': 'Carne, Aves y Mariscos',
     'browse.catGrains': 'Cereales, Pasta y Legumbres',
     'browse.catVeg': 'Verduras',
@@ -295,6 +293,7 @@ export const ui = {
     "footer.contact": "Contacto",
     "footer.privacy": "Política de privacidad",
     "footer.terms": "Términos y condiciones",
+    "footer.methodology": "Metodología",
     "yield.loses": "Pérdida del {loss}% del peso al cocinarse",
     "yield.expands": "El peso se multiplica por {n} al cocinarse",
     "source.usdaMeatTable": "Tabla de Rendimientos de Cocción del USDA para Carne y Aves",
@@ -325,7 +324,7 @@ export const ui = {
 
     'browse.heading': 'Parcourir par aliment',
     'browse.description':
-      '26 aliments répartis dans les trois grandes catégories — la couverture la plus large de tout calculateur cru à cuit.',
+      '{n} aliments répartis dans les trois grandes catégories, chacun avec son rendement de cuisson USDA et le détail complet des macros.',
     'browse.catMeat': 'Viandes, Volailles & Fruits de mer',
     'browse.catGrains': 'Céréales, Pâtes & Légumineuses',
     'browse.catVeg': 'Légumes',
@@ -437,6 +436,7 @@ export const ui = {
     "footer.contact": "Contact",
     "footer.privacy": "Politique de confidentialité",
     "footer.terms": "Conditions générales",
+    "footer.methodology": "Méthodologie",
     "yield.loses": "Perte de {loss} % du poids à la cuisson",
     "yield.expands": "Poids multiplié par {n} à la cuisson",
     "source.usdaMeatTable": "Table des rendements de cuisson de l’USDA pour la viande et la volaille",
@@ -467,7 +467,7 @@ export const ui = {
 
     'browse.heading': 'Nach Lebensmittel stöbern',
     'browse.description':
-      '26 Lebensmittel in allen drei Hauptkategorien — die breiteste Abdeckung eines Roh-zu-Gekocht-Rechners.',
+      '{n} Lebensmittel in allen drei Hauptkategorien, jeweils mit USDA-Garausbeute und vollständiger Makroaufschlüsselung.',
     'browse.catMeat': 'Fleisch, Geflügel & Meeresfrüchte',
     'browse.catGrains': 'Getreide, Nudeln & Hülsenfrüchte',
     'browse.catVeg': 'Gemüse',
@@ -579,6 +579,7 @@ export const ui = {
     "footer.contact": "Kontakt",
     "footer.privacy": "Datenschutzerklärung",
     "footer.terms": "Allgemeine Geschäftsbedingungen",
+    "footer.methodology": "Methodik",
     "yield.loses": "{loss} % Gewichtsverlust beim Garen",
     "yield.expands": "{n}-faches Gewicht nach dem Garen",
     "source.usdaMeatTable": "USDA-Tabelle der Garausbeuten für Fleisch und Geflügel",
@@ -609,7 +610,7 @@ export const ui = {
 
     'browse.heading': 'Explorar por alimento',
     'browse.description':
-      '26 alimentos nas três principais categorias — a cobertura mais ampla de qualquer calculadora de cru para cozido.',
+      '{n} alimentos nas três principais categorias, cada um com seu rendimento de cocção do USDA e a composição completa de macros.',
     'browse.catMeat': 'Carnes, Aves e Frutos do Mar',
     'browse.catGrains': 'Grãos, Massas e Leguminosas',
     'browse.catVeg': 'Vegetais',
@@ -721,6 +722,7 @@ export const ui = {
     "footer.contact": "Contato",
     "footer.privacy": "Política de privacidade",
     "footer.terms": "Termos e condições",
+    "footer.methodology": "Metodologia",
     "yield.loses": "Perda de {loss}% do peso ao cozinhar",
     "yield.expands": "O peso é multiplicado por {n} ao cozinhar",
     "source.usdaMeatTable": "Tabela de Rendimentos de Cocção do USDA para Carnes e Aves",
@@ -734,289 +736,7 @@ export const ui = {
     "footer.brand": "Calculadora Cru→Cozido",
   },
 
-  ja: {
-    'nav.wordmark': '生→調理済み',
-    'nav.chicken': 'チキン',
-    'nav.rice': 'ご飯',
-    'nav.beef': '牛肉',
-    'nav.darkMode': 'ダークモード切替',
-    'nav.language': '言語',
 
-    'hero.eyebrow': 'USDA調理収率データに基づく',
-    'hero.heading': '生から調理済み計算機',
-    'hero.description':
-      '加熱した肉は生より15〜35%軽く、米やパスタは2〜3倍重くなります。生でも加熱後でも重量を入力すれば変換でき、肉類・穀物・野菜の完全なマクロ（カロリー、タンパク質、炭水化物、脂質）も分かります。',
-    'hero.usda':
-      'すべての収率はUSDA FoodData Central、USDA調理収率表、およびUSDA農業ハンドブック第102号から取得しています。',
-
-    'browse.heading': '食品を選ぶ',
-    'browse.description':
-      '3つの主要カテゴリにわたる26種類の食品 — あらゆる生から調理済み計算機の中で最も広い対応範囲。',
-    'browse.catMeat': '肉類・鶏肉・魚介類',
-    'browse.catGrains': '穀物・パスタ・豆類',
-    'browse.catVeg': '野菜',
-    'browse.note.chicken': '調理後28%減',
-    'browse.note.beef': '調理後27%減',
-    'browse.note.salmon': '調理後15%減',
-    'browse.note.pork': '調理後22%減',
-    'browse.note.rice': '調理後3倍に膨張',
-    'browse.note.pasta': '調理後2.25倍に膨張',
-    'browse.note.lentils': '調理後2.9倍に膨張',
-    'browse.note.quinoa': '調理後3.1倍に膨張',
-    'browse.note.spinach': '調理後23%減',
-    'browse.note.broccoli': '正味の重量変化なし',
-    'browse.note.potato': '調理後6%減',
-    'browse.note.sweetPotato': '調理後22%減',
-
-    'browse.food.chicken': '鶏の胸肉',
-    'browse.food.beef': '合い挽き肉 (80/20)',
-    'browse.food.salmon': 'サーモンフィレ',
-    'browse.food.pork': 'ポークチョップ',
-    'browse.food.rice': '白米',
-    'browse.food.pasta': 'パスタ',
-    'browse.food.lentils': 'レンズ豆',
-    'browse.food.quinoa': 'キヌア',
-    'browse.food.spinach': 'ほうれん草',
-    'browse.food.broccoli': 'ブロッコリー',
-    'browse.food.potato': 'じゃがいも',
-    'browse.food.sweetPotato': 'さつまいも',
-
-    'callout.eyebrow': '驚きの収率',
-    'callout.heading': 'ほうれん草は「かさ」が激減するだけで、重量は23%しか減らない',
-    'callout.description':
-      'ほうれん草の調理歩留まりは77%で、生の葉100gは加熱後も約77g、減るのは23%だけです。フライパン一杯の生のほうれん草がわずかな量まで縮むため、重量も同じだけ落ちると思われがちですが、激減するのは「かさ」であって「重さ」ではありません。白米はその逆で、乾燥100gが調理後300gになります。どちらも、目分量ではなくはかりを使うべき理由です。',
-    'callout.spinachBtn': 'ほうれん草計算機 →',
-    'callout.riceBtn': '米計算機 →',
-
-    'usda.heading': 'なぜUSDAデータ？',
-    'usda.meatLabel': '肉類・鶏肉',
-    'usda.meatText':
-      '<strong>USDAの肉類・鶏肉調理収率表</strong>からの収率 — 食品メーカーや栄養士が使用しているのと同じ情報源。',
-    'usda.grainsLabel': '穀物・野菜',
-    'usda.grainsText':
-      '<strong>USDA農業ハンドブック第102号</strong>、および<strong>USDA FoodData Central</strong>（fdc.nal.usda.gov）の生と調理済みの項目の比較から導き出した収率。後者は米国の公式栄養データベースです。',
-
-    'calc.foodLabel': '食品',
-    'calc.foodPlaceholder': '検索 — 鶏の胸肉、白米、ブロッコリー…',
-    'calc.clearFood': '食品選択をクリア',
-    'calc.foodSuggestions': '食品候補',
-    'calc.noFoodsFound': '食品が見つかりませんでした。',
-    'calc.directionLabel': '方向',
-    'calc.rawToCooked': '生 → 調理済み',
-    'calc.cookedToRaw': '調理済み → 生',
-    'calc.rawWeight': '生の重量',
-    'calc.cookedWeight': '調理済みの重量',
-    'calc.weightPlaceholder': '例：200',
-    'calc.emptyState': '上記で食品を検索して始めてください。',
-    'calc.nutritionHeader': '栄養成分 — この量について',
-    'calc.calories': 'カロリー',
-    'calc.protein': 'タンパク質',
-    'calc.carbs': '炭水化物',
-    'calc.fat': '脂質',
-    'calc.sourceLabel': '出典',
-    'calc.estimateSource': '業界標準の推定値（USDAデータ未掲載）',
-    'calc.estimateNote':
-      'この収率は業界標準の推定値です。USDAはこの食品の調理収率の直接測定値を公開していません。',
-    'calc.morePrecise': '+ より精確：調理方法を選ぶ',
-    'calc.hidePrecise': '− 調理方法を非表示',
-    'calc.cookingMethodLabel': '調理方法',
-    'calc.unitLabel': '重量の単位',
-    'calc.yieldExpand': '乾燥重量の{n}倍に膨張 · USDA収率：{pct}%',
-    'calc.yieldLoss': '調理後{loss}%の重量減 · USDA収率：{pct}%',
-
-    'footer.tagline':
-      '肉類、穀物、野菜のUSDA調理収率データ。すべての換算に完全なマクロ付き。',
-    'footer.popularFoods': '人気の食品',
-    'footer.dataSources': 'データ出典',
-    'footer.usdaMeat': 'USDA肉類・鶏肉調理収率表',
-    'footer.usdaFdc': 'USDA FoodData Central',
-    'footer.usdaHandbook': "USDA農業ハンドブック第102号（1975年）",
-    'footer.nonUsdaNote':
-      "大豆ミートはIFCT 2017（インドの公式表）に基づきます。USDAはこの食品を扱っていません。",
-    'footer.disclaimer':
-      '数値は上記のUSDAデータに基づいています。正確な計量のため、常に料理用スケールで食品を計ってください。',
-
-    'food.estimatedYield': '推定収率',
-    'food.rawToCookedCalc': '生から調理済み計算機',
-    'food.usdaCookingYield': 'USDA調理収率',
-    'food.source': '出典',
-    'food.estimateSource':
-      '業界標準の推定値 — USDAはこの食品の調理収率データを直接公開していません。',
-    'food.yieldByMethod': '調理方法別収率',
-    'food.yieldByMethodSource': '出典：USDA肉類・鶏肉調理収率表',
-    'food.chickenHeading': '鶏の胸肉がマクロ追跡の金本位標準である理由',
-    'food.chickenP1':
-      '皮なし・骨なしの鶏の胸肉は、生100gあたり約22.5gのタンパク質を含みます — あらゆる全食品の中で最高のタンパク質・カロリー比のひとつです。生100gあたりわずか120カロリー、2.6gの脂質で、ボディビルダー、アスリート、カロリー制限中の誰にとっても定番のリーンプロテインです。',
-    'food.chickenP2':
-      '鶏胸肉は加熱すると約28%の重量を失うため、<strong>生重量基準の表示に対して加熱後の重量を記録すると、実際のタンパク質を少なく見積もることになります</strong>。加熱済み150gの分量は生約210gから得られたもので、USDAの栄養表示に対して記録すべき数値は210gです。',
-    'food.calcHeading': '{name}計算機',
-    'food.faqHeading': 'よくある質問',
-    'food.relatedLabel': '関連計算機',
-    'food.allFoods': 'すべての食品 →',
-
-    'page.homeTitle': '生から調理済み計算機 | USDA収率データと完全なマクロ',
-    'page.homeDescription':
-      'あらゆる食品の生から調理済みの重量を換算。カロリー、タンパク質、炭水化物、脂質をあらゆる量で取得 — USDAデータに基づく。',
-    // Footer company links, yield descriptions, data-source labels
-    "footer.company": "会社情報",
-    "footer.about": "運営者について",
-    "footer.contact": "お問い合わせ",
-    "footer.privacy": "プライバシーポリシー",
-    "footer.terms": "利用規約",
-    "yield.loses": "調理すると重量が{loss}%減ります",
-    "yield.expands": "調理すると乾燥重量の{n}倍に膨らみます",
-    "source.usdaMeatTable": "USDA 食肉・鶏肉の調理歩留まり表",
-    "source.usdaHandbook102": "USDA農業ハンドブック第102号（1975年）",
-    "source.usdaFdc": "USDA FoodData Central（生と加熱後のデータを比較）",
-    "source.ifct": "IFCT 2017 — インド食品成分表（インドの公式栄養機関）",
-    "calc.ifctNote":
-      "この歩留まりは実測データから算出した実際の数値ですが、出典はUSDAではなく、インドの公式食品成分表であるIFCT 2017です。USDAはこの食品を扱っていません。",
-    "calc.noteLabel": "注:",
-
-    "footer.brand": "生→調理済み 計算機",
-  },
-
-  ko: {
-    'nav.wordmark': '생→조리',
-    'nav.chicken': '닭고기',
-    'nav.rice': '쌀',
-    'nav.beef': '소고기',
-    'nav.darkMode': '다크 모드 전환',
-    'nav.language': '언어',
-
-    'hero.eyebrow': 'USDA 조리 수율 데이터 기반',
-    'hero.heading': '생 → 조리 계산기',
-    'hero.description':
-      '조리한 고기는 생보다 15~35% 가볍고, 쌀과 파스타는 두세 배 무겁습니다. 생이든 조리 후든 무게를 입력하면 변환되고, 육류·곡물·채소의 완전한 매크로(칼로리, 단백질, 탄수화물, 지방)도 함께 나옵니다.',
-    'hero.usda':
-      '모든 수율은 USDA FoodData Central, USDA 조리 수율 표, USDA 농업 핸드북 제102호에서 가져왔습니다.',
-
-    'browse.heading': '식품별 찾기',
-    'browse.description':
-      '3가지 주요 카테고리에 걸친 26가지 식품 — 어떤 생→조리 계산기보다 넓은 범위.',
-    'browse.catMeat': '육류, 가금류 및 해산물',
-    'browse.catGrains': '곡물, 파스타 및 콩류',
-    'browse.catVeg': '채소',
-    'browse.note.chicken': '조리 시 28% 감소',
-    'browse.note.beef': '조리 시 27% 감소',
-    'browse.note.salmon': '조리 시 15% 감소',
-    'browse.note.pork': '조리 시 22% 감소',
-    'browse.note.rice': '조리 시 3배 팽창',
-    'browse.note.pasta': '조리 시 2.25배 팽창',
-    'browse.note.lentils': '조리 시 2.9배 팽창',
-    'browse.note.quinoa': '조리 시 3.1배 팽창',
-    'browse.note.spinach': '조리 시 23% 감소',
-    'browse.note.broccoli': '순 중량 변화 없음',
-    'browse.note.potato': '조리 시 6% 감소',
-    'browse.note.sweetPotato': '조리 시 22% 감소',
-
-    'browse.food.chicken': '닭 가슴살',
-    'browse.food.beef': '다진 소고기 (80/20)',
-    'browse.food.salmon': '연어 필레',
-    'browse.food.pork': '돼지 갈비',
-    'browse.food.rice': '백미',
-    'browse.food.pasta': '파스타',
-    'browse.food.lentils': '렌틸콩',
-    'browse.food.quinoa': '퀴노아',
-    'browse.food.spinach': '시금치',
-    'browse.food.broccoli': '브로콜리',
-    'browse.food.potato': '감자',
-    'browse.food.sweetPotato': '고구마',
-
-    'callout.eyebrow': '놀라운 수율',
-    'callout.heading': '시금치는 부피가 무너질 뿐, 무게는 23%만 줄어듭니다',
-    'callout.description':
-      '시금치의 조리 수율은 77%로, 생잎 100g은 조리 후에도 약 77g이고 줄어드는 것은 23%뿐입니다. 팬 가득한 생 시금치가 얼마 안 되는 양으로 줄어들다 보니 무게도 그만큼 빠진다고 생각하기 쉽지만, 무너지는 것은 부피이지 질량이 아닙니다. 백미는 반대 방향으로, 건조 100g이 조리 후 300g이 됩니다. 둘 다 눈대중보다 저울이 나은 이유입니다.',
-    'callout.spinachBtn': '시금치 계산기 →',
-    'callout.riceBtn': '쌀 계산기 →',
-
-    'usda.heading': '왜 USDA 데이터인가?',
-    'usda.meatLabel': '육류 및 가금류',
-    'usda.meatText':
-      '<strong>USDA 육류 및 가금류 조리 수율 표</strong>의 수율 — 식품 제조업체와 영양사들이 사용하는 동일한 출처.',
-    'usda.grainsLabel': '곡물 및 채소',
-    'usda.grainsText':
-      '<strong>USDA 농업 핸드북 제102호</strong>, 그리고 <strong>USDA FoodData Central</strong>(fdc.nal.usda.gov)에서 생 및 조리된 항목을 비교하여 도출된 수율 — 후자는 미국의 권위 있는 영양 데이터베이스입니다.',
-
-    'calc.foodLabel': '식품',
-    'calc.foodPlaceholder': '검색 — 닭 가슴살, 백미, 브로콜리…',
-    'calc.clearFood': '식품 선택 지우기',
-    'calc.foodSuggestions': '식품 추천',
-    'calc.noFoodsFound': '식품을 찾을 수 없습니다.',
-    'calc.directionLabel': '방향',
-    'calc.rawToCooked': '생 → 조리',
-    'calc.cookedToRaw': '조리 → 생',
-    'calc.rawWeight': '생 무게',
-    'calc.cookedWeight': '조리된 무게',
-    'calc.weightPlaceholder': '예: 200',
-    'calc.emptyState': '시작하려면 위에서 식품을 검색하세요.',
-    'calc.nutritionHeader': '영양 — 이 양에 대해',
-    'calc.calories': '칼로리',
-    'calc.protein': '단백질',
-    'calc.carbs': '탄수화물',
-    'calc.fat': '지방',
-    'calc.sourceLabel': '출처',
-    'calc.estimateSource': '업계 표준 추정치 (USDA 데이터 없음)',
-    'calc.estimateNote':
-      '이 수율 수치는 업계 표준 추정치입니다. USDA는 이 식품에 대한 직접적인 조리 수율 측정값을 게시하지 않았습니다.',
-    'calc.morePrecise': '+ 더 정확하게: 조리 방법 선택',
-    'calc.hidePrecise': '− 조리 방법 숨기기',
-    'calc.cookingMethodLabel': '조리 방법',
-    'calc.unitLabel': '무게 단위',
-    'calc.yieldExpand': '건조 무게의 {n}배로 팽창 · USDA 수율: {pct}%',
-    'calc.yieldLoss': '조리 시 {loss}% 무게 감소 · USDA 수율: {pct}%',
-
-    'footer.tagline':
-      '육류, 곡물, 채소를 위한 USDA 조리 수율 데이터. 모든 변환에 대한 완전한 매크로.',
-    'footer.popularFoods': '인기 식품',
-    'footer.dataSources': '데이터 출처',
-    'footer.usdaMeat': 'USDA 육류 및 가금류 조리 수율 표',
-    'footer.usdaFdc': 'USDA FoodData Central',
-    'footer.usdaHandbook': "USDA 농업 핸드북 제102호(1975)",
-    'footer.nonUsdaNote':
-      "콩고기는 IFCT 2017(인도 공식 성분표)를 사용합니다. USDA는 이 식품을 다루지 않습니다.",
-    'footer.disclaimer':
-      '값은 위의 USDA 데이터를 기반으로 합니다. 정확도를 위해 항상 주방 저울로 식품을 측정하세요.',
-
-    'food.estimatedYield': '추정 수율',
-    'food.rawToCookedCalc': '생 → 조리 계산기',
-    'food.usdaCookingYield': 'USDA 조리 수율',
-    'food.source': '출처',
-    'food.estimateSource':
-      '업계 표준 추정치 — USDA는 이 식품에 대한 직접적인 조리 수율 데이터를 게시하지 않았습니다.',
-    'food.yieldByMethod': '조리 방법별 수율',
-    'food.yieldByMethodSource': '출처: USDA 육류 및 가금류 조리 수율 표',
-    'food.chickenHeading': '닭 가슴살이 매크로 추적의 황금 기준인 이유',
-    'food.chickenP1':
-      '껍질과 뼈를 제거한 닭 가슴살은 생 100g당 약 22.5g의 단백질을 제공합니다 — 모든 전체 식품 중 가장 높은 단백질 대 칼로리 비율 중 하나입니다. 생 100g당 120칼로리와 2.6g의 지방만으로, 보디빌더, 운동선수, 칼로리 적자를 관리하는 모든 사람에게 가장 선호되는 린 단백질입니다.',
-    'food.chickenP2':
-      '닭 가슴살은 조리하면 약 28%의 무게가 줄어들기 때문에, <strong>생중량 기준 라벨에 조리 후 무게를 기록하면 실제 단백질이 적게 계산됩니다</strong>. 조리된 150g은 생 약 210g에서 나온 것으로, USDA 영양 라벨에 기록해야 할 숫자는 210g입니다.',
-    'food.calcHeading': '{name} 계산기',
-    'food.faqHeading': '자주 묻는 질문',
-    'food.relatedLabel': '관련 계산기',
-    'food.allFoods': '모든 식품 →',
-
-    'page.homeTitle': '생 → 조리 계산기 | USDA 수율 데이터 및 완전한 매크로',
-    'page.homeDescription':
-      '모든 식품의 생 및 조리된 무게를 변환하세요. 모든 양에 대한 칼로리, 단백질, 탄수화물, 지방을 얻으세요 — USDA 데이터 기반.',
-    // Footer company links, yield descriptions, data-source labels
-    "footer.company": "회사 정보",
-    "footer.about": "사이트 소개",
-    "footer.contact": "문의하기",
-    "footer.privacy": "개인정보 처리방침",
-    "footer.terms": "이용약관",
-    "yield.loses": "조리하면 무게의 {loss}%가 줄어듭니다",
-    "yield.expands": "조리하면 건조 중량의 {n}배로 불어납니다",
-    "source.usdaMeatTable": "USDA 육류·가금류 조리 수율표",
-    "source.usdaHandbook102": "USDA 농업 핸드북 제102호(1975)",
-    "source.usdaFdc": "USDA FoodData Central (생·조리 항목 비교)",
-    "source.ifct": "IFCT 2017 — 인도 식품성분표(인도의 공식 영양 기관)",
-    "calc.ifctNote":
-      "이 수율은 실제로 계산된 수치이지만, 출처는 USDA가 아니라 인도의 공식 식품성분표인 IFCT 2017입니다. USDA는 이 식품을 다루지 않습니다.",
-    "calc.noteLabel": "참고:",
-
-    "footer.brand": "생→조리 계산기",
-  },
 
   it: {
     'nav.wordmark': 'Crudo→Cotto',
@@ -1035,7 +755,7 @@ export const ui = {
 
     'browse.heading': 'Sfoglia per alimento',
     'browse.description':
-      '26 alimenti nelle tre categorie principali — la copertura più ampia di qualsiasi calcolatore crudo-cotto.',
+      '{n} alimenti nelle tre categorie principali, ciascuno con la resa di cottura USDA e il dettaglio completo dei macro.',
     'browse.catMeat': 'Carne, Pollame e Frutti di mare',
     'browse.catGrains': 'Cereali, Pasta e Legumi',
     'browse.catVeg': 'Verdure',
@@ -1147,6 +867,7 @@ export const ui = {
     "footer.contact": "Contatti",
     "footer.privacy": "Informativa sulla privacy",
     "footer.terms": "Termini e condizioni",
+    "footer.methodology": "Metodologia",
     "yield.loses": "Perdita del {loss}% del peso in cottura",
     "yield.expands": "Peso moltiplicato per {n} in cottura",
     "source.usdaMeatTable": "Tabella USDA delle rese di cottura per carne e pollame",
@@ -1160,147 +881,6 @@ export const ui = {
     "footer.brand": "Calcolatore Crudo→Cotto",
   },
 
-  hi: {
-    'nav.wordmark': 'कच्चा→पका',
-    'nav.chicken': 'चिकन',
-    'nav.rice': 'चावल',
-    'nav.beef': 'गोश्त',
-    'nav.darkMode': 'डार्क मोड टॉगल करें',
-    'nav.language': 'भाषा',
-
-    'hero.eyebrow': 'USDA कुकिंग यील्ड डेटा पर आधारित',
-    'hero.heading': 'कच्चे से पके का कैलकुलेटर',
-    'hero.description':
-      'पका मांस कच्चे से 15–35% हल्का होता है; चावल और पास्ता दो से तीन गुना भारी। कच्चा या पका, कोई भी वजन डालकर बदलें — मांस, अनाज और सब्जियों के लिए पूरे मैक्रो (कैलोरी, प्रोटीन, कार्ब्स, वसा) के साथ।',
-    'hero.usda':
-      'सभी यील्ड USDA FoodData Central, USDA कुकिंग यील्ड तालिका और USDA कृषि हैंडबुक संख्या 102 से ली गई हैं।',
-
-    'browse.heading': 'खाद्य पदार्थ खोजें',
-    'browse.description':
-      'तीनों प्रमुख श्रेणियों में 26 खाद्य पदार्थ — किसी भी कच्चे से पके कैलकुलेटर की सबसे व्यापक कवरेज।',
-    'browse.catMeat': 'मांस, मुर्गी और समुद्री भोजन',
-    'browse.catGrains': 'अनाज, पास्ता और दालें',
-    'browse.catVeg': 'सब्जियां',
-    'browse.note.chicken': 'पकाने पर 28% कम',
-    'browse.note.beef': 'पकाने पर 27% कम',
-    'browse.note.salmon': 'पकाने पर 15% कम',
-    'browse.note.pork': 'पकाने पर 22% कम',
-    'browse.note.rice': 'पकाने पर 3× फैलता है',
-    'browse.note.pasta': 'पकाने पर 2.25× फैलता है',
-    'browse.note.lentils': 'पकाने पर 2.9× फैलता है',
-    'browse.note.quinoa': 'पकाने पर 3.1× फैलता है',
-    'browse.note.spinach': 'पकाने पर 23% कम',
-    'browse.note.broccoli': 'शुद्ध वजन में कोई बदलाव नहीं',
-    'browse.note.potato': 'पकाने पर 6% कम',
-    'browse.note.sweetPotato': 'पकाने पर 22% कम',
-
-    'browse.food.chicken': 'चिकन ब्रेस्ट',
-    'browse.food.beef': 'कीमा (80/20)',
-    'browse.food.salmon': 'सैल्मन फिलेट',
-    'browse.food.pork': 'पोर्क चॉप',
-    'browse.food.rice': 'सफेद चावल',
-    'browse.food.pasta': 'पास्ता',
-    'browse.food.lentils': 'मसूर दाल',
-    'browse.food.quinoa': 'क्विनोआ',
-    'browse.food.spinach': 'पालक',
-    'browse.food.broccoli': 'ब्रोकोली',
-    'browse.food.potato': 'आलू',
-    'browse.food.sweetPotato': 'शकरकंद',
-
-    'callout.eyebrow': 'चौंकाने वाले यील्ड',
-    'callout.heading': 'पालक की मात्रा तो ढह जाती है, पर वजन सिर्फ 23% घटता है',
-    'callout.description':
-      'पालक की कुकिंग यील्ड 77% है: 100g कच्चे पत्ते पकने के बाद भी करीब 77g रहते हैं, यानी सिर्फ 23% की कमी। कड़ाही भर कच्चा पालक सिकुड़कर मुट्ठी भर रह जाता है, इसलिए लगभग हर कोई मान लेता है कि वजन भी उतनी ही तेजी से गिरता होगा, पर जो ढहता है वह मात्रा है, वजन नहीं। सफेद चावल इसके विपरीत होता है: 100g सूखा 300g पका बन जाता है। दोनों ही बताते हैं कि अंदाजे से बेहतर तराजू है।',
-    'callout.spinachBtn': 'पालक कैलकुलेटर →',
-    'callout.riceBtn': 'चावल कैलकुलेटर →',
-
-    'usda.heading': 'USDA डेटा क्यों?',
-    'usda.meatLabel': 'मांस और मुर्गी',
-    'usda.meatText':
-      'यील्ड <strong>USDA मांस और मुर्गी कुकिंग यील्ड तालिका</strong> से — वही स्रोत जो खाद्य निर्माता और पोषण विशेषज्ञ उपयोग करते हैं।',
-    'usda.grainsLabel': 'अनाज और सब्जियां',
-    'usda.grainsText':
-      '<strong>USDA कृषि हैंडबुक संख्या 102</strong> से, और <strong>USDA FoodData Central</strong> (fdc.nal.usda.gov) में कच्ची और पकी प्रविष्टियों की तुलना से ली गई यील्ड — यह अमेरिका का आधिकारिक पोषक तत्व डेटाबेस है।',
-
-    'calc.foodLabel': 'खाद्य पदार्थ',
-    'calc.foodPlaceholder': 'खोजें — चिकन ब्रेस्ट, सफेद चावल, ब्रोकोली…',
-    'calc.clearFood': 'चयन हटाएं',
-    'calc.foodSuggestions': 'खाद्य सुझाव',
-    'calc.noFoodsFound': 'कोई खाद्य पदार्थ नहीं मिला।',
-    'calc.directionLabel': 'दिशा',
-    'calc.rawToCooked': 'कच्चा → पका',
-    'calc.cookedToRaw': 'पका → कच्चा',
-    'calc.rawWeight': 'कच्चा वजन',
-    'calc.cookedWeight': 'पका वजन',
-    'calc.weightPlaceholder': 'जैसे 200',
-    'calc.emptyState': 'शुरू करने के लिए ऊपर खाद्य पदार्थ खोजें।',
-    'calc.nutritionHeader': 'पोषण — इस मात्रा के लिए',
-    'calc.calories': 'कैलोरी',
-    'calc.protein': 'प्रोटीन',
-    'calc.carbs': 'कार्ब्स',
-    'calc.fat': 'वसा',
-    'calc.sourceLabel': 'स्रोत',
-    'calc.estimateSource': 'उद्योग-मानक अनुमान (USDA डेटा अनुपलब्ध)',
-    'calc.estimateNote':
-      'यह यील्ड एक उद्योग-मानक अनुमान है। USDA ने इस खाद्य पदार्थ के लिए सीधे कुकिंग यील्ड माप प्रकाशित नहीं किए हैं।',
-    'calc.morePrecise': '+ अधिक सटीक: पकाने की विधि चुनें',
-    'calc.hidePrecise': '− पकाने की विधि छुपाएं',
-    'calc.cookingMethodLabel': 'पकाने की विधि',
-    'calc.unitLabel': 'वजन की इकाई',
-    'calc.yieldExpand': 'सूखे वजन का {n}× फैलता है · USDA यील्ड: {pct}%',
-    'calc.yieldLoss': 'पकाने पर {loss}% वजन घटता है · USDA यील्ड: {pct}%',
-
-    'footer.tagline':
-      'मांस, अनाज और सब्जियों के लिए USDA कुकिंग यील्ड डेटा। हर रूपांतरण के लिए पूरे मैक्रो।',
-    'footer.popularFoods': 'लोकप्रिय खाद्य पदार्थ',
-    'footer.dataSources': 'डेटा स्रोत',
-    'footer.usdaMeat': 'USDA मांस और मुर्गी कुकिंग यील्ड तालिका',
-    'footer.usdaFdc': 'USDA FoodData Central',
-    'footer.usdaHandbook': "USDA कृषि हैंडबुक संख्या 102 (1975)",
-    'footer.nonUsdaNote':
-      "सोया चंक्स के लिए IFCT 2017 (भारत की आधिकारिक तालिकाएं) का उपयोग होता है; USDA उस खाद्य पदार्थ को कवर नहीं करता।",
-    'footer.disclaimer':
-      'मान ऊपर दिए USDA डेटा के अनुसार हैं। सटीकता के लिए हमेशा रसोई तराजू से खाना तोलें।',
-
-    'food.estimatedYield': 'अनुमानित यील्ड',
-    'food.rawToCookedCalc': 'कच्चे से पके का कैलकुलेटर',
-    'food.usdaCookingYield': 'USDA कुकिंग यील्ड',
-    'food.source': 'स्रोत',
-    'food.estimateSource':
-      'उद्योग-मानक अनुमान — USDA ने इस खाद्य पदार्थ के लिए सीधे कुकिंग यील्ड डेटा प्रकाशित नहीं किया है।',
-    'food.yieldByMethod': 'पकाने की विधि के अनुसार यील्ड',
-    'food.yieldByMethodSource': 'स्रोत: USDA मांस और मुर्गी कुकिंग यील्ड तालिका',
-    'food.chickenHeading': 'चिकन ब्रेस्ट मैक्रो-ट्रैकिंग का स्वर्ण मानक क्यों है',
-    'food.chickenP1':
-      'बिना त्वचा और हड्डी के चिकन ब्रेस्ट प्रति 100g कच्चे में लगभग 22.5g प्रोटीन देता है — किसी भी साबुत खाद्य पदार्थ का सबसे अच्छा प्रोटीन-कैलोरी अनुपात। प्रति 100g कच्चे में केवल 120 कैलोरी और 2.6g वसा के साथ, यह बॉडीबिल्डर, एथलीट और कैलोरी कम करने वाले सभी लोगों के लिए पसंदीदा लीन प्रोटीन है।',
-    'food.chickenP2':
-      'पकाने पर करीब 28% वजन खो देने के कारण, <strong>यील्ड को ध्यान में रखे बिना पका वजन लॉग करने से आपकी वास्तविक प्रोटीन खपत कम आंकी जाती है</strong>। 150g पका हिस्सा लगभग 210g कच्चे से आया — USDA लेबल के अनुसार यही कच्चा वजन आपको लॉग करना चाहिए।',
-    'food.calcHeading': '{name} कैलकुलेटर',
-    'food.faqHeading': 'अक्सर पूछे जाने वाले सवाल',
-    'food.relatedLabel': 'संबंधित कैलकुलेटर',
-    'food.allFoods': 'सभी खाद्य पदार्थ →',
-
-    'page.homeTitle': 'कच्चे से पके का कैलकुलेटर | USDA यील्ड डेटा और पूरे मैक्रो',
-    'page.homeDescription':
-      'किसी भी खाद्य पदार्थ का कच्चे और पके के बीच वजन बदलें। किसी भी मात्रा के लिए कैलोरी, प्रोटीन, कार्ब्स और वसा पाएं — USDA डेटा पर आधारित।',
-    // Footer company links, yield descriptions, data-source labels
-    "footer.company": "कंपनी",
-    "footer.about": "हमारे बारे में",
-    "footer.contact": "संपर्क करें",
-    "footer.privacy": "गोपनीयता नीति",
-    "footer.terms": "नियम और शर्तें",
-    "yield.loses": "पकाने पर अपने वजन का {loss}% खो देता है",
-    "yield.expands": "पकाने पर सूखे वजन का {n} गुना हो जाता है",
-    "source.usdaMeatTable": "USDA मांस और मुर्गी कुकिंग यील्ड तालिका",
-    "source.usdaHandbook102": "USDA कृषि हैंडबुक संख्या 102 (1975)",
-    "source.usdaFdc": "USDA FoodData Central (कच्ची और पकी प्रविष्टियों की तुलना)",
-    "source.ifct": "IFCT 2017 — भारतीय खाद्य संघटन तालिकाएं (भारत का आधिकारिक पोषण प्राधिकरण)",
-    "calc.ifctNote":
-      "यह यील्ड एक वास्तविक, गणना किया गया आंकड़ा है, लेकिन यह USDA से नहीं बल्कि IFCT 2017 — भारत की आधिकारिक खाद्य संघटन तालिकाओं — से आता है, क्योंकि USDA इस खाद्य पदार्थ को कवर नहीं करता।",
-    "calc.noteLabel": "ध्यान दें:",
-
-    "footer.brand": "कच्चा→पका कैलकुलेटर",
-  },
 } as const;
 
 export type TranslationKey = keyof (typeof ui)['en'];

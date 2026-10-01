@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FoodContent from '../components/FoodContent.astro';
 import { SLUG_TO_ID, getFoodBySlug } from '../utils/foods';
 import { LOCALES, getFoodFaqItems, getFoodPageMeta } from '../i18n';
+import { foodPageHasFullContent } from '../i18n/food-content';
 
 const locale = 'en';
 
@@ -20,14 +21,32 @@ if (!food) {
 const { title, description } = getFoodPageMeta(locale, food);
 
 const BASE = 'https://rawtocookedcalculator.com';
-const hreflangUrls: Record<string, string> = { en: `${BASE}/${slug}` };
-for (const l of LOCALES) {
-  if (l !== 'en') hreflangUrls[l] = `${BASE}/${l}/${slug}`;
-}
+
+// Only advertise locales whose food pages are indexable. The others render the
+// thin templated layout and are `noindex`'d until translated, so listing them as
+// hreflang alternates would point crawlers at pages they've been told to drop.
+const hreflangUrls: Record<string, string> = Object.fromEntries(
+  LOCALES.filter(foodPageHasFullContent).map((l) => [
+    l,
+    l === 'en' ? `${BASE}/${slug}` : `${BASE}/${l}/${slug}`,
+  ])
+);
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  url: `${BASE}/${slug}`,
+  dateModified: '2026-09-09',
+  author: {
+    '@type': 'Person',
+    name: 'Vaibhav Tiwari',
+    url: `${BASE}/methodology`,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Raw to Cooked Calculator',
+    url: BASE,
+  },
   mainEntity: getFoodFaqItems(locale, food).map(({ q, a }) => ({
     '@type': 'Question',
     name: q,

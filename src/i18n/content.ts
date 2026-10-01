@@ -117,7 +117,7 @@ export const METHOD_LABELS: Record<Locale, Record<string, string>> = {
     pressure_cooked: 'En olla a presión',
     baked_in_foil: 'Al horno en papel aluminio',
     baked_skin_oiled: 'Al horno (piel aceitada)',
-    french_fried: 'Frito (patatas fritas)',
+    french_fried: 'Frito (papas fritas)',
     hash_browned: 'Salteado rallado (hash brown)',
     parboiled: 'Sancochado',
     instant_precooked: 'Instantáneo / Precocido',
@@ -239,80 +239,6 @@ export const METHOD_LABELS: Record<Locale, Record<string, string>> = {
     well_done: 'Bem passado',
     overdone: 'Muito passado',
   },
-  ja: {
-    baked_roasted: 'オーブン焼き / ロースト',
-    'baked/roasted': 'オーブン焼き / ロースト',
-    grilled: 'グリル',
-    boiled_poached: '茹で / ポーチ',
-    pan_fried: 'フライパン焼き',
-    boiled: '茹で',
-    boiled_rehydrated: '茹で / 戻し',
-    boiled_steamed: '茹で / 蒸し',
-    slow_cooked_braised: '弱火煮込み / 煮込み',
-    baked: 'オーブン焼き',
-    pan_broiled: 'フライパン蒸し焼き',
-    braised: '蒸し煮',
-    broiled: 'グリル（上火）',
-    broiled_barbecued: 'グリル（バーベキュー）',
-    broiled_grilled: 'グリル / 直火焼き',
-    roasted: 'ロースト',
-    simmered: '煮込み',
-    simmered_20min: '煮込み（20分）',
-    deep_fat_fried: '揚げ',
-    deep_fat_fried_breaded: '揚げ（パン粉付き）',
-    oven_fried: 'オーブン揚げ焼き',
-    steamed: '蒸し',
-    pressure_cooked: '圧力鍋調理',
-    baked_in_foil: 'ホイル焼き',
-    baked_skin_oiled: 'オーブン焼き（皮に油）',
-    french_fried: 'フライドポテト',
-    hash_browned: 'ハッシュドポテト',
-    parboiled: '湯通し（パーボイル）',
-    instant_precooked: 'インスタント / 調理済み',
-    boiled_or_baked: '茹で / オーブン焼き',
-    scrambled: 'スクランブル',
-    average_all_temps: '平均（全温度帯）',
-    medium: 'ミディアム',
-    well_done: 'ウェルダン',
-    overdone: '加熱しすぎ',
-  },
-  ko: {
-    baked_roasted: '오븐 구이 / 로스트',
-    'baked/roasted': '오븐 구이 / 로스트',
-    grilled: '직화 구이',
-    boiled_poached: '삶기 / 수란식 조리',
-    pan_fried: '팬 프라이',
-    boiled: '삶기',
-    boiled_rehydrated: '삶기 / 불리기',
-    boiled_steamed: '삶기 / 찌기',
-    slow_cooked_braised: '저온 조리 / 브레이징',
-    baked: '오븐 구이',
-    pan_broiled: '팬 브로일',
-    braised: '조림',
-    broiled: '윗불 구이',
-    broiled_barbecued: '윗불 구이(바비큐)',
-    broiled_grilled: '윗불 구이 / 직화 구이',
-    roasted: '로스트',
-    simmered: '뭉근히 끓임',
-    simmered_20min: '뭉근히 끓임(20분)',
-    deep_fat_fried: '튀김',
-    deep_fat_fried_breaded: '튀김(빵가루)',
-    oven_fried: '오븐 튀김',
-    steamed: '찜',
-    pressure_cooked: '압력솥 조리',
-    baked_in_foil: '포일 구이',
-    baked_skin_oiled: '오븐 구이(껍질에 기름)',
-    french_fried: '감자튀김',
-    hash_browned: '해시브라운',
-    parboiled: '데치기(파보일)',
-    instant_precooked: '인스턴트 / 조리 완료',
-    boiled_or_baked: '삶기 또는 오븐 구이',
-    scrambled: '스크램블',
-    average_all_temps: '평균(전 온도)',
-    medium: '미디엄',
-    well_done: '웰던',
-    overdone: '과조리',
-  },
   it: {
     baked_roasted: 'Al forno / Arrosto',
     'baked/roasted': 'Al forno / Arrosto',
@@ -349,43 +275,6 @@ export const METHOD_LABELS: Record<Locale, Record<string, string>> = {
     medium: 'Media cottura',
     well_done: 'Ben cotta',
     overdone: 'Troppo cotta',
-  },
-  hi: {
-    baked_roasted: 'बेक्ड / रोस्टेड',
-    'baked/roasted': 'बेक्ड / रोस्टेड',
-    grilled: 'ग्रिल्ड',
-    boiled_poached: 'उबला / पोच्ड',
-    pan_fried: 'तवे पर तला',
-    boiled: 'उबला',
-    boiled_rehydrated: 'उबला / भिगोया',
-    boiled_steamed: 'उबला / भाप में पका',
-    slow_cooked_braised: 'धीमी आंच पर पका / दम',
-    baked: 'बेक्ड',
-    pan_broiled: 'तवे पर बिना तेल पका',
-    braised: 'दम पर पका',
-    broiled: 'ब्रॉइल्ड (ऊपर से आँच)',
-    broiled_barbecued: 'ब्रॉइल्ड (बारबेक्यू)',
-    broiled_grilled: 'ब्रॉइल्ड / ग्रिल्ड',
-    roasted: 'रोस्टेड',
-    simmered: 'धीमी आंच पर पका',
-    simmered_20min: 'धीमी आंच पर पका (20 मिनट)',
-    deep_fat_fried: 'डीप फ्राई',
-    deep_fat_fried_breaded: 'डीप फ्राई (ब्रेडेड)',
-    oven_fried: 'ओवन फ्राई',
-    steamed: 'भाप में पका',
-    pressure_cooked: 'प्रेशर कुकर में पका',
-    baked_in_foil: 'फॉयल में बेक्ड',
-    baked_skin_oiled: 'बेक्ड (छिलके पर तेल)',
-    french_fried: 'फ्रेंच फ्राई',
-    hash_browned: 'हैश ब्राउन',
-    parboiled: 'अधपका उबला (पारबॉइल्ड)',
-    instant_precooked: 'इंस्टेंट / प्रीकुक्ड',
-    boiled_or_baked: 'उबला या बेक्ड',
-    scrambled: 'भुर्जी',
-    average_all_temps: 'औसत (सभी तापमान)',
-    medium: 'मीडियम',
-    well_done: 'वेल डन',
-    overdone: 'ज्यादा पका',
   },
 };
 
@@ -457,7 +346,7 @@ export const EXPLANATIONS: Record<Locale, Record<ExplanationKey, string>> = {
     spinach:
       'La espinaca solo pierde alrededor del 23% de su peso al cocinarse: un rendimiento USDA del 77%, así que 100 g de hojas crudas siguen pesando unos 77 g cocidas. Es el alimento peor juzgado de este sitio: una sartén de hojas crudas se reduce a una fracción de su volumen, así que parece que el peso también tiene que haberse desplomado. Las hojas pierden el aire y la estructura mucho antes que el agua, de modo que el volumen se hunde mientras el peso apenas se mueve.',
     potato:
-      'Una papa hervida solo pierde alrededor del 6% de su peso; un boniato al horno pierde más bien un 22%. La densa estructura de almidón retiene la humedad, así que solo se evapora una pequeña cantidad desde la superficie durante la cocción.',
+      'Una papa hervida solo pierde alrededor del 6% de su peso; un camote al horno pierde más bien un 22%. La densa estructura de almidón retiene la humedad, así que solo se evapora una pequeña cantidad desde la superficie durante la cocción.',
     vegDefault:
       'La mayoría de las verduras pierden entre el 0% y alrededor del 25% de su peso al cocinarse: el brócoli queda más o menos igual, mientras que las hojas verdes son las que más pierden. Las paredes celulares se ablandan y algo de agua se evapora al cocinarlas.',
   },
@@ -533,54 +422,6 @@ export const EXPLANATIONS: Record<Locale, Record<ExplanationKey, string>> = {
     vegDefault:
       'A maioria dos vegetais perde entre 0% e cerca de 25% do peso ao ser cozida — o brócolis sai praticamente igual, enquanto as folhas verdes perdem mais. As paredes celulares amolecem e um pouco de água evapora durante o cozimento.',
   },
-  ja: {
-    chicken:
-      '鶏胸肉は加熱すると重量の約28%を、鶏もも肉は約31%を失います——USDA歩留まりはそれぞれ72%と69%です。失われるのはほぼ水分です。加熱するとタンパク質が変性・収縮して筋繊維から水分を押し出し、脂も少し溶け出します。温度が高く加熱時間が長いほど損失は大きくなり、ポーチのような低温・湿式の加熱では23%前後にとどまります。',
-    beef:
-      '牛肉は加熱すると、部位と脂の量に応じて重量の約15〜30%を失います。赤身の多い部位は溶け出す脂が少ないぶん重量が残り、脂の多い部位は水分と脂が一緒に滴り落ちてより多く減ります。',
-    pork:
-      '豚肉は、短時間で焼くポークチョップなら重量の約22%、低温で長時間煮込む場合は最大35%を失います。タンパク質が収縮して水分が蒸発し、長く加熱するほど水分が抜けます。だから豚肩肉はフライパンで焼くチョップよりはるかに大きく減ります。',
-    turkey:
-      '七面鳥の胸肉はローストすると重量の約21%を失います——USDA歩留まり79%です。鶏肉と同じく、タンパク質が収縮して水分が蒸発することで失われ、ローストは蒸す・茹でるよりわずかに多く水分を飛ばします。',
-    salmon:
-      'サーモンは加熱すると重量の約15%を失います——USDA歩留まり85%で、ここに挙げた肉・魚の中で最も高い値です。タンパク質が凝固して多少の水分を放出しますが、脂質が多いため重量の大部分は保たれます。',
-    shrimp:
-      'エビは加熱すると重量の約25%を失います——USDA歩留まり75%です。失われるのは主に表面と殻の水分で、身自体は密で崩れないため、見た目の縮み以上に軽くなります。',
-    meatDefault:
-      '肉と魚は加熱すると、通常は重量の20〜35%を失います。タンパク質が収縮して筋組織から水分が蒸発し、脂の多い部位は脂が溶け出すぶんさらに軽くなります。',
-    grains:
-      '穀物・パスタ・豆類は加熱すると重量がおよそ2〜3倍になります——歩留まりは約220%から335%です。でんぷん粒が煮汁を吸って膨らむため、加熱後の重量は乾燥重量をはるかに上回ります。栄養成分表示が乾燥（生）重量を基準にしているため、マクロは常に乾燥重量から計算します。',
-    spinach:
-      'ほうれん草は加熱しても重量の約23%しか失いません——USDA歩留まり77%で、生100gの葉は加熱後も約77gあります。このサイトで最も誤解されている食材です。生の葉はフライパンの中で元のかさのごく一部にまで縮むため、重量も同じように激減したように見えます。葉は水分を失うずっと前に空気と構造を失うので、かさは急激に減っても重量はほとんど動きません。',
-    potato:
-      '茹でたじゃがいもは重量の約6%しか失いませんが、焼いたさつまいもは22%近く失います。密なでんぷん構造が水分を内部に閉じ込めるため、加熱中に表面から蒸発するのはわずかです。',
-    vegDefault:
-      'ほとんどの野菜は加熱すると重量の0%から約25%を失います——ブロッコリーはほぼ変わらず、葉物野菜が最も多く失います。加熱すると細胞壁がやわらかくなり、水分が多少蒸発します。',
-  },
-  ko: {
-    chicken:
-      '닭 가슴살은 조리하면 무게의 약 28%가, 닭 넓적다리살은 약 31%가 줄어듭니다 — USDA 수율은 각각 72%와 69%입니다. 줄어드는 것은 거의 다 물입니다. 열을 받으면 단백질이 변성·수축하면서 근섬유에서 수분을 밀어내고, 지방도 조금 녹아 나옵니다. 온도가 높고 조리 시간이 길수록 손실이 커지고, 수란처럼 낮고 촉촉한 열에서는 23%에 가깝게 유지됩니다.',
-    beef:
-      '소고기는 조리하면 부위와 지방 함량에 따라 무게의 약 15~30%가 줄어듭니다. 기름기가 적은 부위는 녹아 나오는 지방이 적어 더 많이 남고, 지방이 많은 부위는 물과 지방이 함께 빠지면서 더 많이 줄어듭니다.',
-    pork:
-      '돼지고기는 빠르게 굽는 갈비로는 무게의 약 22%, 낮은 온도에서 오래 브레이징하면 최대 35%가 줄어듭니다. 단백질이 수축하고 물이 증발하는데, 오래 익힐수록 더 많은 수분이 빠집니다. 그래서 앞다리는 팬에 구운 갈비보다 훨씬 많이 줄어듭니다.',
-    turkey:
-      '칠면조 가슴살은 오븐에 구우면 무게의 약 21%가 줄어듭니다 — USDA 수율 79%입니다. 닭고기처럼 단백질이 수축하고 수분이 증발하면서 줄어들며, 굽는 방식은 찌거나 삶는 것보다 수분을 조금 더 날립니다.',
-    salmon:
-      '연어는 조리하면 무게의 약 15%가 줄어듭니다 — USDA 수율 85%로, 여기 실린 어떤 고기나 생선보다도 높습니다. 단백질이 응고하면서 약간의 액체를 내보내지만, 높은 지방 함량이 무게의 대부분을 잡아 둡니다.',
-    shrimp:
-      '새우는 조리하면 무게의 약 25%가 줄어듭니다 — USDA 수율 75%입니다. 빠지는 것은 대부분 표면과 껍질의 수분이고, 치밀한 살 자체는 뭉쳐 있어서 눈에 보이는 것보다 더 가벼워집니다.',
-    meatDefault:
-      '고기와 생선은 조리하면 보통 무게의 20~35%가 줄어듭니다. 단백질이 수축하고 근육 조직에서 물이 증발하며, 지방이 많은 부위는 지방이 녹아 나오면서 무게가 더 줄어듭니다.',
-    grains:
-      '곡물, 파스타, 콩류는 조리하면 무게가 대략 두세 배가 됩니다 — 수율은 약 220%에서 335%에 이릅니다. 전분 알갱이가 조리 액체를 흡수해 부풀기 때문에, 조리 후 무게가 건조 무게를 훨씬 넘어섭니다. 영양성분표가 건조(생) 중량 기준이므로, 영양소는 항상 건조 중량으로 계산합니다.',
-    spinach:
-      '시금치는 조리해도 무게의 약 23%만 줄어듭니다 — USDA 수율 77%로, 생잎 100g은 조리 후에도 약 77g입니다. 이 사이트에서 가장 크게 오해받는 식품입니다. 팬에 담긴 생잎이 원래 부피의 일부까지 줄어들다 보니 무게도 함께 무너진 것처럼 보입니다. 잎은 수분을 잃기 훨씬 전에 공기와 구조를 잃기 때문에, 부피는 급격히 꺼져도 무게는 거의 움직이지 않습니다.',
-    potato:
-      '삶은 감자는 무게의 약 6%만 줄지만, 구운 고구마는 22%에 가깝게 줄어듭니다. 치밀한 전분 구조가 수분을 안에 가둬 두기 때문에, 조리 중 표면에서 아주 적은 양만 증발합니다.',
-    vegDefault:
-      '대부분의 채소는 조리하면 무게의 0%에서 약 25%가 줄어듭니다 — 브로콜리는 거의 그대로 나오고, 잎채소가 가장 많이 줄어듭니다. 조리하면 세포벽이 물러지고 물이 어느 정도 증발합니다.',
-  },
   it: {
     chicken:
       'Il petto di pollo perde circa il 28% del suo peso in cottura e la coscia circa il 31% — rese USDA del 72% e del 69%. La perdita è quasi tutta acqua: con il calore le proteine si denaturano e si contraggono, spremendo l’umidità fuori dalle fibre muscolari, e un po’ di grasso si scioglie. Temperature più alte e tempi più lunghi aumentano la perdita; un calore dolce e umido come la cottura in camicia la mantiene più vicina al 23%.',
@@ -604,30 +445,6 @@ export const EXPLANATIONS: Record<Locale, Record<ExplanationKey, string>> = {
       'Una patata lessata perde solo il 6% circa del suo peso; una patata dolce al forno ne perde quasi il 22%. La densa struttura amidacea trattiene l’umidità all’interno, e solo una piccola parte evapora dalla superficie durante la cottura.',
     vegDefault:
       'La maggior parte delle verdure perde tra lo 0% e il 25% circa del proprio peso in cottura — i broccoli escono praticamente invariati, mentre le verdure a foglia perdono di più. Le pareti cellulari si ammorbidiscono e un po’ d’acqua evapora durante la cottura.',
-  },
-  hi: {
-    chicken:
-      'चिकन ब्रेस्ट पकाने पर अपने वजन का करीब 28% और चिकन थाई करीब 31% खोता है — USDA यील्ड क्रमशः 72% और 69%। यह कमी लगभग पूरी तरह पानी की होती है: गर्मी लगते ही प्रोटीन विकृत होकर सिकुड़ते हैं और मांसपेशी रेशों से नमी बाहर निचोड़ देते हैं, साथ ही थोड़ी चर्बी भी पिघल जाती है। ज्यादा तापमान और ज्यादा देर पकाने से कमी और बढ़ती है; पोचिंग जैसी धीमी, नम आंच पर यह 23% के आसपास रहती है।',
-    beef:
-      'बीफ पकाने पर कट और उसकी चर्बी की मात्रा के हिसाब से अपने वजन का करीब 15–30% खोता है। कम चर्बी वाले कट ज्यादा बनाए रखते हैं क्योंकि कम चर्बी पिघलती है; ज्यादा चर्बी वाले कट पानी और चर्बी दोनों टपकने से ज्यादा खोते हैं।',
-    pork:
-      'पोर्क जल्दी पकने वाले चॉप के रूप में अपने वजन का करीब 22% खोता है, और धीमी आंच पर लंबे समय तक दम देने पर 35% तक। प्रोटीन सिकुड़ते हैं और पानी भाप बनकर उड़ता है; कट जितनी देर पकता है, उतनी ज्यादा नमी निकलती है, इसीलिए पोर्क शोल्डर तवे पर पके चॉप से कहीं ज्यादा खोता है।',
-    turkey:
-      'टर्की ब्रेस्ट रोस्ट करने पर अपने वजन का करीब 21% खोता है — USDA यील्ड 79%। चिकन की तरह यह वजन इसलिए घटता है क्योंकि प्रोटीन सिकुड़ते हैं और नमी भाप बनकर उड़ती है; भूनने में भाप देने या उबालने की तुलना में थोड़ी ज्यादा नमी निकलती है।',
-    salmon:
-      'सैल्मन पकाने पर अपने वजन का करीब 15% खोता है — USDA यील्ड 85%, जो यहां दी गई किसी भी मांस या मछली में सबसे ज्यादा है। इसके प्रोटीन जमते हैं और कुछ तरल छोड़ते हैं, लेकिन ज्यादा वसा होने के कारण वजन का बड़ा हिस्सा बना रहता है।',
-    shrimp:
-      'झींगा पकाने पर अपने वजन का करीब 25% खोता है — USDA यील्ड 75%। यह कमी ज्यादातर ऊपरी सतह और छिलके की नमी की होती है; सघन मांस खुद जुड़ा रहता है, इसलिए झींगे जितना सिकुड़ते दिखते हैं उससे ज्यादा हल्के हो जाते हैं।',
-    meatDefault:
-      'मांस और मछली पकाने पर आम तौर पर अपने वजन का 20–35% खोते हैं। प्रोटीन सिकुड़ते हैं और मांसपेशी ऊतक से पानी भाप बनकर उड़ता है, और ज्यादा चर्बी वाले कट चर्बी पिघलने से और वजन खोते हैं।',
-    grains:
-      'अनाज, पास्ता और दालें पकाने पर वजन में करीब दो से तीन गुना हो जाते हैं — यील्ड लगभग 220% से 335% तक होती है। स्टार्च के कण पकाने का तरल सोखकर फूल जाते हैं, इसलिए पका वजन सूखे वजन से कहीं ज्यादा होता है। मैक्रो हमेशा सूखे (कच्चे) वजन से गिने जाते हैं, क्योंकि पोषण लेबल भी इसी आधार पर मापते हैं।',
-    spinach:
-      'पालक पकाने पर अपने वजन का सिर्फ करीब 23% खोता है — USDA यील्ड 77%, यानी 100g कच्चे पत्ते पकने पर भी करीब 77g रहते हैं। यह इस साइट पर सबसे ज्यादा गलत आंका जाने वाला खाद्य पदार्थ है: कड़ाही में कच्चे पत्ते अपनी मात्रा के एक अंश तक सिमट जाते हैं, इसलिए लगता है कि वजन भी उतना ही गिरा होगा। पत्ते अपना पानी खोने से बहुत पहले अपनी हवा और बनावट खो देते हैं, इसलिए मात्रा तो तेजी से गिरती है पर वजन मुश्किल से बदलता है।',
-    potato:
-      'उबला आलू अपने वजन का सिर्फ करीब 6% खोता है; बेक की हुई शकरकंद करीब 22% खोती है। सघन स्टार्च संरचना नमी को भीतर रोके रखती है, इसलिए पकाते समय सतह से बहुत थोड़ी नमी ही उड़ती है।',
-    vegDefault:
-      'ज्यादातर सब्जियां पकाने पर अपने वजन का 0% से करीब 25% तक खोती हैं — ब्रोकली लगभग जस की तस निकलती है, जबकि पत्तेदार सब्जियां सबसे ज्यादा खोती हैं। पकाते समय कोशिका भित्तियां नरम पड़ती हैं और कुछ पानी भाप बनकर उड़ता है।',
   },
 };
 

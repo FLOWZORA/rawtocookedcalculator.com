@@ -18,6 +18,11 @@ export interface AboutPage {
   eyebrow: string;
   heading: string;
   lede: string;
+  bylineLabel: string;
+  bylineName: string;
+  bylineBio: string;
+  reviewedLabel: string;
+  reviewed: string;
   problemHeading: string;
   problemParagraphs: string[];
   dataHeading: string;
@@ -57,6 +62,12 @@ export const ABOUT: Record<Locale, AboutPage> = {
     eyebrow: 'About',
     heading: 'Why this calculator exists',
     lede: 'The raw-versus-cooked weight problem is one of the most common sources of macro tracking error — and one of the easiest to fix once you understand it.',
+    bylineLabel: 'Built and maintained by',
+    bylineName: 'Vaibhav Tiwari',
+    bylineBio:
+      'Raw to Cooked Calculator is built and maintained by Vaibhav Tiwari, who compiled its cooking-yield tables from USDA publications and cross-checked every figure against its primary source. He is not a dietitian or food scientist; the site reports published research figures and does the conversion arithmetic — it is not a substitute for advice from a qualified professional.',
+    reviewedLabel: 'Data last reviewed',
+    reviewed: 'September 2026',
     problemHeading: 'The problem',
     problemParagraphs: [
       'Standard nutrition databases — including USDA FoodData Central — publish macro values based on raw, uncooked food weight. Most people cook before eating. The weight of food changes during cooking: meat loses water and shrinks, dry grains absorb water and expand. The nutrition label stays the same, but the weight on your scale is completely different.',
@@ -76,8 +87,8 @@ export const ABOUT: Record<Locale, AboutPage> = {
         html: `Yield percentages for rice, pasta, legumes, and vegetables are derived by comparing raw and cooked entries in <strong ${STRONG}>USDA FoodData Central</strong> — the same database that powers most major nutrition apps.`,
       },
       {
-        label: 'Estimates',
-        html: 'A small number of foods (salmon, shrimp) use industry-standard estimates because USDA has not published direct cooking-yield data for them. These are clearly disclosed on the relevant food pages.',
+        label: 'Seafood & other cuts',
+        html: `Yields for <strong ${STRONG}>salmon</strong> and <strong ${STRONG}>shrimp</strong>, plus turkey breast and veal, come from <strong ${STRONG}>USDA Agriculture Handbook No. 102</strong> (1975) — the USDA's foundational cooking-yield study, which documents cuts the newer meat table does not. No figure on this site relies on an informal estimate.`,
       },
     ],
     howHeading: 'How the calculation works',
@@ -101,6 +112,12 @@ export const ABOUT: Record<Locale, AboutPage> = {
     eyebrow: 'Acerca de',
     heading: 'Por qué existe esta calculadora',
     lede: 'El problema del peso crudo frente al cocido es una de las causas más frecuentes de error al contar macros — y una de las más fáciles de resolver en cuanto se entiende.',
+    bylineLabel: 'Creado y mantenido por',
+    bylineName: 'Vaibhav Tiwari',
+    bylineBio:
+      'La Calculadora Crudo a Cocido está creada y mantenida por Vaibhav Tiwari, que compiló sus tablas de rendimiento de cocción a partir de publicaciones del USDA y contrastó cada cifra con su fuente primaria. No es dietista ni tecnólogo de alimentos; el sitio recoge cifras de investigación publicadas y hace la aritmética de conversión, y no sustituye el consejo de un profesional cualificado.',
+    reviewedLabel: 'Datos revisados por última vez',
+    reviewed: 'Septiembre de 2026',
     problemHeading: 'El problema',
     problemParagraphs: [
       'Las bases de datos nutricionales habituales —incluida USDA FoodData Central— publican los macros según el peso del alimento crudo y sin cocinar. Pero casi todo el mundo cocina antes de comer. Y el peso del alimento cambia durante la cocción: la carne pierde agua y encoge, los cereales secos absorben agua y se expanden. La etiqueta nutricional sigue igual, pero el peso de tu báscula es completamente distinto.',
@@ -120,8 +137,8 @@ export const ABOUT: Record<Locale, AboutPage> = {
         html: `Los porcentajes de rendimiento de arroz, pasta, legumbres y verduras se obtienen comparando las entradas en crudo y en cocido de <strong ${STRONG}>USDA FoodData Central</strong>, la misma base de datos que alimenta a la mayoría de las apps de nutrición.`,
       },
       {
-        label: 'Estimaciones',
-        html: 'Unos pocos alimentos (salmón, camarones) usan estimaciones estándar del sector porque el USDA no ha publicado datos directos de rendimiento de cocción para ellos. Esto se indica con claridad en las páginas de esos alimentos.',
+        label: 'Pescado y otros cortes',
+        html: `Los rendimientos del <strong ${STRONG}>salmón</strong> y los <strong ${STRONG}>camarones</strong>, además de la pechuga de pavo y la ternera, provienen del <strong ${STRONG}>Manual de Agricultura n.º 102 del USDA</strong> (1975), el estudio de referencia del USDA sobre rendimientos de cocción, que recoge cortes que la tabla de carne más reciente no incluye. Ninguna cifra del sitio se basa en una estimación informal.`,
       },
     ],
     howHeading: 'Cómo funciona el cálculo',
@@ -145,6 +162,12 @@ export const ABOUT: Record<Locale, AboutPage> = {
     eyebrow: 'À propos',
     heading: 'Pourquoi ce calculateur existe',
     lede: 'L’écart entre poids cru et poids cuit est l’une des sources d’erreur les plus répandues dans le suivi des macros — et l’une des plus simples à corriger une fois qu’on l’a comprise.',
+    bylineLabel: 'Conçu et maintenu par',
+    bylineName: 'Vaibhav Tiwari',
+    bylineBio:
+      'Le Calculateur Cru-Cuit est conçu et maintenu par Vaibhav Tiwari, qui a compilé ses tables de rendement de cuisson à partir des publications de l’USDA et vérifié chaque chiffre par rapport à sa source primaire. Il n’est ni diététicien ni technologue alimentaire ; le site reprend des chiffres de recherche publiés et effectue le calcul de conversion — il ne remplace pas l’avis d’un professionnel qualifié.',
+    reviewedLabel: 'Données revues pour la dernière fois',
+    reviewed: 'Septembre 2026',
     problemHeading: 'Le problème',
     problemParagraphs: [
       'Les bases de données nutritionnelles courantes — y compris USDA FoodData Central — publient les macros sur la base du poids cru, non cuit. Or presque tout le monde cuisine avant de manger. Et le poids de l’aliment change à la cuisson : la viande perd de l’eau et rétrécit, les céréales sèches en absorbent et gonflent. L’étiquette nutritionnelle, elle, ne bouge pas, mais le poids sur votre balance n’a plus rien à voir.',
@@ -164,8 +187,8 @@ export const ABOUT: Record<Locale, AboutPage> = {
         html: `Les rendements du riz, des pâtes, des légumineuses et des légumes sont obtenus en comparant les entrées crues et cuites de <strong ${STRONG}>USDA FoodData Central</strong> — la base de données qui alimente la plupart des grandes applications de nutrition.`,
       },
       {
-        label: 'Estimations',
-        html: 'Quelques aliments (saumon, crevettes) reposent sur des estimations standard du secteur, faute de données de rendement publiées par l’USDA. Ces cas sont clairement signalés sur les pages concernées.',
+        label: 'Poisson et autres morceaux',
+        html: `Les rendements du <strong ${STRONG}>saumon</strong> et des <strong ${STRONG}>crevettes</strong>, ainsi que du blanc de dinde et du veau, proviennent du <strong ${STRONG}>Manuel agricole n° 102 de l’USDA</strong> (1975), l’étude de référence de l’USDA sur les rendements de cuisson, qui documente des morceaux absents de la table de viande plus récente. Aucun chiffre du site ne repose sur une estimation informelle.`,
       },
     ],
     howHeading: 'Comment le calcul fonctionne',
@@ -189,6 +212,12 @@ export const ABOUT: Record<Locale, AboutPage> = {
     eyebrow: 'Über uns',
     heading: 'Warum es diesen Rechner gibt',
     lede: 'Der Unterschied zwischen Roh- und Gargewicht ist eine der häufigsten Fehlerquellen beim Makro-Tracking — und eine der am leichtesten zu behebenden, sobald man sie verstanden hat.',
+    bylineLabel: 'Erstellt und gepflegt von',
+    bylineName: 'Vaibhav Tiwari',
+    bylineBio:
+      'Der Roh-zu-Gegart-Rechner wird von Vaibhav Tiwari erstellt und gepflegt. Er hat die Garausbeute-Tabellen aus USDA-Veröffentlichungen zusammengetragen und jeden Wert mit seiner Primärquelle abgeglichen. Er ist weder Ernährungsberater noch Lebensmitteltechnologe; die Seite gibt veröffentlichte Forschungswerte wieder und übernimmt die Umrechnung — sie ersetzt nicht den Rat einer qualifizierten Fachkraft.',
+    reviewedLabel: 'Daten zuletzt geprüft',
+    reviewed: 'September 2026',
     problemHeading: 'Das Problem',
     problemParagraphs: [
       'Gängige Nährwertdatenbanken — auch USDA FoodData Central — geben Makros für das rohe, ungegarte Gewicht an. Gegessen wird aber meist gegart. Und beim Garen ändert sich das Gewicht: Fleisch verliert Wasser und schrumpft, trockenes Getreide nimmt Wasser auf und quillt. Das Nährwertetikett bleibt gleich, das Gewicht auf deiner Waage ist ein völlig anderes.',
@@ -208,8 +237,8 @@ export const ABOUT: Record<Locale, AboutPage> = {
         html: `Die Ausbeuten für Reis, Nudeln, Hülsenfrüchte und Gemüse ergeben sich aus dem Vergleich roher und gegarter Einträge in <strong ${STRONG}>USDA FoodData Central</strong> — derselben Datenbank, auf der die meisten großen Ernährungs-Apps aufbauen.`,
       },
       {
-        label: 'Schätzwerte',
-        html: 'Für einige wenige Lebensmittel (Lachs, Garnelen) kommen branchenübliche Schätzwerte zum Einsatz, weil das USDA dafür keine direkten Garausbeuten veröffentlicht hat. Auf den betreffenden Seiten ist das klar gekennzeichnet.',
+        label: 'Fisch & weitere Teilstücke',
+        html: `Die Ausbeuten für <strong ${STRONG}>Lachs</strong> und <strong ${STRONG}>Garnelen</strong> sowie für Putenbrust und Kalb stammen aus dem <strong ${STRONG}>USDA Agriculture Handbook Nr. 102</strong> (1975), der grundlegenden USDA-Studie zu Garausbeuten, die Teilstücke erfasst, die in der neueren Fleischtabelle fehlen. Kein Wert auf dieser Seite beruht auf einer informellen Schätzung.`,
       },
     ],
     howHeading: 'Wie die Berechnung funktioniert',
@@ -233,6 +262,12 @@ export const ABOUT: Record<Locale, AboutPage> = {
     eyebrow: 'Sobre',
     heading: 'Por que esta calculadora existe',
     lede: 'A diferença entre peso cru e peso cozido é uma das causas mais comuns de erro no controle de macros — e uma das mais fáceis de resolver assim que você entende o problema.',
+    bylineLabel: 'Criado e mantido por',
+    bylineName: 'Vaibhav Tiwari',
+    bylineBio:
+      'A Calculadora de Cru para Cozido é criada e mantida por Vaibhav Tiwari, que compilou suas tabelas de rendimento de cocção a partir de publicações do USDA e conferiu cada número com sua fonte primária. Ele não é nutricionista nem cientista de alimentos; o site reproduz números de pesquisa publicados e faz a aritmética da conversão — não substitui a orientação de um profissional qualificado.',
+    reviewedLabel: 'Dados revisados pela última vez',
+    reviewed: 'Setembro de 2026',
     problemHeading: 'O problema',
     problemParagraphs: [
       'As bases de dados nutricionais mais usadas — inclusive a USDA FoodData Central — publicam os macros com base no peso do alimento cru, sem cozinhar. Só que quase todo mundo cozinha antes de comer. E o peso muda durante o cozimento: a carne perde água e encolhe, os grãos secos absorvem água e incham. O rótulo nutricional continua o mesmo, mas o peso na sua balança é completamente outro.',
@@ -252,8 +287,8 @@ export const ABOUT: Record<Locale, AboutPage> = {
         html: `Os percentuais de rendimento de arroz, massas, leguminosas e vegetais são obtidos comparando as entradas cruas e cozidas na <strong ${STRONG}>USDA FoodData Central</strong> — a mesma base que alimenta a maioria dos grandes aplicativos de nutrição.`,
       },
       {
-        label: 'Estimativas',
-        html: 'Alguns poucos alimentos (salmão, camarão) usam estimativas padrão do setor, porque o USDA não publicou dados diretos de rendimento de cocção para eles. Isso é informado com clareza nas páginas desses alimentos.',
+        label: 'Peixe e outros cortes',
+        html: `Os rendimentos do <strong ${STRONG}>salmão</strong> e do <strong ${STRONG}>camarão</strong>, além do peito de peru e da vitela, vêm do <strong ${STRONG}>Manual de Agricultura n.º 102 do USDA</strong> (1975), o estudo de referência do USDA sobre rendimentos de cocção, que documenta cortes que a tabela de carnes mais recente não inclui. Nenhum número do site se baseia em uma estimativa informal.`,
       },
     ],
     howHeading: 'Como o cálculo funciona',
@@ -270,93 +305,7 @@ export const ABOUT: Record<Locale, AboutPage> = {
     ctaLabel: '← Usar a calculadora',
   },
 
-  ja: {
-    metaTitle: '生・加熱後計算機について | USDAの調理歩留まりデータ',
-    metaDescription:
-      '生・加熱後計算機は、USDA公式の調理歩留まりデータを使って生と加熱後の重量を換算し、栄養素も表示します。仕組みと、このサイトを作った理由をご紹介します。',
-    eyebrow: '運営者について',
-    heading: 'この計算機を作った理由',
-    lede: '生の重量と加熱後の重量の食い違いは、栄養管理で最もよくある誤差の原因のひとつです。そして仕組みさえ分かれば、最も簡単に解消できるもののひとつでもあります。',
-    problemHeading: '問題点',
-    problemParagraphs: [
-      'USDA FoodData Centralを含め、一般的な栄養データベースは生の未調理状態の重量を基準に栄養素を掲載しています。しかし多くの人は加熱してから食べます。加熱すれば重量は変わります。肉は水分が抜けて縮み、乾燥した穀物は水を吸って膨らみます。栄養表示は変わらないのに、はかりの数値はまったく別物になっているのです。',
-      '加熱後の鶏肉150gを量り、それを生重量基準のデータベース項目に当てはめて記録すると、実際には生150g分の栄養しか計上していないことになります。タンパク源にしておよそ50g分の取りこぼしです。これを毎日続ければ、誤差はあっという間に積み上がります。',
-      'この計算機はその問題を解決します。生でも加熱後でも重量を入力すれば、食材ごとに正しい歩留まりを使って、もう一方の重量と、正確なカロリー・タンパク質・炭水化物・脂質をすぐに算出します。',
-    ],
-    dataHeading: 'データの出典',
-    dataIntro:
-      'このサイトのすべての歩留まりの数値は、USDAの公式データ——管理栄養士、食品メーカー、研究者が使うのと同じデータベース——に基づいています。',
-    dataCards: [
-      {
-        label: '食肉・鶏肉',
-        html: `鶏肉、牛肉、豚肉、七面鳥などの動物性タンパク質の歩留まりは、<strong ${STRONG}>USDA 食肉・鶏肉の調理歩留まり表</strong>によります。同表は管理された調理条件で測定された数値を掲載しています。`,
-      },
-      {
-        label: '穀物・野菜・豆類',
-        html: `米、パスタ、豆類、野菜の歩留まりは、<strong ${STRONG}>USDA FoodData Central</strong>の生と加熱後のデータを比較して算出しています。主要な栄養管理アプリの多くが依拠しているのと同じデータベースです。`,
-      },
-      {
-        label: '推定値',
-        html: 'ごく一部の食材（サーモン、エビ）は、USDAが調理歩留まりを直接公表していないため、業界標準の推定値を使用しています。該当する食材のページにその旨を明記しています。',
-      },
-    ],
-    howHeading: '計算の仕組み',
-    howParagraphs: [
-      'すべての換算は、歩留まり率というひとつの数値に基づいています。これは加熱後の重量を生の重量に対する百分率で表したものです。歩留まり75%なら生100gが加熱後75gに、歩留まり300%なら乾燥100gが加熱後300gになります（白米がこれにあたります）。',
-      '栄養素は換算の向きにかかわらず、常に生の重量に換算した値から計算します。USDAの栄養データは生の状態で測定されているため、この方式なら結果が常に一致します。',
-      '歩留まり率は研究に基づく平均値です。実際の結果は部位、大きさ、水分量、加熱方法によって変わります。この計算機は、加熱による減少をまったく考慮しない場合よりも確実に正確に近づけるためのもので、実験室並みの精度をうたうものではありません。',
-    ],
-    toolHeading: 'このツールについて',
-    toolParagraphs: [
-      '生・加熱後計算機は無料の静的Webツールです。アカウント登録も、個人データの追跡も、有料機能もありません。どのブラウザ、どの端末でも動作します。',
-      '鶏胸肉、合い挽き肉、サーモン、豚肉、米、パスタ、キヌア、レンズ豆、ほうれん草、ブロッコリー、じゃがいもなどに対応し、加熱方法によって結果が大きく変わる食材については方法別の歩留まりも用意しています。',
-    ],
-    ctaLabel: '← 計算機を使う',
-  },
 
-  ko: {
-    metaTitle: '생·조리 계산기 소개 | USDA 조리 수율 데이터',
-    metaDescription:
-      '생·조리 계산기는 USDA 공식 조리 수율 데이터로 생 중량과 조리 후 중량을 변환하고 영양소까지 보여줍니다. 작동 방식과 만들게 된 이유를 소개합니다.',
-    eyebrow: '사이트 소개',
-    heading: '이 계산기를 만든 이유',
-    lede: '생 중량과 조리 후 중량의 차이는 영양소 기록에서 가장 흔한 오차 원인 중 하나이며, 원리만 알면 가장 쉽게 바로잡을 수 있는 문제이기도 합니다.',
-    problemHeading: '문제',
-    problemParagraphs: [
-      'USDA FoodData Central을 포함한 일반적인 영양 데이터베이스는 조리하지 않은 생 중량을 기준으로 영양소를 표기합니다. 그런데 대부분의 사람은 조리한 뒤에 먹습니다. 조리하면 무게가 달라집니다. 고기는 물이 빠져 줄어들고, 마른 곡물은 물을 흡수해 불어납니다. 영양성분표는 그대로인데, 저울에 찍히는 숫자는 완전히 달라지는 것이죠.',
-      '조리한 닭고기 150g을 재서 생중량 기준 항목에 대입해 기록하면, 실제로는 생 150g 분량의 영양소만 계산하게 됩니다. 단백질 공급원 기준으로 약 50g이 빠지는 셈입니다. 이를 매일 반복하면 오차는 순식간에 쌓입니다.',
-      '이 계산기는 그 문제를 해결합니다. 생 중량이든 조리 후 중량이든 입력하면, 식품마다 알맞은 조리 수율을 적용해 반대편 중량과 정확한 칼로리·단백질·탄수화물·지방을 즉시 계산해 줍니다.',
-    ],
-    dataHeading: '데이터 출처',
-    dataIntro:
-      '이 사이트의 모든 수율 수치는 USDA 공식 자료 — 영양사, 식품 제조사, 연구자가 사용하는 것과 같은 데이터베이스 — 에서 나옵니다.',
-    dataCards: [
-      {
-        label: '육류 및 가금류',
-        html: `닭고기, 소고기, 돼지고기, 칠면조 등 동물성 단백질의 수율은 <strong ${STRONG}>USDA 육류·가금류 조리 수율표</strong>에서 가져왔습니다. 이 표는 통제된 조리 조건에서 측정한 값을 제공합니다.`,
-      },
-      {
-        label: '곡물, 채소 및 콩류',
-        html: `쌀, 파스타, 콩류, 채소의 수율은 <strong ${STRONG}>USDA FoodData Central</strong>의 생·조리 항목을 비교해 산출했습니다. 주요 영양 관리 앱 대부분이 근거로 삼는 바로 그 데이터베이스입니다.`,
-      },
-      {
-        label: '추정값',
-        html: '소수의 식품(연어, 새우)은 USDA가 조리 수율을 직접 발표하지 않아 업계 표준 추정값을 사용합니다. 해당 식품 페이지에 이 사실을 분명히 표시해 두었습니다.',
-      },
-    ],
-    howHeading: '계산 방식',
-    howParagraphs: [
-      '모든 변환은 단 하나의 숫자, 즉 수율에 기반합니다. 수율은 조리 후 중량을 생 중량에 대한 백분율로 나타낸 값입니다. 수율 75%는 생 100g이 조리 후 75g이 된다는 뜻이고, 수율 300%는 마른 상태 100g이 조리 후 300g이 된다는 뜻입니다(백미가 그렇습니다).',
-      '영양소는 변환 방향과 관계없이 항상 생중량 기준으로 계산합니다. 그래야 생 식품을 기준으로 측정된 USDA 영양 데이터와 결과가 어긋나지 않습니다.',
-      '수율은 연구에 기반한 평균값입니다. 실제 결과는 부위, 크기, 수분 함량, 조리법에 따라 달라집니다. 이 계산기는 조리 손실을 아예 무시할 때보다 훨씬 정확한 값에 가까워지게 해 주지만, 실험실 수준의 정밀도를 보장하지는 않습니다.',
-    ],
-    toolHeading: '이 도구에 대하여',
-    toolParagraphs: [
-      '생·조리 계산기는 무료 정적 웹 도구입니다. 계정도, 개인 데이터 추적도, 유료 기능도 없습니다. 어떤 브라우저와 기기에서도 작동합니다.',
-      '닭 가슴살, 다진 소고기, 연어, 돼지고기, 쌀, 파스타, 퀴노아, 렌틸콩, 시금치, 브로콜리, 감자 등을 다루며, 조리법에 따라 결과가 크게 달라지는 식품은 조리법별 수율도 제공합니다.',
-    ],
-    ctaLabel: '← 계산기 사용하기',
-  },
 
   it: {
     metaTitle: 'Informazioni sul Calcolatore Crudo-Cotto | Dati di resa USDA',
@@ -365,6 +314,12 @@ export const ABOUT: Record<Locale, AboutPage> = {
     eyebrow: 'Chi siamo',
     heading: 'Perché esiste questo calcolatore',
     lede: 'Lo scarto tra peso da crudo e peso da cotto è una delle cause più diffuse di errore nel conteggio dei macro — e una delle più semplici da correggere, una volta capito il meccanismo.',
+    bylineLabel: 'Creato e gestito da',
+    bylineName: 'Vaibhav Tiwari',
+    bylineBio:
+      'Il Calcolatore Crudo-Cotto è creato e gestito da Vaibhav Tiwari, che ne ha compilato le tabelle delle rese di cottura a partire dalle pubblicazioni USDA e ha verificato ogni valore rispetto alla fonte primaria. Non è dietista né tecnologo alimentare; il sito riporta dati di ricerca pubblicati ed esegue l’aritmetica della conversione, e non sostituisce il parere di un professionista qualificato.',
+    reviewedLabel: 'Dati verificati l’ultima volta',
+    reviewed: 'Settembre 2026',
     problemHeading: 'Il problema',
     problemParagraphs: [
       'I database nutrizionali di riferimento — inclusa USDA FoodData Central — riportano i macro sul peso dell’alimento crudo, non cotto. Quasi tutti però cucinano prima di mangiare. E il peso cambia durante la cottura: la carne perde acqua e si restringe, i cereali secchi assorbono acqua e si gonfiano. L’etichetta nutrizionale resta la stessa, ma il peso sulla bilancia è tutto un altro.',
@@ -384,8 +339,8 @@ export const ABOUT: Record<Locale, AboutPage> = {
         html: `Le rese di riso, pasta, legumi e verdure si ricavano confrontando le voci crude e cotte in <strong ${STRONG}>USDA FoodData Central</strong> — lo stesso database su cui si basa la maggior parte delle grandi app di nutrizione.`,
       },
       {
-        label: 'Stime',
-        html: 'Pochi alimenti (salmone, gamberi) si basano su stime standard del settore, perché l’USDA non ha pubblicato dati diretti sulla resa di cottura. La cosa è indicata chiaramente nelle pagine dei relativi alimenti.',
+        label: 'Pesce e altri tagli',
+        html: `Le rese di <strong ${STRONG}>salmone</strong> e <strong ${STRONG}>gamberi</strong>, oltre a petto di tacchino e vitello, provengono dal <strong ${STRONG}>Manuale di Agricoltura n. 102 dell’USDA</strong> (1975), lo studio di riferimento dell’USDA sulle rese di cottura, che documenta tagli assenti dalla tabella della carne più recente. Nessun valore del sito si basa su una stima informale.`,
       },
     ],
     howHeading: 'Come funziona il calcolo',
@@ -402,49 +357,6 @@ export const ABOUT: Record<Locale, AboutPage> = {
     ctaLabel: '← Usa il calcolatore',
   },
 
-  hi: {
-    metaTitle: 'कच्चे से पके कैलकुलेटर के बारे में | USDA कुकिंग यील्ड डेटा',
-    metaDescription:
-      'कच्चे से पके का कैलकुलेटर USDA के आधिकारिक कुकिंग यील्ड डेटा से कच्चे और पके वजन बदलता है और पूरे मैक्रो दिखाता है। जानें यह कैसे काम करता है और क्यों बना।',
-    eyebrow: 'हमारे बारे में',
-    heading: 'यह कैलकुलेटर क्यों बना',
-    lede: 'कच्चे बनाम पके वजन की उलझन मैक्रो ट्रैकिंग में गलती की सबसे आम वजहों में से एक है — और एक बार समझ लेने पर सबसे आसानी से ठीक होने वाली भी।',
-    problemHeading: 'समस्या',
-    problemParagraphs: [
-      'USDA FoodData Central समेत आम पोषण डेटाबेस मैक्रो के मान कच्चे, बिना पके भोजन के वजन के आधार पर देते हैं। लेकिन ज्यादातर लोग पकाकर खाते हैं। और पकाते समय वजन बदल जाता है: मांस पानी खोकर सिकुड़ता है, सूखे अनाज पानी सोखकर फैलते हैं। पोषण लेबल वही रहता है, पर आपकी तराजू का वजन बिलकुल अलग होता है।',
-      'अगर आप 150g पका चिकन तौलते हैं और उसे कच्चे वजन वाली डेटाबेस प्रविष्टि पर दर्ज करते हैं, तो असल में आप सिर्फ 150g कच्चे के मैक्रो गिन रहे हैं — प्रोटीन स्रोत के करीब 50g छूट जाते हैं। यह रोज करें और गलती तेजी से जुड़ती चली जाती है।',
-      'यह कैलकुलेटर इसे हल करता है: आप कच्चा या पका, कोई भी वजन डालें और हर खाद्य पदार्थ की सही कुकिंग यील्ड लगाकर यह तुरंत दूसरी तरफ का वजन निकाल देता है — साथ में सटीक कैलोरी, प्रोटीन, कार्ब्स और वसा भी।',
-    ],
-    dataHeading: 'डेटा कहां से आता है',
-    dataIntro:
-      'इस साइट का हर यील्ड आंकड़ा आधिकारिक USDA स्रोतों से आता है — वही डेटाबेस जिनका इस्तेमाल आहार विशेषज्ञ, खाद्य निर्माता और शोधकर्ता करते हैं।',
-    dataCards: [
-      {
-        label: 'मांस और मुर्गी',
-        html: `चिकन, बीफ, पोर्क, टर्की और अन्य पशु प्रोटीन के यील्ड प्रतिशत <strong ${STRONG}>USDA मांस और मुर्गी कुकिंग यील्ड तालिका</strong> से लिए गए हैं, जो नियंत्रित परिस्थितियों में मापे गए आंकड़े देती है।`,
-      },
-      {
-        label: 'अनाज, सब्जियां और दालें',
-        html: `चावल, पास्ता, दालों और सब्जियों के यील्ड प्रतिशत <strong ${STRONG}>USDA FoodData Central</strong> में कच्ची और पकी प्रविष्टियों की तुलना से निकाले गए हैं — वही डेटाबेस जिस पर ज्यादातर बड़े पोषण ऐप चलते हैं।`,
-      },
-      {
-        label: 'अनुमान',
-        html: 'कुछ ही खाद्य पदार्थ (सैल्मन, झींगा) उद्योग-मानक अनुमानों पर आधारित हैं, क्योंकि USDA ने उनके लिए सीधे कुकिंग यील्ड डेटा प्रकाशित नहीं किया है। संबंधित पेजों पर यह साफ बताया गया है।',
-      },
-    ],
-    howHeading: 'गणना कैसे काम करती है',
-    howParagraphs: [
-      'हर बदलाव एक ही संख्या पर टिका है: यील्ड प्रतिशत। यह पका वजन है, कच्चे वजन के प्रतिशत के रूप में। 75% यील्ड का मतलब 100g कच्चा पकने पर 75g रह जाता है। 300% यील्ड का मतलब 100g सूखा पकने पर 300g हो जाता है (जैसे सफेद चावल)।',
-      'आप किसी भी दिशा में बदलें, मैक्रो हमेशा कच्चे वजन के बराबर मान से गिने जाते हैं। इससे नतीजे USDA के पोषण डेटा से मेल खाते रहते हैं, जो कच्चे भोजन पर मापा जाता है।',
-      'यील्ड प्रतिशत शोध पर आधारित औसत हैं — असली नतीजे कट, आकार, नमी की मात्रा और पकाने के तरीके से बदलते हैं। यह कैलकुलेटर आपको पकाने में होने वाली कमी को पूरी तरह अनदेखा करने की तुलना में कहीं ज्यादा सही आंकड़े के करीब लाता है; यह प्रयोगशाला जैसी सटीकता का वादा नहीं करता।',
-    ],
-    toolHeading: 'यह टूल',
-    toolParagraphs: [
-      'कच्चे से पके का कैलकुलेटर एक मुफ्त, स्थिर वेब टूल है — कोई अकाउंट नहीं, कोई निजी डेटा ट्रैकिंग नहीं, कोई भुगतान वाली सुविधा नहीं। यह किसी भी ब्राउज़र और किसी भी डिवाइस पर चलता है।',
-      'इसमें चिकन ब्रेस्ट, कीमा, सैल्मन, पोर्क, चावल, पास्ता, क्विनोआ, मसूर दाल, पालक, ब्रोकोली, आलू और बहुत कुछ शामिल है — और जिन खाद्य पदार्थों में पकाने का तरीका नतीजे को खासा बदलता है, उनके लिए विधि-वार यील्ड डेटा भी।',
-    ],
-    ctaLabel: '← कैलकुलेटर इस्तेमाल करें',
-  },
 };
 
 export const CONTACT: Record<Locale, ContactPage> = {
@@ -593,63 +505,7 @@ export const CONTACT: Record<Locale, ContactPage> = {
       'Se um percentual de rendimento parecer errado, o mais útil é informar: o alimento e o método de cozimento em questão, o número que você esperava e a fonte com que está comparando. Assim conseguimos conferir rapidamente com os dados do USDA.',
   },
 
-  ja: {
-    metaTitle: 'お問い合わせ | 生・加熱後計算機',
-    metaDescription:
-      '調理歩留まりデータに関するご質問、数値がおかしいと感じた場合、ご意見・ご感想など、生・加熱後計算機の運営チームまでお気軽にご連絡ください。',
-    eyebrow: 'お問い合わせ',
-    heading: 'ご連絡ください',
-    lede: '計算機の使い方に関するご質問、数値がおかしいと感じた場合、あるいはご意見・ご感想など、いただいたメッセージにはすべて目を通しています。',
-    emailLabel: 'メール',
-    emailNote: '数営業日以内の返信を心がけています。',
-    helpHeading: '対応できる内容',
-    canHelpLabel: '対応できます',
-    canHelp: [
-      '歩留まり率の算出方法に関するご質問',
-      '数値が正しくないと思われる場合のご報告',
-      '計算機やサイト全般へのご意見',
-      '未対応の食材の追加リクエスト',
-      '技術的な不具合・バグのご報告',
-    ],
-    outOfScopeLabel: '対応できない内容',
-    outOfScope: [
-      '個別の食事・栄養指導',
-      '医療に関するご質問や健康状態の評価',
-      '特定の疾患に対応した献立の作成',
-    ],
-    tipLabel: 'データの誤りをご報告いただく場合',
-    tipText:
-      '歩留まり率が正しくないと思われる場合、対象の食材と加熱方法、想定されていた数値、比較されている出典をあわせてお知らせいただけると助かります。USDAのデータとすぐに照合できます。',
-  },
 
-  ko: {
-    metaTitle: '문의하기 | 생·조리 계산기',
-    metaDescription:
-      '조리 수율 데이터에 대한 질문, 이상해 보이는 계산 결과, 또는 일반적인 의견 — 생·조리 계산기 팀에 연락해 주세요.',
-    eyebrow: '문의하기',
-    heading: '연락 주세요',
-    lede: '계산기 작동 방식에 대한 질문, 잘못돼 보이는 수치, 또는 일반적인 의견까지 — 보내주시는 메시지는 모두 읽고 있습니다.',
-    emailLabel: '이메일',
-    emailNote: '영업일 기준 며칠 안에 답변드리려 노력합니다.',
-    helpHeading: '도와드릴 수 있는 것',
-    canHelpLabel: '도와드릴 수 있습니다',
-    canHelp: [
-      '수율이 어떻게 계산되는지에 대한 질문',
-      '잘못돼 보이는 수치 제보',
-      '계산기나 사이트에 대한 일반적인 의견',
-      '아직 없는 식품 추가 요청',
-      '기술적 문제나 버그',
-    ],
-    outOfScopeLabel: '다루지 않는 것',
-    outOfScope: [
-      '개인 맞춤 식단·영양 상담',
-      '의학적 질문이나 건강 상태 평가',
-      '특정 질환을 위한 식단 설계',
-    ],
-    tipLabel: '데이터 오류를 알려주실 때',
-    tipText:
-      '수율이 잘못돼 보인다면, 해당 식품과 조리 방법, 기대하셨던 수치, 비교하신 출처를 함께 알려주시면 가장 도움이 됩니다. 그러면 USDA 데이터와 빠르게 대조해 볼 수 있습니다.',
-  },
 
   it: {
     metaTitle: 'Contatti | Calcolatore Crudo-Cotto',
@@ -680,34 +536,6 @@ export const CONTACT: Record<Locale, ContactPage> = {
       'Se una percentuale di resa ti sembra sbagliata, le informazioni più utili da indicare sono: l’alimento e il metodo di cottura in questione, il valore che ti aspettavi e la fonte con cui lo stai confrontando. Così possiamo verificarlo rapidamente sui dati USDA.',
   },
 
-  hi: {
-    metaTitle: 'संपर्क करें | कच्चे से पके का कैलकुलेटर',
-    metaDescription:
-      'कुकिंग यील्ड डेटा से जुड़े सवाल, कोई गणना गलत लग रही हो, या सामान्य सुझाव — कच्चे से पके कैलकुलेटर की टीम से संपर्क करें।',
-    eyebrow: 'संपर्क',
-    heading: 'हमसे संपर्क करें',
-    lede: 'कैलकुलेटर कैसे काम करता है, कोई आंकड़ा गलत लग रहा हो, या कोई सामान्य सुझाव हो — हम हर संदेश पढ़ते हैं।',
-    emailLabel: 'ईमेल',
-    emailNote: 'हम कुछ कार्यदिवसों में जवाब देने की कोशिश करते हैं।',
-    helpHeading: 'हम किसमें मदद कर सकते हैं',
-    canHelpLabel: 'हम मदद कर सकते हैं',
-    canHelp: [
-      'यील्ड प्रतिशत कैसे निकाले जाते हैं, इससे जुड़े सवाल',
-      'कोई आंकड़ा गलत लगने पर उसकी जानकारी देना',
-      'कैलकुलेटर या साइट पर सामान्य सुझाव',
-      'फिलहाल शामिल न किए गए किसी खाद्य पदार्थ का अनुरोध',
-      'तकनीकी दिक्कतें या बग',
-    ],
-    outOfScopeLabel: 'हमारे दायरे से बाहर',
-    outOfScope: [
-      'व्यक्तिगत आहार या पोषण सलाह',
-      'चिकित्सा संबंधी सवाल या स्वास्थ्य आकलन',
-      'किसी खास स्वास्थ्य स्थिति के लिए भोजन योजना',
-    ],
-    tipLabel: 'डेटा से जुड़ी गड़बड़ी बताना',
-    tipText:
-      'अगर आपको कोई यील्ड प्रतिशत गलत लगता है, तो सबसे उपयोगी जानकारी यह होगी: कौन-सा खाद्य पदार्थ और पकाने का कौन-सा तरीका, आपको किस आंकड़े की उम्मीद थी, और आप किस स्रोत से तुलना कर रहे हैं। इससे हम उसे USDA डेटा से जल्दी जांच सकते हैं।',
-  },
 };
 
 export function getAbout(locale: Locale): AboutPage {

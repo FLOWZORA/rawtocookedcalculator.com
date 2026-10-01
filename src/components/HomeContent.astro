@@ -1,9 +1,10 @@
 ---
 import Calculator from './Calculator.astro';
-import { t, getLangPrefix } from '../i18n';
+import { t, tf, getLangPrefix } from '../i18n';
 import type { Locale } from '../i18n';
 import { getHome } from '../i18n/home';
 import { getHomeFaq } from '../i18n/faq';
+import { getAllFoods } from '../utils/foods';
 
 interface Props {
   locale: Locale;
@@ -14,6 +15,7 @@ const prefix = getLangPrefix(locale);
 const home = getHome(locale);
 const article = home.article;
 const faqItems = getHomeFaq(locale);
+const foodCount = getAllFoods().length;
 
 const categories = [
   {
@@ -80,7 +82,7 @@ const categories = [
       {t(locale, 'browse.heading')}
     </h2>
     <p class="text-sm text-[var(--color-mute)] mb-8">
-      {t(locale, 'browse.description')}
+      {tf(locale, 'browse.description', { n: foodCount })}
     </p>
 
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -274,7 +276,12 @@ const categories = [
       <h3 class="text-base font-semibold text-[var(--color-ink)] tracking-tight mt-8 mb-3">
         {article.usdaHeading}
       </h3>
-      <p class="text-sm text-[var(--color-body)] leading-relaxed">{article.usdaP1}</p>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed mb-4">{article.usdaP1}</p>
+
+      <h3 class="text-base font-semibold text-[var(--color-ink)] tracking-tight mt-8 mb-3">
+        {article.calorieTargetHeading}
+      </h3>
+      <p class="text-sm text-[var(--color-body)] leading-relaxed" set:html={article.calorieTargetHtml} />
 
     </article>
   </div>

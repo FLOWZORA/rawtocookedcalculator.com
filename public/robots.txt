@@ -3,4 +3,4 @@ Allow: /
 Disallow: /404
 Disallow: /500
 
-Sitemap: https://rawtocookedcalculator.com/sitemap.xml
+Sitemap: https://rawtocookedcalculator.com/sitemap-index.xml

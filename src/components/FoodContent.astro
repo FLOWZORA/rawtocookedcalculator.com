@@ -7,6 +7,7 @@ import { t, tf, getLangPrefix, getYieldDescription, getFoodSource, getFoodFaqIte
 import type { Locale } from '../i18n';
 import { getFoodName, getShortFoodName, getCategoryLabel } from '../i18n/food-names';
 import { getExplanation, getMethodLabel } from '../i18n/content';
+import { getFoodLongContent, foodPageHasFullContent } from '../i18n/food-content';
 
 interface Props {
   locale: Locale;
@@ -15,6 +16,26 @@ interface Props {
 
 const { locale, food } = Astro.props;
 const prefix = getLangPrefix(locale);
+
+// en/es/fr/de/pt/it pages carry full, food-specific long-form content. Any
+// other locale keeps the shorter templated layout until that content is
+// translated, so all the blocks it drives are gated on `hasLongform`.
+// (Locales without the full content are also noindex'd — see
+// `foodPageHasFullContent` and the food page routes.)
+const hasLongform = foodPageHasFullContent(locale);
+const longContent = hasLongform ? getFoodLongContent(locale, food.id) : undefined;
+
+// Byline shown on the long-form pages, localized. The methodology page is
+// English-only (no [lang] route), so non-English bylines link to it unprefixed.
+const BYLINE: Record<string, { text: string; method: string; reviewed: string }> = {
+  en: { text: 'Compiled and cross-checked against USDA primary sources by Vaibhav Tiwari.', method: 'Methodology', reviewed: 'Last reviewed September 2026' },
+  es: { text: 'Recopilado y contrastado con fuentes primarias del USDA por Vaibhav Tiwari.', method: 'Metodología', reviewed: 'Última revisión: septiembre de 2026' },
+  fr: { text: 'Compilé et recoupé avec les sources primaires de l’USDA par Vaibhav Tiwari.', method: 'Méthodologie', reviewed: 'Dernière révision : septembre 2026' },
+  de: { text: 'Zusammengestellt und mit USDA-Primärquellen abgeglichen von Vaibhav Tiwari.', method: 'Methodik', reviewed: 'Zuletzt geprüft: September 2026' },
+  pt: { text: 'Compilado e verificado com fontes primárias do USDA por Vaibhav Tiwari.', method: 'Metodologia', reviewed: 'Última revisão: setembro de 2026' },
+  it: { text: 'Compilato e verificato con le fonti primarie dell’USDA da Vaibhav Tiwari.', method: 'Metodologia', reviewed: 'Ultima revisione: settembre 2026' },
+};
+const byline = BYLINE[locale] ?? BYLINE.en;
 
 const isChicken = food.id === 'chicken-breast';
 const foodName = getFoodName(locale, food.id);
@@ -68,11 +89,21 @@ const relatedFoods = getAllFoods()
     <p class="text-xs font-mono text-[var(--color-faint)]">
       {t(locale, 'food.source')}: {sourceText}
     </p>
+
+    <!-- Byline (long-form pages only) -->
+    {hasLongform && (
+      <p class="text-xs text-[var(--color-faint)] leading-relaxed mt-2 max-w-xl">
+        {byline.text}{' '}
+        <a href="/methodology" class="text-[var(--color-link)] hover:underline">{byline.method}</a>
+        {` · ${byline.reviewed}`}
+      </p>
+    )}
   </div>
 </section>
 
-<!-- Chicken-specific: method yields table -->
-{isChicken && food.yield_by_method && (
+<!-- Chicken-specific: method yields table (non-English; English gets the
+     unified long-form treatment below) -->
+{!hasLongform && isChicken && food.yield_by_method && (
   <section class="border-b border-[var(--color-hairline)]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
       <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-5">
@@ -95,8 +126,8 @@ const relatedFoods = getAllFoods()
   </section>
 )}
 
-<!-- Chicken-specific: protein quality note -->
-{isChicken && (
+<!-- Chicken-specific: protein quality note (non-English only) -->
+{!hasLongform && isChicken && (
   <section class="border-b border-[var(--color-hairline)]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
       <div class="max-w-2xl">
@@ -112,6 +143,51 @@ const relatedFoods = getAllFoods()
   </section>
 )}
 
+<!-- English long-form: why the weight changes -->
+{hasLongform && longContent && (
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+      <div class="max-w-2xl">
+        <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+          {longContent.introHeading}
+        </h2>
+        {longContent.intro.map((para) => (
+          <p class="text-sm text-[var(--color-body)] leading-relaxed mb-3 last:mb-0">{para}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- English long-form: yield by method + worked examples -->
+{hasLongform && longContent && (
+  <section class="border-b border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+      <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-5">
+        {longContent.methodHeading}
+      </h2>
+      {food.yield_by_method && (
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl mb-6">
+          {Object.entries(food.yield_by_method).map(([method, pct]) => (
+            <div class="bg-[var(--color-surface)] border border-[var(--color-hairline)] rounded-[var(--radius-md)] px-4 py-4 text-center">
+              <p class="text-2xl font-semibold text-[var(--color-ink)] tabular-nums mb-1">{pct}%</p>
+              <p class="text-xs text-[var(--color-mute)]">{getMethodLabel(locale, method)}</p>
+            </div>
+          ))}
+        </div>
+      )}
+      <div class="max-w-2xl">
+        {longContent.method.map((para) => (
+          <p class="text-sm text-[var(--color-body)] leading-relaxed mb-3 last:mb-0">{para}</p>
+        ))}
+      </div>
+      <p class="mt-4 text-xs text-[var(--color-faint)] font-mono">
+        {t(locale, 'food.source')}: {sourceText}
+      </p>
+    </div>
+  </section>
+)}
+
 <!-- Calculator -->
 <section>
   <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
@@ -123,6 +199,42 @@ const relatedFoods = getAllFoods()
     </div>
   </div>
 </section>
+
+<!-- English long-form: how much raw to buy -->
+{hasLongform && longContent && (
+  <section class="border-t border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+      <div class="max-w-2xl">
+        <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+          {longContent.buyingHeading}
+        </h2>
+        {longContent.buying.map((para) => (
+          <p class="text-sm text-[var(--color-body)] leading-relaxed mb-3 last:mb-0">{para}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- English long-form: common logging mistakes -->
+{hasLongform && longContent && (
+  <section class="border-t border-[var(--color-hairline)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+      <div class="max-w-2xl">
+        <h2 class="text-xl font-semibold text-[var(--color-ink)] tracking-tight mb-4">
+          {longContent.mistakesHeading}
+        </h2>
+        <ul class="space-y-3">
+          {longContent.mistakes.map((item) => (
+            <li class="text-sm text-[var(--color-body)] leading-relaxed pl-4 border-l-2 border-[var(--color-hairline)]">
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+)}
 
 <!-- FAQ -->
 <section class="border-t border-[var(--color-hairline)]">
